@@ -1,6 +1,6 @@
 # CACM Daily News · 云端每日推送
 
-每天早上（北京时间 09:00）自动抓取 **Communications of the ACM 的 News 栏目**最新文章，
+每天早上（北京时间 09:00）自动抓取 **Communications of the ACM 的 所有栏目**最新文章，
 生成中文摘要、核心要点、中文思维导图和**中英对照全文**，发到你的邮箱。
 
 跑在 **GitHub Actions** 上——**电脑关机也照常执行**，不需要你开着电脑。
