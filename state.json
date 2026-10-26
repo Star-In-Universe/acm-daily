@@ -1,4 +1,13 @@
 {
-  "processed": [],
-  "last_check": ""
+  "processed": [
+    {
+      "id": 813528,
+      "pushed_at": "2026-10-26T18:04:53+08:00",
+      "title": "AI Finds its Way Into Backcountry Search and Rescue",
+      "date": "2026-10-19T14:12:01",
+      "link": "https://cacm.acm.org/news/ai-finds-its-way-into-backcountry-search-and-rescue/",
+      "dir": "articles/2026-10-19-ai-finds-its-way-into-backcountry-search-and-rescue"
+    }
+  ],
+  "last_check": "2026-10-26T18:04:35+08:00"
 }
