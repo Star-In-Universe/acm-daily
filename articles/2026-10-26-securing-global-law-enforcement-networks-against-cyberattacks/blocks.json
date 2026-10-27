@@ -1,0 +1,151 @@
+{
+ "title": "Securing Global Law Enforcement Networks Against Cyberattacks",
+ "lede": "External software can compromise confidential police records when access controls and monitoring fall short.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "Cyber attackers routinely target police departments across the globe. Threat actors can encrypt 911 computer-aided dispatch (CAD) tools and breach police station databases to steal confidential files. System outages can take down emergency call lines, freeze access to forensic evidence, and stall cross-border record checks."
+  },
+  {
+   "type": "p",
+   "en": "One such breach occurred on March 20, 2026, when a file sharing platform that Los Angeles City Attorney Hydee Feldstein Soto’s office used to transfer litigation case files to opposing counsel was hit, according to the Los Angeles Times and other outlets. The unauthorized access leaked 7.7 terabytes of sensitive police records across 337,000 files, including officer personnel records, witness medical histories, internal affairs files, and unredacted criminal complaints, some of which subsequently surfaced online, but did not compromise core police infrastructure."
+  },
+  {
+   "type": "p",
+   "en": "An official statement from the Los Angeles Police Department (LAPD) noted that the intrusion remained isolated to the City Attorney’s external server and affected files from closed civil lawsuits."
+  },
+  {
+   "type": "p",
+   "en": "“LAPD is aware of an incident within the LA City Attorney’s Office, where unauthorized individuals gained access to a digital storage system,” the statement said. “This digital storage contained discovery documents from previously adjudicated or settled LAPD civil litigation cases. The breach does not involve any LAPD systems or networks. We take this incident very seriously and are working with the LA City Attorney’s Office to gain access to the impacted files to understand the full scope of the data breach. LAPD is committed to safeguarding its sensitive personnel and investigative information.”"
+  },
+  {
+   "type": "p",
+   "en": "The attack was attributed to WorldLeaks, a cyber-extortion group, which publicly claimed responsibility for the intrusion. Investigators have yet to verify the precise entry point into the City Attorney’s storage system, but security analysts said that WorldLeaks usually breaks in via valid credentials or exposed Web services missing multi-factor authentication. Rather than deploying ransomware, the group generally conducts reconnaissance, moves laterally, steals vast caches of restricted files, and threatens public exposure on its leak site."
+  },
+  {
+   "type": "p",
+   "en": "The breach underscores how external software can compromise confidential police records whenever access controls and monitoring fall short."
+  },
+  {
+   "type": "p",
+   "en": "Targeting Police Infrastructure and Vendor Platforms"
+  },
+  {
+   "type": "p",
+   "en": "Anar Israfilov, founder of cybersecurity firm Cyberoon Enterprise Corporation, said criminals target law enforcement networks because connected systems house criminal intelligence, legal records, evidence, and 911 response tools. Attackers include ransomware syndicates looking for leverage, hacktivists, organized crime groups searching for witness rosters, and state-sponsored actors seeking intelligence, said Israfilov."
+  },
+  {
+   "type": "p",
+   "en": "High-profile incidents highlight several distinct actors or actions:"
+  },
+  {
+   "type": "p",
+   "en": "Ransomware Syndicates. Law enforcement agencies took down the LockBit ransomware syndicate in February 2024, dismantling a prolific network that regularly hit municipal police departments, courts, and public-safety software vendors worldwide."
+  },
+  {
+   "type": "p",
+   "en": "Hacktivists and Crime Groups. A September 2022 intrusion by the hacktivist collective Guacamaya compromised military and police institutions across Latin America, leaking internal emails and records."
+  },
+  {
+   "type": "p",
+   "en": "State-Sponsored Advanced Persistent Threats (APTs). From May 2021 through February 2022, the state-backed threat group APT41 breached at least six U.S. state government networks housing police and public-safety infrastructure, exploiting vulnerable Web applications for long-term espionage."
+  },
+  {
+   "type": "p",
+   "en": "Because law enforcement operations run on interconnected digital networks, penetrating a single entry point can hand threat actors access to cross-border intelligence feeds, informant registries, and active evidence files. This structural division of public safety IT creates significant operational security gaps."
+  },
+  {
+   "type": "p",
+   "en": "According to Israfilov, technical prevention responsibilities are often divided between departments. Law enforcement officers may be responsible for the systems they use, while the local city department may be responsible for infrastructure issues. Vendors will be responsible for third-party platforms used in the processes and the courts are accountable for legal discoveries, said Israfilov."
+  },
+  {
+   "type": "p",
+   "en": "When security duties split among separate organizations, enforcement breaks down, turning external vendor platforms into unchecked entry points into sensitive data pipelines, he said."
+  },
+  {
+   "type": "p",
+   "en": "Attack Vectors and System Vulnerabilities"
+  },
+  {
+   "type": "p",
+   "en": "“The most common entry point is weak identity control, especially orphaned or poorly managed accounts with elevated permissions to the critical systems. Third-party tools like legal discovery and evidence systems can also create risk if they do not use strong [phishing-resistant] authentication or proper identity federation,” said Kishore Bitra, lead, collaboration engineering team at Baltimore City Information & Technology."
+  },
+  {
+   "type": "p",
+   "en": "Advisories from the U.S. Cybersecurity and Infrastructure Security Agency (CISA) and the SANS Institute repeatedly highlight identity management failures as a primary route into local public-safety networks."
+  },
+  {
+   "type": "p",
+   "en": "“When attackers get in, older on-premises systems usually fail first. Flat networks make it easier for attackers to move around, which can quickly affect file shares, Active Directory, and user workstations,” said Bitra."
+  },
+  {
+   "type": "p",
+   "en": "Lacking internal microsegmentation, a breached workstation or unpatched web tool would let intruders pivot across an entire municipal network."
+  },
+  {
+   "type": "p",
+   "en": "Wanderson Castilho, chief executive officer of Enetsec, a digital forensics and cybercrime investigation firm, said the primary security gaps lie in legacy hardware, outdated software, weak passwords, excessive access privileges, and poorly secured agency-vendor connections."
+  },
+  {
+   "type": "p",
+   "en": "These technical flaws multiply when public safety agencies attempt to connect modern cloud-hosted discovery platforms directly to legacy database architectures."
+  },
+  {
+   "type": "p",
+   "en": "Incident Response Sequences"
+  },
+  {
+   "type": "p",
+   "en": "“The first goal is to protect emergency dispatch and keep services running. Instead of shutting everything down, teams should isolate the problem by revoking active sessions, blocking risky sign-ins, and disabling compromised vendor connections,” said Bitra."
+  },
+  {
+   "type": "p",
+   "en": "Focusing on containment rather than total shutdowns keeps 911 CAD tools online while forensic isolation occurs, a process relying on pre-configured failover protocols designed to isolate compromised software without severing emergency field communications."
+  },
+  {
+   "type": "p",
+   "en": "“Then, affected service accounts should be turned off and compromised endpoints rebuilt using clean images. Meanwhile, dispatch should continue through backup systems such as isolated communication tools or mobile-managed devices on separate networks so emergency traffic is not interrupted,” said Bitra."
+  },
+  {
+   "type": "p",
+   "en": "Such a phased recovery workflow keeps threat actors from maintaining a foothold inside core police infrastructure during remediation."
+  },
+  {
+   "type": "p",
+   "en": "Budgetary and Compliance Barriers"
+  },
+  {
+   "type": "p",
+   "en": "“Public agencies often cannot afford to replace legacy systems all at once due to various reason[s] including the operational budget. Because of that, they keep old platforms running and add vendor integrations, middleware, and scripts on top of them,” said Bitra."
+  },
+  {
+   "type": "p",
+   "en": "Budget constraints force municipal IT teams to layer custom middleware and scripts around aging databases instead of installing unified modern architectures, making consistent security policy enforcement difficult, he said."
+  },
+  {
+   "type": "p",
+   "en": "“That creates a compliance problem because older systems usually do not support modern encryption, logging, or authentication standards well. Agencies end up trying to wrap security around fragile legacy systems, which increases complexity, technical debt, and audit risk,” said Bitra."
+  },
+  {
+   "type": "p",
+   "en": "As a result, departments run afoul of mandates under the U.S. Criminal Justice Information Services (CJIS) Security Policy and the EU Law Enforcement Directive (LED) while operating legacy codebases. CJIS mandates controls for protecting police data, including multi-factor logins, data encryption, and access logs. Meanwhile, the LED sets data-protection and tracking rules across European law enforcement agencies."
+  },
+  {
+   "type": "p",
+   "en": "Isolating Vendor Tools Within Resource Limits"
+  },
+  {
+   "type": "p",
+   "en": "“Every vendor tool housing police records, discovery documentation, pieces of evidence, or HR data must be regarded as an element of law enforcement attack surface. If the third-party [provider] accesses police information, such access must be segmented, kept under supervision, restricted in time, and subject to auditing,” said Israfilov."
+  },
+  {
+   "type": "p",
+   "en": "In the end, protecting public-safety networks demands treating every vendor connection as a potential breach point, experts said. Enforcing zero-trust network access, identity federation, tight segmentation, and routine vendor audits allows agencies to safeguard evidence and emergency operations without exceeding municipal budgets."
+  },
+  {
+   "type": "p",
+   "en": "David Geer is a journalist who focuses on issues related to cybersecurity. He writes from Cleveland, OH, USA."
+  }
+ ],
+ "tail": []
+}

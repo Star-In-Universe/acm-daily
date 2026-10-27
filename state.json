@@ -15,7 +15,15 @@
       "date": "2026-10-23T15:37:50",
       "link": "https://cacm.acm.org/blogcacm/core-concepts-in-infrastructure-cost-management/",
       "dir": "articles/2026-10-23-core-concepts-in-infrastructure-cost-management"
+    },
+    {
+      "id": 813827,
+      "pushed_at": "2026-10-27T13:45:23+08:00",
+      "title": "Securing Global Law Enforcement Networks Against Cyberattacks",
+      "date": "2026-10-26T11:19:25",
+      "link": "https://cacm.acm.org/news/securing-global-law-enforcement-networks-against-cyberattacks/",
+      "dir": "articles/2026-10-26-securing-global-law-enforcement-networks-against-cyberattacks"
     }
   ],
-  "last_check": "2026-10-26T18:10:08+08:00"
+  "last_check": "2026-10-27T13:45:02+08:00"
 }
