@@ -1,16 +1,19 @@
-# CACM Daily News · 云端每日推送
+# CACM 每日推送 · 云端版（News + Opinion）
 
-每天早上（北京时间 09:00）自动抓取 **Communications of the ACM 的 所有栏目**最新文章，
-生成中文摘要、核心要点、中文思维导图和**中英对照全文**，发到你的邮箱。
+每天早上（北京时间 09:00）自动抓取 **Communications of the ACM** 的新文章
+（默认 **News + Opinion** 两个栏目），生成中文摘要、核心要点、中文思维导图和
+**中英对照全文**，汇总成**一封邮件**发到你的邮箱。
 
 跑在 **GitHub Actions** 上——**电脑关机也照常执行**，不需要你开着电脑。
 
 ```
 GitHub Actions（每天 01:00 UTC / 09:00 CST）
-   └─ fetch  → 翻译（DeepSeek）→ 摘要 + 思维导图 → SMTP 发信
+   └─ fetch（posts + digital-library）→ 翻译（DeepSeek）→ 摘要 + 思维导图
+      → 合并成一封 HTML 邮件 → SMTP 发信
 ```
 
-邮件长这样：HTML 正文（摘要 + 要点 + 内嵌思维导图）+ `article.md` 附件（中英对照全文）。
+邮件长这样：每篇一段（中文标题 + 摘要 + 要点 + 内嵌思维导图 + 原文链接），
+每篇的**中英对照全文**作为 `.md` 附件。一天最多 4 篇，没新文章就不发信。
 
 ---
 
@@ -81,15 +84,31 @@ git push -u origin main
 
 ---
 
-## 二、它是怎么判断「新文章」的
+## 二、它抓哪些内容、怎么判断「新文章」
 
-- 站点：`https://cacm.acm.org/wp-json/wp/v2/posts?section=72`（News 栏目，
-  普通网页有反爬，但 WordPress API 可以直连，返回全文 HTML）。
-- `state.json` 记录已推送的文章 id，随仓库一起提交，所以**不会重复推送**。
+CACM 站点有两个来源，普通网页有反爬（403），但这两个 WordPress 接口可以直连、返回全文 HTML：
+
+| 来源 | 接口 | 栏目（section id） |
+| --- | --- | --- |
+| 网站文章 | `/wp-json/wp/v2/posts` | `72` News、`164` BLOG@CACM |
+| 杂志文章 | `/wp-json/wp/v2/digital-library` | `11` Opinion、`23` Research、`40` Practice |
+
+默认推送 **News(72) + Opinion(11)**。判断规则：
+
+- `state.json` 记录已推送的文章 id，随仓库一起提交，**不会重复推送**。
 - 只处理 **7 天内** 的文章；更旧的视为过期，避免把陈年旧闻当新闻。
+- 一次最多处理 **4 篇**，合并成一封邮件；超出部分留到下一次。
 - 自动跳过 "Call for Papers" 这类通知稿。
 
-> News 栏目实际是**每周 2~4 篇**，不是每天都有。没有新稿的那天，Actions 会正常退出、不发信。
+> 栏目更新频率（2026 年实测）：News 每周 2~4 篇，Opinion 每周 3~6 篇，
+> 所以大部分早上会收到 1~2 篇；没有新稿的那天，Actions 正常退出、不发信。
+
+**想加/减栏目**，改 `.github/workflows/daily.yml` 里这两行（逗号分隔，空字符串表示不抓该来源）：
+
+```yaml
+CACM_POSTS_SECTIONS: "72"        # News；加博客写 "72,164"
+CACM_DL_SECTIONS: "11"           # Opinion；加研究写 "11,23"
+```
 
 ---
 
@@ -107,8 +126,9 @@ GitHub 会停用长期无活动的仓库的定时任务。本流程每次运行�
 - GitHub Actions：私有仓库每月 2000 分钟免费，本任务每天约 1~2 分钟，够用。
 - DeepSeek：每篇文章约 2 次调用，合计几分钱。
 
-**Q：能改成推送博客（BLOG@CACM）或不限栏目吗？**
-改 `.github/workflows/daily.yml` 里的 `CACM_SECTION`：`72` = News，`164` = 博客，`0` = 全部。
+**Q：能只推 Opinion，或加上 Research / 博客吗？**
+改 `daily.yml` 里的两个环境变量即可，见上文「想加/减栏目」。
+Opinion 走 `digital-library` 接口，News 走 `posts` 接口，两边的 section id 不通用。
 
 **Q：能只发到手机、不发邮件？**
 邮件本身就是手机上最完整的载体（能带图片和附件）。如果一定要 IM 推送，
@@ -125,8 +145,9 @@ GitHub 会停用长期无活动的仓库的定时任务。本流程每次运行�
 ```bash
 pip install -r requirements.txt
 export DEEPSEEK_API_KEY=sk-xxx
-python scripts/main.py --force 813528            # 完整跑一篇
-python scripts/main.py --force 813528 --dry-run out.eml   # 只生成 .eml 不发信
+python scripts/main.py                              # 正常跑（有新文章才发信）
+python scripts/main.py --force 814230               # 强制跑某一篇（id 见 URL 或接口）
+python scripts/main.py --force 814230 --dry-run out.eml   # 只生成 .eml 不发信
 ```
 
 Windows PowerShell 用 `$env:DEEPSEEK_API_KEY="sk-xxx"`。
