@@ -1,0 +1,209 @@
+{
+ "id": 814230,
+ "date": "2026-10-30T11:19:39",
+ "date_gmt": "2026-10-30T15:19:39",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?post_type=digital-library&#038;p=814230"
+ },
+ "modified": "2026-10-30T17:33:14",
+ "modified_gmt": "2026-10-30T21:33:14",
+ "slug": "the-techlash-is-back",
+ "status": "publish",
+ "type": "digital-library",
+ "link": "https://cacm.acm.org/opinion/the-techlash-is-back/",
+ "title": {
+  "rendered": "The Techlash Is Back"
+ },
+ "content": {
+  "rendered": "<article>\n<div class=\"body\" lang=\"en\">\n<section id=\"sec1\" class=\"sec\">\n<p id=\"p-1\">Peggy Noonan is a weekly columnist for <i>The Wall Street Journal</i>. I often disagree with her opinions, but I find her to be one of the most astute observers of the American social-economical-political zeitgeist. When she described in 2018 Silicon Valley executives as “moral Martians who operate on some weird new postmodern ethical wavelength,” I realized that the popular view of Silicon Valley as a fountain of technical innovation and cool gadgets had changed. Indeed, in my January 2019 <a class=\"ext-link\" href=\"https://cacm.acm.org/opinion/are-we-having-an-ethical-crisis-in-computing/\" data-jats-ext-link-type=\"uri\">column</a>,<a class=\"footnote-link xref xref-fn\" href=\"#fn1\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn1\"><sup>a</sup></a> I also quoted Niall Ferguson, a Hoover Institution historian, who described cyberspace as “cyberia, a dark and lawless realm where malevolent actors range.” <em>The</em> <i>Economist</i> magazine coined the term Techlash to describe what was then a new phenomenon of growing hostility toward the tech giants. The COVID pandemic distracted us from the techlash of the late 2010s. In fact, technology was our salvation during those dark days of social distancing. But now, the techlash is back!</p>\n<p id=\"p-2\">In her Sept. 10, 2026 <a class=\"ext-link\" href=\"https://www.wsj.com/opinion/pause-ai-for-humanitys-sake-8839ca5e\" data-jats-ext-link-type=\"uri\">column</a><a class=\"footnote-link xref xref-fn\" href=\"#fn2\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn2\"><sup>b</sup></a> “Pause AI for Humanity’s Sake,” Noonan argued, “When something speeds up and gets out of control, it isn’t alarmist to demand prudence and deliberation.” This is not the first call to slow down AI development. “Pause Giant AI Experiments: An Open Letter” was a letter published by the Future of Life Institute in March 2023. But <i>The Wall Street Journal</i> is, in essence, the flagship publication of the U.S. business community; the publication objects practically always to government regulation. A day earlier, Paul Tudor Jones, another columnist at <i>The Wall Street Journal</i>, warned that “AI May Become the Third Superpower”, and called for U.S. president Donald Trump and China president Xi Jingping to <b>“</b>develop a shared strategy to confront it.” As reported in the <a class=\"ext-link\" href=\"https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf\" data-jats-ext-link-type=\"uri\">2026 AI Index</a>,<a class=\"footnote-link xref xref-fn\" href=\"#fn3\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn3\"><sup>c</sup></a> U.S. sentiment has turned negative on AI, with the majority concerned rather than optimistic about AI’s societal impact.</p>\n<p id=\"p-3\">The negative view of AI has taken a concrete form in the backlash against datacenters, which emerged as a major factor in the November 2026 mid-term U.S. elections. A recent poll <a class=\"ext-link\" href=\"https://www.usatoday.com/story/news/politics/elections/2026/08/24/data-centers-trump-midterm-elections/91442283007/\" data-jats-ext-link-type=\"uri\">found</a><a class=\"footnote-link xref xref-fn\" href=\"#fn4\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn4\"><sup>d</sup></a> that more than 70% of Americans oppose the constructions of datacenters in their areas because of “the strain on water and electricity resources but also the disruption to communities with noise and pollution.” The darkening view of AI technology and its impact is also translating into a darkening view of Big Tech. “Even the tech gods who once had good intentions have gone to the dark side, seduced by the billions to be made on [AI],” <a class=\"ext-link\" href=\"https://www.nytimes.com/2026/02/14/opinion/welcome-to-the-voyage-of-the-damned.html\" data-jats-ext-link-type=\"uri\">wrote</a><a class=\"footnote-link xref xref-fn\" href=\"#fn5\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn5\"><sup>e</sup></a> <i>The New York Times</i> columnist Maureen Dowd last February.</p>\n<p id=\"p-4\">Last year, I <a class=\"ext-link\" href=\"https://cacm.acm.org/opinion/techno-optimism-techno-pessimism-and-techno-realism/\" data-jats-ext-link-type=\"uri\">argued</a><a class=\"footnote-link xref xref-fn\" href=\"#fn6\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn6\"><sup>f</sup></a> that the pie-in-the-sky techno-optimism of some in the tech industry is bound to lead to adverse consequences. Bill Gates seems to agree with me; he recently <a class=\"ext-link\" href=\"https://www.nytimes.com/2026/08/26/technology/bill-gates-ai-risks.html\" data-jats-ext-link-type=\"uri\">warned</a><a class=\"footnote-link xref xref-fn\" href=\"#fn7\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn7\"><sup>g</sup></a> that his industry was downplaying the risks, which he believes include mass unemployment and bioterrorism. Techno-optimism naturally leads to “<a class=\"ext-link\" href=\"https://theconversation.com/techno-utopians-like-musk-are-treading-old-ground-the-futurism-of-early-20th-century-europe-259367\" data-jats-ext-link-type=\"uri\">techno-utopianism</a>,”<a class=\"footnote-link xref xref-fn\" href=\"#fn8\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn8\"><sup>h</sup></a> which is the belief that new and speculative technologies are the primary drivers for human progress, societal transformation, and the extension of life</p>\n<p id=\"p-5\">But in some segments of the tech industry, techno-utopianism has led to what is being called “<a class=\"ext-link\" href=\"https://link.springer.com/article/10.1007/s00146-026-02862-9\" data-jats-ext-link-type=\"uri\">Technofascism</a>.”<a class=\"footnote-link xref xref-fn\" href=\"#fn9\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn9\"><sup>i</sup></a> If technology is an unalloyed good, then objections to it are simply bad and must be eliminated. Some techno-optimists are now advocating an authoritarian political model where unelected technology elites and corporate actors fuse private infrastructure with state power, using digital tools such as AI and ubiquitous surveillance to bypass and undermine democratic oversight. In a recent book, <i>The Nerd Reich</i>, journalist Gil Durán argues that a small circle of Silicon Valley billionaires and venture capitalists have concluded that democracy is in their way—and that they should be governing in its place. Undoubtedly, the technofascist view represents a very narrow segment in the Tech industry, but it is a very loud segment, and the rest of the industry does not object loudly.</p>\n<p id=\"p-6\">Clearly, the time has come to boldly regulate AI. Beyond that, however, our professional associations still conduct their business as if academia and industry are two sides of the same coin. The Computing Research Association <a class=\"ext-link\" href=\"https://cra.org/industry/2025/10/20/strengthening-the-bridge-between-academia-and-industry/\" data-jats-ext-link-type=\"uri\">calls</a><a class=\"footnote-link xref xref-fn\" href=\"#fn10\" data-jats-ref-type=\"fn\" data-jats-rid=\"fn10\"><sup>j</sup></a> for increasing interaction between industry and academia. Google provides financial support for the ACM A.M. Turing Award, fully funding the prestigious $1 million cash prize, in an apparent conflict of interest. If our professional associations are truly committed to the public good, then they must re-examine their relationship with the tech industry.</p>\n</section>\n<section id=\"sec2\" class=\"sec\"></section>\n</div>\n</article>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>U.S. sentiment has turned negative on AI, with the majority concerned rather than optimistic about AI’s societal impact.</p>",
+  "protected": false
+ },
+ "featured_media": 814261,
+ "comment_status": "open",
+ "ping_status": "closed",
+ "template": "",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 39,
+      "post_id": 51
+     }
+    }
+   ]
+  },
+  "cacm_acm_queue_branding_active": 0,
+  "lede": "<p>Clearly, the time has come to boldly regulate AI.</p>\n",
+  "table_of_contents": "<ul>\n<li><a href=\"#footnotes\">Footnotes</a></li>\n</ul>\n",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "footnotes": ""
+ },
+ "categories": [
+  20,
+  3
+ ],
+ "issue": [
+  20595
+ ],
+ "section": [
+  11,
+  20067
+ ],
+ "content-type": [],
+ "byline": [
+  39
+ ],
+ "class_list": [
+  "post-814230",
+  "digital-library",
+  "type-digital-library",
+  "status-publish",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-society",
+  "issue-november-2026",
+  "section-opinion",
+  "section-vardis-insights"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/opinion/the-techlash-is-back/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "The Techlash Is Back",
+   "url": "http://cacm.acm.org/opinion/the-techlash-is-back/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/opinion/the-techlash-is-back/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/10/103026.MV_.The-Techlash-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/10/103026.MV_.The-Techlash-G.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Moshe Y. Vardi",
+     "url": "https://cacm.acm.org/author/moshe-y-vardi/"
+    }
+   ],
+   "creator": [
+    "Moshe Y. Vardi"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-10-30T15:19:39Z",
+   "datePublished": "2026-10-30T15:19:39Z",
+   "dateModified": "2026-10-30T21:33:14Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"The Techlash Is Back\",\"url\":\"http:\\/\\/cacm.acm.org\\/opinion\\/the-techlash-is-back\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/opinion\\/the-techlash-is-back\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/10\\/103026.MV_.The-Techlash-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/10\\/103026.MV_.The-Techlash-G.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Moshe Y. Vardi\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/moshe-y-vardi\\/\"}],\"creator\":[\"Moshe Y. Vardi\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-10-30T15:19:39Z\",\"datePublished\":\"2026-10-30T15:19:39Z\",\"dateModified\":\"2026-10-30T21:33:14Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "jetpack_sharing_enabled": true,
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814230",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/digital-library"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814230"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 3,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814230/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814260,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814230/revisions/814260"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814261"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814230"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814230"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814230"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814230"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814230"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814230"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

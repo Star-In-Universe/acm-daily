@@ -1,0 +1,127 @@
+{
+ "title": "Une Vie En Rose",
+ "lede": "Long after history was erased, an archivist unearths a rare recording—unaware of why it was saved.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "The position was evasively titled “archival specialist,” and the job requirements listed off dead technologies and languages alike. On their first day, Milo stood in front of a rusty, dented, black storage cabinet."
+  },
+  {
+   "type": "p",
+   "en": "“That’s the beast,” said the manager as he made his way out of the office. Once he left, there was nothing else but Milo, their desk, silence, and the cabinet."
+  },
+  {
+   "type": "p",
+   "en": "It towered over them. Inside, a column of decrepit computers stacked on uneven racks. It must have been centuries since these had been turned on. Despite having spent years assiduously studying ancient technologies, Milo barely recognized the hardware, which made the challenge of data retrieval even more interesting to them."
+  },
+  {
+   "type": "p",
+   "en": "The newly appointed archival specialist spent their first week examining the material. It was tempting to simply press the power button and hope for the best, but half-melted plastic shells and scratched-out aluminium parts did not indicate safety. There was precious data inside each of the disks still lodged within these rough-edged machines—being brisk carried a risk Milo could not take, even though they could barely contain their enthusiasm handling these rare relics, fingers buzzing at every key press."
+  },
+  {
+   "type": "p",
+   "en": "The “nothing left behind” policy had been in place for so long that no one remembered exactly when it began. It had led to the erasure of millennia of human existence and culture to remedy the unmanageable amount of stuff consistently created by a species that could not stop itself from making."
+  },
+  {
+   "type": "p",
+   "en": "But now, as the memory of this digital overload faded, efforts for conservation started bubbling up. Activists fought to frame preservation as resistance, and in some places, they succeeded. When machine artifacts were pieced together, dug up, or simply found, they were no longer immediately destroyed. Milo trained to sort through the useful and the useless, to spot value in the discarded, to understand the essential and the superfluous."
+  },
+  {
+   "type": "p",
+   "en": "So, Milo cleaned these computers with careful fingers, clearing dust and debris, re-attaching disconnected pins and boards, until finally, one machine was ready to be turned on."
+  },
+  {
+   "type": "p",
+   "en": "For a few agonizing seconds, nothing happened."
+  },
+  {
+   "type": "p",
+   "en": "An unhappy mechanical rumble growled, followed by a low purring hum. A small LED pin turned green before flickering back to darkness."
+  },
+  {
+   "type": "p",
+   "en": "Once this first stride was made, it was not long before the archival specialist could access what was left of the hard drives. Most files were encrypted or incomplete. Some held phantoms of databases of which the meaning had long been forgotten, and some used languages no one had spoken in eons. Diligently, Milo made their way through the digital rubble."
+  },
+  {
+   "type": "p",
+   "en": "The largest file was tucked under a long path name. It was a video file, ready to be consumed by modern eyes in all its inefficient storage requirements."
+  },
+  {
+   "type": "p",
+   "en": "The image was black and white. Cracks faded in and out from the corners. There was a man behind a microphone. He looked solemn, like he was preparing to give the performance of a lifetime. He raised his hand, commanding the orchestra to begin. The audio was clearly altered, having been converted, compressed, or damaged in some other way. The sound was distorted and echoed as if it was recorded in a large hall."
+  },
+  {
+   "type": "p",
+   "en": "The man behind the microphone began to sing. The melody was regal, but delicate, almost like a prayer. The singer hit each consonant with brio, like his mouth was a percussion instrument. Milo was fascinated; it was like he didn’t even need to breathe, but still pronounced each syllable perfectly. He must have been an acclaimed performer. The music died down after one song, cutting to black abruptly. The room was silent again, aside from the buzz of the computer."
+  },
+  {
+   "type": "p",
+   "en": "* * *"
+  },
+  {
+   "type": "p",
+   "en": "“I’m not sure it’s right,” I say with a wince."
+  },
+  {
+   "type": "p",
+   "en": "The three of us sit around my desk, elbow to elbow on our swivel chairs. Jean brushes my concerns off with a hand gesture. “No one will see it or even know it exists.”"
+  },
+  {
+   "type": "p",
+   "en": "“Although…” Guy interrupts, “maybe they should? Can we add a link in the Readme on the repository?”"
+  },
+  {
+   "type": "p",
+   "en": "His eyes are shining with an excitement I find altogether disturbing. I shut him down: “That’s definitely against our agreement with the National Archive Institute, and honestly, borderline unethical.”"
+  },
+  {
+   "type": "p",
+   "en": "We had been granted access to the training data we needed via a partnership with the NAI. This agreement benefited both parties: We got to train a cutting-edge model, and they got to use its outputs in an exhibition with our common goal being to recreate historical speeches of which recordings had been lost or damaged."
+  },
+  {
+   "type": "p",
+   "en": "“What’s the harm?” asks Jean. “I’m the only one here who could be offended, and I want to hear that. The model is already trained, and we have all the inputs we need. It’s one line of code for five minutes of trailblazing weirdness.”"
+  },
+  {
+   "type": "p",
+   "en": "I’m still not convinced. Guy pokes my arm. “You don’t even have to see it if it makes you uncomfortable. And we can delete it immediately!”"
+  },
+  {
+   "type": "p",
+   "en": "I don’t have any arguments to counter that. If we are the only ones to see whatever the output will be, it’s almost like it hasn’t happened, right?"
+  },
+  {
+   "type": "p",
+   "en": "So, I run the command. It will take less than an hour to generate the full file with the matching video. Our model uses timbral transfer to match a person’s voice onto another. Traditionally, we would use actors to read archive speeches before applying the real speakers’ vocal identity to them, but here, we transfer the speaker’s voice onto a melody. We got the bare vocal line by running a simple source-separation algorithm on a recording off of YouTube. And just like that, the console log on my terminal window grows over our lunch break, as our secret experiment is carried out quietly."
+  },
+  {
+   "type": "p",
+   "en": "When the processing stops, a single video file appears in an output folder. Jean and Guy wheel their chairs next to me again, eyes locked on my 15-inch laptop screen."
+  },
+  {
+   "type": "p",
+   "en": "”We’re only watching it once,” I declare under the misguided assumption they would listen to me, “and then in the bin it goes!”"
+  },
+  {
+   "type": "p",
+   "en": "I hear Guy whisper something like “buzzkill,” but he is quickly distracted by the footage starting to play on my computer. We sit there, wide-eyed. The speaker raises a hand, and I cringe. Then, he starts singing, and Jean chuckles. Did I run a model just to make a man laugh?"
+  },
+  {
+   "type": "p",
+   "en": "The video feels absurd, like a portal into an alternate reality, or the curtains being raised on a play of poor taste. Like an anachronistic painting hanging in Versailles, or the drunken dream of someone who has just watched The Sound of Music. It is everything I did not want it to be, and yet, a part of me revels at how convincing the output of our model is."
+  },
+  {
+   "type": "p",
+   "en": "On my computer screen, a despot sings:"
+  },
+  {
+   "type": "p",
+   "en": "Quand il me prend dans ses bras, et me parle tout bas, je vois la vie en rose."
+  },
+  {
+   "type": "p",
+   "en": "A nonsensical piece of fabricated history: no meaning, no harm. Unseen by the world outside of this room."
+  }
+ ],
+ "tail": []
+}
