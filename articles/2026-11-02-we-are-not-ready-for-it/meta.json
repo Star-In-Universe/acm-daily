@@ -1,0 +1,93 @@
+{
+ "title_zh": "菲尔兹奖得主谈AI安全理论",
+ "lede_zh": "Tsimerman 创立数学AI安全研究所，呼吁为AI安全建立理论基础。",
+ "summary": "AI在数学等领域的快速进展引发关注，但菲尔兹奖得主Jacob Tsimerman更担忧AI对人类的存在性威胁。他早在2015年AlphaGo和2022年ChatGPT出现后便确信AI能力已足够危险，并于2026年与Andrew Critch共同创立数学AI安全研究所（MAISI），旨在为AI安全建立可测量的理论基础。MAISI获得Coefficient Giving 1000万美元资助，计划招聘10至30名理论研究者，并与OpenAI等机构合作。Tsimerman以香农信息论类比，希望定义AI安全的“熵”式度量，并借鉴DARPA HACMS项目证明形式化方法可构建安全系统。他强调需要数学家、物理学家、计算机科学家等共同应对这一巨大转型，认为当前社会尚未准备好。",
+ "points": [
+  "Tsimerman因AI能力突破而确信其存在性风险，2026年创立MAISI并任科学总监。",
+  "MAISI获1000万美元资助，计划2027年1月前招聘10-30名理论研究者，聚焦AI安全理论基础。",
+  "Tsimerman希望像香农定义信息熵一样，为AI安全建立可测量的理论框架。",
+  "DARPA HACMS项目证明形式化方法可构建难以攻破的系统，为AI安全提供范例。",
+  "MAISI研究涉及复杂性理论、组合数学、学习理论、统计力学、博弈论和模型论等多个数学分支。",
+  "Tsimerman认为AI安全需全社会多学科协作，当前公众讨论升温带来希望。"
+ ],
+ "terms": [
+  {
+   "en": "Fields Medal",
+   "zh": "菲尔兹奖"
+  },
+  {
+   "en": "AI safety",
+   "zh": "AI安全"
+  },
+  {
+   "en": "existential threat",
+   "zh": "存在性威胁"
+  },
+  {
+   "en": "AI alignment",
+   "zh": "AI对齐"
+  },
+  {
+   "en": "formal verification",
+   "zh": "形式化验证"
+  },
+  {
+   "en": "complexity theory",
+   "zh": "复杂性理论"
+  },
+  {
+   "en": "game theory",
+   "zh": "博弈论"
+  },
+  {
+   "en": "model theory",
+   "zh": "模型论"
+  }
+ ],
+ "mindmap": {
+  "title": "AI安全的理论\n基础建设",
+  "branches": [
+   {
+    "title": "背景与动机",
+    "children": [
+     "AI在数学领域快速进展引发惊叹",
+     "Tsimerman十年前开始担忧AI风险",
+     "AlphaGo和ChatGPT消除其怀疑"
+    ]
+   },
+   {
+    "title": "MAISI的使命与方法",
+    "children": [
+     "建立可测量的AI安全理论",
+     "类比香农信息论定义安全度量",
+     "招聘多学科理论研究者"
+    ]
+   },
+   {
+    "title": "关键证据与案例",
+    "children": [
+     "DARPA HACMS项目证明形式化方法有效",
+     "AI可辅助代码形式化验证",
+     "合作方包括OpenAI等机构"
+    ]
+   },
+   {
+    "title": "影响与争议",
+    "children": [
+     "AI存在性风险进入公共讨论中心",
+     "需要全社会多学科协作",
+     "当前安全措施缺乏理论根基"
+    ]
+   },
+   {
+    "title": "结论与希望",
+    "children": [
+     "人类尚未准备好应对AI转型",
+     "公众讨论升温带来希望",
+     "人类智慧曾克服巨大挑战"
+    ]
+   }
+  ]
+ },
+ "skip": []
+}

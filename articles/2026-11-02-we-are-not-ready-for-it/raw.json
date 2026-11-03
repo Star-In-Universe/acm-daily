@@ -1,0 +1,239 @@
+{
+ "id": 814001,
+ "date": "2026-11-02T16:56:59",
+ "date_gmt": "2026-11-02T21:56:59",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814001"
+ },
+ "modified": "2026-11-02T16:56:59",
+ "modified_gmt": "2026-11-02T21:56:59",
+ "slug": "we-are-not-ready-for-it",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/news/we-are-not-ready-for-it/",
+ "title": {
+  "rendered": "‘We Are Not Ready for It’"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">Mathematicians the world over have been astonished by the rapid advances AI has made in their field. Many also are grieving the loss of the human-centered, hand-crafted spirit that characterized mathematics for centuries.</p>\n\n\n\n<p class=\"wp-block-paragraph\">University of Toronto mathematician Jacob Tsimerman is grieving too, but he is not astonished. Over the past few years, even as he produced the work that earned him a <a href=\"https://www.math.harvard.edu/jacob-tsimerman-receives-2026-fields-medal/\">Fields Medal</a> in July 2026, he saw the AI onslaught coming. He also developed a deep conviction that AI could pose an existential threat to humanity.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“AI and AI safety, I think, are the most important problems of our times,” said Tsimerman. He has shifted attention from his work in pure mathematics to focus on developing a theoretical basis for understanding and controlling AI. In September 2026, he founded the <a href=\"https://maisi.org/\">Mathematical AI Safety Institute (MAISI)</a> together with Andrew Critch, a research scientist in the University of California Berkeley’s <a href=\"https://humancompatible.ai/\">Center for Human-Compatible AI</a> and chief executive officer of <a href=\"https://www.encultured.ai/\">Encultured AI</a>. Tsimerman serves as MAISI’s scientific director, Critch as its executive director.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Last summer, Tsimerman was planning to take a position in AI safety at OpenAI. However, after the establishment of MAISI, he decided to remain there full-time.&nbsp;OpenAI is supporting MAISI&#8217;s work in various ways, for example by donating credits and providing access to the latest models.&nbsp;MAISI is also cooperating with other labs and&nbsp;other AI safety organizations.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Starting with a $10-million grant from Coefficient Giving, MAISI is hiring between 10 and 30 theoreticians from various areas—including mathematics, physics, and computer science—for its January 2027 semester. Scores of further hires are planned. “What I want are people who are willing and able to work on hard problems for a long time and really tackle the underlying theoretical obstacles” to AI safety, said Tsimerman. “This is not going to be easy.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Tsimerman’s career up to now has focused on purely mathematical questions at the intersection of number theory, model theory, and algebraic geometry. Nevertheless, he has been thinking seriously about AI for more than a decade. “I thought it was natural that, if AI becomes capable, it could become extraordinarily dangerous and risky,” he said. “But it wasn’t clear to me it <em>would</em> become capable.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">His doubts diminished when DeepMind developed the AlphaGo game-playing system in 2015, and disappeared when OpenAI released ChatGPT in 2022. “As soon as I saw that AI could talk, the debate was over for me,” said Tsimerman. “Now that it can talk, it can do everything.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Critch and Tsimerman are co-authors of the paper <a href=\"https://arxiv.org/abs/2507.09369\">&#8220;A Taxonomy of Omnicidal Futures Involving Artificial Intelligence.&#8221;</a> When the paper was posted online in mid-2025, discussions of the existential threat of AI were on the periphery of public discourse. Today, they are center stage.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“Humanity needs not just mathematicians, it needs governance people, it needs infrastructure people, it needs physicists, computer scientists, chemists—it needs everybody to think through this huge transition we are going through,” said Tsimerman. “We need to figure out what to do, because we are not ready for it.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><em>CACM</em> spoke with Tsimerman in early October. What follows is an edited version of the conversation.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>What are your aspirations for MAISI?</strong><strong></strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">My hope is to create some sort of theoretical underpinning for what safety is in some way that we can measure, for how to safely interact with an AI, for how to make the notion of AI alignment less fuzzy.</p>\n\n\n\n<p class=\"wp-block-paragraph\">A good analogy to think about is the telecommunications industry. It was alive and well before we had a notion of what information was. Claude Shannon came along and defined—through entropy, which is a pretty math-y notion—how to measure information. That gave us a conceptual understanding that made the world leap forward. Now we measure everything in terms of bits and bandwidth, and we have Shannon capacity and measurements of how much information you can store.</p>\n\n\n\n<p class=\"wp-block-paragraph\">So that would be a model of success. We want to come up with some version of AI safety that has a theoretical underpinning. Right now, we don’t have that. Right now, we do character training and monitoring. There’s a lot of hope in that, hope that the AI goes nicely forward, so maybe it will be nice in the future. I’m not saying that’s not worth doing; it’s definitely worth doing. But, as a place to hang the hat of civilizational safety, because those are the stakes, it’s wanting.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>What you would consider to be progress in AI safety research?</strong><strong></strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">I think there are several ways it could go. Any kind of metric to check whether alignment is taking place, something based more in fundamental understanding than on a sort of zoological treatment, would be useful. Any kind of protocol to deal with an AI that’s potentially untrustworthy but more computationally powerful than you, to allow you to trust the output even when you don’t trust the AI, that could be a success. Formal verification, formal methods, are something that people pursue now a lot with respect to AI safety.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I don’t equate safety with cybersecurity, because they’re not the same, and I think it&#8217;s quite damaging if we start thinking of them as the same. But cybersecurity and hacking are a big part of AI safety. Right now, the way a lot of cybersecurity works is we make software, and then we look for bugs. So we build a house and look for holes. That’s just not how you build a safe system. The AI can hack through that like butter.&nbsp;</p>\n\n\n\n<p class=\"wp-block-paragraph\">A better thing to do is to build something from the ground up that you can prove is secure, something that comes with a guarantee that information from a certain part can’t leak out to another part.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Is there an example of this idea being carried out, of building a secure system from the ground up?</strong><strong></strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Yes. For example, Kathleen Fisher, who is the CEO of <a href=\"https://aria.org.uk/\">ARIA</a> [the U.K.&#8217;s Advanced Research &amp; Invention Agency], ran a program at DARPA [the U.S. Defense Advanced Research Projects Agency] called HACMS [High-Assurance Cyber-Military Systems]. It used formal methods to secure military vehicles. They gave a red team access, and asked, “How much could you hack this system?” And the answer was not at all, even with insider access. That demonstrated on a major scale—not nearly the scale we need, we need this to be everywhere—but on a major scale, that this is possible, within reach.</p>\n\n\n\n<p class=\"wp-block-paragraph\">And it is more within reach with AI. A lot of stuff used to be out of scope because you just needed too much human time to code everything and make sure it’s okay. Now you can have AI write code and can formally check it to make sure that it’s correct.&nbsp;</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>What areas of math will be useful and relevant in the work at MAISI</strong><strong>?</strong><strong></strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">I&#8217;ll answer your question, but first I want to emphasize the point that we want theoreticians. We are getting mathematicians, theoretical computer scientists, theoretical physicists, people who have done AI safety work before. We have a broad range.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Having said that, a lot of different parts of math could show up. When you’re interacting with a computational system and you’re coming up with some sort of interaction protocol or design mechanism, complexity theory shows up.</p>\n\n\n\n<p class=\"wp-block-paragraph\">A lot of these problems are framed in terms of complexity theory problems, under which a lot of combinatorics takes place. We are doing learning theory, trying to understand how things evolve over time, how to understand the behavior of a large-scale system built of lots of neurons. </p>\n\n\n\n<p class=\"wp-block-paragraph\">A lot of statistical mechanics comes up, field theories show up, in which [partial differential equations] have a big part to play. Optimization and classical analysis have a big part to play. We are also trying to model AI by coming up with a game theory for AI systems that have to reflect on themselves and their internal structure. Logic and model theory also play a role.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The point is not so much to prove interesting theorems. I don’t really care if we prove a single theorem. The point is to develop some sort of understanding that we can then apply to AI safety.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>What gives you hope at this moment in time, when things are changing so fast?</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">AI is becoming a part of our discourse, as it should. People are talking about the existential risks, they are discussing slowdowns and pauses, which I think is very good. A lot more energy and talent are coming forward. MAISI has had a tremendous amount of interest from theoreticians, which is not just good for MAISI but also shows that people are taking the problem of AI safety seriously. They are realizing the scale of the problem.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Humans are capable of great foolishness but also great wisdom. We have accomplished great things in the past, and we are still here. There are a lot of reasons for hope.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong><em>Allyn Jackson</em></strong> <em>is a journalist specializing in mathematics and science and is based in German.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>&ldquo;Humanity needs everybody to think through this huge transition we are going through, because we are not ready for it.&rdquo;</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814385,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 16001,
+      "post_id": 101999
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Fields Medal recipient Jacob Tsimerman has been thinking seriously about AI for more than a decade.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 ACM 0001-0782/26/11</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  7,
+  8
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  72
+ ],
+ "content-type": [],
+ "byline": [
+  16001
+ ],
+ "class_list": [
+  "post-814001",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-data-and-information",
+  "category-security-and-privacy",
+  "section-news"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/news/we-are-not-ready-for-it/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "‘We Are Not Ready for It’",
+   "url": "http://cacm.acm.org/news/we-are-not-ready-for-it/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/news/we-are-not-ready-for-it/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/10/110226.QA_.Jacob-Tsimerman-HLF.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/10/110226.QA_.Jacob-Tsimerman-HLF.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Allyn Jackson",
+     "url": "https://cacm.acm.org/author/allyn-jackson/"
+    }
+   ],
+   "creator": [
+    "Allyn Jackson"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-02T21:56:59Z",
+   "datePublished": "2026-11-02T21:56:59Z",
+   "dateModified": "2026-11-02T21:56:59Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"\\u2018We Are Not Ready for It\\u2019\",\"url\":\"http:\\/\\/cacm.acm.org\\/news\\/we-are-not-ready-for-it\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/news\\/we-are-not-ready-for-it\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/10\\/110226.QA_.Jacob-Tsimerman-HLF.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/10\\/110226.QA_.Jacob-Tsimerman-HLF.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Allyn Jackson\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/allyn-jackson\\/\"}],\"creator\":[\"Allyn Jackson\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-02T21:56:59Z\",\"datePublished\":\"2026-11-02T21:56:59Z\",\"dateModified\":\"2026-11-02T21:56:59Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Allyn Jackson",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/10/110226.QA_.Jacob-Tsimerman-HLF.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814001",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814001"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 10,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814001/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814398,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814001/revisions/814398"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814385"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814001"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814001"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814001"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814001"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814001"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814001"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814001"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}
