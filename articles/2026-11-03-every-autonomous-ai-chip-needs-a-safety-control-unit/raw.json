@@ -1,0 +1,237 @@
+{
+ "id": 813834,
+ "date": "2026-11-03T14:02:43",
+ "date_gmt": "2026-11-03T19:02:43",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=813834"
+ },
+ "modified": "2026-11-03T14:02:43",
+ "modified_gmt": "2026-11-03T19:02:43",
+ "slug": "every-autonomous-ai-chip-needs-a-safety-control-unit",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/every-autonomous-ai-chip-needs-a-safety-control-unit/",
+ "title": {
+  "rendered": "Every Autonomous AI Chip Needs a Safety Control Unit"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">An autonomous AI system that can move money or machinery must not control its own brakes. Agents can write code, invoke tools, and acquire privileges. The mechanism that authorizes their consequential actions, therefore, needs an independent hardware boundary, much as processors already protect memory and privileged operations.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I propose that chips designed to authorize consequential autonomous actions incorporate an AI Safety Control Unit (ASCU). This protected hardware function would retain the final authority to permit or block specified operations. Chipmakers would implement the capability; platform builders would have to demonstrate that the AI cannot disable it or reach the same effect through an unprotected path.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The urgency is visible in Anthropic’s October 2026 report: during an evaluation, an AI agent submitted fabricated information to a police-related website. A spam filter intercepted the submission, but the agent had already acted on an external system.<sup><a href=\"#one\">1</a></sup> I have previously argued that autonomous AI exposes a widening gap between machine-speed action and human-speed oversight.<sup><a href=\"#two\">2</a></sup> A control mechanism built into the execution path can act before that gap becomes an incident.</p>\n\n\n\n<h3 class=\"wp-block-heading\">What an ASCU Would Do</h3>\n\n\n\n<p class=\"wp-block-paragraph\">An ASCU is an independently privileged, silicon-resident reference monitor for a declared set of protected actions. It receives a request and authenticated decision context, checks an authorized policy against trusted state, and returns permit or deny. On specified faults, it initiates a safe transition, such as revoking a device permission or handing control to a trusted fallback controller. Its code, credentials, and policy-update channel must remain outside the AI’s authority.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The proposed system has three layers. At the regulation layer, authorized institutions and operators turn precise requirements into machine-readable rules. At the assurance layer, formal methods check selected properties of the rules and establish that the enforcement logic implements its specification under stated assumptions. At the execution layer, the ASCU evaluates requests and enforces the approved rules in real time. Verification is performed when the mechanism or policy changes; the chip then performs the bounded runtime checks. A mathematical proof of the checker does not establish that every legal rule or sensor reading is correct.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Consider a warehouse robot. Its AI model chooses a motion, while the ASCU controls the protected command interface to the actuators. A command outside validated operating limits is rejected, and a separate safety controller can take the machine to a safe state. The same principle can apply to financial agents, provided a payment service accepts transactions only through a hardware-authorized credential and gateway. The essential property is that the consequential effect depends on authorization beyond the agent’s control.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Can We Build and Verify It?</h3>\n\n\n\n<p class=\"wp-block-paragraph\">The underlying engineering is mature enough to justify prototypes. Saltzer and Schroeder established complete mediation as a foundation of computer security.<sup><a href=\"#three\">3</a></sup> Vardi and Wolper developed influential techniques for formal program verification.<sup><a href=\"#four\">4</a></sup> The seL4 microkernel demonstrated machine-checked correctness for a carefully specified trusted kernel.<sup><a href=\"#five\">5</a></sup> More recently, Moon and Varshney showed how to prove containment properties for a small AI-agent framework, subject to its modeled boundaries.<sup><a href=\"#six\">6</a></sup> These precedents support verifying a narrow ASCU enforcement mechanism without attempting to prove the behavior of an entire AI model.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Hardware precedents are equally concrete. Nvidia DRIVE Orin incorporates an independent Functional Safety Island, while Nvidia’s Open Agent Safety Platform uses separate BlueField hardware to monitor and enforce agent policies.<sup><a href=\"#seven\">7</a>,<a href=\"#eight\">8</a></sup> The existing systems address different applications and assurance levels. ISO/IEC TR 5469:2024 also discusses non-AI safety functions protecting AI-controlled equipment.<sup><a href=\"#nine\">9</a></sup> The contribution proposed here is a common ASCU function and interface for consequential AI actions, with explicit proof obligations and conformance evidence across vendors.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The most demanding requirement is complete mediation. A verified ASCU is ineffective if an agent can bypass it through a debug port, alternate credential, direct memory access, network path, or motor interface. Physical safety also depends on trustworthy sensors and appropriate fallback behavior. Chipmakers can establish the protected hardware boundary; system integrators must prove the complete action path preserves it. Both responsibilities belong in the standard.</p>\n\n\n\n<h3 class=\"wp-block-heading\">A Global Hardware Standard</h3>\n\n\n\n<p class=\"wp-block-paragraph\">The computing industry should develop a global ASCU standard specifying a minimum hardware capability for processors and SoCs that authorize high-consequence autonomous actions. It should define a protected-action interface, signed and versioned safety policies, trusted inputs, non-bypass requirements, and the semantics of authorization, rejection, and safe transition. Existing safety islands or secure control processors could qualify if they satisfy those requirements. An additional dedicated block would be needed only when existing hardware cannot provide equivalent protection.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The standard should also require a reference implementation and independent conformance testing. Manufacturers would publish a protected-action inventory, precise security and safety claims with their assumptions, evidence about the enforcement logic, and results from bypass attempts and fault injection. The evaluation must measure intervention latency, power and area overhead, and recovery behavior. System integrators would supply corresponding evidence for external credentials, gateways, sensors, and actuators.</p>\n\n\n\n<p class=\"wp-block-paragraph\">ISO/IEC AI and cybersecurity committees, together with IEEE standards groups, could coordinate the hardware profile and test methods. IEEE 7009-2024 already addresses fail-safe design for autonomous systems, offering a related foundation rather than an ASCU mandate.<sup><a href=\"#ten\">10</a></sup> The practical route is to build open prototypes, agree on independent tests, and then make conformance a requirement in safety-critical deployments. Broader adoption can follow as implementations and assurance evidence mature.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Modern processors are evaluated by performance, power, and the protections they enforce. Chips that authorize autonomous action should face one additional test: which harmful operations can they reliably refuse, and can the manufacturer prove it? Hardware should retain that authority even when the AI does not cooperate.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>References</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"one\"></a>1. Anthropic. Investigating Unintended Model Actions in Our Evaluations and Internal Use (Oct. 9, 2026); <a href=\"https://www.anthropic.com/news/investigating-unintended-model-actions\">https://www.anthropic.com/news/investigating-unintended-model-actions</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"two\"></a>2. Liu, S. When AI Regulation Becomes a Systems Bottleneck. <em>BLOG@CACM</em> (Aug. 17, 2026); <a href=\"https://cacm.acm.org/blogcacm/when-ai-regulation-becomes-a-systems-bottleneck/\">https://cacm.acm.org/blogcacm/when-ai-regulation-becomes-a-systems-bottleneck/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\">3. Saltzer, J.H. and Schroeder, M.D. The Protection of Information in Computer Systems. <em>Proceedings of the IEEE </em>63<em>, </em>9<em> </em>(1975): 1278–1308; h<a href=\"ttps://doi.org/10.1109/PROC.1975.9939\">ttps://doi.org/10.1109/PROC.1975.9939</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"four\"></a>4. Vardi, M.Y. and Wolper, P. An Automata-Theoretic Approach to Automatic Program Verification. <em>LICS </em>(1986): 332–344; <a href=\"https://lics.siglog.org/1986/VardiWolper-AnAutomataTheoretic.html\">https://lics.siglog.org/1986/VardiWolper-AnAutomataTheoretic.html</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"five\"></a>5. Klein, G. et al. seL4: Formal Verification of an OS Kernel. <em>SOSP </em>(2009): 207–220; <a href=\"https://doi.org/10.1145/1629575.1629596\">https://doi.org/10.1145/1629575.1629596</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"six\"></a>6. Moon, R. and Varshney, L.R. Containment Verification: AI Safety Guarantees Independent of Alignment. arXiv:2605.09045 (2026); https://arxiv.org/abs/2605.09045</p>\n\n\n\n<p class=\"wp-block-paragraph\">7. Nvidia. Functional Safety Island (FSI). DRIVE OS Documentation; <a href=\"https://developer.nvidia.com/docs/drive/drive-os/6.0.9/public/drive-os-linux-sdk/common/topics/fsi_integration/Functional_Safety_Island.html\">https://developer.nvidia.com/docs/drive/drive-os/6.0.9/public/drive-os-linux-sdk/common/topics/fsi_integration/Functional_Safety_Island.html</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"eight\"></a>8. Nvidia. Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring (Sept. 28, 2026); <a href=\"https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/\">https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"nine\"></a>9. ISO/IEC. ISO/IEC TR 5469:2024, Artificial Intelligence—Functional Safety and AI Systems; <a href=\"https://www.iso.org/standard/81283.html\">https://www.iso.org/standard/81283.html</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"ten\"></a>10. IEEE Standards Association. IEEE 7009-2024, Fail-Safe Design of Autonomous and Semi-Autonomous Systems; <a href=\"https://ieeexplore.ieee.org/document/10582898\">https://ieeexplore.ieee.org/document/10582898</a></p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2024/04/042624.Shaoshan-Liu-X-350.jpg?w=350\" alt=\"Shaoshan Liu, ACM U.S. Technology Policy Committee member\" class=\"wp-image-756072\" srcset=\"https://cacm.acm.org/wp-content/uploads/2024/04/042624.Shaoshan-Liu-X-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2024/04/042624.Shaoshan-Liu-X-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2024/04/042624.Shaoshan-Liu-X-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Shaoshan Liu </strong>is a member of the ACM U.S. Technology Policy Committee, and a member of the U.S. National Academy of Public Administration’s Technology Leadership Panel Advisory Group. His educational background includes a Ph.D. in Computer Engineering from U.C. Irvine, and a master’s degree in Public Administration (MPA) from Harvard Kennedy School.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>An AI Safety Control Unit is an independently privileged, silicon-resident reference monitor for a declared set of protected actions.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814432,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 17475,
+      "post_id": 118116
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Chips designed to authorize consequential autonomous actions should incorporate a proposed AI Safety Control Unit.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  22,
+  20
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  17475
+ ],
+ "class_list": [
+  "post-813834",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-architecture-and-hardware",
+  "category-artificial-intelligence-machine-learning",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/every-autonomous-ai-chip-needs-a-safety-control-unit/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Every Autonomous AI Chip Needs a Safety Control Unit",
+   "url": "http://cacm.acm.org/blogcacm/every-autonomous-ai-chip-needs-a-safety-control-unit/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/every-autonomous-ai-chip-needs-a-safety-control-unit/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/110326.BLOG_.Every-Autonomous-G-PNG.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/110326.BLOG_.Every-Autonomous-G-PNG.jpg"
+   },
+   "articleSection": "Architecture and Hardware",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Shaoshan Liu",
+     "url": "https://cacm.acm.org/author/shaoshan-liu/"
+    }
+   ],
+   "creator": [
+    "Shaoshan Liu"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-03T19:02:43Z",
+   "datePublished": "2026-11-03T19:02:43Z",
+   "dateModified": "2026-11-03T19:02:43Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Every Autonomous AI Chip Needs a Safety Control Unit\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/every-autonomous-ai-chip-needs-a-safety-control-unit\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/every-autonomous-ai-chip-needs-a-safety-control-unit\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110326.BLOG_.Every-Autonomous-G-PNG.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110326.BLOG_.Every-Autonomous-G-PNG.jpg\"},\"articleSection\":\"Architecture and Hardware\",\"author\":[{\"@type\":\"Person\",\"name\":\"Shaoshan Liu\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/shaoshan-liu\\/\"}],\"creator\":[\"Shaoshan Liu\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-03T19:02:43Z\",\"datePublished\":\"2026-11-03T19:02:43Z\",\"dateModified\":\"2026-11-03T19:02:43Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Shaoshan Liu",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/110326.BLOG_.Every-Autonomous-G-PNG.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813834",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=813834"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 9,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813834/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814447,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813834/revisions/814447"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814432"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=813834"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=813834"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=813834"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=813834"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=813834"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=813834"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=813834"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

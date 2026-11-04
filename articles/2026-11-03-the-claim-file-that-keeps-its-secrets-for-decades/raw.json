@@ -1,0 +1,237 @@
+{
+ "id": 813712,
+ "date": "2026-11-03T09:49:34",
+ "date_gmt": "2026-11-03T14:49:34",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=813712"
+ },
+ "modified": "2026-11-03T09:49:34",
+ "modified_gmt": "2026-11-03T14:49:34",
+ "slug": "the-claim-file-that-keeps-its-secrets-for-decades",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/the-claim-file-that-keeps-its-secrets-for-decades/",
+ "title": {
+  "rendered": "The Claim File That Keeps Its Secrets for Decades"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">Insurers are in the business of long time horizons. A physical-damage auto claim you settle this month leaves behind a file with data that stays sensitive for years—the policyholder’s name, address, driver’s license, and Social Security number; the VIN and photos of the damaged vehicle; repair estimates, total-loss and salvage records; bank and payment details; and, when an injury rides along with the claim, medical records. That file doesn’t stop being sensitive when the check clears. Litigation, subrogation, fraud review, and retention rules keep it alive for years, and the identity data inside it is sensitive for a lifetime.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Now pair that with a quiet fact about cryptography: the encryption protecting that file today may not protect it forever. This is Harvest Now, Decrypt Later (HNDL). An adversary could copy the encrypted data now, keep it with its context, and wait for the ability to read it. Nothing about that collection looks like a breach; there is often no detectable event at all. For a carrier, the data’s secrecy lifetime routinely outlasts any quantum timeline, so the confidentiality failure has already begun—the decryption is simply scheduled for later. The uncomfortable truth: encrypted data can outlive the assumption that protects it.</p>\n\n\n<h3>The Asymmetry Hiding in Your Traffic</h3>\n\n\n<p class=\"wp-block-paragraph\">The reassuring half is that symmetric cryptography survives: AES-256 faces only <a href=\"https://en.wikipedia.org/wiki/Grover%27s_algorithm\">Grover’s algorithm</a>,<sup><a href=\"#one\">a</a></sup> which weakens but doesn’t break it. The problem is what sits in front of it. That claim file is sealed with a symmetric cipher whose key was established through a public-key mechanism, and RSA and elliptic-curve systems are exactly what <a href=\"https://en.wikipedia.org/wiki/Shor%27s_algorithm\">Shor’s algorithm</a><sup><a href=\"#two\">b</a></sup> dismantles. Recover that key-exchange layer later, reconstruct the symmetric secret, and the recorded data opens. The strong lock is bolted to a hinge that rusts on a known schedule.</p>\n\n\n<h3>The Clock Already Started</h3>\n\n\n<p class=\"wp-block-paragraph\">The planning question isn’t “when will a quantum computer arrive?” It is whether the years a claim file must stay confidential, plus the years it takes to migrate a large carrier and its vendors, exceed the time until that capability might exist. <a href=\"https://globalriskinstitute.org/mp-files/quantum-threat-timeline-report-2021-full-report.pdf/\">Mosca’s inequality</a><sup><a href=\"#three\">c</a></sup> states it plainly: if data must stay secret for <em>x</em> years and migration takes <em>y</em> years, you are exposed once quantum capability could arrive within <em>x + y</em>. For an insurer, <em>x</em> is measured in decades and <em>y</em> in years — the sum clears almost any horizon. And forward secrecy won’t save you: a captured session still holds an ephemeral key-exchange problem a future quantum solution can undo, and the metadata alone — who filed, when, claim amounts — carries value on its own.</p>\n\n\n<h3>What’s Actually Worth Harvesting</h3>\n\n\n<p class=\"wp-block-paragraph\">Not all data has the same half-life. A payment authorization loses value in minutes. A claim file—PII, VIN, damage photos, adjuster notes, and any attached medical records—stays identifying and exploitable for years. A Social Security number is effectively permanent. And a retention schedule is not a confidentiality period: it says how long you must <em>keep</em> the file, not how long its contents can <em>hurt</em> the policyholder—and an attacker’s copy survives your lawful deletion.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Crypto-Agility Is a Governance Problem</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Swapping one algorithm for another is the easy half; the decisive half is whether you can <em>find</em> the vulnerable cryptography at all. Systems that label algorithm identifiers, key versions, retention periods, and data owners can locate what must move and prove it moved. A checklist that re-issues only public-facing certificates sails past code signing, database key-wrapping, backups, and the tunnels to repair networks, salvage vendors, and medical-bill review. Agility is observability and governance before it is a compiler flag.</p>\n\n\n<h3>Stop the Bleeding</h3>\n\n\n<p class=\"wp-block-paragraph\">Because you can’t un-leak a claim file, the most useful milestone is blunt: the date after which high-priority new data no longer relies solely on quantum-vulnerable key establishment. The standards are ready—in 2024 NIST finalized <a href=\"https://csrc.nist.gov/pubs/fips/203/final\">ML-KEM (FIPS 203)</a>,<sup><a href=\"#four\">d</a></sup> <a href=\"https://csrc.nist.gov/pubs/fips/204/final\">ML-DSA (FIPS 204)</a>,<sup><a href=\"#five\">e</a></sup> and <a href=\"https://csrc.nist.gov/pubs/fips/205/final\">SLH-DSA (FIPS 205)</a>.<sup><a href=\"#six\">f</a></sup> And the obligations carriers already answer to point the same way: the <a href=\"https://www.ftc.gov/legal-library/browse/rules/safeguards-rule\">GLBA Safeguards Rule</a>,<sup><a href=\"#seven\">g</a></sup> the <a href=\"https://content.naic.org/sites/default/files/modellaw-668.pdf\">NAIC Insurance Data Security Model Law</a>,<sup><a href=\"#eight\">h</a></sup> <a href=\"https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html\">HIPAA</a><sup><a href=\"#nine\">i</a></sup> for the medical portions of a claim, and state breach-notification laws—none of which care <em>when</em> the attacker finally reads the data, only that you protected it for its promised life. <a href=\"https://www.rfc-editor.org/info/rfc9954\">Hybrid schemes</a><sup><a href=\"#ten\">j</a></sup> offer a controlled bridge while interoperability matures.</p>\n\n\n<h3>The Breach Outside Your Logs</h3>\n\n\n<p class=\"wp-block-paragraph\">The first large quantum computer will be a milestone, not a starting gun. For an insurer, the decisive event may already be behind us—a quiet copy of a claims archive, a stolen backup export—made years before anyone can read it, and impossible to recall. So the exercise isn’t defending against a 2032 machine; it is deciding, today, which of your claim files would still harm a policyholder then, and shrinking that set before it is collected: minimize what you retain, protect new exchanges with standardized post-quantum cryptography, re-protect stored archives, and build the agility to do it again. The one thing you will never get to do is un-file the claim.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Disclosure: </strong>AI tools were used for research assistance, reference gathering, and editorial support in preparing this post.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Footnotes</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"one\"></a>a. Shor&#8217;s algorithm. Wikipedia; <a href=\"https://en.wikipedia.org/wiki/Shor%27s_algorithm\">https://en.wikipedia.org/wiki/Shor%27s_algorithm</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"two\"></a>b. Grover&#8217;s algorithm. Wikipedia; <a href=\"https://en.wikipedia.org/wiki/Grover%27s_algorithm\">https://en.wikipedia.org/wiki/Grover%27s_algorithm</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"three\"></a>c. Global Risk Institute. Quantum Threat Timeline Report (2021); <a href=\"https://globalriskinstitute.org/mp-files/quantum-threat-timeline-report-2021-full-report.pdf/\">https://globalriskinstitute.org/mp-files/quantum-threat-timeline-report-2021-full-report.pdf/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"four\"></a>d. NIST FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM); <a href=\"https://csrc.nist.gov/pubs/fips/203/final\">https://csrc.nist.gov/pubs/fips/203/final</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"five\"></a>e. NIST FIPS 204, Module-Lattice-Based Digital Signature Algorithm (ML-DSA); <a href=\"https://csrc.nist.gov/pubs/fips/204/final\">https://csrc.nist.gov/pubs/fips/204/final</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"six\"></a>f. NIST FIPS 205, Stateless Hash-Based Digital Signature Algorithm (SLH-DSA); <a href=\"https://csrc.nist.gov/pubs/fips/205/final\">https://csrc.nist.gov/pubs/fips/205/final</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"seven\"></a>g. FTC. Safeguards Rule (Gramm-Leach-Bliley Act); <a href=\"https://www.ftc.gov/legal-library/browse/rules/safeguards-rule\">https://www.ftc.gov/legal-library/browse/rules/safeguards-rule</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"eight\"></a>h. NAIC. Insurance Data Security Model Law (Model 668); <a href=\"https://content.naic.org/sites/default/files/modellaw-668.pdf\">https://content.naic.org/sites/default/files/modellaw-668.pdf</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"nine\"></a>i. HHS, HIPAA Privacy and Security Rules; <a href=\"https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html\">https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"ten\"></a>j. IETF RFC 9954. Hybrid Key Exchange in TLS 1.3; <a href=\"https://www.rfc-editor.org/info/rfc9954\">https://www.rfc-editor.org/info/rfc9954</a></p>\n\n\n\n<p class=\"wp-block-paragraph\">k. NIST CSWP 39. Considerations for Achieving Crypto Agility; <a href=\"https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final\">https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final</a></p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/10/Sai-Charan-Obuladinne.101626.BLOG-350.jpg\" alt=\"Sai Charan Obuladinne\" class=\"wp-image-814327\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/10/Sai-Charan-Obuladinne.101626.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/10/Sai-Charan-Obuladinne.101626.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/10/Sai-Charan-Obuladinne.101626.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Sai Charan Obuladinne</strong> is a Staff Engineering Manager at GEICO, where he drives strategic technical initiatives for claims platforms in close collaboration with ML teams. Previously, he was a Staff Software Engineer at Meta, and he has spent over a decade building backend systems across advertising, healthcare, and logistics.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>The encryption protection you buy today has to survive a computer that doesn&rsquo;t exist yet.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814402,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20544,
+      "post_id": 812967
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Encrypted data can outlive the assumption that protects it.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  7,
+  8
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20544
+ ],
+ "class_list": [
+  "post-813712",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-data-and-information",
+  "category-security-and-privacy",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/the-claim-file-that-keeps-its-secrets-for-decades/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "The Claim File That Keeps Its Secrets for Decades",
+   "url": "http://cacm.acm.org/blogcacm/the-claim-file-that-keeps-its-secrets-for-decades/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/the-claim-file-that-keeps-its-secrets-for-decades/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/10/110226.BLOG_.The-Claim-File2-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/10/110226.BLOG_.The-Claim-File2-G.jpg"
+   },
+   "articleSection": "Data and Information",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Sai Charan Obuladinne ",
+     "url": "https://cacm.acm.org/author/sai-charan-obuladinne/"
+    }
+   ],
+   "creator": [
+    "Sai Charan Obuladinne "
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-03T14:49:34Z",
+   "datePublished": "2026-11-03T14:49:34Z",
+   "dateModified": "2026-11-03T14:49:34Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"The Claim File That Keeps Its Secrets for Decades\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/the-claim-file-that-keeps-its-secrets-for-decades\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/the-claim-file-that-keeps-its-secrets-for-decades\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/10\\/110226.BLOG_.The-Claim-File2-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/10\\/110226.BLOG_.The-Claim-File2-G.jpg\"},\"articleSection\":\"Data and Information\",\"author\":[{\"@type\":\"Person\",\"name\":\"Sai Charan Obuladinne\\u2028\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/sai-charan-obuladinne\\/\"}],\"creator\":[\"Sai Charan Obuladinne\\u2028\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-03T14:49:34Z\",\"datePublished\":\"2026-11-03T14:49:34Z\",\"dateModified\":\"2026-11-03T14:49:34Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Sai Charan Obuladinne ",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/10/110226.BLOG_.The-Claim-File2-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813712",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=813712"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 17,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813712/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814420,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813712/revisions/814420"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814402"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=813712"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=813712"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=813712"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=813712"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=813712"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=813712"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=813712"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

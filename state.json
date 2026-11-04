@@ -55,7 +55,31 @@
       "date": "2026-11-02T16:56:59",
       "link": "https://cacm.acm.org/news/we-are-not-ready-for-it/",
       "section": "News"
+    },
+    {
+      "id": 813837,
+      "pushed_at": "2026-11-04T15:03:00+08:00",
+      "title": "The Septuagint Effect",
+      "date": "2026-11-03T19:55:16",
+      "link": "https://cacm.acm.org/blogcacm/the-septuagint-effect/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 813834,
+      "pushed_at": "2026-11-04T15:03:00+08:00",
+      "title": "Every Autonomous AI Chip Needs a Safety Control Unit",
+      "date": "2026-11-03T14:02:43",
+      "link": "https://cacm.acm.org/blogcacm/every-autonomous-ai-chip-needs-a-safety-control-unit/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 813712,
+      "pushed_at": "2026-11-04T15:03:00+08:00",
+      "title": "The Claim File That Keeps Its Secrets for Decades",
+      "date": "2026-11-03T09:49:34",
+      "link": "https://cacm.acm.org/blogcacm/the-claim-file-that-keeps-its-secrets-for-decades/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-03T15:19:17+08:00"
+  "last_check": "2026-11-04T15:02:09+08:00"
 }

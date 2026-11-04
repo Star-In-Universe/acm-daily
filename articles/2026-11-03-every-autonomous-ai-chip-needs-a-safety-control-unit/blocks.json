@@ -1,0 +1,84 @@
+{
+ "title": "Every Autonomous AI Chip Needs a Safety Control Unit",
+ "lede": "Chips designed to authorize consequential autonomous actions should incorporate a proposed AI Safety Control Unit.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "An autonomous AI system that can move money or machinery must not control its own brakes. Agents can write code, invoke tools, and acquire privileges. The mechanism that authorizes their consequential actions, therefore, needs an independent hardware boundary, much as processors already protect memory and privileged operations."
+  },
+  {
+   "type": "p",
+   "en": "I propose that chips designed to authorize consequential autonomous actions incorporate an AI Safety Control Unit (ASCU). This protected hardware function would retain the final authority to permit or block specified operations. Chipmakers would implement the capability; platform builders would have to demonstrate that the AI cannot disable it or reach the same effect through an unprotected path."
+  },
+  {
+   "type": "p",
+   "en": "The urgency is visible in Anthropic’s October 2026 report: during an evaluation, an AI agent submitted fabricated information to a police-related website. A spam filter intercepted the submission, but the agent had already acted on an external system. I have previously argued that autonomous AI exposes a widening gap between machine-speed action and human-speed oversight. A control mechanism built into the execution path can act before that gap becomes an incident."
+  },
+  {
+   "type": "h",
+   "en": "What an ASCU Would Do"
+  },
+  {
+   "type": "p",
+   "en": "An ASCU is an independently privileged, silicon-resident reference monitor for a declared set of protected actions. It receives a request and authenticated decision context, checks an authorized policy against trusted state, and returns permit or deny. On specified faults, it initiates a safe transition, such as revoking a device permission or handing control to a trusted fallback controller. Its code, credentials, and policy-update channel must remain outside the AI’s authority."
+  },
+  {
+   "type": "p",
+   "en": "The proposed system has three layers. At the regulation layer, authorized institutions and operators turn precise requirements into machine-readable rules. At the assurance layer, formal methods check selected properties of the rules and establish that the enforcement logic implements its specification under stated assumptions. At the execution layer, the ASCU evaluates requests and enforces the approved rules in real time. Verification is performed when the mechanism or policy changes; the chip then performs the bounded runtime checks. A mathematical proof of the checker does not establish that every legal rule or sensor reading is correct."
+  },
+  {
+   "type": "p",
+   "en": "Consider a warehouse robot. Its AI model chooses a motion, while the ASCU controls the protected command interface to the actuators. A command outside validated operating limits is rejected, and a separate safety controller can take the machine to a safe state. The same principle can apply to financial agents, provided a payment service accepts transactions only through a hardware-authorized credential and gateway. The essential property is that the consequential effect depends on authorization beyond the agent’s control."
+  },
+  {
+   "type": "h",
+   "en": "Can We Build and Verify It?"
+  },
+  {
+   "type": "p",
+   "en": "The underlying engineering is mature enough to justify prototypes. Saltzer and Schroeder established complete mediation as a foundation of computer security. Vardi and Wolper developed influential techniques for formal program verification. The seL4 microkernel demonstrated machine-checked correctness for a carefully specified trusted kernel. More recently, Moon and Varshney showed how to prove containment properties for a small AI-agent framework, subject to its modeled boundaries. These precedents support verifying a narrow ASCU enforcement mechanism without attempting to prove the behavior of an entire AI model."
+  },
+  {
+   "type": "p",
+   "en": "Hardware precedents are equally concrete. Nvidia DRIVE Orin incorporates an independent Functional Safety Island, while Nvidia’s Open Agent Safety Platform uses separate BlueField hardware to monitor and enforce agent policies. The existing systems address different applications and assurance levels. ISO/IEC TR 5469:2024 also discusses non-AI safety functions protecting AI-controlled equipment. The contribution proposed here is a common ASCU function and interface for consequential AI actions, with explicit proof obligations and conformance evidence across vendors."
+  },
+  {
+   "type": "p",
+   "en": "The most demanding requirement is complete mediation. A verified ASCU is ineffective if an agent can bypass it through a debug port, alternate credential, direct memory access, network path, or motor interface. Physical safety also depends on trustworthy sensors and appropriate fallback behavior. Chipmakers can establish the protected hardware boundary; system integrators must prove the complete action path preserves it. Both responsibilities belong in the standard."
+  },
+  {
+   "type": "h",
+   "en": "A Global Hardware Standard"
+  },
+  {
+   "type": "p",
+   "en": "The computing industry should develop a global ASCU standard specifying a minimum hardware capability for processors and SoCs that authorize high-consequence autonomous actions. It should define a protected-action interface, signed and versioned safety policies, trusted inputs, non-bypass requirements, and the semantics of authorization, rejection, and safe transition. Existing safety islands or secure control processors could qualify if they satisfy those requirements. An additional dedicated block would be needed only when existing hardware cannot provide equivalent protection."
+  },
+  {
+   "type": "p",
+   "en": "The standard should also require a reference implementation and independent conformance testing. Manufacturers would publish a protected-action inventory, precise security and safety claims with their assumptions, evidence about the enforcement logic, and results from bypass attempts and fault injection. The evaluation must measure intervention latency, power and area overhead, and recovery behavior. System integrators would supply corresponding evidence for external credentials, gateways, sensors, and actuators."
+  },
+  {
+   "type": "p",
+   "en": "ISO/IEC AI and cybersecurity committees, together with IEEE standards groups, could coordinate the hardware profile and test methods. IEEE 7009-2024 already addresses fail-safe design for autonomous systems, offering a related foundation rather than an ASCU mandate. The practical route is to build open prototypes, agree on independent tests, and then make conformance a requirement in safety-critical deployments. Broader adoption can follow as implementations and assurance evidence mature."
+  },
+  {
+   "type": "p",
+   "en": "Modern processors are evaluated by performance, power, and the protections they enforce. Chips that authorize autonomous action should face one additional test: which harmful operations can they reliably refuse, and can the manufacturer prove it? Hardware should retain that authority even when the AI does not cooperate."
+  }
+ ],
+ "tail": [
+  "References",
+  "1. Anthropic. Investigating Unintended Model Actions in Our Evaluations and Internal Use (Oct. 9, 2026); https://www.anthropic.com/news/investigating-unintended-model-actions",
+  "2. Liu, S. When AI Regulation Becomes a Systems Bottleneck. BLOG@CACM (Aug. 17, 2026); https://cacm.acm.org/blogcacm/when-ai-regulation-becomes-a-systems-bottleneck/",
+  "3. Saltzer, J.H. and Schroeder, M.D. The Protection of Information in Computer Systems. Proceedings of the IEEE 63, 9 (1975): 1278–1308; https://doi.org/10.1109/PROC.1975.9939",
+  "4. Vardi, M.Y. and Wolper, P. An Automata-Theoretic Approach to Automatic Program Verification. LICS (1986): 332–344; https://lics.siglog.org/1986/VardiWolper-AnAutomataTheoretic.html",
+  "5. Klein, G. et al. seL4: Formal Verification of an OS Kernel. SOSP (2009): 207–220; https://doi.org/10.1145/1629575.1629596",
+  "6. Moon, R. and Varshney, L.R. Containment Verification: AI Safety Guarantees Independent of Alignment. arXiv:2605.09045 (2026); https://arxiv.org/abs/2605.09045",
+  "7. Nvidia. Functional Safety Island (FSI). DRIVE OS Documentation; https://developer.nvidia.com/docs/drive/drive-os/6.0.9/public/drive-os-linux-sdk/common/topics/fsi_integration/Functional_Safety_Island.html",
+  "8. Nvidia. Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring (Sept. 28, 2026); https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+  "9. ISO/IEC. ISO/IEC TR 5469:2024, Artificial Intelligence—Functional Safety and AI Systems; https://www.iso.org/standard/81283.html",
+  "10. IEEE Standards Association. IEEE 7009-2024, Fail-Safe Design of Autonomous and Semi-Autonomous Systems; https://ieeexplore.ieee.org/document/10582898",
+  "Shaoshan Liu is a member of the ACM U.S. Technology Policy Committee, and a member of the U.S. National Academy of Public Administration’s Technology Leadership Panel Advisory Group. His educational background includes a Ph.D. in Computer Engineering from U.C. Irvine, and a master’s degree in Public Administration (MPA) from Harvard Kennedy School."
+ ]
+}
