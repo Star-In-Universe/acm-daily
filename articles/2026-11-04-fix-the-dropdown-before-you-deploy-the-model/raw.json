@@ -1,0 +1,239 @@
+{
+ "id": 813759,
+ "date": "2026-11-04T13:36:06",
+ "date_gmt": "2026-11-04T18:36:06",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=813759"
+ },
+ "modified": "2026-11-04T13:56:53",
+ "modified_gmt": "2026-11-04T18:56:53",
+ "slug": "fix-the-dropdown-before-you-deploy-the-model",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/fix-the-dropdown-before-you-deploy-the-model/",
+ "title": {
+  "rendered": "Fix the Dropdown Before You Deploy the Model"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">My team was in the early planning stages of new generative AI capabilities for a property and casualty insurance claims management platform when the dialogue began (common these days) at model choice, retrieval architecture, and prompting. But it ended up somewhere less glitzy. We had to prove, before we trusted a language model to write a claim summary or recommend a next course of action, what the fields in our application truly represented.</p>\n\n\n\n<p class=\"wp-block-paragraph\">It appears we have plenty of company. Gartner in 2024 forecast that by the end of 2025, no less than 30% of GenAI initiatives will have been abandoned subsequent to proof of idea because of poor information high quality.<sup><a href=\"#one\">1</a></sup> In early 2025, Gartner went even further, projecting that this year, organizations will abandon 60% of AI initiatives because they lack AI-ready data, and 63% of organizations do not need or do not know if they have suitable information administration practices for AI.<sup><a href=\"#two\">2</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\">The lesson I want to offer is that the problem of preparedness actually lives somewhere else; not in the free-form documents you want to dump into a model, but around the free-form documents, the dropdowns, picklists, status codes, and other metadata that quietly go into every record.</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>The Problem Hiding in Plain Sight</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">Enterprise workflow systems have stack up shaped fields for many years. Each dropdown value was created by a responsible individual, for a responsible reason. What happens over many years is fairly obvious: nearly identical options (&#8220;Water Damage,&#8221; &#8220;Water &#8211; Pipe Burst,&#8221; &#8220;Water/Plumbing&#8221;); labels that have different meanings in different lines of business; retired codes that are still just an option; and an &#8220;Other&#8221; that almost silently becomes the most frequently used option. With experience, people manage this with tribal knowledge. They know which value the team really uses, and what it really means. A model has no such knowledge; it sees only the label.</p>\n\n\n\n<p class=\"wp-block-paragraph\">It&#8217;s more important for GenAI than dashboards. The impact of a disorganized category is limited to a badly visualized bar in a BI report that a human analyst might pick up on. In a GenAI system, structured fields are context. They&#8217;re injected into prompts, used as retrieval filters, attached as metadata to document chunks, and used as labels in evaluation sets.</p>\n\n\n\n<p class=\"wp-block-paragraph\">An incorrectly labeled field isn&#8217;t just a false bar on a chart; it&#8217;s a lock that silently changes which documents get retrieved and what the model says, and what the model says, it says convincingly. Structured data is the scaffolding on which retrieval-augmented generation is built.</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>What a Field-level Audit Taught Us</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">We performed a comprehensive audit of all dropdown fields in the app, across all lines of business. Five lessons emerged.</p>\n\n\n\n<p class=\"wp-block-paragraph\">1. <strong>Take inventory before you interpret.</strong> Breaking down each field and all its values, and what lines of business to support, was eye-opening. Many issues were difficult to see until values could be compared across lines of business.</p>\n\n\n\n<p class=\"wp-block-paragraph\">2. <strong>Usage speaks volumes.</strong> Values that are never used, or overused &#8220;catch-all&#8221; values both indicate a taxonomy that no longer describes how work is being done. How do you interpret a heavily used &#8220;Other&#8221;? A requirements document written by your users.</p>\n\n\n\n<p class=\"wp-block-paragraph\">3. <strong>Meaning is context-sensitive.</strong> A label might have different meanings in different lines of business. Provide a model with a label without the context and it will fuse the different meanings. Standardize the values or provide context (line of business, definition) in the metadata a model receives.</p>\n\n\n\n<p class=\"wp-block-paragraph\">4. <strong>Definitions are a deliverable</strong>. Giving each value a one-sentence definition required real decision making. It also gave us content that we could reuse in prompts and rubrics for evaluation. The data dictionary became a prompt resource.</p>\n\n\n\n<p class=\"wp-block-paragraph\">5. <strong>Readiness is a practice, not a project.</strong> Values drift because products, rules, and processes change. We agree: AI-ready data is not one and done.<sup><a href=\"#two\">2</a></sup> Every field needs a named owner and a change process.</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>Principles that Transfer</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">All of this applies not just to insurance, not just to a particular model or platform. Any organization that sticks language models on over their long-running production systems will get a variant of this. These are the things I&#8217;d take to any domain:</p>\n\n\n\n<p class=\"wp-block-paragraph\">Think of structured metadata as a first-class model input, not background plumbing. Look at it with the same level of care you&#8217;d give your prompt.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Scope readiness in the use case. You do not need to clean out every single field. You only need to clean the fields your use case pulls, filters, or reasons over. Gartner also recommends preparing data to a distinct set of AI use cases.<sup><a href=\"#two\">2</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\">Use a cross-functional audit. Make the product, engineering, operations, and compliance audits all equal. Different teams will see different failure modes and no one team can be the sole arbiter of a value.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Test on the cleaned taxonomy. If your evaluation labels are in the same dirty fields, then your test set is dirty, too, and your metrics will be optimistic.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Prioritize data. Data readiness is not pre-work for the AI project. It is the AI project&#8217;s longest-lead task; schedule and resource accordingly.</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>The Unglamorous Prerequisite</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">No one demos a cleaned-up picklist. It doesn&#8217;t show up in keynote slides and it never gets its own line on a GenAI roadmap. But I have started to think that it&#8217;s the sharpest and most meaningful distinction between pilots that wow and products that stick around. Our models are only going to get better, but our own data will only get better if we choose to make it better.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I wonder how people have done this. If you layered language models on top of legacy operational data, what did you discover in your structured fields, and who in your organization did you hand ownership of the fix to?</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Disclosure</strong>: The language of this post has been assisted by AI tools that the author has reviewed.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>References</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">1. Gartner. <a href=\"https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025\" target=\"_blank\" rel=\"noopener\">Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025</a> (July 29, 2024).</p>\n\n\n\n<p class=\"wp-block-paragraph\">2. Gartner. <a href=\"https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk\" target=\"_blank\" rel=\"noopener\">Lack of AI-Ready Data Puts AI Projects at Risk</a> (February 26, 2025).</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/10/Venkata-Krishna-Sai-Neelisetti.102026.BLOG-350.jpg?w=350\" alt=\"Venkata Krishna Sai Neelisetti\" class=\"wp-image-814496\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/10/Venkata-Krishna-Sai-Neelisetti.102026.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/10/Venkata-Krishna-Sai-Neelisetti.102026.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/10/Venkata-Krishna-Sai-Neelisetti.102026.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Venkata Krishna Sai Neelisetti</strong> is a Generative AI Product Analyst at a large property and casualty insurer based in the U.S. The views expressed in this article are solely his own. Examples have been anonymized to remove references to the insurer.</em></p>\n\n\n\n<p class=\"wp-block-paragraph\"></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Free-form documents, picklists, status codes, and other metadata are the building blocks of a model&#8217;s preparedness.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814505,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20572,
+      "post_id": 813757
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "Free-form documents, picklists, status codes, and other metadata are the building blocks of a model's preparedness.",
+  "cacm_plugin_open_graph_image": 814505,
+  "cacm_plugin_open_graph_title": "Fix the Dropdown Before You Deploy the Model",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Structured data is a first-class model input, not background plumbing.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  9,
+  2
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20572
+ ],
+ "class_list": [
+  "post-813759",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-software-engineering-and-programming-languages",
+  "category-systems-and-networking",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/fix-the-dropdown-before-you-deploy-the-model/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Fix the Dropdown Before You Deploy the Model",
+   "url": "http://cacm.acm.org/blogcacm/fix-the-dropdown-before-you-deploy-the-model/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/fix-the-dropdown-before-you-deploy-the-model/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/110426.BLOG_.Fix-the-Dropdown-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/110426.BLOG_.Fix-the-Dropdown-G.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Venkata Krishna Sai Neelisetti",
+     "url": "https://cacm.acm.org/author/venkata-krishna-sai-neelisetti/"
+    }
+   ],
+   "creator": [
+    "Venkata Krishna Sai Neelisetti"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-04T18:36:06Z",
+   "datePublished": "2026-11-04T18:36:06Z",
+   "dateModified": "2026-11-04T18:56:53Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Fix the Dropdown Before You Deploy the Model\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/fix-the-dropdown-before-you-deploy-the-model\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/fix-the-dropdown-before-you-deploy-the-model\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110426.BLOG_.Fix-the-Dropdown-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110426.BLOG_.Fix-the-Dropdown-G.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Venkata Krishna Sai Neelisetti\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/venkata-krishna-sai-neelisetti\\/\"}],\"creator\":[\"Venkata Krishna Sai Neelisetti\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-04T18:36:06Z\",\"datePublished\":\"2026-11-04T18:36:06Z\",\"dateModified\":\"2026-11-04T18:56:53Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Venkata Krishna Sai Neelisetti",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/110426.BLOG_.Fix-the-Dropdown-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813759",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=813759"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 8,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813759/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814507,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813759/revisions/814507"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814505"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=813759"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=813759"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=813759"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=813759"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=813759"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=813759"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=813759"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

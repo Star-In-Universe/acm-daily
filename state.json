@@ -79,7 +79,23 @@
       "date": "2026-11-03T09:49:34",
       "link": "https://cacm.acm.org/blogcacm/the-claim-file-that-keeps-its-secrets-for-decades/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 813759,
+      "pushed_at": "2026-11-05T15:28:53+08:00",
+      "title": "Fix the Dropdown Before You Deploy the Model",
+      "date": "2026-11-04T13:36:06",
+      "link": "https://cacm.acm.org/blogcacm/fix-the-dropdown-before-you-deploy-the-model/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 813854,
+      "pushed_at": "2026-11-05T15:28:53+08:00",
+      "title": "The Real Cost of AI Code Shows Up 30 Days Later",
+      "date": "2026-11-04T11:52:11",
+      "link": "https://cacm.acm.org/blogcacm/the-real-cost-of-ai-code-shows-up-30-days-later/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-04T15:02:09+08:00"
+  "last_check": "2026-11-05T15:28:22+08:00"
 }

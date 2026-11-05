@@ -1,0 +1,75 @@
+{
+ "title": "The Real Cost of AI Code Shows Up 30 Days Later",
+ "lede": "Do AI tools make coders faster or just busier?",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "Last year, a group of experienced developers sat down to fix real bugs in code they knew well. Half the time they used AI tools, half the time they did not. Beforehand, they predicted the AI would make them about 24% faster. Afterward, they believed it had. The measured result went the other way: they were 19% slower with the AI, a METR study found. The study is small and the authors list real caveats, yet the gap it found is the point. People felt fast, but the clock said otherwise."
+  },
+  {
+   "type": "p",
+   "en": "I am not quoting this to bury AI tools. I use them, Amazon Q, GitHub Copilot, Claude Code, and Kiro, every day at my current employer, so read this as field notes, not a pitch. My team ships real features with them. The trouble is that for months I could not say whether they made us faster or just busier. Most teams are in the same spot, and most of the ways we measure the answer are looking at the wrong moment."
+  },
+  {
+   "type": "h",
+   "en": "Feelings are The Worst Available Instrument"
+  },
+  {
+   "type": "p",
+   "en": "The gap repeats across the evidence. In the trial above, developers overrated the AI by nearly 40 points against their own measured time. A Stanford experiment found a second version of the same problem: people with an AI assistant wrote less secure code and were more sure it was safe. GitHub’s own survey, often cited as proof of a boost, rests on self-report, with more than 90% of developers saying they finished faster. Self-report is useful for morale; it is a poor meter for output or quality, since the people holding the stopwatch are the same people being timed."
+  },
+  {
+   "type": "h",
+   "en": "Most Dashboards Watch the Keystroke, Not the Consequence"
+  },
+  {
+   "type": "p",
+   "en": "Vendors push three numbers: lines of code written by the model, suggestion acceptance rate, and raw typing speed. All three measure the instant a suggestion lands, and none track what happens to that code later. DORA’s 2024 report found the pattern at scale. As AI adoption rose, teams reported faster code review and better documentation, yet delivery stability dropped about 7%. More code arrived, and more of it broke. A metric that stops at the keystroke cannot see that cost. The metrics that can see it all share one trait: they read git history and CI logs, the record of what the code did after someone wrote it."
+  },
+  {
+   "type": "h",
+   "en": "The Honest Numbers Show Up Weeks Later"
+  },
+  {
+   "type": "p",
+   "en": "Two metrics carry most of the weight, and both read merged code."
+  },
+  {
+   "type": "p",
+   "en": "Rework within 30 days of merge counts how often fresh code gets rewritten soon after it ships. For each merge, note the files it touched, then scan the next 30 days of commits for more edits to the same lines. git log, --follow, and git blame give the per-line history, and the share of merged lines changed again inside the window is your number. A little rework is normal. A jump after a rollout means the team is shipping drafts and paying for them later."
+  },
+  {
+   "type": "p",
+   "en": "Defects found after release counts the bugs that reach production, traced back to the change that caused them. Tag each release, link every filed bug to its release and commit, then track defects per release and per thousand lines shipped. The link is the hard part, so start tagging now, since history cannot be rebuilt later. This is the metric that catches the stability cost DORA saw."
+  },
+  {
+   "type": "p",
+   "en": "Three more fill in the picture. Review time per change, the gap from pull request open to merge, shows whether AI code clears review faster or slower, and your code host API carries the timestamps. Time from first commit to deploy is lead time, and it answers a sharp question: if AI shortens coding but lengthens review and rework, does the change reach production any sooner? Often it does not. Share of AI-written code that survives review tells you how much of the model’s output actually ships, but it works only if you first decide what counts as AI-written, through commit tagging or editor telemetry, and say so plainly. Skip that step and it becomes the same vanity number as acceptance rate."
+  },
+  {
+   "type": "h",
+   "en": "Pair Every Number with What the Team Believed"
+  },
+  {
+   "type": "p",
+   "en": "Here is the part most measurement skips. Record what developers expect before the data comes in, then set it against the 30-day reality. The METR and Stanford gaps exist for one reason: nobody checked perception against outcome. When you log both, you learn two things: whether the tool helped, and whether your team can tell. That second answer decides how much to trust self-report the next time a tool shows up."
+  },
+  {
+   "type": "h",
+   "en": "AI Amplifies the Team You Already Are"
+  },
+  {
+   "type": "p",
+   "en": "DORA’s 2025 report lands on a clean idea: AI is an amplifier. It magnifies the discipline a team already has, good or bad. A team with tight review and real post-release tracking gets faster and holds quality. A team running on green dashboards and gut feel ships more bugs, faster. That is why outcome metrics beat activity metrics. They measure the thing AI amplifies."
+  },
+  {
+   "type": "p",
+   "en": "You do not need all five on day one. Start with rework and post-release defects, the two that show the real cost. Measure a baseline before the next tool lands. Then, when someone asks whether the tool was worth it, you can answer from records instead of feelings."
+  },
+  {
+   "type": "p",
+   "en": "Shubham Kumbhalkar is a software engineer with more than 10 years building distributed systems, cloud backends, and GenAI tools in production. Views are his own."
+  }
+ ],
+ "tail": []
+}

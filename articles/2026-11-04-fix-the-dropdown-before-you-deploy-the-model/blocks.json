@@ -1,0 +1,112 @@
+{
+ "title": "Fix the Dropdown Before You Deploy the Model",
+ "lede": "Structured data is a first-class model input, not background plumbing.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "My team was in the early planning stages of new generative AI capabilities for a property and casualty insurance claims management platform when the dialogue began (common these days) at model choice, retrieval architecture, and prompting. But it ended up somewhere less glitzy. We had to prove, before we trusted a language model to write a claim summary or recommend a next course of action, what the fields in our application truly represented."
+  },
+  {
+   "type": "p",
+   "en": "It appears we have plenty of company. Gartner in 2024 forecast that by the end of 2025, no less than 30% of GenAI initiatives will have been abandoned subsequent to proof of idea because of poor information high quality. In early 2025, Gartner went even further, projecting that this year, organizations will abandon 60% of AI initiatives because they lack AI-ready data, and 63% of organizations do not need or do not know if they have suitable information administration practices for AI."
+  },
+  {
+   "type": "p",
+   "en": "The lesson I want to offer is that the problem of preparedness actually lives somewhere else; not in the free-form documents you want to dump into a model, but around the free-form documents, the dropdowns, picklists, status codes, and other metadata that quietly go into every record."
+  },
+  {
+   "type": "h",
+   "en": "The Problem Hiding in Plain Sight"
+  },
+  {
+   "type": "p",
+   "en": "Enterprise workflow systems have stack up shaped fields for many years. Each dropdown value was created by a responsible individual, for a responsible reason. What happens over many years is fairly obvious: nearly identical options (“Water Damage,” “Water – Pipe Burst,” “Water/Plumbing”); labels that have different meanings in different lines of business; retired codes that are still just an option; and an “Other” that almost silently becomes the most frequently used option. With experience, people manage this with tribal knowledge. They know which value the team really uses, and what it really means. A model has no such knowledge; it sees only the label."
+  },
+  {
+   "type": "p",
+   "en": "It’s more important for GenAI than dashboards. The impact of a disorganized category is limited to a badly visualized bar in a BI report that a human analyst might pick up on. In a GenAI system, structured fields are context. They’re injected into prompts, used as retrieval filters, attached as metadata to document chunks, and used as labels in evaluation sets."
+  },
+  {
+   "type": "p",
+   "en": "An incorrectly labeled field isn’t just a false bar on a chart; it’s a lock that silently changes which documents get retrieved and what the model says, and what the model says, it says convincingly. Structured data is the scaffolding on which retrieval-augmented generation is built."
+  },
+  {
+   "type": "h",
+   "en": "What a Field-level Audit Taught Us"
+  },
+  {
+   "type": "p",
+   "en": "We performed a comprehensive audit of all dropdown fields in the app, across all lines of business. Five lessons emerged."
+  },
+  {
+   "type": "p",
+   "en": "1. Take inventory before you interpret. Breaking down each field and all its values, and what lines of business to support, was eye-opening. Many issues were difficult to see until values could be compared across lines of business."
+  },
+  {
+   "type": "p",
+   "en": "2. Usage speaks volumes. Values that are never used, or overused “catch-all” values both indicate a taxonomy that no longer describes how work is being done. How do you interpret a heavily used “Other”? A requirements document written by your users."
+  },
+  {
+   "type": "p",
+   "en": "3. Meaning is context-sensitive. A label might have different meanings in different lines of business. Provide a model with a label without the context and it will fuse the different meanings. Standardize the values or provide context (line of business, definition) in the metadata a model receives."
+  },
+  {
+   "type": "p",
+   "en": "4. Definitions are a deliverable. Giving each value a one-sentence definition required real decision making. It also gave us content that we could reuse in prompts and rubrics for evaluation. The data dictionary became a prompt resource."
+  },
+  {
+   "type": "p",
+   "en": "5. Readiness is a practice, not a project. Values drift because products, rules, and processes change. We agree: AI-ready data is not one and done. Every field needs a named owner and a change process."
+  },
+  {
+   "type": "h",
+   "en": "Principles that Transfer"
+  },
+  {
+   "type": "p",
+   "en": "All of this applies not just to insurance, not just to a particular model or platform. Any organization that sticks language models on over their long-running production systems will get a variant of this. These are the things I’d take to any domain:"
+  },
+  {
+   "type": "p",
+   "en": "Think of structured metadata as a first-class model input, not background plumbing. Look at it with the same level of care you’d give your prompt."
+  },
+  {
+   "type": "p",
+   "en": "Scope readiness in the use case. You do not need to clean out every single field. You only need to clean the fields your use case pulls, filters, or reasons over. Gartner also recommends preparing data to a distinct set of AI use cases."
+  },
+  {
+   "type": "p",
+   "en": "Use a cross-functional audit. Make the product, engineering, operations, and compliance audits all equal. Different teams will see different failure modes and no one team can be the sole arbiter of a value."
+  },
+  {
+   "type": "p",
+   "en": "Test on the cleaned taxonomy. If your evaluation labels are in the same dirty fields, then your test set is dirty, too, and your metrics will be optimistic."
+  },
+  {
+   "type": "p",
+   "en": "Prioritize data. Data readiness is not pre-work for the AI project. It is the AI project’s longest-lead task; schedule and resource accordingly."
+  },
+  {
+   "type": "h",
+   "en": "The Unglamorous Prerequisite"
+  },
+  {
+   "type": "p",
+   "en": "No one demos a cleaned-up picklist. It doesn’t show up in keynote slides and it never gets its own line on a GenAI roadmap. But I have started to think that it’s the sharpest and most meaningful distinction between pilots that wow and products that stick around. Our models are only going to get better, but our own data will only get better if we choose to make it better."
+  },
+  {
+   "type": "p",
+   "en": "I wonder how people have done this. If you layered language models on top of legacy operational data, what did you discover in your structured fields, and who in your organization did you hand ownership of the fix to?"
+  },
+  {
+   "type": "p",
+   "en": "Disclosure: The language of this post has been assisted by AI tools that the author has reviewed."
+  }
+ ],
+ "tail": [
+  "References",
+  "1. Gartner. Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025 (July 29, 2024).",
+  "2. Gartner. Lack of AI-Ready Data Puts AI Projects at Risk (February 26, 2025).",
+  "Venkata Krishna Sai Neelisetti is a Generative AI Product Analyst at a large property and casualty insurer based in the U.S. The views expressed in this article are solely his own. Examples have been anonymized to remove references to the insurer."
+ ]
+}

@@ -1,0 +1,239 @@
+{
+ "id": 813854,
+ "date": "2026-11-04T11:52:11",
+ "date_gmt": "2026-11-04T16:52:11",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=813854"
+ },
+ "modified": "2026-11-04T11:52:11",
+ "modified_gmt": "2026-11-04T16:52:11",
+ "slug": "the-real-cost-of-ai-code-shows-up-30-days-later",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/the-real-cost-of-ai-code-shows-up-30-days-later/",
+ "title": {
+  "rendered": "The Real Cost of AI Code Shows Up 30 Days Later"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">Last year, a group of experienced developers sat down to fix real bugs in code they knew well. Half the time they used AI tools, half the time they did not. Beforehand, they predicted the AI would make them about 24% faster. Afterward, they believed it had. The measured result went the other way: they were <a href=\"https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/\">19% slower</a> with the AI, a METR study found. The study is small and the authors list real caveats, yet the gap it found is the point. People felt fast, but the clock said otherwise.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I am not quoting this to bury AI tools. I use them, Amazon Q, GitHub Copilot, Claude Code, and Kiro, every day at my current employer, so read this as field notes, not a pitch. My team ships real features with them. The trouble is that for months I could not say whether they made us faster or just busier. Most teams are in the same spot, and most of the ways we measure the answer are looking at the wrong moment.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Feelings are The Worst Available Instrument</h3>\n\n\n\n<p class=\"wp-block-paragraph\">The gap repeats across the evidence. In the trial above, developers overrated the AI by nearly 40 points against their own measured time. A <a href=\"https://arxiv.org/abs/2211.03622\">Stanford experiment</a> found a second version of the same problem: people with an AI assistant wrote less secure code and were more sure it was safe. GitHub&#8217;s own survey, often cited as proof of a boost, rests on self-report, with more than 90% of developers saying they <a href=\"https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/\">finished faster</a>. Self-report is useful for morale; it is a poor meter for output or quality, since the people holding the stopwatch are the same people being timed.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Most Dashboards Watch the Keystroke, Not the Consequence</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Vendors push three numbers: lines of code written by the model, suggestion acceptance rate, and raw typing speed. All three measure the instant a suggestion lands, and none track what happens to that code later. <a href=\"https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report\">DORA&#8217;s 2024 report</a> found the pattern at scale. As AI adoption rose, teams reported faster code review and better documentation, yet delivery stability dropped about 7%. More code arrived, and more of it broke. A metric that stops at the keystroke cannot see that cost. The metrics that can see it all share one trait: they read git history and CI logs, the record of what the code did after someone wrote it.</p>\n\n\n\n<h3 class=\"wp-block-heading\">The Honest Numbers Show Up Weeks Later</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Two metrics carry most of the weight, and both read merged code.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Rework within 30 days of merge counts how often fresh code gets rewritten soon after it ships. For each merge, note the files it touched, then scan the next 30 days of commits for more edits to the same lines. <code>git log</code>, <code>--follow</code>, and <code>git blame</code> give the per-line history, and the share of merged lines changed again inside the window is your number. A little rework is normal. A jump after a rollout means the team is shipping drafts and paying for them later.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Defects found after release counts the bugs that reach production, traced back to the change that caused them. Tag each release, link every filed bug to its release and commit, then track defects per release and per thousand lines shipped. The link is the hard part, so start tagging now, since history cannot be rebuilt later. This is the metric that catches the stability cost DORA saw.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Three more fill in the picture. Review time per change, the gap from pull request open to merge, shows whether AI code clears review faster or slower, and your code host API carries the timestamps. Time from first commit to deploy is <a href=\"https://dora.dev/guides/dora-metrics/\">lead time</a>, and it answers a sharp question: if AI shortens coding but lengthens review and rework, does the change reach production any sooner? Often it does not. Share of AI-written code that survives review tells you how much of the model&#8217;s output actually ships, but it works only if you first decide what counts as AI-written, through commit tagging or editor telemetry, and say so plainly. Skip that step and it becomes the same vanity number as acceptance rate.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Pair Every Number with What the Team Believed</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Here is the part most measurement skips. Record what developers expect before the data comes in, then set it against the 30-day reality. The METR and Stanford gaps exist for one reason: nobody checked perception against outcome. When you log both, you learn two things: whether the tool helped, and whether your team can tell. That second answer decides how much to trust self-report the next time a tool shows up.</p>\n\n\n\n<h3 class=\"wp-block-heading\">AI Amplifies the Team You Already Are</h3>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"https://dora.dev/research/2025/dora-report/\">DORA&#8217;s 2025 report</a> lands on a clean idea: AI is an amplifier. It magnifies the discipline a team already has, good or bad. A team with tight review and real post-release tracking gets faster and holds quality. A team running on green dashboards and gut feel ships more bugs, faster. That is why outcome metrics beat activity metrics. They measure the thing AI amplifies.</p>\n\n\n\n<p class=\"wp-block-paragraph\">You do not need all five on day one. Start with rework and post-release defects, the two that show the real cost. Measure a baseline before the next tool lands. Then, when someone asks whether the tool was worth it, you can answer from records instead of feelings.</p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/10/Shubham-Kumbhalkar.102026.BLOG-350.jpg\" alt=\"Shubham Kumbhalkar\" class=\"wp-image-814472\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/10/Shubham-Kumbhalkar.102026.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/10/Shubham-Kumbhalkar.102026.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/10/Shubham-Kumbhalkar.102026.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Shubham Kumbhalkar</strong> is a software engineer with more than 10 years building distributed systems, cloud backends, and GenAI tools in production. Views are his own.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p><span style=\"caret-color: #212121; color: #212121; font-family: Aptos; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none; display: inline !important; float: none;\">How to measure the effects of AI coding tools on a team&#8217;s work.</span></p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814494,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20573,
+      "post_id": 813852
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p><span style=\"caret-color: #212121; color: #212121; font-family: Aptos; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none; display: inline !important; float: none;\">Do AI tools make coders faster or just busier?</span></p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  4,
+  9
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20573
+ ],
+ "class_list": [
+  "post-813854",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-profession",
+  "category-software-engineering-and-programming-languages",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/the-real-cost-of-ai-code-shows-up-30-days-later/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "The Real Cost of AI Code Shows Up 30 Days Later",
+   "url": "http://cacm.acm.org/blogcacm/the-real-cost-of-ai-code-shows-up-30-days-later/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/the-real-cost-of-ai-code-shows-up-30-days-later/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/110426.BLOG_.The-Real-Cost-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/110426.BLOG_.The-Real-Cost-G.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Shubham Kumbhalkar",
+     "url": "https://cacm.acm.org/author/shubham-kumbhalkar/"
+    }
+   ],
+   "creator": [
+    "Shubham Kumbhalkar"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-04T16:52:11Z",
+   "datePublished": "2026-11-04T16:52:11Z",
+   "dateModified": "2026-11-04T16:52:11Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"The Real Cost of AI Code Shows Up 30 Days Later\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/the-real-cost-of-ai-code-shows-up-30-days-later\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/the-real-cost-of-ai-code-shows-up-30-days-later\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110426.BLOG_.The-Real-Cost-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110426.BLOG_.The-Real-Cost-G.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Shubham Kumbhalkar\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/shubham-kumbhalkar\\/\"}],\"creator\":[\"Shubham Kumbhalkar\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-04T16:52:11Z\",\"datePublished\":\"2026-11-04T16:52:11Z\",\"dateModified\":\"2026-11-04T16:52:11Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Shubham Kumbhalkar",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/110426.BLOG_.The-Real-Cost-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813854",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=813854"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 12,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813854/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814498,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813854/revisions/814498"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814494"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=813854"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=813854"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=813854"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=813854"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=813854"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=813854"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=813854"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}
