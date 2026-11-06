@@ -1,0 +1,167 @@
+{
+ "title": "AI Abundance or Luddite Revolution?",
+ "lede": "Universal basic income is not a solution to AI-induced unemployment and a sovereign wealth fund is incapable of funding it.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "Will AI lead to massive unemployment? In some sectors, AI is already replacing entry-level jobs. Computer science graduates are having increasing difficulty obtaining jobs as AI takes over junior programming jobs. Poorly designed customer-service robots are rapidly displacing customer service agents and forcing customers to submit to a company’s business model. Those whose jobs are being replaced find little comfort in economists’ forecasts that there will eventually be more new jobs than those replaced."
+  },
+  {
+   "type": "p",
+   "en": "Techno-optimists have advanced “abundance,” a vague hypothesis that AI automation will make most all goods and services so abundant that their costs will be zero and no one will need to work. They endorse a universal basic income (UBI) to cover residual costs remaining after abundance zeroes most costs. In the U.S., a common proposal for UBI is $12,000 for every adult, regardless of their economic status."
+  },
+  {
+   "type": "p",
+   "en": "Techno-pessimists are not persuaded that AI will generate widespread abundance. They believe there will be massive job losses, spread unevenly across sectors and mainly at the entry level. They are worried that mounting job losses will foment social upheaval, with a good chance of violent protests such as in the famous Luddite revolt against automation in the textile industry in 1811–1816. They believe the UBI would not alleviate the angst over loss of work, and its vast expense would provoke a massive economic crisis."
+  },
+  {
+   "type": "p",
+   "en": "Here we will argue that UBI is not the solution to AI-induced unemployment, and that the sovereign wealth fund (SWF), a popular notion to pay for UBI, will fall far short. We will argue for the much more pragmatic approach of extending unemployment benefits and offering retraining for the new jobs. This approach is affordable, likely to provide a safety net for AI induced job losses, and likely to avoid violent social upheavals."
+  },
+  {
+   "type": "h",
+   "en": "The Debt Context"
+  },
+  {
+   "type": "p",
+   "en": "Regardless of whether AI automation brings abundance or upheaval, many economies face difficult futures. Government assistance programs are popular and growing but taxes are insufficient to pay for them. This has resulted in large debts exceeding GDP in many countries. The U.S. national debt is $40 trillion (123% of GDP) and growing at more than $2 trillion per year. Several European countries have debts exceeding their GDPs: Greece (146.1%), Italy (137.1%), France (115.6%), Belgium (107.9%), Spain (100.7%) and the UK (100%). Greece and Sweden found the political courage to reduce their national debts, but it was a painful process for politicians and citizens alike. Some pundits argue that AI abundance will improve productivity so much that these countries will eliminate their debts. Given politicians’ proclivity to expand spending rather than shrink debt, that seems like a wishful fantasy. They are ill prepared for disruptions from AI induced unemployment."
+  },
+  {
+   "type": "h",
+   "en": "Attack of the Luddites"
+  },
+  {
+   "type": "p",
+   "en": "In 1811, British artisans led by Ned Ludd fought back against automated machinery for making textiles by breaking the mechanized looms and knitting frames. They feared that unskilled machine operators were robbing them of their livelihood."
+  },
+  {
+   "type": "p",
+   "en": "The Jacquard Loom (1804) accelerated textile automation in the Industrial Revolution. The loom weaved faster than human hands and automated the incorporation of complex patterns into the cloths by storing weaving instructions on punched cards that controlled the movements of the machine. Patterns could be designed in advance and the cards sold to loom holders. Even with automated looms, there was a prosperous “cottage industry” of custom textiles in Europe. No machine could match their workmanship."
+  },
+  {
+   "type": "p",
+   "en": "Little did the Luddites suspect that, by the time of its peak a century later, the mechanized British textile industry would employ as many as 500,000 workers directly in spinning and weaving. France employed more than two million workers, nearly 40% of its industrial workforce."
+  },
+  {
+   "type": "p",
+   "en": "Initial experience with the software industry seems to indicate that the new AI coders have impacted mostly entry-level programmers but not senior software developers. Because AI generated codes often contain errors, a new job category is emerging: software verification. The same can be said of other fields, such as accounting or legal services, where new specialists will verify the “work” done by AI."
+  },
+  {
+   "type": "p",
+   "en": "Over the years, unions formed to oppose automation that did not benefit workers. Modern unions have noted that, since 1980, technology has replaced more U.S. jobs than it has generated. They are concerned that AI will accelerate this trend."
+  },
+  {
+   "type": "h",
+   "en": "What Fuels the AI Revolution?"
+  },
+  {
+   "type": "p",
+   "en": "The Industrial Revolution emerged in 17–19 century Europe and North America. It was supported by capital accumulated through colonialism, trade, and slavery, and relied on energy from coal and oil. By the 19 century, textiles once imported from Asia were increasingly manufactured in Europe using steam-powered machinery and raw materials often produced through slave or low-wage labor. The AI revolution of the 21 century has similar dependencies. Its engines are digital computers powered by electricity generated from fossil fuels, nuclear energy, solar, wind, and water. Its raw materials are data expropriated from artisans or generated by low-wage workers. AI systems are distinguished by four foundational elements:"
+  },
+  {
+   "type": "p",
+   "en": "Artificial neural network models, beginning with the McCulloch–Pitts model and later probabilistic neuromorphic variants."
+  },
+  {
+   "type": "p",
+   "en": "Universal function approximation, which enables such models to represent broad classes of mathematical functions."
+  },
+  {
+   "type": "p",
+   "en": "Backpropagation, introduced in 1974 by P.J. Werbos, and other gradient-based methods, allowing efficient training of ANNs on large datasets."
+  },
+  {
+   "type": "p",
+   "en": "Large, curated datasets, including text, images, symbols, and other structured information, used to train AI models."
+  },
+  {
+   "type": "p",
+   "en": "Human labor remains essential. Much of the data used to train AI originates from the work of writers, creators, and data annotators, often receiving little compensation relative to the value they generated. Although hundreds of billions of dollars are being invested in AI infrastructure, far less is spent compensating the people and communities that create and curate the underlying data. A central challenge, therefore, is ensuring that the immense investments driving AI translate into broadly shared economic and social benefits rather than concentrating rewards among a small number of stakeholders. UBI is seen by many as a tool for accomplishing this."
+  },
+  {
+   "type": "h",
+   "en": "The Jevons Paradox"
+  },
+  {
+   "type": "p",
+   "en": "In 1865, the English economist William Stanley Jevons observed that technological improvements increased the efficiency of coal use and lowered the price of coal, leading to increased demand for coal to run more factories. AI techno-optimists have latched on to the Jevons paradox to “prove” that AI productivity will increase consumption of AI—the Abundance Hypothesis. Economist Erik Brynjolfsson does not agree that the paradox would apply across the board, because some market segments do not satisfy the conditions for the paradox. Nonetheless, entrepreneurs such as Elon Musk predict AI technology will, by 2035, reduce costs to near-zero in all sectors, eliminating the need for employment and rendering money useless."
+  },
+  {
+   "type": "h",
+   "en": "The UBI"
+  },
+  {
+   "type": "p",
+   "en": "The UBI response to AI employment disruption is that every adult receives a guaranteed income regardless of their economic status. The income does not need to be high because abundance eliminates most costs. Universal basic income proposals often tout a sovereign wealth fund to pay for it."
+  },
+  {
+   "type": "p",
+   "en": "An example of a successful SWF was established in 2020 by the Seminole Tribe to invest in commercial real estate properties. The Seminole Tribe owns six casinos, numerous hotels, and the Hard Rock Café, which has restaurants in 74 countries. An Internet post estimates that each adult member of the Seminole Tribe receives $100,000 per year from the fund. Unfortunately, this example does not generalize to a full population. UBI promoters therefore advocate for a combination of tax overhaul and SWF to generate the funds needed. All the scenarios for collecting enough taxes to pay for UBI imagine a total restructuring of the tax system including confiscatory rates on high earners, annual taxes on wealth including pension funds and stock holdings, value-added tax, a special tax to capture the salary lost when a robot replaces a human, and much higher corporate taxes. There is no way the political system would agree to such massive tax changes. The political system stoutly resists even small reforms to Social Security such as raising retirement age by one year."
+  },
+  {
+   "type": "h",
+   "en": "The SWF"
+  },
+  {
+   "type": "p",
+   "en": "Because taxation will come up woefully short, the SWF is often proposed to make up the difference. It is basically an investment fund that appreciates along with the stock markets. Some proposers argue that a sufficiently large SWF would gather enough annual interest to cover all the annual UBI payments."
+  },
+  {
+   "type": "p",
+   "en": "SWFs are state-owned investment funds that manage national wealth through investments in various asset classes such as oil, company stocks, bonds, real estate, and alternative investments like private equity and hedge funds. An AI SWF would have to generate an enormous return on investment (ROI) to support UBI. In the US, the UBI of $12,000 issued annually to 270 million adults would total about $3.2 trillion annually. If the stock market appreciated at X% a year, a SWF with $3.2/X trillion could be self-sustaining. For X=2%, a realistic estimate, the SWF would need $160 trillion. The current U.S. GDP is about $30 trillion and U.S. debt stands at about $40 trillion—so that SWF is approximately five times the GDP."
+  },
+  {
+   "type": "p",
+   "en": "The SWF estimates here correspond to an economy with the current tax system. The sweeping tax changes noted previously would confiscate so much wealth that the stock market could not function well, and the SWF would collapse."
+  },
+  {
+   "type": "h",
+   "en": "Other Difficulties"
+  },
+  {
+   "type": "p",
+   "en": "Proponents of UBI often overlook six other difficulties."
+  },
+  {
+   "type": "p",
+   "en": "The first is the background assumption that everything becomes abundant at about the same rate and the prices of everything keep going down. But the economy is not homogeneous in this way. For example, sectors such as solar panel, magnet, and chip manufacturing require rare earths, which are in limited supply worldwide. Robots in those sectors would be unable to achieve “abundance” because of the high costs to obtain the rare earths. Resource limits would affect the abilities of each sector to reduce its unit costs to zero, in many cases producing a floor keeping prices up."
+  },
+  {
+   "type": "p",
+   "en": "A second difficulty concerns capitalism itself. If products become abundant and consumer prices fall to zero, what incentive remains to start a company? There would be nothing to invest in, no return on investment, and no stocks. Without a stock market, a sovereign wealth fund would have no way to grow. UBI would collapse."
+  },
+  {
+   "type": "p",
+   "en": "A third difficulty concerns the distributions of human talents. People with greater abilities tend to accumulate more power. Today, that power often becomes wealth. Power is inherently unevenly distributed. Those with more would block acquisition of power by those with less. Those with less would covet those with more. Inequality would worsen rather than disappear. Power struggles would intensify, to no one’s benefit."
+  },
+  {
+   "type": "p",
+   "en": "A fourth difficulty concerns the value of high skill levels of experts and masters in their fields. People want master physicians to deal with their diseases, master plumbers to repair their pipes, master electricians to install their electricity, master chefs to feed them, and master musicians to inspire them. AI is unlikely to develop skills matching human experts or masters. Those skill levels depend almost entirely on vast reservoirs of tacit knowledge that machines cannot know. The humans replaced by machines are likely to be those of lower skill levels, such as beginner or competent levels. If no one is learning the lower skill levels of a domain, who will grow into future experts and masters?"
+  },
+  {
+   "type": "p",
+   "en": "A fifth difficulty is the possibility of inflation erasing the value of UBI. It is commonly proposed that, if the SWF is insufficient, the government can simply print new money to make up the difference. The problem is that “free money” generates inflation. This was demonstrated in the U.S. when the government made massive subsidies available during the COVID pandemic, which stoked a period of high inflation."
+  },
+  {
+   "type": "p",
+   "en": "A sixth difficulty is the capriciousness of politicians. A recent proposal in the U.S. by Senator Bernie Sanders would confiscate 50% of all the wealth of the large AI companies, currently about $27 trillion. Half that comes nowhere close to funding the SWF needed for the UBI. The one-time confiscation of that wealth would severely impact those companies’ stocks and all the stock market and index funds that depend on them. This shortsighted proposal is unlikely to pass Congress, but the urge behind it to confiscate wealth is growing. A variation on this proposal is for the government to take a stake in many companies, for example 20%, converting that portion of their market value into cash for a SWF."
+  },
+  {
+   "type": "h",
+   "en": "Conclusion"
+  },
+  {
+   "type": "p",
+   "en": "Will AI lead to a Luddite revolution or will a UBI rescue society when AI takes jobs away from humans? What can governments do? We conclude that a U.S. utopian zero-cost economy is unlikely and the proposed UBI solution funded by SWF investing in the stock market would be far from sufficient to support the American labor force. The UBI proposals overlook that people work not just for a salary but because it gives them purpose and meaning and a sense of contributing to society. Taking away their work takes away their dignity. They feel incomplete and restive."
+  },
+  {
+   "type": "p",
+   "en": "An alternative is available as a variation of the status quo. Displaced workers would get unemployment benefits until they are employed again. They would be offered retraining in the skill sets of the new jobs. Some jobs could be designated “reserved for humans only.” A tax on AI services would pay for all this."
+  },
+  {
+   "type": "p",
+   "en": "To us, UBI looks like an infeasible fantasy. There is not enough money, abundance, or popular will to realize a no-work economy. We are in for a rough ride."
+  }
+ ],
+ "tail": []
+}

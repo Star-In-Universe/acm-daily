@@ -95,7 +95,23 @@
       "date": "2026-11-04T11:52:11",
       "link": "https://cacm.acm.org/blogcacm/the-real-cost-of-ai-code-shows-up-30-days-later/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 814295,
+      "pushed_at": "2026-11-06T15:28:14+08:00",
+      "title": "AI Abundance or Luddite Revolution?",
+      "date": "2026-11-05T11:10:02",
+      "link": "https://cacm.acm.org/opinion/ai-abundance-or-luddite-revolution/",
+      "section": "Opinion"
+    },
+    {
+      "id": 813884,
+      "pushed_at": "2026-11-06T15:28:14+08:00",
+      "title": "Why Enterprise AI Agents Need Transaction-Level Auditing",
+      "date": "2026-11-05T09:46:08",
+      "link": "https://cacm.acm.org/blogcacm/why-enterprise-ai-agents-need-transaction-level-auditing/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-05T15:28:22+08:00"
+  "last_check": "2026-11-06T15:27:32+08:00"
 }
