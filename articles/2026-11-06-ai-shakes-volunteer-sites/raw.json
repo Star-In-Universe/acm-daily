@@ -1,0 +1,239 @@
+{
+ "id": 813972,
+ "date": "2026-11-06T16:30:03",
+ "date_gmt": "2026-11-06T21:30:03",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=813972"
+ },
+ "modified": "2026-11-06T16:30:03",
+ "modified_gmt": "2026-11-06T21:30:03",
+ "slug": "ai-shakes-volunteer-sites",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/news/ai-shakes-volunteer-sites/",
+ "title": {
+  "rendered": "AI Shakes Volunteer Sites"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">The generosity of strangers has long powered online communities. Spaces like Stack Overflow, GitHub, curl, OpenSSL, Wikipedia, and OpenStreetMap have a rich history of volunteers sharing knowledge and maintaining code, encyclopedias, and maps.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Now, AI is having a say. Trained on content from these sites, it is changing how volunteers contribute and how users consume content. Stack Overflow, for example, has seen <a href=\"https://ppc.land/stack-overflow-drops-to-1-442-questions-in-july-down-99-from-2014-peak/\">monthly questions fall</a> from a peak of roughly 200,000 in 2014 to about 1,400 in July 2026. Meanwhile, a deluge of contributions—often fake and misleading—has overrun these projects.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This has created unease about the future of online knowledge sharing. “We are starting to replace social communities and their underlying processes with a piece of software,” said <a href=\"https://www.bu.edu/questrom/profiles/gordon-burtch/\">Gordon Burtch</a>, Allen and Kelli Questrom Professor in Information Systems at Boston University. “As fewer people go to the community with questions, the incentive for experts to be there falls in turn.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">He isn’t the only one sounding alarms. “There is a huge fear, with growing evidence, that AI companies are kicking the legs out from underneath the table they are eating at,” said <a href=\"https://com.uw.edu/person/benjamin-mako-hill/\">Benjamin Mako Hill</a>, an associate professor of communication at the University of Washington and a longtime contributor to peer-production projects.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The stakes extend beyond site traffic and human connections. Fundamental questions arise about the quality of AI-provided information, who owns and profits from it, and what role humans play in vetting it. The cycle can also be recursive: models trained on public knowledge inhibit the production of new content. The question now is: will these communities evolve or disappear?</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Substance or Slop?</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Every era has seen online communities wither or die. Usenet groups, mailing lists, and the discussion boards on <a href=\"https://en.wikipedia.org/wiki/CompuServe\">CompuServe</a> and <a href=\"https://en.wikipedia.org/wiki/AOL\">AOL</a>, evolved into more elaborate Web forums. Those resources eventually turned into Stack Overflow, GitHub, and Reddit. At each transition, participants lamented but the world moved on.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Whether AI will supplant human contributors or introduce new forms of knowledge sharing is not clear. What is apparent is that peer production projects are undergoing a radical shift—and the repercussions could be far reaching. “AI creates an asymmetry of sorts. Generation becomes costless, but verification, evaluation, and curation do not,” Burtch said.</p>\n\n\n\n<p class=\"wp-block-paragraph\">At curl, tldraw, and English-language Wikipedia, AI has lowered production costs and increased participation—but with few checks on verification, judgment, and context. Curl’s seven-year bug bounty <a href=\"https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/\">ended</a> in January 2026 after roughly a fifth of submissions were deemed AI slop, and fewer than 5% turned out to be actual vulnerabilities. Over its lifetime, the program <a href=\"https://hackerone.com/ibb?type=team\">paid researchers</a> more than $100,000 for identifying 87 confirmed vulnerabilities.</p>\n\n\n\n<p class=\"wp-block-paragraph\">AI also can reduce participation. Disintermediation on the Internet has existed for well over a decade. Google knowledge panels have pulled content from Wikipedia and other services. The problem, Hill argues, is that corrections and nuance don’t travel back to the original source. When a user challenges a chatbot’s answer, that suggestion remains in the chat window. And unlike a search result, the chatbot doesn’t always reveal where the information originated.</p>\n\n\n\n<p class=\"wp-block-paragraph\">At Stack Overflow, site rules compound the problem. A question that has already been answered is typically marked “closed” and linked to the earlier thread. No new discussion takes place. This may not seem significant since past content remains, but “if new people don’t join and participate, there is nobody there to grow into a community leader or moderator,” Burtch said. “The community is likely to atrophy and become more concentrated. It may take longer, or become impossible, to cover new technologies.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">There is evidence this is taking place. Stack Overflow was already in slow decline prior to AI, said <a href=\"https://johanneswachs.com/\">Johannes Wachs</a>, an associate professor at Hungary’s Corvinus University of Budapest and a senior fellow at Microsoft’s AI Economy Institute. Once ChatGPT appeared, one study found activity <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11421660/\">dropped by 25% within six months</a> relative to comparable forums where the chatbot was less available or less capable. By Wachs&#8217;s account, overall use of Stack Overflow has fallen more than 95% since ChatGPT&#8217;s release. &#8220;Online communities thrive on new blood,&#8221; he said.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Labor Pains</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">The irony is inescapable: AI models are built on the backs of the same communities they are displacing. Stack Overflow answers, Wikipedia articles, and millions of GitHub commits became training data, yet the volunteers who generated them were neither asked nor paid. When Stack Overflow entered a licensing agreement with OpenAI in 2024, the contributors didn’t receive a penny from the deal, and they had no say in how their content is used.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“It’s essentially a question of who owns the platform to distribute content, and who owns the right to the content,” said <a href=\"https://www.hanlinli.com/\">Hanlin Li</a>, an assistant professor at the University of Texas at Austin. Currently, she said, platforms can distribute or resell what volunteers produce however they like, and “the actual creators don’t often see any benefits from that distribution.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">That rift was exposed in 2023, when Stack Exchange moderators <a href=\"https://dl.acm.org/doi/full/10.1145/3788040\">went on strike</a> for nearly two months after the company issued confusing instructions about its AI policy. Days into the walkout, it also stopped publishing its data dumps to the Internet Archive while making plans to monetize its API for data access. For communities that had long embraced the principle of open knowledge, the shift in policy was devastating. It laid bare the gulf between producing knowledge and controlling how it is used and monetized.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Li believes volunteers have leverage because, as new events unfold and new information emerges, AI models require a steady supply of fresh data from humans. She points to Wikipedia as a success story. The English-language site <a href=\"https://en.wikipedia.org/wiki/Wikipedia:Presumptive_removal_of_AI-generated_content\">actively deletes AI-generated content</a>. In addition, rather than blocking reuse, the Wikimedia Foundation has <a href=\"https://enterprise.wikimedia.com/blog/wikipedia-25-enterprise-partners/\">established a paid tier</a> that sells high-volume customers a real-time feed of edits and article updates along with guaranteed uptime. It requires attribution and prohibits using the feed to build a competing product.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Beyond the Stars</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Although the future of many online communities is cloudy, some—Reddit and GitHub among them—continue to <a href=\"https://observer.com/2025/10/reddit-earnings-human-center-ai-strategy/\">thrive</a>. The difference likely isn’t AI; it’s that some sites dispense answers and others offer a place to debate a topic or discuss a bug report. “The social fabric of Reddit is a real thing,” Wachs said. GitHub, likewise, isn’t a reference library but a place to work. Although much of the code arriving there is now written by AI, humans still decide what gets built and what gets merged.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Other sites, such as Stack Overflow, may already be in a death spiral. Yet the ending isn’t written. “We need to find a way for AI to complement the human knowledge-production process rather than disintermediate it,” Burtch said. “AI products should provide attribution and, where appropriate, return traffic, feedback, or financial support to the communities whose knowledge they use,” he added.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Wachs strikes a broader view: “There is a joy to participating in online communities. There is a reason people answer other people’s questions for no pay, and that’s the one thing that no model can provide.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Samuel</strong> <strong>Greengard</strong> is an author and journalist based in West Linn, OR, USA.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>The impact of AI on volunteer sites, including fake and misleading contributions and increasingly fewer queries, is creating unease about the future of sharing knowledge online.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814641,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 1,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 148,
+      "post_id": 297
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>AI is raising fundamental questions about the quality of information on volunteer sites and humans' role in vetting it.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 ACM 0001-0782/26/11</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  21,
+  3
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  72
+ ],
+ "content-type": [],
+ "byline": [
+  148
+ ],
+ "class_list": [
+  "post-813972",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-hci",
+  "category-society",
+  "section-news"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/news/ai-shakes-volunteer-sites/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "AI Shakes Volunteer Sites",
+   "url": "http://cacm.acm.org/news/ai-shakes-volunteer-sites/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/news/ai-shakes-volunteer-sites/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/110626.News_.AI-Shakes-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/110626.News_.AI-Shakes-G.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Samuel Greengard",
+     "url": "https://cacm.acm.org/author/samuel-greengard/"
+    }
+   ],
+   "creator": [
+    "Samuel Greengard"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-06T21:30:03Z",
+   "datePublished": "2026-11-06T21:30:03Z",
+   "dateModified": "2026-11-06T21:30:03Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"AI Shakes Volunteer Sites\",\"url\":\"http:\\/\\/cacm.acm.org\\/news\\/ai-shakes-volunteer-sites\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/news\\/ai-shakes-volunteer-sites\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110626.News_.AI-Shakes-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110626.News_.AI-Shakes-G.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Samuel Greengard\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/samuel-greengard\\/\"}],\"creator\":[\"Samuel Greengard\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-06T21:30:03Z\",\"datePublished\":\"2026-11-06T21:30:03Z\",\"dateModified\":\"2026-11-06T21:30:03Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Samuel Greengard",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/110626.News_.AI-Shakes-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813972",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=813972"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 3,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813972/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814640,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/813972/revisions/814640"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814641"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=813972"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=813972"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=813972"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=813972"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=813972"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=813972"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=813972"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

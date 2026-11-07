@@ -111,7 +111,31 @@
       "date": "2026-11-05T09:46:08",
       "link": "https://cacm.acm.org/blogcacm/why-enterprise-ai-agents-need-transaction-level-auditing/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 813972,
+      "pushed_at": "2026-11-07T14:41:06+08:00",
+      "title": "AI Shakes Volunteer Sites",
+      "date": "2026-11-06T16:30:03",
+      "link": "https://cacm.acm.org/news/ai-shakes-volunteer-sites/",
+      "section": "News"
+    },
+    {
+      "id": 814017,
+      "pushed_at": "2026-11-07T14:41:06+08:00",
+      "title": "Who Audits the AI Auditors?",
+      "date": "2026-11-06T15:15:33",
+      "link": "https://cacm.acm.org/blogcacm/who-audits-the-ai-auditors/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 814003,
+      "pushed_at": "2026-11-07T14:41:06+08:00",
+      "title": "Escaping the Cloud with Edge RAG",
+      "date": "2026-11-06T13:00:21",
+      "link": "https://cacm.acm.org/blogcacm/escaping-the-cloud-with-edge-rag/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-06T15:27:32+08:00"
+  "last_check": "2026-11-07T14:40:05+08:00"
 }

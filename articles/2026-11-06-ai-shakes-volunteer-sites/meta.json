@@ -1,0 +1,89 @@
+{
+ "title_zh": "AI冲击志愿社区",
+ "lede_zh": "AI引发对志愿社区信息质量及人类审核角色的根本性质疑。",
+ "summary": "以Stack Overflow、GitHub、Wikipedia等为代表的志愿社区长期依靠陌生人贡献知识。生成式AI的兴起改变了贡献与消费方式：Stack Overflow月提问量从2014年约20万骤降至2026年7月约1400；curl因约五分之一提交为AI垃圾、仅不足5%为真实漏洞而终止七年漏洞赏金计划。AI公司使用社区数据训练模型却未付费或征得同意，Stack Overflow与OpenAI的2024年协议未惠及贡献者，2023年Stack Exchange版主罢工暴露矛盾。研究显示ChatGPT发布后Stack Overflow活动下降超95%。Wikipedia通过删除AI生成内容并推出付费数据feed取得平衡；Reddit和GitHub因社交或协作属性仍繁荣。结论是需让AI补充而非取代人类知识生产，并回馈社区。",
+ "points": [
+  "Stack Overflow月提问量从2014年峰值约20万降至2026年7月约1400，ChatGPT发布后活动下降超95%。",
+  "curl七年漏洞赏金计划于2026年1月终止，约五分之一提交为AI垃圾，仅不足5%为真实漏洞。",
+  "Stack Overflow与OpenAI 2024年许可协议未给贡献者报酬，2023年Stack Exchange版主罢工近两月抗议AI政策。",
+  "Wikipedia主动删除AI生成内容，并推出付费实时编辑feed，要求署名且禁止构建竞争产品。",
+  "Reddit和GitHub因社交讨论或协作工作属性而持续繁荣，AI写代码但人类决定构建与合并。",
+  "研究者呼吁AI产品应提供署名、回流量、反馈或资金支持，补充而非取代人类知识生产。"
+ ],
+ "terms": [
+  {
+   "en": "peer production",
+   "zh": " peer生产/同侪生产"
+  },
+  {
+   "en": "AI slop",
+   "zh": "AI垃圾内容"
+  },
+  {
+   "en": "disintermediation",
+   "zh": "去中介化"
+  },
+  {
+   "en": "bug bounty",
+   "zh": "漏洞赏金"
+  },
+  {
+   "en": "knowledge panel",
+   "zh": "知识面板"
+  },
+  {
+   "en": "data dump",
+   "zh": "数据转储"
+  },
+  {
+   "en": "attribution",
+   "zh": "署名/归属"
+  }
+ ],
+ "mindmap": {
+  "title": "AI冲击\n志愿社区",
+  "branches": [
+   {
+    "title": "背景与问题",
+    "children": [
+     "志愿社区依赖陌生人贡献",
+     "AI训练于社区内容并改变参与",
+     "Stack Overflow提问量暴跌"
+    ]
+   },
+   {
+    "title": "机制与案例",
+    "children": [
+     "AI降低生成成本但验证仍难",
+     "curl赏金计划因AI垃圾终止",
+     "Stack Overflow规则加速萎缩",
+     "Wikipedia删除AI内容并收费"
+    ]
+   },
+   {
+    "title": "劳动与产权争议",
+    "children": [
+     "贡献者未获报酬或同意",
+     "Stack Exchange版主罢工",
+     "平台控制分发与货币化"
+    ]
+   },
+   {
+    "title": "影响与分化",
+    "children": [
+     "Reddit和GitHub因社交协作繁荣",
+     "Stack Overflow或陷死亡螺旋",
+     "呼吁AI回馈社区并署名"
+    ]
+   },
+   {
+    "title": "结论",
+    "children": [
+     "AI应补充而非取代人类",
+     "社区乐趣是模型无法提供"
+    ]
+   }
+  ]
+ },
+ "skip": []
+}
