@@ -1,0 +1,237 @@
+{
+ "id": 814107,
+ "date": "2026-11-09T17:15:31",
+ "date_gmt": "2026-11-09T22:15:31",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814107"
+ },
+ "modified": "2026-11-09T17:32:16",
+ "modified_gmt": "2026-11-09T22:32:16",
+ "slug": "ai-agents-cant-talk",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/ai-agents-cant-talk/",
+ "title": {
+  "rendered": "AI Agents Can’t Talk"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">When software leaders hear that multi-agent systems are &#8220;talking to each other,&#8221; they typically picture an autonomous, real-time collaboration layer of agents negotiating, delegating, and reasoning in fluid conversation. The marketing narrative paints a compelling picture of decentralized digital workforces conducting rich dialogues to solve complex operational goals. But as engineering teams attempt to scale these architectures beyond controlled pilot environments into production environments, they hit a blunt reality: AI agents don’t talk. What looks like an organic exchange of intelligence is actually just a sequence of brittle, state-machine handoffs masquerading as dialogue.</p>\n\n\n\n<p class=\"wp-block-paragraph\">At a fundamental architectural level, large language models (LLMs) are stateless text-completion functions. They possess no active transport mechanism, socket listener, or runtime memory to &#8220;hear&#8221; or &#8220;speak&#8221; continuously. When Agent A passes an output to Agent B, it is executing a standard request-response transaction across standard compute infrastructure. Agent A serializes its intermediate generation into a structured schema (often a raw JSON payload), transmits it across a middleware proxy or message broker, and Agent B unrolls that payload into a fresh context window. Calling this inter-agent communication misleads systems architects into applying conversational paradigms to what is fundamentally distributed remote procedure call (RPC) execution.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This conceptual misstep carries massive cost and performance consequences. In a human team, dialogue refines ideas through back-and-forth feedback. In an LLM-based system, dialogue expands token overhead exponentially. As detailed in my earlier post, &#8220;<a href=\"https://cacm.acm.org/blogcacm/the-hidden-token-trap-of-agent-orchestration/\">The Hidden Token Trap of Agent Orchestration</a>,&#8221; when developers design multi-agent loops that rely on natural language negotiations to reach consensus, they force every participating agent to re-read and re-process the entire prior exchange with every single turn. A five-turn discussion between three worker agents does not yield deeper reasoning; it simply bloats the prompt payload, multiplies API inference fees, and introduces processing latency that renders real-time automation unusable.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The illusion of dialogue breaks down fastest inside the context window. In conversational multi-agent setups, every &#8220;turn&#8221; in the conversation appends the raw history of both agents into the next prompt generation. As task complexity grows, token consumption scales non-linearly. More critically, dumping uncurated message logs into downstream context windows triggers severe attention drift and compounding hallucinations. When agents consume unverified synthetic outputs from one another, they mirror the feedback-loop degradation identified in foundational research by Shumailov et al. on <a href=\"https://www.nature.com/articles/s41586-024-07566-y\">AI model collapse</a>. Without deterministic verification boundaries between handoffs, message-passing turns multi-agent systems into quiet echo chambers of cascading failure.</p>\n\n\n\n<figure class=\"wp-block-table\"><table class=\"has-fixed-layout\"><tbody><tr><td>&nbsp;[Agent A: Planner / Orchestrator]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼ (1. Generates Unverified Sub-Task Payload)<br>&nbsp;┌───────────────────────────────────────────────────────────────┐<br>&nbsp;│&nbsp; Brittle Message Queue / Uncurated Prompt Context&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │<br>&nbsp;└───────────────────────────────────────────────────────────────┘<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼ (2. Injects Raw Output into Downstream Window)<br>&nbsp;[Agent B: Sub-Task Executor] ──► (Amplifies Error / Hallucination)</td></tr></tbody></table></figure>\n\n\n\n<p class=\"wp-block-paragraph\">To escape this trap, enterprise software architects must replace conversational abstractions with explicit state management. Rather than letting agents pass conversational threads back and forth, production architectures rely on central state stores, event buses, or key-value caches. Agent A finishes its sub-task, writes a validated, typed result to a database or state engine, and terminates its execution lifecycle. Agent B is then instantiated independently, pulling only the specific key fields required to execute its assigned role. This decoupled pattern enforces clean execution boundaries, prevents context contamination, and keeps token costs linear rather than exponential.</p>\n\n\n\n<p class=\"wp-block-paragraph\">To build resilient multi-agent systems in production, enterprise architectures are pivoting away from unconstrained &#8220;agent chat&#8221; and toward structured operational protocols. Standardized specifications like Anthropic’s <a href=\"https://modelcontextprotocol.io/\">Model Context Protocol (MCP)</a> demonstrate that real agent coordination relies on rigid schema boundaries, explicit tool capabilities, and controlled state persistence rather than free-form natural language handoffs. Similarly, emerging frameworks for cross-framework agent interoperability such as the open <a href=\"https://a2a-protocol.org/\">Agent2Agent (A2A)</a> protocol focus on standardized discovery, capability negotiation, and secure payload routing rather than conversational mechanics.</p>\n\n\n\n<figure class=\"wp-block-table\"><table class=\"has-fixed-layout\"><tbody><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td colspan=\"2\">&nbsp;[Agent A: Planner]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼ (Serializes Task to Strict Schema / JSON)<br>&nbsp;┌───────────────────────────────────────────────────────────────┐<br>&nbsp;│&nbsp; Deterministic Guardrail Layer (Schema Check &amp; Auth Rules)&nbsp;&nbsp;&nbsp;&nbsp; │<br>&nbsp;└───────────────────────────────────────────────────────────────┘<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼ (Deserializes &amp; Injects Purified Context)<br>&nbsp;[Agent B: Executor]</td></tr></tbody></table></figure>\n\n\n\n<p class=\"wp-block-paragraph\">Security and governance further demand that we abandon the conversational myth. Direct, unmonitored agent-to-agent exchanges create blind spots for prompt injection, indirect data poisoning, and unauthorized privilege escalation. If a malicious payload or unformatted data stream bypasses the input validation of an upstream agent, an unconstrained downstream agent will execute those malicious instructions without question. Enterprise-grade systems require every handoff to pass through deterministic guardrails: schema validation, authorization checks, and execution boundaries that treat every incoming agent payload with zero-trust skepticism.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Beyond security, observability becomes nearly impossible when agents communicate in unformatted chat streams. Engineering teams attempting to debug a failed workflow must sift through thousands of lines of conversational natural language to discover where an agent drifted off course. In contrast, when agent handoffs are structured as typed API calls or state transactions, every interaction generates deterministic logs, performance metrics, and explicit failure points that can be monitored, alerted on, and automatically retried using standard SRE tooling.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The path forward for multi-agent architecture is not teaching models how to hold better conversations with one another; it is designing superior deterministic state machines, memory stores, and interface boundaries. Until we stop framing multi-agent design around the metaphor of human conversation, teams will continue to drown in token costs and unpredictable runtime behavior. AI agents don&#8217;t need to talk; they need clean contracts, typed schemas, and reliable state routing.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Disclosure:</strong> All core technical concepts and conclusions are entirely my own. A GenAI tool was used strictly for prose refinement.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/04/Abhilash-Pakalapati.04.03.26.BLOG-350.jpg?w=350\" alt=\"Abhilash Pakalapati\" class=\"wp-image-779555\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/04/Abhilash-Pakalapati.04.03.26.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/04/Abhilash-Pakalapati.04.03.26.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/04/Abhilash-Pakalapati.04.03.26.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Abhilash Pakalapati</strong> is a Senior AI Engineer and Data Engineer with more than a decade of experience building large-scale data platforms and intelligent applications. His work focuses on the design of modern data architectures that support machine learning, generative AI systems, and real-time analytics in enterprise environments.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Teams will continue to drown in token costs and unpredictable runtime behavior until we stop framing multi-agent design around the metaphor of human conversation.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814713,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20213,
+      "post_id": 779140
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>What looks like an organic exchange of AI intelligence is just a sequence of brittle, state-machine handoffs masquerading as dialogue.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  9
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20213
+ ],
+ "class_list": [
+  "post-814107",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-software-engineering-and-programming-languages",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/ai-agents-cant-talk/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "AI Agents Can’t Talk",
+   "url": "http://cacm.acm.org/blogcacm/ai-agents-cant-talk/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/ai-agents-cant-talk/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/110926.BLOG_.AI-Agents-Cant2-S.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/110926.BLOG_.AI-Agents-Cant2-S.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Abhilash Pakalapati",
+     "url": "https://cacm.acm.org/author/abhilash-pakalapati/"
+    }
+   ],
+   "creator": [
+    "Abhilash Pakalapati"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-09T22:15:31Z",
+   "datePublished": "2026-11-09T22:15:31Z",
+   "dateModified": "2026-11-09T22:32:16Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"AI Agents Can\\u2019t Talk\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/ai-agents-cant-talk\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/ai-agents-cant-talk\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110926.BLOG_.AI-Agents-Cant2-S.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110926.BLOG_.AI-Agents-Cant2-S.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Abhilash Pakalapati\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/abhilash-pakalapati\\/\"}],\"creator\":[\"Abhilash Pakalapati\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-09T22:15:31Z\",\"datePublished\":\"2026-11-09T22:15:31Z\",\"dateModified\":\"2026-11-09T22:32:16Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Abhilash Pakalapati",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/110926.BLOG_.AI-Agents-Cant2-S.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814107",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814107"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 7,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814107/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814714,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814107/revisions/814714"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814713"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814107"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814107"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814107"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814107"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814107"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814107"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814107"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,107 @@
+{
+ "title": "GenAI Is Shipping Code Faster Than You Can Read It",
+ "lede": "A developer's sense of mastery can feel like it’s slipping, even when their output is higher than ever.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "Open your team’s board on a Monday morning and the picture has already changed. Tickets that were open on Friday are closed. Pull requests that didn’t exist an hour ago are merged. A teammate shipped a feature over the weekend that, a year ago, would have taken a sprint. Much of the code was drafted by an AI assistant, reviewed quickly, and is already running in production."
+  },
+  {
+   "type": "p",
+   "en": "If you feel a small knot of anxiety reading that, you’re in good company. Developers have always had to keep up with new frameworks and tools. What’s different now is how fast the code changes inside the codebase you’re responsible for. Code is arriving faster than anyone can read it, and the silent question many of us carry is: if I can’t follow all of this, am I falling behind? This post offers practical ways to work with the pace instead of being worn down by it."
+  },
+  {
+   "type": "h",
+   "en": "The New Shape of FOMO"
+  },
+  {
+   "type": "p",
+   "en": "The classic fear of missing out (FOMO) in tech was about technologies: the language you hadn’t learned, the framework everyone else seemed to be using. The AI-era version is different. It’s about comprehension. You’re not worried about missing a tool; you’re worried about no longer understanding your own system."
+  },
+  {
+   "type": "p",
+   "en": "That’s a more uncomfortable feeling, because it touches professional identity. Developers have traditionally earned trust by knowing how things work. When a large share of the change in a repository is machine-drafted and merged within hours, that sense of mastery can feel as if it’s slipping, even when your own output is higher than ever."
+  },
+  {
+   "type": "h",
+   "en": "Why the Comparison is Broken"
+  },
+  {
+   "type": "p",
+   "en": "Much of the anxiety comes from measuring yourself against a dashboard. Merged pull requests, closed tickets, and lines changed are easy to count, so they are what we notice. But they only tell you how much was produced. They don’t tell you whether the change was architecturally correct, whether anyone else understands it well enough to build on top of it, or whether it will still make sense to the team in six months."
+  },
+  {
+   "type": "p",
+   "en": "Think of a newsroom where the reporters suddenly start writing ten times faster. The editors still read at the same speed, so stories pile up waiting to be checked, and the editor’s attention becomes the limit. Software is the same. AI can write code quickly, but people still have to read it, understand it, and answer for it at human speed."
+  },
+  {
+   "type": "p",
+   "en": "So the developer who tries to read every change isn’t the most diligent person on the team. They’re spending their scarcest resource, attention, on every change equally, including the ones that don’t need it. What matters now is knowing which changes deserve your attention, and that’s a skill you can build."
+  },
+  {
+   "type": "h",
+   "en": "Practical Ways to Cope"
+  },
+  {
+   "type": "p",
+   "en": "None of these strategies ask you to read more. They’re about deciding where your attention goes."
+  },
+  {
+   "type": "p",
+   "en": "● Start with one part and go deep: You’re accountable for the whole system, but you can’t know all of it at once, so don’t try. Start with the one part that matters most, maybe the one that paged someone last quarter or the one every feature seems to touch, and learn it properly. When it feels familiar, add the next. Keep only a rough outline of the rest. Depth grows one part at a time, and the anxiety shrinks with it."
+  },
+  {
+   "type": "p",
+   "en": "● Let a weekly briefing do the streaming: Think of the morning digest an editor reads before deciding which stories need a closer look. Ask your team’s approved AI tool to read last week’s merged changes and write you one: a few plain-language bullet points on what changed, plus a sequence diagram of one or two key flows, like placing an order or logging in, showing what calls what and where it can fail. Try it by hand once to see if it’s useful, then put it on a weekly schedule so it doesn’t depend on anyone remembering. Read it over a coffee and you’ll spot things like a new fraud check before payment or a retry that was quietly introduced, even in parts of the system you don’t know well."
+  },
+  {
+   "type": "p",
+   "en": "● Read what gets flagged like an editor: When the briefing flags a change, or a change lands in the part you know deeply, slow down. Ask whether the design fits the system, what the generated code quietly assumes, and what happens when it fails. Everything else gets a skim, and that’s fine. As generating code gets cheaper, the person who can quickly judge whether a change is sound becomes the most valuable one in the room. Review isn’t a tax on productivity anymore; it’s the craft."
+  },
+  {
+   "type": "p",
+   "en": "● Follow one thread a week: Pick one item from the briefing, or one flow you’ve never traced, and follow it all the way down. Read the module you didn’t write, or work through the design behind it. An hour is usually enough. Depth builds on itself in a way scanning never does, and it’s the best cure for the feeling of skating on the surface."
+  },
+  {
+   "type": "p",
+   "en": "● Say it out loud: This feeling is far more common than people admit. Mention it in a retro or a one-on-one and you’ll likely find others feel it too, and the weekly briefing is an easy thing to bring along. That’s usually where the conversation about smaller pull requests and better review habits starts."
+  },
+  {
+   "type": "h",
+   "en": "What Teams and Leaders Can Do"
+  },
+  {
+   "type": "p",
+   "en": "A team that produces more than it can understand has a systems problem, so it needs systems answers, not just individual coping."
+  },
+  {
+   "type": "p",
+   "en": "● Keep changes small enough to review. Smaller pull requests with a clear note on intent make review realistic, whether a person or a model wrote the code."
+  },
+  {
+   "type": "p",
+   "en": "● Measure outcomes, not volume. Reliability, customer impact and time to recover say far more than merge counts, and they take away the pressure to compete on throughput."
+  },
+  {
+   "type": "p",
+   "en": "● Budget time for understanding. Leave room for design reviews, documentation, and knowledge sharing. They’re what keeps a fast-moving codebase something people can still reason about."
+  },
+  {
+   "type": "h",
+   "en": "A Steadier Way Forward"
+  },
+  {
+   "type": "p",
+   "en": "The speed of AI-assisted development is real and, for most teams, valuable. But it doesn’t change what makes an engineer worth trusting: sound judgment, a clear understanding of the systems they’re responsible for, and the discipline to focus on what matters. Those qualities aren’t made obsolete by a faster stream of code. They’re what make the stream safe to build on."
+  },
+  {
+   "type": "p",
+   "en": "You don’t need to keep up with everything. You need to know what you’re accountable for, decide where your attention goes, and keep building the skills that machines make more important rather than less. The developers who thrive in this period won’t be the ones who read the most pull requests. They’ll be the ones who stay calm enough to ask the right questions: what changed, what could break, and what needs a closer look."
+  },
+  {
+   "type": "p",
+   "en": "Rahul Vaish is a Software Engineer and Independent Researcher with over a decade of experience designing and building enterprise systems. His work focuses on software architecture, distributed systems, and applied AI."
+  }
+ ],
+ "tail": []
+}

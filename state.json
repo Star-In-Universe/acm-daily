@@ -135,7 +135,31 @@
       "date": "2026-11-06T13:00:21",
       "link": "https://cacm.acm.org/blogcacm/escaping-the-cloud-with-edge-rag/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 814107,
+      "pushed_at": "2026-11-10T15:51:25+08:00",
+      "title": "AI Agents Can’t Talk",
+      "date": "2026-11-09T17:15:31",
+      "link": "https://cacm.acm.org/blogcacm/ai-agents-cant-talk/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 814288,
+      "pushed_at": "2026-11-10T15:51:25+08:00",
+      "title": "An Ethics Ecosystem for AI",
+      "date": "2026-11-09T13:47:59",
+      "link": "https://cacm.acm.org/research/an-ethics-ecosystem-for-ai/",
+      "section": "Research"
+    },
+    {
+      "id": 814104,
+      "pushed_at": "2026-11-10T15:51:25+08:00",
+      "title": "GenAI Is Shipping Code Faster Than You Can Read It",
+      "date": "2026-11-09T09:36:39",
+      "link": "https://cacm.acm.org/blogcacm/genai-is-shipping-code-faster-than-you-can-read-it/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-09T15:17:48+08:00"
+  "last_check": "2026-11-10T15:49:55+08:00"
 }

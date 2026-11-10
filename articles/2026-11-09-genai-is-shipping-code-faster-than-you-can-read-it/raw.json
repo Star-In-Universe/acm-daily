@@ -1,0 +1,237 @@
+{
+ "id": 814104,
+ "date": "2026-11-09T09:36:39",
+ "date_gmt": "2026-11-09T14:36:39",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814104"
+ },
+ "modified": "2026-11-09T09:36:39",
+ "modified_gmt": "2026-11-09T14:36:39",
+ "slug": "genai-is-shipping-code-faster-than-you-can-read-it",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/genai-is-shipping-code-faster-than-you-can-read-it/",
+ "title": {
+  "rendered": "GenAI Is Shipping Code Faster Than You Can Read It"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">Open your team’s board on a Monday morning and the picture has already changed. Tickets that were open on Friday are closed. Pull requests that didn’t exist an hour ago are merged. A teammate shipped a feature over the weekend that, a year ago, would have taken a sprint. Much of the code was drafted by an AI assistant, reviewed quickly, and is already running in production.</p>\n\n\n\n<p class=\"wp-block-paragraph\">If you feel a small knot of anxiety reading that, you’re in good company. Developers have always had to keep up with new frameworks and tools. What’s different now is how fast the code changes inside the codebase you’re responsible for. Code is arriving faster than anyone can read it, and the silent question many of us carry is: if I can’t follow all of this, am I falling behind? This post offers practical ways to work with the pace instead of being worn down by it.</p>\n\n\n\n<h3 class=\"wp-block-heading\">The New Shape of FOMO</h3>\n\n\n\n<p class=\"wp-block-paragraph\">The classic fear of missing out (FOMO) in tech was about technologies: the language you hadn’t learned, the framework everyone else seemed to be using. The AI-era version is different. It’s about comprehension. You’re not worried about missing a tool; you’re worried about no longer understanding your own system.</p>\n\n\n\n<p class=\"wp-block-paragraph\">That’s a more uncomfortable feeling, because it touches professional identity. Developers have traditionally earned trust by knowing how things work. When a large share of the change in a repository is machine-drafted and merged within hours, that sense of mastery can feel as if it’s slipping, even when your own output is higher than ever.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Why the Comparison is Broken</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Much of the anxiety comes from measuring yourself against a dashboard. Merged pull requests, closed tickets, and lines changed are easy to count, so they are what we notice. But they only tell you how much was produced. They don’t tell you whether the change was architecturally correct, whether anyone else understands it well enough to build on top of it, or whether it will still make sense to the team in six months.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Think of a newsroom where the reporters suddenly start writing ten times faster. The editors still read at the same speed, so stories pile up waiting to be checked, and the editor’s attention becomes the limit. Software is the same. AI can write code quickly, but people still have to read it, understand it, and answer for it at human speed.</p>\n\n\n\n<p class=\"wp-block-paragraph\">So the developer who tries to read every change isn’t the most diligent person on the team. They’re spending their scarcest resource, attention, on every change equally, including the ones that don’t need it. What matters now is knowing which changes deserve your attention, and that’s a skill you can build.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Practical Ways to Cope</h3>\n\n\n\n<p class=\"wp-block-paragraph\">None of these strategies ask you to read more. They’re about deciding where your attention goes.</p>\n\n\n\n<p class=\"wp-block-paragraph\">● <strong>Start with one part and go deep:</strong> You’re accountable for the whole system, but you can’t know all of it at once, so don’t try. Start with the one part that matters most, maybe the one that paged someone last quarter or the one every feature seems to touch, and learn it properly. When it feels familiar, add the next. Keep only a rough outline of the rest. Depth grows one part at a time, and the anxiety shrinks with it.</p>\n\n\n\n<p class=\"wp-block-paragraph\">●<strong> Let a weekly briefing do the streaming: </strong>Think of the morning digest an editor reads before deciding which stories need a closer look. Ask your team’s approved AI tool to read last week’s merged changes and write you one: a few plain-language bullet points on what changed, plus a sequence diagram of one or two key flows, like placing an order or logging in, showing what calls what and where it can fail. Try it by hand once to see if it’s useful, then put it on a weekly schedule so it doesn’t depend on anyone remembering. Read it over a coffee and you’ll spot things like a new fraud check before payment or a retry that was quietly introduced, even in parts of the system you don’t know well.</p>\n\n\n\n<p class=\"wp-block-paragraph\">● <strong>Read what gets flagged like an editor: </strong>When the briefing flags a change, or a change lands in the part you know deeply, slow down. Ask whether the design fits the system, what the generated code quietly assumes, and what happens when it fails. Everything else gets a skim, and that’s fine. As generating code gets cheaper, the person who can quickly judge whether a change is sound becomes the most valuable one in the room. Review isn’t a tax on productivity anymore; it’s the craft.</p>\n\n\n\n<p class=\"wp-block-paragraph\">● <strong>Follow one thread a week: </strong>Pick one item from the briefing, or one flow you’ve never traced, and follow it all the way down. Read the module you didn’t write, or work through the design behind it. An hour is usually enough. Depth builds on itself in a way scanning never does, and it’s the best cure for the feeling of skating on the surface.</p>\n\n\n\n<p class=\"wp-block-paragraph\">● <strong>Say it out loud:</strong> This feeling is far more common than people admit. Mention it in a retro or a one-on-one and you’ll likely find others feel it too, and the weekly briefing is an easy thing to bring along. That’s usually where the conversation about smaller pull requests and better review habits starts.</p>\n\n\n\n<h3 class=\"wp-block-heading\">What Teams and Leaders Can Do</h3>\n\n\n\n<p class=\"wp-block-paragraph\">A team that produces more than it can understand has a systems problem, so it needs systems answers, not just individual coping.</p>\n\n\n\n<p class=\"wp-block-paragraph\">● Keep changes small enough to review. Smaller pull requests with a clear note on intent make review realistic, whether a person or a model wrote the code.</p>\n\n\n\n<p class=\"wp-block-paragraph\">● Measure outcomes, not volume. Reliability, customer impact and time to recover say far more than merge counts, and they take away the pressure to compete on throughput.</p>\n\n\n\n<p class=\"wp-block-paragraph\">● Budget time for understanding. Leave room for design reviews, documentation, and knowledge sharing. They’re what keeps a fast-moving codebase something people can still reason about.</p>\n\n\n\n<h3 class=\"wp-block-heading\">A Steadier Way Forward</h3>\n\n\n\n<p class=\"wp-block-paragraph\">The speed of AI-assisted development is real and, for most teams, valuable. But it doesn’t change what makes an engineer worth trusting: sound judgment, a clear understanding of the systems they’re responsible for, and the discipline to focus on what matters. Those qualities aren’t made obsolete by a faster stream of code. They’re what make the stream safe to build on.</p>\n\n\n\n<p class=\"wp-block-paragraph\">You don’t need to keep up with everything. You need to know what you’re accountable for, decide where your attention goes, and keep building the skills that machines make more important rather than less. The developers who thrive in this period won’t be the ones who read the most pull requests. They’ll be the ones who stay calm enough to ask the right questions: what changed, what could break, and what needs a closer look.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/07/Rahul-Vaish.080726.BLOG-350.jpg?w=350\" alt=\"Rahul Vaish\" class=\"wp-image-811101\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/07/Rahul-Vaish.080726.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/07/Rahul-Vaish.080726.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/07/Rahul-Vaish.080726.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Rahul Vaish </strong>is a Software Engineer and Independent Researcher with over a decade of experience designing and building enterprise systems.</em> <em>His work focuses on software architecture, distributed systems, and applied AI.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>The silent question many coders are asking is if they can follow all of the code, or are perhaps falling behind.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814649,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 1,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20439,
+      "post_id": 810651
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>A developer's sense of mastery can feel like it&rsquo;s slipping, even when their output is higher than ever.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  4
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20439
+ ],
+ "class_list": [
+  "post-814104",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-profession",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/genai-is-shipping-code-faster-than-you-can-read-it/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "GenAI Is Shipping Code Faster Than You Can Read It",
+   "url": "http://cacm.acm.org/blogcacm/genai-is-shipping-code-faster-than-you-can-read-it/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/genai-is-shipping-code-faster-than-you-can-read-it/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/110626.BLOG_.GenAI-Is-Shipping-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/110626.BLOG_.GenAI-Is-Shipping-G.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Rahul Vaish",
+     "url": "https://cacm.acm.org/author/rahul-vaish/"
+    }
+   ],
+   "creator": [
+    "Rahul Vaish"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-09T14:36:39Z",
+   "datePublished": "2026-11-09T14:36:39Z",
+   "dateModified": "2026-11-09T14:36:39Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"GenAI Is Shipping Code Faster Than You Can Read It\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/genai-is-shipping-code-faster-than-you-can-read-it\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/genai-is-shipping-code-faster-than-you-can-read-it\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110626.BLOG_.GenAI-Is-Shipping-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110626.BLOG_.GenAI-Is-Shipping-G.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Rahul Vaish\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/rahul-vaish\\/\"}],\"creator\":[\"Rahul Vaish\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-09T14:36:39Z\",\"datePublished\":\"2026-11-09T14:36:39Z\",\"dateModified\":\"2026-11-09T14:36:39Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Rahul Vaish",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/110626.BLOG_.GenAI-Is-Shipping-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814104",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814104"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 5,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814104/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814648,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814104/revisions/814648"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814649"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814104"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814104"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814104"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814104"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814104"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814104"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814104"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}
