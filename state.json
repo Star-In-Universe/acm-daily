@@ -159,7 +159,23 @@
       "date": "2026-11-09T09:36:39",
       "link": "https://cacm.acm.org/blogcacm/genai-is-shipping-code-faster-than-you-can-read-it/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 814241,
+      "pushed_at": "2026-11-11T15:18:59+08:00",
+      "title": "Synergizing LLMs and Formal Methods for Neural-Symbolic Reasoning",
+      "date": "2026-11-10T12:12:12",
+      "link": "https://cacm.acm.org/research/synergizing-llms-and-formal-methods-for-neural-symbolic-reasoning/",
+      "section": "Research"
+    },
+    {
+      "id": 814112,
+      "pushed_at": "2026-11-11T15:18:59+08:00",
+      "title": "In Software that Moves Money, the Model Never Holds the Pen",
+      "date": "2026-11-10T11:49:34",
+      "link": "https://cacm.acm.org/blogcacm/in-software-that-moves-money-the-model-never-holds-the-pen/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-10T15:49:55+08:00"
+  "last_check": "2026-11-11T15:18:02+08:00"
 }

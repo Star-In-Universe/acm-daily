@@ -1,0 +1,243 @@
+{
+ "id": 814112,
+ "date": "2026-11-10T11:49:34",
+ "date_gmt": "2026-11-10T16:49:34",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814112"
+ },
+ "modified": "2026-11-10T11:49:34",
+ "modified_gmt": "2026-11-10T16:49:34",
+ "slug": "in-software-that-moves-money-the-model-never-holds-the-pen",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/in-software-that-moves-money-the-model-never-holds-the-pen/",
+ "title": {
+  "rendered": "In Software that Moves Money, the Model Never Holds the Pen"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\"><a href=\"https://github.com/DylanMerigaud/ledgerloop\">Ledgerloop</a> is an open source procure-to-pay workflow I built after almost two years as a forward-deployed engineer at a procurement fintech, where I turned enterprise clients&#8217; approval rules into product configuration. When a vendor invoice arrives as a PDF, it gets matched against a purchase order, goes through an approval chain, and is reconciled into the accounting system. Writing it from scratch forced me to decide, component by component, whether a model was allowed to touch it.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I started from exact code and let a model in only where the input is fuzzy. That ordering matters for any software whose output someone will later have to defend, and money is the clearest case.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Two Answers to One Question</h3>\n\n\n\n<p class=\"wp-block-paragraph\">A language model samples. Ask it the same question twice and you may get two different answers; above a temperature of zero, that variation is by design. When the job is drafting text, nobody minds. When the job is deciding whether an invoice matches its purchase order, it disqualifies the model.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The question a controller or an auditor asks months later is simple: why was this bill paid? In ledgerloop, the answer is a function. The matching process lives in lib/matching.ts (commit 6af9fb1 on github.com/DylanMerigaud/ledgerloop). It compares quantities and unit prices line by line against a purchase order and a goods receipt, with a price tolerance of 1% to absorb rounding and currency conversion, and it returns one of three verdicts: clean, exception, or duplicate. Run it 1,000 times on the same inputs and you get the same verdict every time. When it is wrong, the bug has a line number.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The approval engine works the same way. The workflow is a graph of gates, each with a condition on the amount, the variance, the department, or the verdict, and the engine walks it. A bill posts only when every active gate has a human approval, and one rejection blocks everything after it. No model sits anywhere on that path. The project README states the rule in one sentence:</p>\n\n\n\n<p class=\"wp-block-paragraph\">Everything else, matching, the workflow engine, reconciliation, is deterministic code, because a payment decision must be exact and repeatable, never a model&#8217;s guess.</p>\n\n\n\n<p class=\"wp-block-paragraph\">None of this is new. Payment systems were built this way long before language models. What matters is that they stay built this way after a model is added.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Where the Model Belongs</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Hold that line and the places where a model belongs become easy to see: they are the places where a deterministic rule would be brittle or impossible to write.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Reading a vendor&#8217;s PDF is the plainest example. Every supplier has its own invoice layout, and parsers built on regular expressions lose that race. A vision model reads the document into a structured invoice, the result is validated against a schema, and from there on code takes over.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Onboarding is another. In my previous job, setting up a new client meant an engineer reading their org chart and turning it into approval rules by hand: who signs what, above which amount. Mapping job titles to signing authority takes judgment, and real org data is messy, with a manager who left last month or two people who both look like the CEO. So an agent reads the HR system and proposes the workflow, with those problems flagged. Code assembles the proposal into a validated graph, and a person reviews and edits it in plain language before anything goes live. An edit that would produce an invalid graph is refused.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Investigating an exception is the last. In the demo data, invoice INV-2042 bills steel bar about 9% above its purchase order, and that number alone does not say whether the supplier raised its prices for a good reason or overcharged. That answer lives in notes, past invoices, and vendor history, and which of those matter depends on what you find along the way. This is the one open-ended agent on the operational path (src/mastra/agents/investigator.ts, commit 38f4f16). It chooses which records to read and writes a recommendation. A person makes the call.</p>\n\n\n\n<p class=\"wp-block-paragraph\">These uses share a shape. The model works on unstructured input and hands a proposal to either code or a person. It never holds the pen on the outcome.</p>\n\n\n\n<h3 class=\"wp-block-heading\">The Handoff Is Where the Engineering Goes</h3>\n\n\n\n<p class=\"wp-block-paragraph\">When the model can only propose, the human step becomes a part you have to design. The reviewer has to see what the agent concluded and why, in the place where they decide, or the review turns into a rubber stamp or a queue. In ledgerloop the paused bill shows the investigator&#8217;s recommendation next to the Approve and Reject buttons, and the run&#8217;s trace lists every record the agent opened on the way. The approver reads the case in one place and decides, and the decision stays with the person who is accountable for it.</p>\n\n\n\n<h3 class=\"wp-block-heading\">A Default for Other Domains</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Money makes the failure visible, but the reasoning carries to any system with an audit trail: access control, insurance claims, medical billing, anywhere someone may later ask why the system did what it did. I suggest a simple test for each component. If you would be uncomfortable answering that question with &#8220;the model thought so,&#8221; the component is code, and the model&#8217;s job is to prepare its input.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Most of my design time on ledgerloop went into deciding which parts of the system a model may enter. In software that moves money, getting that right leaves most of the system as boring, auditable code. I argued a shorter version of this <a href=\"https://dylan.merigaud.com/blog/where-not-to-use-ai\">on my site</a> in July, and the <a href=\"https://github.com/DylanMerigaud/ledgerloop\">ledgerloop source</a> is public for anyone who wants to check where the line falls.</p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/10/Dylan-Merigaud.103026.BLOG-350.jpg\" alt=\"Dylan Merigaud\" class=\"wp-image-814701\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/10/Dylan-Merigaud.103026.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/10/Dylan-Merigaud.103026.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/10/Dylan-Merigaud.103026.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Dylan Merigaud </strong>is a software engineer based in Paris. He was a forward deployed engineer at the procurement fintech Pivot and built ledgerloop, an open source procure-to-pay workflow.</em></p>\n\n\n\n<p class=\"wp-block-paragraph\"></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>In software that moves money, a key decision involves which parts of the system a model may enter.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814745,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20578,
+      "post_id": 814110
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>A model can be added to an invoicing system in places where a deterministic rule would be brittle or impossible to write.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  6,
+  4,
+  7
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20578
+ ],
+ "class_list": [
+  "post-814112",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-applications",
+  "category-computing-profession",
+  "category-data-and-information",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/in-software-that-moves-money-the-model-never-holds-the-pen/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "In Software that Moves Money, the Model Never Holds the Pen",
+   "url": "http://cacm.acm.org/blogcacm/in-software-that-moves-money-the-model-never-holds-the-pen/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/in-software-that-moves-money-the-model-never-holds-the-pen/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111026.BLOG_.In-Software-That-S.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111026.BLOG_.In-Software-That-S.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Dylan Merigaud",
+     "url": "https://cacm.acm.org/author/dylan-merigaud/"
+    }
+   ],
+   "creator": [
+    "Dylan Merigaud"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-10T16:49:34Z",
+   "datePublished": "2026-11-10T16:49:34Z",
+   "dateModified": "2026-11-10T16:49:34Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"In Software that Moves Money, the Model Never Holds the Pen\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/in-software-that-moves-money-the-model-never-holds-the-pen\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/in-software-that-moves-money-the-model-never-holds-the-pen\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111026.BLOG_.In-Software-That-S.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111026.BLOG_.In-Software-That-S.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Dylan Merigaud\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/dylan-merigaud\\/\"}],\"creator\":[\"Dylan Merigaud\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-10T16:49:34Z\",\"datePublished\":\"2026-11-10T16:49:34Z\",\"dateModified\":\"2026-11-10T16:49:34Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Dylan Merigaud",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111026.BLOG_.In-Software-That-S.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814112",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814112"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 10,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814112/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814749,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814112/revisions/814749"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814745"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814112"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814112"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814112"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814112"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814112"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814112"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814112"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

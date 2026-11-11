@@ -1,0 +1,259 @@
+{
+ "title": "Synergizing LLMs and Formal Methods for Neural-Symbolic Reasoning",
+ "lede": "A new neural-symbolic paradigm combines large language models with formal methods toward constructing powerful, trustworthy AI systems.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "In recent years, the rapid proliferation of large language models (LLMs) has marked a transformative shift in the landscape of artificial intelligence and many of its applications: software engineering, finance, healthcare, and legal, among others. Top LLMs, such as ChatGPT, Claude, Gemini, and DeepSeek, have demonstrated impressive capabilities in multimodal understanding, generation, coding, task execution, and reasoning. Leveraging these capabilities, agentic LLMs can plan, take actions, and use feedback loops with memory to achieve goals autonomously."
+  },
+  {
+   "type": "p",
+   "en": "Despite these advances, LLM reasoning suffers from a fundamental limitation: the tendency to produce factually incorrect or logically inconsistent yet plausible outputs, commonly termed hallucinations. This poses serious risks in high-stakes domains, where trustworthiness is critical. Importantly, this issue is not anomalous but rather mathematically inherent to the probabilistic objectives underlying LLM training. As an example, we asked the LLMs to solve a simple puzzle: In 318, only one digit is correct, and it is in the correct position. In 379, only one digit is correct, but it is in the wrong position. In 863, two digits are correct, but they are in the wrong positions. In 421, no digits are correct. What’s the correct combination of the three digits and their positions? Older models such as GPT 4.1, Gemini 2.5, Claude 4 Sonnet, DeepSeek V3, and Grok 3 gave wrong answers with believable thinking processes. Reasoning models, such as the “Thinking” or “Pro” modes, fared better but took minutes to respond. Small open source LLMs performed poorly and often fell into an infinite loop of reasoning. These models are constantly evolving—the latest versions of GPT, Gemini, and Claude all answered correctly (698). However, hallucinations persist, and theoretically cannot be eradicated by training better LLMs alone."
+  },
+  {
+   "type": "p",
+   "en": "Interestingly, we also asked Claude 4 to translate the puzzle into Z3’s SMT-LIB format, which Z3 solved correctly in 0.01 seconds on a laptop (MacBook Pro with M1 Pro). Z3 is a satisfiability modulo theories (SMT) solver, offering rigorous reasoning complementary to the probabilistic nature of LLMs. More broadly, formal methods (FM) provide mathematically precise tools for trustworthy computing: SMT extends classical satisfiability to theories such as arithmetic, bit-vectors, arrays, datatypes, and uninterpreted functions; theorem proving derives valid formulas from axioms via proof calculi; and model checking systematically explores system states to detect property violations."
+  },
+  {
+   "type": "p",
+   "en": "Compared to the uncertain and generative nature of LLMs, formal methods deliver rigorous correctness guarantees, but their adoption is limited by steep learning curves and high expertise requirements. A promising direction is to unify these paradigms by leveraging LLMs for generation and interaction while using formal methods to enforce correctness and interpretability."
+  },
+  {
+   "type": "h",
+   "en": "A Neural-Symbolic Reasoning Paradigm"
+  },
+  {
+   "type": "p",
+   "en": "Notable neural-symbolic AI methods. A common early pattern in LLM-based formal reasoning is loosely coupled integration, where an LLM translates a problem into a formal language for a symbolic solver, and solver failures due to syntactic or semantic issues are fed back to the LLM for iterative refinement. In contrast, tightly integrated approaches embed neural reasoning directly into the formal reasoning loop. For example, LeanDojo employs retrieval-augmented premise selection based on the current proof state and an encoder-decoder transformer to propose the next proof tactic, enabling fine-grained neural-symbolic collaboration."
+  },
+  {
+   "type": "p",
+   "en": "Other tightly integrated paradigms include logical neural networks (LNNs), where neurons correspond to components of weighted logical formulas in a real-valued logic, yielding end-to-end differentiability, omnidirectional inference, and training-time enforcement of logical consistency. Scallop further advances this line through a neurosymbolic programming language and compiler that supports data- and computation-efficient training while delivering strong performance, interpretability, and generalization across diverse tasks. Beyond such architectures, directly integrating formal methods into the internal components of LLMs remains possible but prohibitively resource intensive. Our work instead adopts a practical and complementary strategy: constraining, checking, and guiding LLM outputs via external formal methods without requiring access to model internals. By formalizing the representations, constraints, and reasoning interfaces between LLMs and downstream systems, we ensure verifiability while enabling accessible deployment of reliability mechanisms in high-stakes applications."
+  },
+  {
+   "type": "p",
+   "en": "Our paradigm. Across integration styles, common neural-symbolic interaction themes emerge (Figure 1). To lower the entry barrier, natural language is used as input, with multiple LLM agents coordinated by an agentic task automation LLM that selects agents, interacts with users, and automates the workflow. Complex problems typically follow a “plan-execute” decomposition. The resulting gap between informal input and formal specifications is bridged by an autoformalization LLM, while a designing LLM converts underspecified prompts into high-level designs. Given the close link between formal methods and software engineering, many execution steps involve programming and are handled by a coding LLM. Retrieval-augmented generation (RAG) supplies domain knowledge, including language syntax and semantics, and enables downstream applications. LLM agents interact with formal reasoning engines, including SMT solvers, theorem provers, and model checkers, whose reliable outputs provide high-quality feedback for repairing and refining autoformalized code."
+  },
+  {
+   "type": "p",
+   "en": "Guidelines on architecture design. An LLM+FM architecture should be selected from the assurance target outward, rather than from an LLM workflow inward. The aim is not merely better average outputs, but rather an architecture where success and failure are observable through formal feedback and where completion is gated by a certificate, that is, machine-checkable evidence produced by the FM back end (e.g., a localized conflict explanation, a violating execution trace, or an undischarged proof). This also future-proofs the design: LLM capabilities may change quickly, but the acceptance boundary is defined by certificates that can be validated independently of the LLM."
+  },
+  {
+   "type": "p",
+   "en": "Design Rule 1 (Assurance target). State the artifact that must be correct and the related properties that define correctness. Write the acceptance claim in the form “This output is acceptable because <property> holds for <artifact>.” If this claim cannot be stated precisely, later choices drift toward optimizing fluency or convenience rather than the intended notion of correctness."
+  },
+  {
+   "type": "p",
+   "en": "Design Rule 2 (Back-end FM choice). An FM back end should be chosen to match the property class and, more fundamentally, the domain of quantification. For constraint satisfiability and consistency questions that expect definitive outcomes (e.g., SAT/UNSAT), SMT-based back ends are most appropriate, as they determine logical formula satisfiability and can return unsat cores to localize conflicting constraints, providing constraint-level correctness. For behavioral and temporal properties, model checking is better suited, as it reasons exhaustively over transition systems, verifies whether all executions satisfy a temporal specification, and otherwise produces counterexample traces, with first-class support for safety, liveness, and fairness, yielding behavioral/temporal correctness. For refinement and high-assurance correctness, theorem proving and refinement checking adopt a proof-centric approach, generating and discharging proof obligations to certify that a system meets its specification by construction, providing semantic, unbounded correctness; when full certification is too costly, lighter-weight techniques such as type systems, abstract interpretation, or contract checking can offer faster but partial guarantees."
+  },
+  {
+   "type": "p",
+   "en": "Design Rule 3 (LLM-FM interface). After fixing the FM back end, define the contract between generation and validation by deciding what the LLM may propose (candidates, decompositions, repairs) and what the FM tool must return on failure. Treat formal failures as typed signals rather than generic “try again” events, so prompts and repair logic are organized around channels such as inconsistency, counterexample, or unsatisfied obligation. Finer-grained diagnostics typically shorten repair cycles and reduce silent failure, at the cost of tighter tool integration and more orchestrated iterations. A further trade-off is where human effort is spent: It can be front-loaded via structured inputs that reduce ambiguity, or back-loaded via flexible inputs plus more validation cycles and occasional interactive confirmation."
+  },
+  {
+   "type": "p",
+   "en": "Design Rule 4 (Integration pattern). Select a coupling pattern that matches the dominant failure mode and the task abstraction level. For decision/compliance settings (e.g., access-control policies, configuration constraints), consistency-guarded deliberation works well: Deliberate freely, but gate acceptance with a consistency checker that surfaces localized conflicts. For system-level behaviors (e.g., protocol workflows, safety controllers), counterexample-guided refinement is effective: Failed checks yield executions that drive targeted revisions, at the cost of repeated checking and occasional abstraction. For component synthesis (e.g., critical parsers and code), proof-obligation guided synthesis is effective: Obligations pinpoint repair targets, but require precise specifications and manageable proof burden. Patterns are often combined across layers; when both system- and code-level assurance are needed, certify the higher-level model or contracts first, then constrain and certify lower-level synthesis."
+  },
+  {
+   "type": "p",
+   "en": "Design Rule 5 (Acceptance guard). State explicitly the certificate that gates acceptance for the end-to-end system and what exactly it certifies. This operationalizes “good vs. bad” choices and makes trade-offs legible: Stronger certificates raise iteration cost and may narrow applicability, while lighter-weight certificates broaden scope but leave more residual uncertainty. In practice, designs are most robust when they align the architecture with the task abstraction level, treat FM as the correctness filter rather than an optional add-on, and keep a clean separation between candidate generation and certificate-based validation."
+  },
+  {
+   "type": "p",
+   "en": "In summary, LLMs and FM will form a complementary and beneficial generate-validate loop in future applications: LLMs explore the design space by proposing candidate artifacts, while FM back ends enforce a certificate-based acceptance boundary grounded in explicit assurance targets. Formal failures verified by FM would become structured feedback that guides iterative refinement, aligning probabilistic generation with semantic guarantees. In the following sections, we will provide some examples of our neural-symbolic reasoning paradigm to demonstrate the different roles of LLMs and formal reasoning in a variety of application domains."
+  },
+  {
+   "type": "h",
+   "en": "FM4LLM: Legal AI with LLM-SMT Integration"
+  },
+  {
+   "type": "p",
+   "en": "As our first case study, we show how formal reasoning enhances the reliability and consistency of LLM outputs in legal reasoning. While substantive rationality concerns fairness and morality, formal rationality demands logical adherence to the law. Existing legal LLMs, such as LawLLM, primarily rely on natural language processing and retrieval-augmented generation to reduce hallucinations, but still lack logically grounded and reliable reasoning."
+  },
+  {
+   "type": "p",
+   "en": "Our approach, shown in Figure 2, addresses the above issue using SMT solving. Each statutory clause c is parsed into a typed rule Rule(c):=〈Actor,Action,Cond,Penalty〉, and compiled into a first-order implicationϕc:=∀x.Actor(x)∧Action(x)∧Cond(x)→Penalty(x). All articles form the static legal knowledge base K:={ϕc|c∈Statutes}. Given a case D, the Prosecutor and Attorney LLMs generate (FP,SP):=ProsecutorLLM(D),(FD,SD):=AttorneyLLM(D), where F are fact predicates and S are cited clauses. The autoformalization LLM acts neutrally and takes the evidence provided by the above two LLMs and generates SMT-LIB format formal code that Z3 can check. If Z3 reports unsatisfiable, we will extract the minimal unsatisfiable core, representing the simplest reason that causes logical inconsistency. The autoformalization LLM maps this core back to the original text and instructs the Prosecutor or Attorney LLM to drop the contradictory clauses, then asks Z3 to check for consistency again."
+  },
+  {
+   "type": "p",
+   "en": "Example. Consider the following real case: (Gong Qiang concerns a repeat narcotics offender) Defendant Gong Qiang received a WeChat message from Luo, requesting the purchase of 1,000 yuan worth of drugs. After receiving the 1,000 yuan transfer from Luo via WeChat, Gong Qiang delivered 2 grams of methamphetamine and six magu tablets to Luo at approximately 5:00 PM …"
+  },
+  {
+   "type": "p",
+   "en": "Taking the case information as input, the Prosecutor LLM (accusatory stance) extracts:"
+  },
+  {
+   "type": "p",
+   "en": "Actors: Defendant Gong Qiang (prior drug convictions), buyer Luo; public prosecution by Donghu District People’s Procuratorate"
+  },
+  {
+   "type": "p",
+   "en": "Acts: Sold 2g methamphetamine + 6 “magu” tablets for 1,000 RMB"
+  },
+  {
+   "type": "p",
+   "en": "Evidence: WeChat payment record, seized drugs, positive urine tests, confession"
+  },
+  {
+   "type": "p",
+   "en": "Aggravators: Repeat drug offender in five-year window; multiple prior administrative penalties"
+  },
+  {
+   "type": "p",
+   "en": "Statutory Law: [64, 65]; [347, 356]"
+  },
+  {
+   "type": "p",
+   "en": "On the other hand, the Attorney LLM (exculpatory stance) extracts:"
+  },
+  {
+   "type": "p",
+   "en": "Actors: Defendant Gong Qiang, buyer Luo; defense counsel appointed"
+  },
+  {
+   "type": "p",
+   "en": "Acts: Acknowledge sale but stress “very small quantity” and no wider circulation"
+  },
+  {
+   "type": "p",
+   "en": "Evidence: WeChat record, drug test, confession"
+  },
+  {
+   "type": "p",
+   "en": "Mitigators: Full confession, signed plea agreement, voluntary compensation and buyer’s understanding; prior sentence already served, limited social harm"
+  },
+  {
+   "type": "p",
+   "en": "Statutory Law: [64, 67]; [347, 356]"
+  },
+  {
+   "type": "p",
+   "en": "The autoformalization LLM analyzes the above results and further extracts the following facts and converts them into SMT-LIB format, then sends them to the Z3 solver together with the extracted rules and clauses:"
+  },
+  {
+   "type": "p",
+   "en": "Article 65: matched field { prior_sentence: True, reoffense_in_5_years: True }"
+  },
+  {
+   "type": "p",
+   "en": "Article 67: matched field { truthful_confession: True }"
+  },
+  {
+   "type": "p",
+   "en": "Article 347: matched fields {subject: person, action: traffic_narcotics, object: narcotics, intent: intentional}"
+  },
+  {
+   "type": "p",
+   "en": "Z3 evaluates the logical constraints and produces consistent results, which a judge LLM converts into a human-readable verdict of two years’ imprisonment and a 10,000 yuan fine, close to the ground truth of one year and two months with an 11,000 yuan penalty. This legally informed integration employs multiple role-specific LLM agents coordinated with an SMT solver to ensure logical consistency, leading to more realistic sentencing and the highest accuracy among state-of-the-art methods."
+  },
+  {
+   "type": "h",
+   "en": "LLM4FM: LLM Model-Checking Agent"
+  },
+  {
+   "type": "p",
+   "en": "LLMs can reduce the costly manual effort in formal methods. This case study presents a multi-LLM-agent framework that automates the full model-checking workflow. While model checking itself is automated once a formal model and properties are provided, its industrial adoption is hindered by the manual creation of models and specifications, which requires expertise in checker-specific modeling languages and temporal logics unfamiliar to most engineers."
+  },
+  {
+   "type": "p",
+   "en": "Autoformalization is central to LLM-driven formal methods. Prior work has used LLMs to translate natural language into linear temporal logic (LTL) formulas and to synthesize or repair formal proofs, but these do not target system-level modeling. Our case study focuses on the Process Analysis Toolkit (PAT), which employs CSP# as the modeling language. The PAT-Agent framework (Figure 3) takes a natural language system description comprising system behavior and expected properties, translating the former into a formal model and the latter into requirements—properties with specified expected outcomes (i.e., expected to hold or not hold)."
+  },
+  {
+   "type": "p",
+   "en": "We introduce the following notation: Let LNL be the space of natural language descriptions, Π the planning representations, P the generation plans, M the PAT models, Q the user requirements, V PAT’s verification procedure, C the counterexample traces, and R the repair directives. With these notations, our pipeline is summarized by the four transformations:"
+  },
+  {
+   "type": "p",
+   "en": "T plan : L NL → Π → P ; T gen : P → M ; V : M × Q → { MATCH , MISMATCH } m × C ; T repair : M × C × R → M ."
+  },
+  {
+   "type": "p",
+   "en": "Our objective is to obtain a model M*∈M such that ∀(ϕ,o)∈Q:V(M*,ϕ)=o. In the first stage, a Planning LLM parses the system description to extract semantic elements such as constants, variables, actions, and guards, and produces a model-generation plan that defines the intended structure and includes placeholder annotations with explanatory comments to guide subsequent code synthesis. It also processes the user-specified requirements for the system (e.g., reachability and liveness requirements)."
+  },
+  {
+   "type": "p",
+   "en": "User studies show that PAT-Agent translates requirements with 99.6% accuracy across multiple projects. In rare cases, manual checks are still required, supported by optional checkpoints in PAT-Agent. In the second stage, a Coding LLM translates the model-generation plan into CSP# code, guided by formal syntax and semantics and a corpus of existing PAT models. In our experiments, Claude 3.7 Sonnet generates CSP# code with near-perfect syntax on the first attempt, with any minor issues resolved automatically through brief LLM interaction. Full semantic correctness cannot be guaranteed in an automated method, as it depends on user intent, but this issue can be mitigated by checking the generated model against the automatically formalized properties and expected outcomes using PAT. Assuming that the properties are formalized correctly and they sufficiently capture the user’s intent, model checking itself will largely resolve modeling inaccuracies. When mismatches occur, a model repair loop is triggered: PAT’s output, including counterexamples, guides a Repair Agent to identify and fix only the faulty code region rather than regenerating the entire model. In practice, three to four repair iterations typically suffice to satisfy all properties."
+  },
+  {
+   "type": "p",
+   "en": "Example. An electrical engineer describes the motor engine as follows:"
+  },
+  {
+   "type": "p",
+   "en": "This process models a car’s motor. The engine can be turned on and off, the car can start and stop driving, the fuel is gradually consumed after driving, and it can be refueled."
+  },
+  {
+   "type": "p",
+   "en": "The Planning LLM extracts and defines key constants, variables, and actions (e.g., carMotion, fuel, engineStatus, startDriving), assigning context-appropriate names and inferring implicit system logic using common sense. For example, it deduces that startDriving requires the engine to be on, the car to be stationary, sufficient fuel, and driver presence. The Coding LLM then instantiates this plan by filling in concrete model details, translating such inferred actions into:"
+  },
+  {
+   "type": "p",
+   "en": "The code follows CSP# syntax [conditions] event_name data_operations -> next_process(), where guards specify enabling conditions and data operations define event effects, and it passes PAT’s syntax check on the first attempt. The Coding LLM also formalizes system requirements, for example, translating “the car should not be in driving mode without the key” into a reachability assertion, where the state driveWithoutKey is expected to be unreachable:"
+  },
+  {
+   "type": "p",
+   "en": "However, verification results may show that the above state is reachable given the initial model generated by the Coding LLM. This issue, together with a counterexample trace composed of system states that lead to the error, is sent to the Repair Agent for a repair iteration, after which the above process is revised as follows to avoid the error:"
+  },
+  {
+   "type": "p",
+   "en": "Interestingly, this issue reflects a real-life situation in which a coauthor of this article kept the engine on and dropped off a passenger, who took the key, at a shopping mall. The author continued to drive the car to the office, only to realize he could not lock the car! With PAT-Agent, automakers can now verify their designs without the excuse of, “But we do not have formal methods engineers.”"
+  },
+  {
+   "type": "h",
+   "en": "They Are One: Trustworthy AI Coder"
+  },
+  {
+   "type": "p",
+   "en": "Some powerful integrations of neural-symbolic reasoning require the two parts to work hand in hand in each small step. This case study demonstrates an AI coder that combines LLMs, program refinement, and theorem proving into a hybrid system. LLMs have shown potent coding capabilities, and the latest ones have raised the bar to the project level—the user only needs to give a one-line prompt, and GPT 5 can build a fully functional website. However, the fundamental reliability problem remains: Is the code functionally correct with respect to user specifications?"
+  },
+  {
+   "type": "p",
+   "en": "Example. We asked GPT 5 to write the following function: Generate a program that finds the square root of N within the error bound e."
+  },
+  {
+   "type": "p",
+   "en": "GPT 5 produced the Python code below. However, the reader can check that the two lines after the for loop are incorrect, as there exist N and e such that abs(x_next - x) <= e, but abs(x_next⌃2 - N) > e, which violates the specification. Such issues prompted us to build a reliable AI coder, illustrated in Figure 4. To ensure correctness, we adopt the refinement calculus to derive code from first-order logic specifications via correctness-preserving transformations. A program is viewed as a predicate transformer, and refinement as logical implications between transformers. Starting from a pure specification Spec, the calculus incrementally replaces conjuncts and quantifiers with executable constructs, such as assignments, guards, loops, and nondeterministic choices using laws like assignment introduction, guard strengthening, and loop introduction, until only code remains. Traditionally, each refinement step requires human intervention: selecting a refinement law whose side conditions hold, instantiating schema variables to produce a program fragment, and discharging the proof obligations (POs) ensuring Spec⊑Code. This manual workflow scales poorly for real-world systems, where large specifications may require hundreds of refinement steps. To address scalability, we integrate LLMs into the refinement loop. Given the current specification state Si, the LLM predicts a suitable refinement law, instantiates it to generate a candidate code fragment Ci, and emits the associated proof obligation (PO) induced by the refinement law. For example, the VC for an assignment, {P}x:=E{Q}, requires proving the logical implication P⇒Q[x↦E]. An automated theorem prover (ATP) attempts to discharge all POs. If all succeed, the refinement commits to Si+1. If any PO fails, the ATP produces the failing proof state (e.g., an unsatisfied VC or counterexample model), which is fed back to the LLM. The LLM may revise the code, select a different refinement rule, or backtrack to the last verified state. This yields a search-and-repair refinement process jointly guided by symbolic reasoning and neural generation."
+  },
+  {
+   "type": "p",
+   "en": "Back to the square root example, our method generated the code below. Our code is guaranteed correct with respect to the proof obligations required by the refinement calculus in each step. Only one human input remains: This method requires the specification in first-order logic at the starting point, but not every programmer is knowledgeable in logic."
+  },
+  {
+   "type": "p",
+   "en": "LLM-based autoformalization can mitigate this, as done in the previous case study, but the core issue remains: What if the translation is wrong? We argue that no perfect and fully automatic solution exists, as verification ultimately depends on correctness criteria defined by the user. In the experiment, our method improves the pass rate on popular datasets, such as HumanEval and EvalPlus, over the base LLM. That is, if the LLM becomes more intelligent, our method’s result will be improved on top of that. More importantly, unlike LLMs, whose pass rate decreases with more test cases, indicating that potential bugs still exist, our method’s pass rate is consistent regardless of test cases because programs are proven correct. Those that fail do so mainly because the theorem prover timed out, which, in turn, could be enhanced by LLMs."
+  },
+  {
+   "type": "h",
+   "en": "Mitigating Autoformalization Risk"
+  },
+  {
+   "type": "p",
+   "en": "A common issue across LLM+FM paradigms is the translation from informal user intention to formal specification. We generally assume that the user sufficiently specifies their requirements in natural language and manually confirms the formal specification generated by the autoformalization module. Beyond syntax, the main risk is semantic under-specification: Natural language omits assumptions, scopes, and constraints, so an autoformalizer can produce a logically consistent but intent-misaligned specification that still passes solver checks and yields certificates for the wrong target. Robustness can be improved with typed intermediate representations and constrained decoding, where the LLM emits a type-checked schema compiled deterministically into the target formalism, and with semantic validation via round-trip paraphrases and automatically generated “should/should-not” scenarios checked against both the original intent and the formal solver."
+  },
+  {
+   "type": "p",
+   "en": "A practical mitigation is N-version autoformalization: Generate multiple independent formalizations using different LLMs or prompt/decoding variants of the same LLM, and filter them with lightweight formal checks (well-formedness/type constraints, satisfiability and non-triviality, and consistency against fixed background constraints). Material disagreement in structure or consequences is treated as a high-risk signal and surfaced explicitly rather than being silently resolved. When appropriate, a router+specialists strategy (a system-level mixture of experts) can further reduce mismatch by dispatching inputs to domain- and logic-specific formalizers or templates, while keeping the same certificate-producing back end as the acceptance gate."
+  },
+  {
+   "type": "p",
+   "en": "Finally, while certificate-producing back ends provide strong guarantees of logical validity, they do not eliminate epistemic uncertainty regarding specification fidelity. Formal methods act as verifiers of consistency, not arbiters of semantic truth. Bridging the informal-formal gap therefore remains an open research challenge, requiring improved interactive specification protocols, structure-aware validation, and human-in-the-loop confirmation mechanisms."
+  },
+  {
+   "type": "h",
+   "en": "Conclusion and Future Work"
+  },
+  {
+   "type": "p",
+   "en": "This article presents a neural-symbolic paradigm in which LLMs propose candidate artifacts and formal methods gate acceptance with machine-checkable certificates. The three case studies illustrate this paradigm, but the key contribution is a reusable design view: Select from the assurance target outward, choose an FM back end for the property class, and use formal feedback to drive revision so errors become observable rather than implicit."
+  },
+  {
+   "type": "p",
+   "en": "Beyond the case studies, the same paradigm applies to other integrations of LLMs and FM and applications in compliance analysis, protocol verification, cyber-physical safety, and synthesis of critical components. Recent progress around Lean further illustrates this opportunity. Mathlib shows how an extensive machine-checked library can support large-scale formalization and provide a strong foundation for later AI-assisted proof tools, while CSLib seeks to extend this effort to computer science concepts and verified code for AI-aided FM. Together, these projects suggest that shared formal libraries and reusable proof artifacts can help LLMs and formal methods achieve results beyond what either could readily do alone."
+  },
+  {
+   "type": "p",
+   "en": "Future work will broaden these directions and further close the autoformalization gap via N-version translation (across models or prompt variants), router+specialists, typed intermediate representations, and scenario-based semantic validation."
+  }
+ ],
+ "tail": []
+}
