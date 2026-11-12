@@ -1,0 +1,127 @@
+{
+ "title": "Quantum is Gaining, but Don’t Throw Away that Supercomputer",
+ "lede": "Quantum systems increasingly are being paired with classical computers.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "When IBM announced in May that two of its quantum computers helped Cleveland Clinic achieve a record-size simulation of human proteins, a couple of other pieces of hardware also stood out in the accomplishment: two supercomputers."
+  },
+  {
+   "type": "p",
+   "en": "This pairing of quantum computing and classical computing illustrates that while quantum computers can deliver staggering compute power in certain circumstances, they also have limitations compared to conventional systems, which have faster clock rates, established algorithms, are more capable with large datasets, and are more broadly useful than niche-oriented quantum."
+  },
+  {
+   "type": "p",
+   "en": "“There’s going to be a classical computer in anything that has to do with quantum,” said IBM vice president of quantum adoption Scott Crowder."
+  },
+  {
+   "type": "p",
+   "en": "There’s plenty of similar thinking around the quantum computing industry, which is routinely partnering with classical high-performance computing (HPC) companies to serve what Marcus Henning, chief business officer of German quantum computing company planqc GmbH, referred to as a “coprocessor” boost to supercomputers. In March, planqc entered an arrangement with end user partners Infineon and BMW to help them combine quantum and supercomputing processes."
+  },
+  {
+   "type": "p",
+   "en": "The growing list of such partnerships includes a July announcement by quantum company Quantinuum, Rolls-Royce, and the U.K. National Supercomputing Centre at the University of Edinburgh to examine how the combination of quantum and classical computing can improve gas turbine engines. The same month, quantum vendor Rigetti Computing said it will work with supercomputing provider Hewlett Packard Enterprises at the Pittsburgh Supercomputing Center to integrate the two technologies. Quantinuum also formed an alliance with HPE in June. IBM has several quantum/classical partnerships in addition to the one with Cleveland Clinic."
+  },
+  {
+   "type": "p",
+   "en": "A Super Assistant"
+  },
+  {
+   "type": "p",
+   "en": "Quantum computing has been exciting the computing world with eye-popping achievements. One example came in 2024, when a Google quantum computer ran a benchmark algorithm in less than five minutes that the company said would have taken a supercomputer a septillion years. In July of this year, IBM, working with the University of Chicago, announced that its quantum computer had solved in 15 minutes a problem that would “demand infeasible amounts of classical computing time.”"
+  },
+  {
+   "type": "p",
+   "en": "Despite all this brawn, quantum computing is working essentially as a powerful assistant to classical supercomputing, rather than as a replacement."
+  },
+  {
+   "type": "p",
+   "en": "Why? While quantum is still a work in progress—quantum computing developers are focused on increasing the qubit count in their machines—the answer lies largely in quantum’s reliance on specific algorithms written to solve very specific tasks by taking advantage of quantum properties. Qubits, or quantum bits, can represent zero and one at the same time, a quantum characteristic known as superposition. And they work in conjunction with other qubits, via a quantum process called entanglement."
+  },
+  {
+   "type": "p",
+   "en": "The combination of superposition and entanglement is what gives quantum computing its enormous computational capabilities."
+  },
+  {
+   "type": "p",
+   "en": "It’s All About the Algorithms"
+  },
+  {
+   "type": "p",
+   "en": "Yet that is only true if the quantum computer has the proper algorithms. “Quantum is not a general-purpose machine,” said Henning of planqc. “It’s a coprocessor. It solves certain kinds of problems where classical computers are really, really bad. You load it with problems that a classical cannot solve.”"
+  },
+  {
+   "type": "p",
+   "en": "No one is throwing away their classical iron."
+  },
+  {
+   "type": "p",
+   "en": "“We will still have supercomputers, classical computers, and they’ll have additional tools for different kinds of problems,” Henning said. “One tool will be a quantum computer. With quantum computers, you’re still at the stage where you still have to develop algorithms. With classical computers, we have many, many years of experience. We have very well established algorithms and libraries and codes and all these things.”"
+  },
+  {
+   "type": "p",
+   "en": "So classical computers will continue to carry the general computing workload, probably for a long time to come. Quantum computers won’t supplant them any time soon for AI, for example, because for now, quantum cannot readily absorb large amounts of data. Quantum computers, however, can feed their findings into a classically-driven AI process."
+  },
+  {
+   "type": "p",
+   "en": "Quantum for Quantum"
+  },
+  {
+   "type": "p",
+   "en": "One of several promising areas for quantum is the simulation of matter, fluid dynamics, physical processes and chemistry. That’s because the quantum properties of quantum computers can echo the quantum makeup of matter which, many physicists believe, exhibit quantum superposition and entangled behavior on the atomic and subatomic level. Thus, quantum computing portends major improvements in materials for batteries, in pharmaceuticals, in aerospace fuel use (as with Quantinuum and Rolls-Royce’s arrangement), and other things."
+  },
+  {
+   "type": "p",
+   "en": "“You can try to do it classically, but the compute resources you have will never be sufficient for that,” said Henning."
+  },
+  {
+   "type": "p",
+   "en": "In hybrid projects, quantum hands over its results to a supercomputer for broader application."
+  },
+  {
+   "type": "p",
+   "en": "That’s what happened when Cleveland Clinic used two IBM quantum computers and two Japanese supercomputers provided through a partnership with Japan’s government-owned research institute RIKEN when it was trying to simulate a couple of human proteins. The combination was able to model two different molecules (one that’s part of the human digestion system, and another that’s part of the human immune system) at a size of 12,635 atoms and11,608 atoms, both roughly 40 times the size of the previous high of 303 atoms."
+  },
+  {
+   "type": "p",
+   "en": "IBM described the approach as quantum-centric supercomputing. Basically, “Classical broke up the problem into fragments, quantum simulated the pieces” and “classical stitched it back together to get the full answer,” explained IBM’s Crowder."
+  },
+  {
+   "type": "p",
+   "en": "Quantum/classical combinations also help companies optimize financial portfolios and logistics. For example, planqc’s project with Infineon and BMW aims to optimize supply chain processes. IBM in May announced that it is working with insurance company Allstate to improve its combination of risks and values. To evaluate home insurance policy offerings, IBM’s Heron quantum computer “generates a batch of candidate answers nudged toward combinations that are both valuable and within budget,” an IBM representative said. “Then, a classical step cleans up the list.”"
+  },
+  {
+   "type": "p",
+   "en": "“Quantum computers are a very niche tool for very important problems which currently you can’t even approach on a classical computer,” said Mykola Maksymenko, co-founder and chief technology officer of New York City-based Haiqu, which simulates quantum processes on classical computers."
+  },
+  {
+   "type": "p",
+   "en": "Analog, or Nature’s Way"
+  },
+  {
+   "type": "p",
+   "en": "One irony is that quantum computers work their “septillion year” wonders even though they are, by the conventional measurement of clock speed, slower than classical systems. While today’s high-performance classical computers run in the terahertz range, a quantum computer might run in the hertz range of one operation per second. That’s one reason they are not good at large data processing."
+  },
+  {
+   "type": "p",
+   "en": "It’s a striking difference. But clock speed is misleading from the quantum perspective, because quantum doesn’t rely on it. Rather, what is lost in clock speed is made up with the exponential power of combining superposition and entanglement for specific tasks."
+  },
+  {
+   "type": "p",
+   "en": "Izhar Madelsy, co-founder and CEO of Quantum Elements, Los Angeles, described quantum as a return to the analog world—a notable departure from the digital side of computing to which the world is accustomed."
+  },
+  {
+   "type": "p",
+   "en": "Quantum computers are analog precisely because the quantum mechanics on which they are based are themselves analog, Madelsy said. “While when you look at quantum devices, which are analog devices, they’re very good at representing complex systems that are rooted in quantum physics,” he said. “They represent nature using an analog system.”"
+  },
+  {
+   "type": "p",
+   "en": "In short, he said, quantum computing “is an analog beast.”"
+  },
+  {
+   "type": "p",
+   "en": "Mark Halper is a freelance journalist based near Bristol, U.K. He covers everything from media moguls to subatomic particles."
+  }
+ ],
+ "tail": []
+}

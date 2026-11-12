@@ -175,7 +175,31 @@
       "date": "2026-11-10T11:49:34",
       "link": "https://cacm.acm.org/blogcacm/in-software-that-moves-money-the-model-never-holds-the-pen/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 814161,
+      "pushed_at": "2026-11-12T15:49:20+08:00",
+      "title": "Quantum is Gaining, but Don’t Throw Away that Supercomputer",
+      "date": "2026-11-11T13:48:20",
+      "link": "https://cacm.acm.org/news/quantum-is-gaining-but-dont-throw-away-that-supercomputer/",
+      "section": "News"
+    },
+    {
+      "id": 814166,
+      "pushed_at": "2026-11-12T15:49:20+08:00",
+      "title": "Two Ways Into the Maze: From Bidirectional BFS to Bidirectional Dijkstra",
+      "date": "2026-11-11T13:21:34",
+      "link": "https://cacm.acm.org/blogcacm/two-ways-into-the-maze-from-bidirectional-bfs-to-bidirectional-dijkstra/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 814136,
+      "pushed_at": "2026-11-12T15:49:20+08:00",
+      "title": "Orchestration: From Personal Sound Signature to Personal Computation Signature",
+      "date": "2026-11-11T12:51:00",
+      "link": "https://cacm.acm.org/blogcacm/orchestration-from-personal-sound-signature-to-personal-computation-signature/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-11T15:18:02+08:00"
+  "last_check": "2026-11-12T15:48:23+08:00"
 }

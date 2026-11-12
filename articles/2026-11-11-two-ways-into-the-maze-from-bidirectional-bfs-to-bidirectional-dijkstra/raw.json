@@ -1,0 +1,239 @@
+{
+ "id": 814166,
+ "date": "2026-11-11T13:21:34",
+ "date_gmt": "2026-11-11T18:21:34",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814166"
+ },
+ "modified": "2026-11-11T13:21:34",
+ "modified_gmt": "2026-11-11T18:21:34",
+ "slug": "two-ways-into-the-maze-from-bidirectional-bfs-to-bidirectional-dijkstra",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/two-ways-into-the-maze-from-bidirectional-bfs-to-bidirectional-dijkstra/",
+ "title": {
+  "rendered": "Two Ways Into the Maze: From Bidirectional BFS to Bidirectional Dijkstra"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">This fall, my family and I walked into a maze built from stacked hay bales, with pumpkins along the edges and kids racing through every passage. We didn&#8217;t stay together. Half of us went in through one entrance, and the other half went in through the opposite one. Nobody drew a map. Each group simply tried the next opening, and after a few turns we heard each other&#8217;s voices and met somewhere in the middle. Once we met, we knew the whole way through.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Two Groups, One Search</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Without planning it, we had acted out one of the most useful ideas in computer science: search from both ends at once. In a maze every step costs the same, and the standard way to explore it is breadth-first search, or BFS. You check every spot one step away, then every spot two steps away, and so on. Run that from both entrances and you get bidirectional BFS: two waves of searching that meet in the middle.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Why bother with two groups? Because searches grow quickly. If every spot leads to three new ones and the exit is ten steps away, one group might check around 59,000 spots. Two groups that each go only five steps check about 500 between them. Splitting the distance in half doesn&#8217;t halve the work; it shrinks it dramatically.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>When Steps Stop Being Equal</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">A hay maze is a friendly world, because every step is equal. Real problems rarely are. Picture a map of towns instead of hay passages, where every town charges a toll to pass through. Now the question isn&#8217;t &#8220;what&#8217;s the shortest walk?&#8221; but &#8220;what&#8217;s the cheapest trip?&#8221; A route through two expensive towns can cost more than a route through four cheap ones, and BFS, which only counts steps, can&#8217;t tell the difference.</p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"860\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Figure-SCO.jpg\" alt=\"figure 'Two Ways Into'\" class=\"wp-image-814836\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Figure-SCO.jpg 1600w, https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Figure-SCO.jpg?resize=300,161 300w, https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Figure-SCO.jpg?resize=768,413 768w, https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Figure-SCO.jpg?resize=1024,550 1024w, https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Figure-SCO.jpg?resize=1536,826 1536w, https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Figure-SCO.jpg?resize=620,333 620w\" sizes=\"auto, (max-width: 1600px) 100vw, 1600px\" /><figcaption class=\"wp-element-caption\">Towns A to Z, each with a toll; the cheapest route is in green. </figcaption></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Dijkstra, From Both Ends</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">The tool for costs is Dijkstra&#8217;s algorithm. Instead of exploring by step count, it always moves to the cheapest place it can reach next. One small trick fits this map: entering a town costs that town&#8217;s toll, so the tolls on the towns become costs on the roads leading into them. C costs 2, D costs 5, E costs 3, and so on.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Now bring back the two groups. One search starts at A and moves forward, always taking the cheapest next town. The other starts at Z and moves backward the same way. Just as in the maze, each side only has to cover about half the map before they meet.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Let&#8217;s watch it happen on the map. Each town&#8217;s number is what you pay to enter it, and each search keeps a running total.</p>\n\n\n\n<p class=\"wp-block-paragraph\">1.) The search from A looks at its neighbors first: C costs 2, E costs 3, and B costs 4.</p>\n\n\n\n<p class=\"wp-block-paragraph\">2.) The search from Z does the same on its side: W costs 2, X costs 3, and Y costs 4.</p>\n\n\n\n<p class=\"wp-block-paragraph\">3.) Each search takes its cheapest option first. From A, that&#8217;s C (2), which leads on to D for a total of 2 + 5 = 7. From Z, it&#8217;s W (2), which reaches E for a total of 2 + 3 = 5 and D for 2 + 5 = 7.</p>\n\n\n\n<p class=\"wp-block-paragraph\">4.) Now both searches have touched the same towns. Through E, the route A → E → W → Z costs 3 + 2 = 5. Through D, the route A → C → D → W → Z costs 2 + 5 + 2 = 9. The best so far is 5.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The cheapest step still waiting on A&#8217;s side is E (3), and on Z&#8217;s side it&#8217;s X (3). Together that&#8217;s 6, already more than 5, so nothing left can beat the route we have. We stop, and the costly towns on the outer routes, such as B, F, u, Y, and V, never get fully explored</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Meeting is Not The Same as Finishing</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">This is the part that is easy to get wrong. In the maze, the first meeting is the answer. With tolls, it might not be. On this map the two searches can meet along three routes: through D (cost 9), through F and u (cost 10), and through E and W (cost 5). When the searches meet, we remember the cost of that route and keep going. We stop only when the cheapest next step from A plus the cheapest next step from Z already costs at least as much as the best route found. At that point, nothing left can beat it. And the meeting town&#8217;s toll is counted once, not once from each side.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Here the winner is A → E → W → Z, at 3 + 2 = 5. On a map this small the savings are tiny, but on road networks or graphs with millions of points, two searches meeting in the middle can be the difference between exploring most of the map and exploring a small piece of it.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This isn&#8217;t just a puzzle trick. Route planners face exactly this problem: roads have travel times, tolls, or traffic, and the goal is the cheapest trip, not the one with the fewest turns. Searching from both the start and the destination is a well-known way to speed that up on huge road maps. The same idea works for network routing, where each link has a delay, and for any problem with a clear start, a clear goal, and a cost for every step.</p>\n\n\n\n<p class=\"wp-block-paragraph\">That afternoon in the maze, two groups and a few shouts were enough to find the way. Real systems need one more rule: don&#8217;t just meet in the middle, make sure you have met on the cheapest path.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Disclosure</strong>: AI tools were used for research assistance, reference gathering, and editorial support in preparing this article.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>References</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">1. Dijkstra, E.W. A note on two problems in connexion with graphs, <em>Numerische Mathematik 1</em> (1959), pp. 269–271.</p>\n\n\n\n<p class=\"wp-block-paragraph\">2. Pohl, I. Bi-directional Search, <em>Machine Intelligence 6</em> (1971), pp. 127–140.</p>\n\n\n\n<p class=\"wp-block-paragraph\">3. Bidirectional search, Wikipedia; <a href=\"https://en.wikipedia.org/wiki/Bidirectional_search\">https://en.wikipedia.org/wiki/Bidirectional_search</a></p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/10/Saicharan-Obladinne.100526.BLOG-350.jpg?w=350\" alt=\"Saicharan Obladinne\" class=\"wp-image-813454\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/10/Saicharan-Obladinne.100526.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/10/Saicharan-Obladinne.100526.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/10/Saicharan-Obladinne.100526.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Sai Charan Obuladinne </strong>is a Staff Engineering Manager at GEICO, where he drives strategic technical initiatives for claims platforms in close collaboration with ML teams. Previously, he was a Staff Software Engineer at Meta, and he has spent over a decade building back-end systems across advertising, healthcare, and logistics.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Route planners&#8217; problems are that roads have travel times, tolls, or traffic, and their goal is the cheapest trip, not the one with the fewest turns.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814828,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20544,
+      "post_id": 812967
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Meeting in the middle is a great way to search. Once every step has a cost, it needs one more rule.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  7,
+  10
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20544
+ ],
+ "class_list": [
+  "post-814166",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-data-and-information",
+  "category-theory",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/two-ways-into-the-maze-from-bidirectional-bfs-to-bidirectional-dijkstra/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Two Ways Into the Maze: From Bidirectional BFS to Bidirectional Dijkstra",
+   "url": "http://cacm.acm.org/blogcacm/two-ways-into-the-maze-from-bidirectional-bfs-to-bidirectional-dijkstra/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/two-ways-into-the-maze-from-bidirectional-bfs-to-bidirectional-dijkstra/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Two-Ways-Into-SCO.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Two-Ways-Into-SCO.jpg"
+   },
+   "articleSection": "Data and Information",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Sai Charan Obuladinne ",
+     "url": "https://cacm.acm.org/author/sai-charan-obuladinne/"
+    }
+   ],
+   "creator": [
+    "Sai Charan Obuladinne "
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-11T18:21:34Z",
+   "datePublished": "2026-11-11T18:21:34Z",
+   "dateModified": "2026-11-11T18:21:34Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Two Ways Into the Maze: From Bidirectional BFS to Bidirectional Dijkstra\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/two-ways-into-the-maze-from-bidirectional-bfs-to-bidirectional-dijkstra\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/two-ways-into-the-maze-from-bidirectional-bfs-to-bidirectional-dijkstra\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111126.BLOG_.Two-Ways-Into-SCO.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111126.BLOG_.Two-Ways-Into-SCO.jpg\"},\"articleSection\":\"Data and Information\",\"author\":[{\"@type\":\"Person\",\"name\":\"Sai Charan Obuladinne\\u2028\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/sai-charan-obuladinne\\/\"}],\"creator\":[\"Sai Charan Obuladinne\\u2028\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-11T18:21:34Z\",\"datePublished\":\"2026-11-11T18:21:34Z\",\"dateModified\":\"2026-11-11T18:21:34Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Sai Charan Obuladinne ",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Two-Ways-Into-SCO.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814166",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814166"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 10,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814166/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814840,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814166/revisions/814840"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814828"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814166"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814166"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814166"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814166"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814166"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814166"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814166"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,239 @@
+{
+ "id": 814161,
+ "date": "2026-11-11T13:48:20",
+ "date_gmt": "2026-11-11T18:48:20",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814161"
+ },
+ "modified": "2026-11-11T16:53:48",
+ "modified_gmt": "2026-11-11T21:53:48",
+ "slug": "quantum-is-gaining-but-dont-throw-away-that-supercomputer",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/news/quantum-is-gaining-but-dont-throw-away-that-supercomputer/",
+ "title": {
+  "rendered": "Quantum is Gaining, but Don’t Throw Away that Supercomputer"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">When IBM <a href=\"https://www.ibm.com/quantum/blog/cleveland-clinic-riken-chemistry\">announced</a> in May that two of its quantum computers helped Cleveland Clinic achieve a record-size simulation of human proteins, a couple of other pieces of hardware also stood out in the accomplishment: two supercomputers.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This pairing of quantum computing and classical computing illustrates that while quantum computers can deliver staggering compute power in certain circumstances, they also have limitations compared to conventional systems, which have faster clock rates, established algorithms, are more capable with large datasets, and are more broadly useful than niche-oriented quantum.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“There’s going to be a classical computer in anything that has to do with quantum,” said IBM vice president of quantum adoption Scott Crowder.</p>\n\n\n\n<p class=\"wp-block-paragraph\">There’s plenty of similar thinking around the quantum computing industry, which is routinely partnering with classical high-performance computing (HPC) companies to serve what Marcus Henning, chief business officer of German quantum computing company planqc GmbH, referred to as a “coprocessor” boost to supercomputers. In March, planqc <a href=\"https://planqc.eu/news/2-3m-funding-for-hybrid-quantum-classical-solutions-in-industry-optimization\">entered an arrangement</a> with end user partners Infineon and BMW to help them combine quantum and supercomputing processes.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The growing list of such partnerships includes a <a href=\"https://pressreleasehub.pa.media/article/quantinuum-rolls-royce-riverlane-and-university-of-edinburgh-sign-agreement-to-explore-quantum-computing-for-industrial-design-and-simulation-78867.html\">July announcement</a> by quantum company Quantinuum, Rolls-Royce, and the U.K. National Supercomputing Centre at the University of Edinburgh to examine how the combination of quantum and classical computing can improve gas turbine engines. The same month, quantum vendor Rigetti Computing <a href=\"https://www.globenewswire.com/news-release/2026/07/27/3333556/0/en/rigetti-expands-collaboration-with-hpe-and-pittsburgh-supercomputing-center-to-build-new-hybrid-quantum-classical-supercomputer.html\">said</a> it will work with supercomputing provider Hewlett Packard Enterprises at the Pittsburgh Supercomputing Center to integrate the two technologies. Quantinuum also formed an alliance with HPE i<a href=\"https://www.quantinuum.com/press-releases/quantinuum-announces-strategic-collaboration-with-hpe-on-quantum-hpc-integration-for-enterprise\">n June</a>. IBM has several quantum/classical partnerships in addition to the one with Cleveland Clinic.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>A Super Assistant</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Quantum computing has been exciting the computing world with eye-popping achievements. One example came in 2024, when a Google quantum computer ran a benchmark algorithm in less than five minutes that the company said would have taken a supercomputer a <a href=\"https://blog.google/innovation-and-ai/technology/research/google-willow-quantum-chip/\">septillion years</a>. In July of this year, IBM, working with the University of Chicago, <a href=\"https://newsroom.ibm.com/2026-07-30-ibm-and-the-university-of-chicago-demonstrate-quantum-advantage,-establishing-trusted-quantum-computation-on-logical-circuits\">announced</a> that its quantum computer had solved in 15 minutes a problem that would “demand infeasible amounts of classical computing time.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Despite all this brawn, quantum computing is working essentially as a powerful assistant to classical supercomputing, rather than as a replacement.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Why? While quantum is still a work in progress—quantum computing developers are focused on increasing the qubit count in their machines—the answer lies largely in quantum’s reliance on specific algorithms written to solve very specific tasks by taking advantage of quantum properties. Qubits, or quantum bits, can represent zero and one at the same time, a quantum characteristic known as superposition. And they work in conjunction with other qubits, via a quantum process called entanglement.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The combination of superposition and entanglement is what gives quantum computing its enormous computational capabilities.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>It’s All About the Algorithms</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Yet that is only true if the quantum computer has the proper algorithms. “Quantum is not a general-purpose machine,” said Henning of planqc. “It’s a coprocessor. It solves certain kinds of problems where classical computers are really, really bad. You load it with problems that a classical cannot solve.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">No one is throwing away their classical iron.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“We will still have supercomputers, classical computers, and they’ll have additional tools for different kinds of problems,” Henning said. “One tool will be a quantum computer. With quantum computers, you’re still at the stage where you still have to develop algorithms. With classical computers, we have many, many years of experience. We have very well established algorithms and libraries and codes and all these things.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">So classical computers will continue to carry the general computing workload, probably for a long time to come. Quantum computers won’t supplant them any time soon for AI, for example, because for now, quantum cannot readily absorb large amounts of data. Quantum computers, however, can feed their findings into a classically-driven AI process.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Quantum for Quantum</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">One of several promising areas for quantum is the simulation of matter, fluid dynamics, physical processes and chemistry. That’s because the quantum properties of quantum computers can echo the quantum makeup of matter which, many physicists believe, exhibit quantum superposition and entangled behavior on the atomic and subatomic level. Thus, quantum computing portends major improvements in materials for batteries, in pharmaceuticals, in aerospace fuel use (as with Quantinuum and Rolls-Royce&#8217;s arrangement), and other things.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“You can try to do it classically, but the compute resources you have will never be sufficient for that,” said Henning.</p>\n\n\n\n<p class=\"wp-block-paragraph\">In hybrid projects, quantum hands over its results to a supercomputer for broader application.</p>\n\n\n\n<p class=\"wp-block-paragraph\">That’s what happened when Cleveland Clinic used two IBM quantum computers and two Japanese supercomputers provided through a partnership with Japan’s government-owned research institute RIKEN when it was trying to simulate a couple of human proteins. The combination was able to model two different molecules (one that’s part of the human digestion system, and another that’s part of the human immune system) at a size of 12,635 atoms and11,608 atoms, both roughly 40 times the size of the previous high of 303 atoms.</p>\n\n\n\n<p class=\"wp-block-paragraph\">IBM described the approach as quantum-centric supercomputing. Basically, “Classical broke up the problem into fragments, quantum simulated the pieces” and “classical stitched it back together to get the full answer,” explained IBM’s Crowder.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Quantum/classical combinations also help companies optimize financial portfolios and logistics. For example, planqc’s project with Infineon and BMW aims to optimize supply chain processes. IBM in May <a href=\"https://www.ibm.com/quantum/blog/allstate-quantum-insurance-portfolio\">announced</a> that it is working with insurance company Allstate to improve its combination of risks and values. To evaluate home insurance policy offerings, IBM’s Heron quantum computer “generates a batch of candidate answers nudged toward combinations that are both valuable and within budget,&#8221; an IBM representative said. &#8220;Then, a classical step cleans up the list.&#8221;</p>\n\n\n\n<p class=\"wp-block-paragraph\">“Quantum computers are a very niche tool for very important problems which currently you can’t even approach on a classical computer,” said Mykola Maksymenko, co-founder and chief technology officer of New York City-based Haiqu, which simulates quantum processes on classical computers.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Analog, or Nature’s Way</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">One irony is that quantum computers work their “septillion year” wonders even though they are, by the conventional measurement of clock speed, slower than classical systems. While today’s high-performance classical computers run in the terahertz range, a quantum computer might run in the hertz range of one operation per second. That’s one reason they are not good at large data processing.</p>\n\n\n\n<p class=\"wp-block-paragraph\">It’s a striking difference. But clock speed is misleading from the quantum perspective, because quantum doesn’t rely on it. Rather, what is lost in clock speed is made up with the exponential power of combining superposition and entanglement for specific tasks.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Izhar Madelsy, co-founder and CEO of Quantum Elements, Los Angeles, described quantum as a return to the analog world—a notable departure from the digital side of computing to which the world is accustomed.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Quantum computers are analog precisely because the quantum mechanics on which they are based are themselves analog, Madelsy said. “While when you look at quantum devices, which are analog devices, they’re very good at representing complex systems that are rooted in quantum physics,” he said. &#8220;They represent nature using an analog system.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">In short, he said, quantum computing “is an analog beast.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong><em>Mark Halper</em></strong> <em>is a freelance journalist based near Bristol, U.K. He covers everything from media moguls to subatomic particles.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Quantum computers can deliver staggering compute power but have limitations compared to conventional systems.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814868,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 14478,
+      "post_id": 73178
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p class=\"Body\"><span style=\"background: #FEFFFE;\">Quantum systems increasingly are being paired with classical computers.</span></p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 ACM 0001-0782/26/11</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  22,
+  2
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  72
+ ],
+ "content-type": [],
+ "byline": [
+  14478
+ ],
+ "class_list": [
+  "post-814161",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-architecture-and-hardware",
+  "category-systems-and-networking",
+  "section-news"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/news/quantum-is-gaining-but-dont-throw-away-that-supercomputer/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Quantum is Gaining, but Don’t Throw Away that Supercomputer",
+   "url": "http://cacm.acm.org/news/quantum-is-gaining-but-dont-throw-away-that-supercomputer/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/news/quantum-is-gaining-but-dont-throw-away-that-supercomputer/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111026.News_.Quantum-Is-Gaining2.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111026.News_.Quantum-Is-Gaining2.jpg"
+   },
+   "articleSection": "Architecture and Hardware",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Mark Halper",
+     "url": "https://cacm.acm.org/author/mark-halper/"
+    }
+   ],
+   "creator": [
+    "Mark Halper"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-11T18:48:20Z",
+   "datePublished": "2026-11-11T18:48:20Z",
+   "dateModified": "2026-11-11T21:53:48Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Quantum is Gaining, but Don\\u2019t Throw Away that Supercomputer\",\"url\":\"http:\\/\\/cacm.acm.org\\/news\\/quantum-is-gaining-but-dont-throw-away-that-supercomputer\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/news\\/quantum-is-gaining-but-dont-throw-away-that-supercomputer\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111026.News_.Quantum-Is-Gaining2.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111026.News_.Quantum-Is-Gaining2.jpg\"},\"articleSection\":\"Architecture and Hardware\",\"author\":[{\"@type\":\"Person\",\"name\":\"Mark Halper\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/mark-halper\\/\"}],\"creator\":[\"Mark Halper\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-11T18:48:20Z\",\"datePublished\":\"2026-11-11T18:48:20Z\",\"dateModified\":\"2026-11-11T21:53:48Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Mark Halper",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111026.News_.Quantum-Is-Gaining2.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814161",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814161"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 8,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814161/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814844,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814161/revisions/814844"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814868"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814161"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814161"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814161"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814161"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814161"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814161"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814161"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

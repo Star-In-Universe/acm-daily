@@ -1,0 +1,267 @@
+{
+ "id": 814136,
+ "date": "2026-11-11T12:51:00",
+ "date_gmt": "2026-11-11T17:51:00",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814136"
+ },
+ "modified": "2026-11-11T12:51:00",
+ "modified_gmt": "2026-11-11T17:51:00",
+ "slug": "orchestration-from-personal-sound-signature-to-personal-computation-signature",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/orchestration-from-personal-sound-signature-to-personal-computation-signature/",
+ "title": {
+  "rendered": "Orchestration: From Personal Sound Signature to Personal Computation Signature"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">Have you ever wondered about the origin of the term orchestration, which has recently gained widespread attention with the rapid growth of agentic software development?</p>\n\n\n\n<p class=\"wp-block-paragraph\">Orchestration is traditionally defined as the art and science of assigning musical ideas to instruments. Yet this definition captures only part of its significance. Drawing on contemporary scholarship, we understand orchestration here as the intentional coordination of distinct musical voices into a coherent expressive whole.<sup><a href=\"#four\">4</a>,<a href=\"#six\">6</a></sup> Rather than asking simply which instrument should play a given passage, orchestration addresses the broader question of how specialized voices can interact to create musical meaning that transcends their individual contributions. In this sense, orchestration is the process of organizing individual capabilities, timbres, and musical functions so the whole becomes greater than the sum of its parts.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Historically, the need for orchestration evolved alongside the development of the modern orchestra. During the Renaissance and Baroque periods, instruments served both to reinforce vocal writing and to participate in increasingly independent instrumental genres, with instrumental color acquiring different roles across musical contexts.<sup><a href=\"#ten\">10</a></sup> As orchestras expanded during the Classical period, composers such as Haydn and Mozart gradually established increasingly differentiated roles for instrumental families.<sup><a href=\"#three\">3</a></sup> By the nineteenth century, larger concert halls, advances in instrument construction, and the growing expressive ambitions of Romantic composers transformed orchestration into an artistic discipline in its own right.<sup><a href=\"#one\">1</a>,<a href=\"#nine\">9</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\">Hector Berlioz&#8217;s <em>Grand traité d&#8217;instrumentation et d&#8217;orchestration modernes</em> (1844) is widely recognized as one of the most influential treatises on instrumentation and orchestration. Berlioz described the orchestra not as a collection of separate instruments, but as a single large instrument capable of producing an almost limitless spectrum of expressive possibilities.<sup><a href=\"#two\">2</a></sup> This represented a profound conceptual shift. The orchestra itself became the instrument, while individual musicians functioned as specialized yet interdependent contributors within a unified expressive system. Berlioz&#8217;s vision laid the foundations for modern orchestral thinking and profoundly influenced later composers and orchestrators.<sup><a href=\"#five\">5</a>,<a href=\"#nine\">9</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\">Several decades later, Nikolai Rimsky-Korsakov&#8217;s <em>Principles of Orchestration</em> (completed after his death by Maximilian Steinberg; first published in Russian in 1913 and in English in 1922) further advanced this perspective by emphasizing not only the characteristics of individual instruments but, more importantly, their interaction, balance, transparency, and collective function.<sup><a href=\"#six\">6</a>,<a href=\"#eight\">8</a></sup> Successful orchestration emerged not from the excellence of isolated parts, but from the quality of their relationships. Later orchestration scholars have argued that orchestration is best understood as the design of meaningful interactions between musical voices, rather than simply the accumulation of instrumental colors.<sup><a href=\"#one\">1</a>,<a href=\"#four\">4</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\">Yet orchestration does more than coordination. It is also one of the primary ways in which composers establish an individual artistic identity. Two composers, or even two orchestrators, may begin with the same melody, harmony, instrumentation, and formal design, yet produce profoundly different sonic experiences. Their choices in timbre, register, density, spacing, articulation, balance, and interaction create a musical voice listeners often recognize almost immediately. Maurice Ravel&#8217;s orchestration of Mussorgsky&#8217;s <em>Pictures at an Exhibition</em> is perhaps the best-known demonstration that orchestration can fundamentally reshape the perception and expressive meaning of musical material.<sup><a href=\"#seven\">7</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Musical Orchestration: Personal Sound Signature</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Building upon this observation, we introduce the concept of a Personal Sound Signature (PSS): the distinctive sonic identity that emerges through recurring orchestration decisions. A PSS is not determined by the instruments themselves, but by the way instruments are organized, combined, layered, balanced, and allowed to interact. In this sense, orchestration is simultaneously a process of coordination and an act of authorship. It reveals the orchestrator’s aesthetic values, artistic priorities, interpretive judgement, and creative imagination. The same musical resources can therefore generate entirely different artistic worlds because orchestration reflects the orchestrator&#8217;s identity as much as the orchestra&#8217;s capabilities.</p>\n\n\n\n<p class=\"wp-block-paragraph\">From this perspective, orchestration fulfills two inseparable functions. First, it coordinates specialized musical agents into a coherent expressive system. Second, it constructs a distinctive sonic identity through the particular manner in which those agents are coordinated. Orchestration is therefore both functional and expressive: it organizes complexity while simultaneously creating uniqueness.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Building upon this historical tradition, we propose that orchestration may be understood more broadly as a general principle of coordinated intelligence. Rather than viewing orchestration solely as a compositional technique, it can be conceptualized as the organization of specialized agents into a coherent system capable of producing outcomes that exceed the capacities of its individual components. Under this framework, diversity is not an obstacle, but a prerequisite for collective intelligence. Each participant contributes distinct capabilities while operating within a shared structure of communication, timing, responsibility, and purpose. The coherence of the system emerges from the intelligent coordination of difference.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Remarkably, this broader conception extends well beyond the concert hall. Nearly two centuries after Berlioz articulated the orchestra as an integrated system of specialized yet interdependent voices, computer scientists adopted the concept of orchestration to address a strikingly similar challenge in distributed and multi-agent systems. Although separated by domain and technology, both musical and computational orchestration seek to answer the same fundamental question: How can specialized, autonomous entities be coordinated so that their collective intelligence exceeds the capabilities of any individual component?</p>\n\n\n\n<p class=\"wp-block-paragraph\">In this post, we argue that music contributes an additional and largely unexplored dimension to this discussion. Beyond coordination, orchestration also shapes identity. Just as composers develop a Personal Sound Signature through the way they organize musical resources, designers of multi-agent systems may likewise create distinctive orchestration strategies that reflect particular priorities, values, and modes of interaction. The true power of orchestration, whether musical or computational, lies in transforming coordination itself into a unique and recognizable signature of intelligence, rather than only in coordinating specialized entities.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Orchestration: From Coordinated Programs to Agentic Intelligence</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Orchestration is traditionally understood in computing as the coordination and management of multiple computational processes, services, or components so they operate together toward a common objective. Yet this definition captures only part of its significance. In agentic programming, orchestration increasingly involves intentionally coordinating distinct agents, tools, processes, and sources of knowledge into a coherent intelligent system. Rather than simply asking which agent should perform a given task, orchestration addresses the broader question of how specialized agents can interact, communicate, reason, and act to produce outcomes that transcend their individual capabilities. In this sense, orchestration is the process of organizing individual capabilities, roles, knowledge sources, and actions so the whole becomes greater than the sum of its parts.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Historically, the need for orchestration in computing emerged as software systems grew more complex. Early programs were largely conceived as sequences of explicitly specified instructions executed by a single computational process. As software systems grew in scale, developers increasingly decomposed them into modules, procedures, objects, services, and distributed components, each responsible for a specialized function. Software engineering paradigms such as structured programming, object-oriented programming, component-based development, and service-oriented architectures progressively shifted attention from individual instructions toward the organization and interaction of computational entities. The challenge was no longer just implementing an individual function, but coordinating multiple specialized components so they could collectively accomplish a larger computational purpose.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The emergence of distributed computing and workflow systems further established orchestration as a central computational concern. Complex applications came to involve multiple services, data sources, execution environments, and computational processes that had to be coordinated in a particular sequence or according to particular dependencies. Workflow engines and cloud-computing platforms subsequently made orchestration an explicit layer of system design: developers specified how specialized computational components should be invoked, combined, monitored, and integrated, rather than implementing every operation as a monolithic process. The system itself increasingly became the object of design, while its individual components served as specialized yet interdependent contributors within a larger computational architecture.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The emergence of AI agents introduces a profound extension of this trajectory. Traditional software orchestration generally coordinates components whose behavior is largely specified in advance. Agentic systems, by contrast, incorporate entities that can interpret goals, reason about possible actions, select tools, adapt their behavior, and respond to changing environments. An agent may therefore determine not only what operation to perform, but also how to pursue an objective within a given set of constraints and resources. This introduces a fundamental shift in the nature of orchestration. The orchestrator no longer coordinates only predefined computational steps; it coordinates entities that themselves possess a degree of autonomy.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This distinction is particularly important in multi-agent and agentic programming systems. A complex task may be decomposed among a planner agent, a research agent, a coding agent, a testing agent, and a critic agent, with each agent contributing a different capability. The orchestrator determines which agents to select, when to invoke them, what information they receive, how they communicate outputs to other agents, and how to evaluate and integrate intermediate results. And, as in the case of musical orchestration, successful orchestration therefore emerges from the quality of the relationships among agents, rather than from the excellence of isolated agents. A highly capable collection of agents can nevertheless produce poor results if their roles overlap, their communication is inadequate, their outputs are not critically evaluated, or their activities are poorly sequenced.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Building upon the historical development of software orchestration, we propose that orchestration may be understood more broadly as a general principle of agentic intelligence. Rather than viewing orchestration solely as a technical mechanism for managing multiple agents, it can be conceptualized as the organization of specialized autonomous entities into a coherent system capable of producing outcomes that exceed the capabilities of its individual components. Each agent contributes distinct capabilities while operating within a shared structure of communication, timing, responsibility, constraints, and purpose.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Yet orchestration does more than coordination. It is also one of the primary ways in which developers establish the identity and character of an agentic system. Two developers, or two development teams, may employ the same underlying language model, the same tools, the same collection of agents, and even the same overall task, yet produce profoundly different system behaviors. Their choices regarding decomposition, role assignment, delegation, communication, memory, tool selection, sequencing, verification, feedback, and intervention generate different forms of agentic intelligence. One system may emphasize autonomy and exploration; another may privilege verification and control. One may rely on iterative critique; another may employ parallel specialized agents. The resulting behavior is therefore shaped not only by the capabilities of the underlying agents, but by the way those capabilities are orchestrated.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Agentic Orchestration: Personal</strong> <strong>Computation</strong> <strong>Signature</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Building on this analogy with musical orchestration, Personal Computation Signature (PCS) can be interpreted as the distinctive pattern of agentic behavior that emerges through recurring orchestration decisions made by a developer or development team. A PCS is determined by how agents and tools are organized, combined, delegated, sequenced, monitored, and allowed to interact. Two developers can therefore use identical computational resources while creating systems that behave differently because they orchestrate those resources differently. In this sense, orchestration is simultaneously a process of coordination and an act of authorship. It reveals not only technical expertise but also design priorities, epistemic assumptions, risk tolerance, desired levels of autonomy, and a philosophy of human-AI collaboration.</p>\n\n\n\n<p class=\"wp-block-paragraph\">From this perspective, orchestration fulfills two inseparable functions. First, it coordinates specialized computational agents into a coherent intelligent system. Second, it constructs a distinctive agentic identity through the particular manner in which those agents are coordinated. Therefore, as in the case of musical orchestration, orchestration is both functional and expressive: it organizes computational complexity while simultaneously creating a distinctive mode of intelligence.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This perspective also distinguishes agentic orchestration from traditional program composition. In conventional programming, the developer specifies the computational procedure: the sequence of operations through which the system transforms inputs into outputs. In agentic programming, the developer increasingly specifies goals, constraints, capabilities, roles, and relationships, while allowing agents to determine some of the intermediate steps required to achieve the desired outcome. The programmer therefore moves from specifying every computational action toward designing the cognitive architecture and orchestration structure within which autonomous entities can reason and act. Orchestration consequently becomes a central programming activity rather than merely an infrastructure concern.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Musical Orchestration and Agentic Orchestration</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Remarkably, this development brings computing conceptually closer to music. Just as the orchestra transforms individual instruments into a coordinated expressive system, an agentic system transforms individual agents, tools, and knowledge resources into a coordinated intelligent system. In both cases, the central design challenge is not simply to maximize the capability of individual components, but to determine how specialized entities should be organized so that their interactions generate capabilities that no individual component possesses on its own. The orchestrator, like the conductor or composer, therefore operates at a level above the individual contributors, shaping their roles, relationships, timing, and collective behavior.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Just as composers develop a Personal Sound Signature through the way they organize musical resources, developers of agentic systems may develop a Personal Computation Signature through the way they organize computational resources, agents, tools, and interactions. That is, the true power of orchestration, whether musical or computational, lies in transforming coordination itself into a distinctive and recognizable signature of intelligence.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>References</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"one\"></a>1. Adler, S. <em>The Study of Orchestration</em> (3rd ed.). W. W. Norton (2002).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"two\"></a>2. Berlioz, H. <em>Berlioz’s orchestration treatise: A translation and commentary</em> (H. Macdonald, Trans. &amp; Ed.). Cambridge University Press (2002).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"three\"></a>3. Blanning, T.C.W. <em>The Triumph of Music: The Rise of Composers, Musicians and Their Art.</em> Harvard University Press (2008).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"four\"></a>4. Delisle, J., Hasegawa, R., Noble, J., and Touizrar, M. Bringing orchestration into the foreground (Editors’ introduction). In J. Delisle, R. Hasegawa, J. Noble, &amp; M. Touizrar (Eds.). <em>The Oxford Handbook of Orchestration Studies </em>(pp. 1–15). Oxford University Press (2026).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"five\"></a>5. Macdonald, H., Berlioz, (Louis-)Hector. <em>Grove Music Online</em>. Oxford University Press (2001).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"six\"></a>6. Mathews, P. Instrumentation and Orchestration. <em>Oxford Bibliographies in Music </em>(2020)<em>.</em></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"seven\"></a>7. Nichols, R. <em>Ravel</em>. Yale University Press (2011).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"eight\"></a>8. Rimsky-Korsakov, N. <em>Principles of Orchestration. </em>M. Steinberg (Ed.); E. Agate (Trans.). Édition Russe de Musique (1922).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"nine\"></a>9. Rushton, J. <em>The Art of Orchestration</em>. In C. Lawson (Ed.), The Cambridge Companion to the Orchestra (pp. 92–111). Cambridge University Press (2003).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"ten\"></a>10. Taruskin, R. <em>The Oxford History of Western Music</em>. Oxford University Press (2005).</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2024/12/121024.BLOG_.Orit-Wolf-x350.jpg?w=350\" alt=\"\" class=\"wp-image-763337\" srcset=\"https://cacm.acm.org/wp-content/uploads/2024/12/121024.BLOG_.Orit-Wolf-x350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2024/12/121024.BLOG_.Orit-Wolf-x350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2024/12/121024.BLOG_.Orit-Wolf-x350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Orit Wolf</strong> is an international concert pianist, composer, and Associate Professor of Creative Arts at the Technion’s Department of Humanities and Arts. Her work explores connections between music, creativity, and science, focusing on live performance and audience communication. See <a href=\"https://www.oritwolf.com\">https://www.oritwolf.com</a>.</em></p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2024/08/082624.BLOG_.Orit-Hazzan-350.jpg?w=350\" alt=\"Orit Hazzan\" class=\"wp-image-760168\" srcset=\"https://cacm.acm.org/wp-content/uploads/2024/08/082624.BLOG_.Orit-Hazzan-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2024/08/082624.BLOG_.Orit-Hazzan-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2024/08/082624.BLOG_.Orit-Hazzan-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Orit Hazzan</strong> is a professor at the Technion’s Department of Education in Science and Technology. Her research focuses on computer science, software engineering, and data science education. See <a href=\"https://orithazzan.net.technion.ac.il/\">https://orithazzan.net.technion.ac.il/</a></em></p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/07/Avi-Salmon.062426.BLOG-350.jpg?w=350\" alt=\"Avi Salmon\" class=\"wp-image-809803\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/07/Avi-Salmon.062426.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/07/Avi-Salmon.062426.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/07/Avi-Salmon.062426.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Avi Salmon</strong> is Innovation Lead at Intel Israel and a senior engineer dedicated to preparing the engineering workforce for the AI era. His work focuses on ramping up and upskilling teams, ensuring they have the cutting-edge methodologies and know-how needed to excel in this rapidly evolving field.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Orchestration seeks to coordinate autonomous musical and computational entities so that their collective intelligence exceeds the capabilities of any individual component.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814823,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 1,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20206,
+      "post_id": 778910
+     }
+    },
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 15082,
+      "post_id": 84395
+     }
+    },
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20349,
+      "post_id": 809379
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Orchestration can be conceptualized as the organization of specialized autonomous entities into a coherent system capable of producing outcomes that exceed the capabilities of its individual components.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  9
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20206,
+  20349,
+  15082
+ ],
+ "class_list": [
+  "post-814136",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-software-engineering-and-programming-languages",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/orchestration-from-personal-sound-signature-to-personal-computation-signature/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Orchestration: From Personal Sound Signature to Personal Computation Signature",
+   "url": "http://cacm.acm.org/blogcacm/orchestration-from-personal-sound-signature-to-personal-computation-signature/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/orchestration-from-personal-sound-signature-to-personal-computation-signature/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Orchestration-From-S.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Orchestration-From-S.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Orit Wolf",
+     "url": "https://cacm.acm.org/author/orit-wolf/"
+    },
+    {
+     "@type": "Person",
+     "name": "Orit Hazzan",
+     "url": "https://cacm.acm.org/author/orit-hazzan/"
+    },
+    {
+     "@type": "Person",
+     "name": "Avi Salmon",
+     "url": "https://cacm.acm.org/author/avi-salmon-2/"
+    }
+   ],
+   "creator": [
+    "Orit Wolf",
+    "Orit Hazzan",
+    "Avi Salmon"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-11T17:51:00Z",
+   "datePublished": "2026-11-11T17:51:00Z",
+   "dateModified": "2026-11-11T17:51:00Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Orchestration: From Personal Sound Signature to Personal Computation Signature\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/orchestration-from-personal-sound-signature-to-personal-computation-signature\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/orchestration-from-personal-sound-signature-to-personal-computation-signature\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111126.BLOG_.Orchestration-From-S.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111126.BLOG_.Orchestration-From-S.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Orit Wolf\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/orit-wolf\\/\"},{\"@type\":\"Person\",\"name\":\"Orit Hazzan\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/orit-hazzan\\/\"},{\"@type\":\"Person\",\"name\":\"Avi Salmon\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/avi-salmon-2\\/\"}],\"creator\":[\"Orit Wolf\",\"Orit Hazzan\",\"Avi Salmon\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-11T17:51:00Z\",\"datePublished\":\"2026-11-11T17:51:00Z\",\"dateModified\":\"2026-11-11T17:51:00Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Orit Wolf, Orit Hazzan, and Avi Salmon",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111126.BLOG_.Orchestration-From-S.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814136",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814136"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 18,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814136/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814822,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814136/revisions/814822"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814823"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814136"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814136"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814136"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814136"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814136"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814136"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814136"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}
