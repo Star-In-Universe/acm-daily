@@ -1,0 +1,251 @@
+{
+ "title": "Reasoning Beyond Prediction: From Data-Driven to Causal Software Engineering",
+ "lede": "The next leap in human-machine co-engineering pairs LLMs with explicit causal models to inspect, test, and justify critical systems.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "Over the past 10–15 years, many software systems have shifted toward cloud-native and distributed architectures, although adoption remains heterogeneous across organizations and domains. Industry surveys report widespread adoption of cloud-native practices (e.g., 89% in 2024) and broad production use of Kubernetes—both strong indicators of large-scale distributed deployment. In parallel, modern systems increasingly incorporate adaptive and data-driven components, including AI/ML in many contexts, enabling capabilities such as autonomous vehicles, intelligent robots, LLM-based assistants, and virtual doctors. But these advances also bring increased uncertainty and unpredictability, driven by data-centric computation, intricate interactions with dynamic environments, and the pervasive distribution of today’s architectures. Microservice ecosystems may include hundreds of independently deployable services; cloud-native applications run atop dynamic infrastructures; cyber-physical systems must coordinate with uncertain physical environments; and AI/ML components can introduce probabilistic behavior and novel failure modes. Together, these factors contribute to structural and epistemic complexity beyond that of traditional monolithic or statically deployed systems—as evident, for instance, in microservice architectures and AI/ML-enabled systems. This shift toward highly interconnected, adaptive, and data-driven architectures makes it increasingly difficult to reason about global behavior, safety, and correctness, requiring engineers to navigate vast behavioral spaces to uncover critical failures. The question is no longer, Can we build it? but rather, Can we trust it? Failing to answer could seriously erode public confidence in future systems, with unpredictable social and economic impact."
+  },
+  {
+   "type": "p",
+   "en": "But how are software engineers managing this challenge? Under the banner of AI4SE (artificial intelligence for software engineering), deep learning–powered human-machine co-engineering—now most visibly through LLM-assisted development—is continually advocated as the solution. Undoubtedly, the gains are real and sometimes impressive: Today’s tools can autocomplete code, draft tests, generate documentation, and even offer design suggestions. However, the steady stream of reported, sometimes catastrophic, software-related incidents shows that we are still far from trustworthy software systems. In practice, software engineering struggles to keep pace with demands for safety, fairness, security, privacy, and transparency, to name just a few concerns. The reason is structural, as the inherent flaws of deep learning—rooted in its correlation-based nature and lack of transparency—make AI support fragile, opaque, and hence untrustworthy, especially in critical domains. Unsurprisingly, the reliability and quality of LLMs themselves emerged as one of the hottest research areas in 2024–2025. In the end, ML- and LLM-powered solutions suffer from the same problems they are supposed to solve."
+  },
+  {
+   "type": "p",
+   "en": "A simple example illustrates the gap. Consider an autonomous driving system, such as a city shuttle. During peak hours, the shuttle occasionally brakes too late at pedestrian crossings. Logs appear normal, and an ML-based monitoring tool flags a strong correlation: late braking (Y) tends to occur when the shuttle is using high-resolution camera mode (X). Based on correlation alone, the tool blames the camera pipeline. But this is a classic case of spurious correlation. A causal analysis reveals the true driver: Higher vehicle speed (Z) automatically triggers the switch to high-resolution camera mode (X) to improve long-distance perception, adding processing delay; the same increase (Z) also reduces the available braking margin, making late braking (Y) more likely. The system incorrectly blames X for Y, when both are caused by Z. A causal model makes this explicit and allows engineers to pose targeted what-if questions based on these relations (e.g., What if the vehicle enters a downhill segment? What if road friction changes? What if we adjust the speed threshold for sensor-mode switching?) to identify risky configurations before deployment. Such reasoning reveals risks that today’s correlation-based tools simply cannot detect. This small example captures a broader reality: Correlation-based tools can tell us what happened, but rarely why or what would happen if things were different. And without the why, trust remains elusive. We believe it is time for a qualitative leap in the kind of assistance machines can offer to engineers: AI should not simply do more; it should do it better."
+  },
+  {
+   "type": "h",
+   "en": "Human-Machine Software Co-Engineering"
+  },
+  {
+   "type": "p",
+   "en": "Machines have long supported humans by automating tedious and error-prone parts of engineering processes, including software engineering (SE). Over time, their assistance has evolved, accelerating both development and quality assurance. In SE, this progression can be seen in what machines support (Table 1): from ancillary, problem-independent tasks and scaffolding (e.g., CASE tools, workbenches, IDEs) (row 1) to automating techniques that formalize engineers’ intuitions in analysis, design, implementation, testing, and maintenance (row 2). For example, coverage-guided testing formalizes the intuition that increasing test coverage reveals more failures; automated static analysis formalizes rule-checking to detect code quality issues. The rise of machine learning (ML)—particularly deep learning—has indeed been a game changer for SE (row 3). With ML, the machine is asked not only to automate tasks but also to support decisions by exploiting historical data from the system or process to uncover patterns across the lifecycle."
+  },
+  {
+   "type": "p",
+   "en": "This paradigm, known as data-driven software engineering (DDSE), has elevated the role of the machine in human-machine co-engineering, as ML augments human capabilities and participates in decision making. Today, ML is used to support nearly every SE activity. Companies deploy ML models to predict (mis)behaviors by learning correlations from product, process, and operational data across the lifecycle. In IT operations, this is often framed as AIOps, an ML-driven approach that automates operations by detecting patterns in data and triggering remediation."
+  },
+  {
+   "type": "p",
+   "en": "As LLMs have come onto the scene, a new wave of data-driven solutions is emerging. LLMs utilize vast unstructured datasets (e.g., from the Web), acting as surrogates of domain expert knowledge to enhance tasks such as requirements analysis, coding, testing, debugging, repair, and nearly any software engineering task. Despite the challenges and concerns surrounding LLM-based solutions (e.g., safety and privacy risks), companies are increasingly adopting them, although the extent of the actual benefits remains hotly debated. DDSE represents the current state of human-machine co-engineering. Compared to two decades ago, machines now do far more than automating repetitive tasks. Their step beyond has been qualitative: ML scales and automates a core human ability, pattern recognition. By uncovering patterns in large datasets, ML amplifies inductive reasoning, enabling systems to infer complex input-output relations and make predictions that guide decisions. LLMs extend this with content generation based on learned patterns. How accurate these capabilities are, and how much engineers should rely on them, is a separate debate, but it is undeniable that, when applied properly, ML can boost software engineering productivity by an order of magnitude."
+  },
+  {
+   "type": "h",
+   "en": "The Step Beyond: Causal Software Engineering"
+  },
+  {
+   "type": "p",
+   "en": "Although ML, and especially LLMs, is often perceived as a panacea, it supports only part of the engineering process. While learning patterns in data is essential for prediction, engineers do much more when designing or validating a system. Throughout the development cycle, they formulate and compare alternative hypotheses, mentally simulate actions, and seek explanations—in other words, they reason beyond pattern recognition. For example, engineers hypothesize multiple design options to meet requirements. During quality assurance, they anticipate how the system might behave under specific conditions and “guess” which inputs, configurations, environmental factors, or user behaviors could trigger failures. In maintenance, such as debugging, they generate alternative explanations for why a failure occurred and what might have happened under different scenarios, guiding them toward an effective fix. In each of these tasks, engineers naturally infer causal relationships among variables and, by such relations, mentally simulate alternative scenarios. We envision causal reasoning as a promising direction for enhancing next-generation assistants."
+  },
+  {
+   "type": "p",
+   "en": "ML models—including transformers, the foundation of LLMs—primarily learn associations between variables, corresponding to rung 1 of Pearl’s ladder of causation. They do not uncover causality. With ML, we can only reason about what has been observed, answering questions such as: Given an observed context (from which the model learned), what output X should we expect if the input W happens to be w? Formally, this is the conditional probability P (X | W = w). Even with LLMs and their massive training corpora, the output fundamentally remains a conditional probability over observed patterns. Causal reasoning acts at a higher level: It targets causation and answers questions such as, What output X do we expect if we actively set W = w? That is, if we intervene on W and change the data-generating process. Or: What would have happened to X if we had set W = w? These intervention and counterfactual queries (rungs 2 and 3 of the ladder of causation) lie beyond ML’s reach, since ML predicts only from what has been seen. Causal reasoning, by contrast, allows us to proactively explore what will happen (or would have happened) under hypothetical interventions, rather than waiting for data to appear. It shifts from a learning-by-seeing paradigm toward learning-by-doing or even learning-by-imagining. Thus, machines gain not only the learn-to-predict capability of ML, but also a plan-to-improve capability."
+  },
+  {
+   "type": "p",
+   "en": "The growing importance of reasoning is evident in the evolution of LLMs from advanced yet associative ML algorithms to compositional systems that demonstrate increasingly effective forms of approximate reasoning, driven by techniques such as chain-of-thought prompting, self-refinement, and reasoning-oriented training. The push to integrate LLMs with external tools to support complex reasoning tasks—seen in AI agents and virtual assistants—points in the same direction."
+  },
+  {
+   "type": "p",
+   "en": "The scientific community is actively debating the extent to which LLMs genuinely reason, as opposed to merely exhibiting the appearance of reasoning through sophisticated pattern matching, such as the memorization effect. At the same time, a growing body of work examines the synergy between LLMs and causal reasoning, where causal models provide the structure for formal reasoning and LLMs support causal learning and inference. In domains such as safety engineering, law, and healthcare—where explanation, justification, and trust are essential—equipping LLMs with causal reasoning is especially important. Without such a shift, the impact of AI in software engineering may plateau, as demands for explainability and accountability grow sharper."
+  },
+  {
+   "type": "p",
+   "en": "Causal software engineering (CSE) offers a new human-machine co-design perspective in which machines imitate and augment human reasoning to anticipate scenarios and explain events, amplified by computational power. Given the motivations above, we believe CSE may represent the next qualitative step beyond DDSE in the assistance machines can provide. The rationale lies in how information is used: DDSE implicitly assumes that data is all you need, yet—no matter how much data you have—useful answers and genuine reasoning require a model where human knowledge and assumptions are explicit. Statistical causal modeling is one way (though not the only one) to harness data to answer the right questions and filter out spurious correlations. The sidebar highlights the main differences between DDSE and CSE."
+  },
+  {
+   "type": "h",
+   "en": "The CSE Conceptual Framework"
+  },
+  {
+   "type": "p",
+   "en": "Here, we outline a conceptual framework to harness causal reasoning for SE tasks, from requirements analysis to design-space exploration, test generation, code analysis, and root cause analysis. In the next section, we review recent research efforts, including our own work on testing and analysis, that instantiate elements of this framework."
+  },
+  {
+   "type": "p",
+   "en": "The framework, shown in Figure 1, revolves around causal models: structured, inspectable representations of a system and its environment that encode the cause-effect relations relevant to a given task. Different tasks may call for different models; Table 2 provides examples of cause and effect variables. A causal model is a mathematical representation of causal relationships within a system. There are two main approaches to causal modeling and inference: the potential outcomes framework, which frames causality in terms of what happened with what would have happened under an alternative condition; and graphical models, where relationships are expressed through directed acyclic graphs, with associated conditional probabilities (in causal Bayesian networks; CBNs) or structural equations (in structural causal models; SCMs) to specify how variables influence one another. We focus on graphical models in the description, though the core ideas generalize across formalisms."
+  },
+  {
+   "type": "p",
+   "en": "Although there are many ways to instantiate a CSE solution for a specific problem, the idea is that causal models should be at the core: They must be used to drive and check the reasoning process to solve the task rigorously and transparently. Rigorously means capable of quantifying the causal effects along the whole reasoning chain and harnessing such estimates to give the best output (e.g., generate safety tests more likely to cause a mishap). Transparently means giving inspectable evidence of the causal paths followed, along with the underpinning assumptions, constraints, and used sources of information, to justify the output for the required input, so that engineers are always kept in the loop and can challenge, refine, or override the reasoning when needed. In this paradigm, the causal model acts as a collaborative reasoning partner, not a black-box oracle: Models help engineers reason more systematically, while engineers can encode those assumptions and constraints, such as required or forbidden causal links, that no automated method can reliably infer. There are two steps to implement a CSE solution (Figure 1): how to construct a causal model (Learning), and how to query the built model (Inference)."
+  },
+  {
+   "type": "p",
+   "en": "Causal model learning. Causal models can be specified manually by domain experts, automatically from data (either observational or from controlled experiments), or by combining both approaches. Accordingly, the inputs to the model-learning step are a specification and/or data."
+  },
+  {
+   "type": "p",
+   "en": "In CSE, a specification encodes the explicit domain knowledge relevant to the task. This knowledge can be used to fully define a model or to refine and complement an existing model generated from data. In both scenarios, experts express assumptions through cause-effect relationships, declaring which relations must hold and which are impossible, defining the context within which causal reasoning is valid. This manual step embeds human understanding directly into the model, allowing engineers to shape and constrain the reasoning space according to their expertise."
+  },
+  {
+   "type": "p",
+   "en": "For instance, suppose we are designing or testing an emergency braking subsystem in an autonomous vehicle. A causal model is meant to help explore design alternatives and/or generate meaningful test cases that highlight a causal pathway from inputs to the possibly failing outputs. A domain expert may provide a causal model expressing key cause-effect relationships, such as:"
+  },
+  {
+   "type": "p",
+   "en": "Rain or fog [Weather] increases [Sensor Noise]"
+  },
+  {
+   "type": "p",
+   "en": "Slippery road [Road Surface] increases [Braking Distance]"
+  },
+  {
+   "type": "p",
+   "en": "High [Vehicle Speed] reduces [Object Detection Accuracy] due to motion blur"
+  },
+  {
+   "type": "p",
+   "en": "Low [Object Detection Accuracy] may affect the [Braking Decision]"
+  },
+  {
+   "type": "p",
+   "en": "These expert-specified causal relations serve as an explicit, inspectable record of assumptions—something ML models do not provide. Modern LLMs can complement human knowledge by suggesting additional cause-effect variables or relationships and build causal models. Further variables or relations could be elicited by an LLM, for instance:"
+  },
+  {
+   "type": "p",
+   "en": "[Lighting Conditions] → [Sensor Noise]"
+  },
+  {
+   "type": "p",
+   "en": "[Vehicle Load] → [Braking Distance]"
+  },
+  {
+   "type": "p",
+   "en": "[Software Version] → [Braking Algorithm Latency]"
+  },
+  {
+   "type": "p",
+   "en": "These relations, parameterized by data (see below), are then exploited in the inference phase to run queries and assess the causal effects of hypothetical interventions on variables."
+  },
+  {
+   "type": "p",
+   "en": "Data plays a critical role in causal learning, in at least the following ways:"
+  },
+  {
+   "type": "p",
+   "en": "Causal structure discovery methods. These can automatically extract cause-effect relationships from data, either entirely from observations or, more effectively, in combination with domain expertise expressed through a specification like that shown above. Engineers can examine, validate, and revise these learned structures, closing the loop between automated discovery and human oversight. A variety of mature approaches exist, which are able to infer which variables influence others and in what direction. Importantly, modern solutions can learn causal structures not only from structured data (e.g., tabular monitoring metrics) but also from unstructured sources such as requirements, design documents, and natural language logs, leveraging again LLMs to extract causal relationships directly from text. Such capabilities make it possible to formalize any type of knowledge about the system into an explicit causal model."
+  },
+  {
+   "type": "p",
+   "en": "Fitting. However the causal structure is obtained (from data or expert specification), data remains essential to quantify the relationships—for example, to parameterize structural equations in an SCM or conditional distributions in a CBN."
+  },
+  {
+   "type": "p",
+   "en": "Validation. Data also enables validation of assumptions: If observations contradict a human-specified relation, the modeler can revisit whether the assumption is wrong or whether the data is simply insufficient."
+  },
+  {
+   "type": "p",
+   "en": "Causal inference. With a model in hand, engineers can query it in a proactive mode—asking what-if questions—or retroactively through counterfactual what-would-have-happened-if questions, to simulate scenarios that may impact the effect variable(s) of interest. Continuing the self-driving car example, engineers can test: What is the effect of a combined change in [Weather] and [Road Surface] on [Braking Distance]? and how degraded [Object Detection Accuracy] affects [Braking Decision] under different [Vehicle Speeds]. Or they can run counterfactual root cause analysis, such as: Would a collision have been avoided if the [Software Version] had been different? As a further illustration, consider a microservice system where engineers aim to improve the [latency] of the Checkout service. A causal model, learned from monitoring data (logs, metrics, traces) and optionally refined by engineers, may relate latency to factors such as request rate, CPU and memory usage, inter-service latency (e.g., calls to Payment or Inventory), service topology (synchronous vs. asynchronous calls), load-balancing strategy, and number of replicas. Typical dependencies might include: higher [request rate] → higher [CPU] → higher [latency]; more [replicas] → lower per-instance [CPU]; and [load-balancing strategy] → [CPU] → [latency]. With such a model, engineers can pose what-if questions: What if we increase [replicas]? What if we change [load-balancing]? What if a synchronous call becomes asynchronous?, predicting causal effects on [latency]. Unlike ML dashboards, which can be distorted by confounding factors (e.g., “more replicas cause higher latency” simply because replicas increase under high load), a causal model supports true intervention analysis, helping engineers simulate actions, isolate confounders, and anticipate their impact."
+  },
+  {
+   "type": "p",
+   "en": "There are multiple ways to instantiate this step, depending on the task and the chosen causal reasoning framework. The most direct approach is to estimate the causal effect of actions—either those to take or those that could have been taken—to support tasks such as performance prediction, test generation, or root cause analysis. With existing tools such as PyWhy, causal effect estimates can be produced with confidence intervals and validated through techniques such as refutation tests."
+  },
+  {
+   "type": "p",
+   "en": "Alternatively, causal models can be combined with other reasoning components, such as LLM-powered AI agents capable of approximate reasoning. Recent work shows how a causal model can guide an LLM in generating performance-critical configurations for microservice testing. In such setups, the causal model may inject causal knowledge into the LLM’s context or act as a consistency checker to ensure outputs respect established causal relations. In some settings, the aim is not to estimate causal effects but simply to uncover cause-effect relationships. For instance, in root cause analysis, causal models often help traverse the graph to identify likely failure causes, sometimes using heuristics such as weighted edges to approximate influence."
+  },
+  {
+   "type": "p",
+   "en": "The instantiation of a CSE solution depends on several factors: the available inputs (specification and structured/unstructured data), the SE task, the type of causal model (from simple graphs to fully parameterized models), the chosen inference approach (effect estimation, attribution, counterfactuals, graph traversal), and whether it is combined with tools such as LLMs. Next, we review how causal methods are currently used in software engineering."
+  },
+  {
+   "type": "h",
+   "en": "Where We Are and What Is Next"
+  },
+  {
+   "type": "p",
+   "en": "The growing footprint of causal reasoning in SE. Recent review studies, including our own, show a growing academic interest in applying causal methods to SE, with more than 90 papers mapped across major digital libraries. With few exceptions, most existing works can be viewed as instances of the CSE framework, typically applying a specific causal learning or inference method to an SE problem. These studies highlight the benefits of combining reasoning with data, especially when both causal discovery and inference are used. Main areas of application (Figure 2) include:"
+  },
+  {
+   "type": "p",
+   "en": "Fault localization: Causal graphs are used to model distributed systems and trace failure-propagation chains, especially in microservices. Most work focuses on learning causal structures (e.g., service-dependency graphs), while true causal inference—such as counterfactual root cause analysis— remains uncommon. Extracted graphs are often handed to ranking or graph-traversal algorithms, for example, PageRank. In debugging, however, causal inference is more prominent, with models derived from programs used for statistical fault localization and program repair."
+  },
+  {
+   "type": "p",
+   "en": "Testing is naturally causal: Choosing an input implicitly involves predicting outcomes under hypothetical conditions. CSE operationalizes this reasoning. It has been applied to self-driving cars, microservices, cyber-physical systems, and metamorphic testing."
+  },
+  {
+   "type": "p",
+   "en": "Prediction: Causal modeling enables predictions free from confounding, unlike correlational ML. Applications include estimating design factors (e.g., reuse success), maintenance (refactoring) impact, and fault prediction."
+  },
+  {
+   "type": "p",
+   "en": "Although relatively few works implement a full discovery and inference pipeline, the range of causal applications is expanding. Opportunities also exist earlier in the lifecycle, such as requirements elicitation and design exploration, where what-if reasoning is highly valuable."
+  },
+  {
+   "type": "p",
+   "en": "Quality attributes. Most work targets reliability, some performance. Applications to security and safety remain rare, despite causal models’ explanatory power being potentially useful for certification."
+  },
+  {
+   "type": "p",
+   "en": "Tools. Causal discovery and inference tooling is maturing rapidly. The PyWhy ecosystem (e.g., causal-learn, dowhy, EconML), IBM’s SPSS Amos, and the Tetrad toolbox are notable examples. While these are general-purpose tools, the growth of CSE is likely to spur SE-specific extensions (e.g., for testing or debugging), and conversely, SE practices may help improve causal tooling, echoing the two-way synergy already observed between ML and SE."
+  },
+  {
+   "type": "p",
+   "en": "Practical challenges and pathways to adoption. Despite the promise shown in the literature, CSE is not yet ready to supplant today’s DDSE solutions. Its adoption in industry will depend on addressing several practical challenges."
+  },
+  {
+   "type": "p",
+   "en": "Expertise barriers. Although causal models are interpretable, using them effectively still requires familiarity with causal thinking and with some statistical foundations (e.g., structure discovery, model fitting, causal inference). Most engineering teams today have limited exposure to these concepts."
+  },
+  {
+   "type": "p",
+   "en": "Pathway to adoption: Promote incremental adoption through tools that scaffold causal thinking, such as PyWhy, supported by tutorials, examples, and domain-specific case studies."
+  },
+  {
+   "type": "p",
+   "en": "Data quality and model stability. As with ML, causal inference relies on data that sufficiently capture the relevant variables. Yet many SE datasets—logs, metrics, traces, issues, commits—are noisy, incomplete, sparse, or biased. Unlike physical systems, software behavior is driven by discrete events, rare failures, and non-stationary processes. Consequently, causal structures inferred purely from observational SE data can be unstable, limiting their generalizability."
+  },
+  {
+   "type": "p",
+   "en": "Pathway to adoption: Establish robustness checks and refutation tests as standard practice, a procedure still largely missing in today’s SE causal literature. These include falsification tests, placebo tests (detecting effects where none should exist), subset refutation (testing consistency across time windows), simulated confounders (sensitivity to missing variables), and bootstrapping for stability assessment. Such practices, supported by libraries like DoWhy, are essential for determining whether causal conclusions are trustworthy enough for engineering use."
+  },
+  {
+   "type": "p",
+   "en": "Integration with existing workflows and tools. Most organizations depend on established continuous integration/continuous deployment (CI/CD) pipelines, observability stacks, testing frameworks, and debugging tools. Introducing causal models requires integration rather than replacement."
+  },
+  {
+   "type": "p",
+   "en": "Pathway to adoption: Develop CSE plug-ins for existing SE tools (e.g., test generators, performance profilers, failure analyzers) so causal reasoning enhances current practices. Like ML, causal reasoning consumes data, but it allows engineers to guide, constrain, and interpret outputs in causal terms. Positioning CSE as an augmentation layer atop mature ML tooling will significantly increase the likelihood of industrial adoption."
+  },
+  {
+   "type": "p",
+   "en": "Computational and tooling maturity. Although causal inference libraries are improving, they are not yet as turnkey, scalable, or optimized as mainstream ML toolkits. Inference can be computationally heavy, and automated discovery requires careful validation."
+  },
+  {
+   "type": "p",
+   "en": "Pathway to adoption: Invest in efficient, domain-specific, SE-tailored implementations, cloud-based causal services, and high-level abstractions that hide complexity behind intuitive interfaces."
+  },
+  {
+   "type": "p",
+   "en": "Organizational resistance and cultural change. Adopting causal modeling requires a shift in how engineers reason about systems. Many teams, accustomed to correlational ML tools, may view causal modeling as too theoretical or demanding."
+  },
+  {
+   "type": "p",
+   "en": "Pathway to adoption: Highlight success stories and industrial case studies that show tangible benefits, for example, in terms of fewer failures, more effective tests, and clearer explanations. Demonstrated value will be key to cultural adoption."
+  },
+  {
+   "type": "h",
+   "en": "Long-term evolution."
+  },
+  {
+   "type": "p",
+   "en": "Reasoning- and data-driven integration. Beyond its immediate utility in SE tasks, CSE’s broader promise lies in integrating causal reasoning with data. This shift is already visible in research on LLMs’ emerging reasoning abilities and in LLM-powered AI agents, enabling planning and improving explainability. As AI (multi-)agent systems such as MetaGPT gain traction in software engineering, CSE is well positioned to support these emerging architectures."
+  },
+  {
+   "type": "p",
+   "en": "Logic besides statistics. While we assumed statistical causal inference, there are many flavors of causality. For instance, in law and forensic analysis, logic-based causality dominates, relying on formal rules and domain knowledge. Linguistic causality—based on semantic relations in text—is also valuable, especially when working with natural language artifacts such as requirements. A comprehensive CSE framework should treat these different forms of causality as first-class citizens."
+  },
+  {
+   "type": "p",
+   "en": "Human-in-the-loop. One key strength of causal models is their interpretability, making CSE naturally suited for human-machine co-design. Inspectable models support grounded, trustworthy responses, and experts can refine them by adding or removing causal links. In CSE, engineers are collaborators rather than spectators; we depart from any “push-button” vision of fully autonomous SE, as trustworthy systems cannot be built without humans in the loop."
+  },
+  {
+   "type": "p",
+   "en": "Ethical concerns. Ethical concerns around AI must not be overlooked. Beyond well-known issues (e.g., safety, privacy, fairness) now under regulatory scrutiny, a subtler risk is the erosion of human judgment and creativity as AI systems grow more capable. In SE, powerful assistants may marginalize human decision making. An emerging counterpoint is the view of AI as provocateur rather than servant: a partner that challenges assumptions, surfaces biases, and stimulates critical thinking. The transparency of causal models naturally supports this reflective engagement. We fully embrace this view: AI can augment human intelligence only when humans remain actively involved."
+  }
+ ],
+ "tail": []
+}

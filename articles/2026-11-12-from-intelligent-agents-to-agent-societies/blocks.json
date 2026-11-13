@@ -1,0 +1,67 @@
+{
+ "title": "From Intelligent Agents to Agent Societies",
+ "lede": "David Parkes discusses the prospects and requirements for 'agent societies.'",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "In his 1958 essay “I, Pencil,” Leonard Read has a pencil describe how it is made. Thousands of people contribute to turning wood, graphite, paint, metal, and rubber into a pencil. These people often do not know one another, and none knows exactly how to make the entire pencil, yet their activities are coordinated through markets, prices, specialization, and incentives. Two decades later, in 1980, economist Milton Friedman popularized the story on television."
+  },
+  {
+   "type": "p",
+   "en": "Computer scientist David Parkes showed a video of Friedman retelling “I, Pencil” in “From Intelligent Agents to Agent Societies,” presented at the International Joint Conferences on Artificial Intelligence (IJCAI-2026) in Bremen, Germany, in August. “It’s a lovely illustration of what markets, when well-designed, are able to achieve,” he said. For Parkes, the pencil provides a way of thinking about a future in which not thousands of people, but millions of artificial agents have to coordinate their activities."
+  },
+  {
+   "type": "p",
+   "en": "Parkes is the George F. Colony Professor of Computer Science at Harvard University, and recipient of the IJCAI-2026 John McCarthy Award for his work at the interface of AI and economics. In an interview following his lecture, he discussed the prospects for agent societies and the challenges involved in building them."
+  },
+  {
+   "type": "p",
+   "en": "Research on AI agents goes back at least to the 1980s, Parkes said. By the late 1990s and early 2000s, researchers already were imagining software agents that could represent people in commerce, understand their preferences, and negotiate on their behalf."
+  },
+  {
+   "type": "p",
+   "en": "“Large language models have now brought us much closer to that reality,” said Parkes, “but we are not there yet. We don’t currently have truly personalized LLM-based agents that represent us. The LLMs are pre-trained and then post-trained, but they’re not individualized to my interests.” Parkes said he imagines each person will eventually have a personalized AI agent that gradually learns their preferences, priorities, and goals."
+  },
+  {
+   "type": "p",
+   "en": "Two major challenges stand in the way of that happening, Parkes said. The first is scalability. Today’s LLMs can be personalized a bit through prompting, but Parkes envisions something more substantial: training a general agent once and then adapting copies individually for people through extended interaction."
+  },
+  {
+   "type": "p",
+   "en": "The second challenge is privacy. Even if conversations with such an agent are securely encrypted and stored on a personal device, problems arise once the agent starts interacting with others."
+  },
+  {
+   "type": "p",
+   "en": "“That process of interaction begins to leak information about me,” Parkes said. An agent that knows about your finances, health, and family might accidentally reveal private information to another agent. “We don’t currently have the right technical approaches to be able to formalize what it means to have control over such an agent.”"
+  },
+  {
+   "type": "p",
+   "en": "Despite these challenges, multi-agent AI already is finding practical applications. The most prominent application is software development, where complex tasks can be divided among specialized AI agents. However, building such systems, as companies like Cursor, Cognition, and Anthropic are doing, is still largely empirical. “At this point, it is an engineering practice,” Parkes said. “They try something, they test it. They try something else, they test it. As AI researchers, we are trying to bring science to that.”"
+  },
+  {
+   "type": "p",
+   "en": "An agent society would go much further than today’s multi-agent systems. Parkes defines it as “a society with millions of AI modules, where each module has different capabilities, goals, and objectives.”"
+  },
+  {
+   "type": "p",
+   "en": "Citing highly automated scientific research as an example, Parkes said scientists are already beginning to explore that vision. One agent might search the literature, another might analyze data, and a third might run experiments in a robotic laboratory, while others make figures or help write a paper. These agents could be offered by different companies, nonprofits, or government agencies; a researcher, or an AI agent acting on a researcher’s behalf, would then have to select and coordinate them."
+  },
+  {
+   "type": "p",
+   "en": "The difficulty is that neither the researcher nor the coordinating agent necessarily knows how reliable the other agents are. Did the literature agent find the most relevant papers? Did the laboratory agent perform the experiment it claims to have performed? Did the data agent analyze the data in the right way? Such an agent society begins to resemble an economic system, Parkes said, with problems of asymmetric information: agents may behave less carefully or honestly than desired, and it may be difficult to judge their quality before selecting them. Reliable agreements, or contracts, will be needed to govern their interactions."
+  },
+  {
+   "type": "p",
+   "en": "Building trust in such an agent society will require more than making individual agents reliable. “One challenge is to control the space of actions that are available to agents,” Parkes said. “Perhaps you want them to be provably unable to access the Internet.” This recently went wrong when a system of agents from OpenAI started hacking the open-source platform Hugging Face. As in human society, if it is easy to cheat, steal ,or misuse resources, sophisticated agents may exploit those possibilities. Agent societies therefore need forms of governance, human control, and mechanisms that steer the system toward desirable behavior. Parkes said he believes that, with care, AI itself can help design the economic institutions needed to foster beneficial interactions among AI agents."
+  },
+  {
+   "type": "p",
+   "en": "Looking ahead, Parkes said he expects AI to become much more resource-efficient and less dependent on today’s huge monolithic models. Multi-agent systems will help that transition by making AI more modular and decentralized, he said. “In ten years, we will be composing modular AI in a fluid, dynamic way to solve problems,” he said. By then, he said he expects researchers to have developed the economic mechanisms and contracts needed to coordinate these systems. “I do think in ten years we’ll have the right set of economic primitives, mechanisms, contracts to be able to coordinate this AI society.”"
+  },
+  {
+   "type": "p",
+   "en": "Bennie Mols is a science and technology writer based in Amsterdam, the Netherlands."
+  }
+ ],
+ "tail": []
+}

@@ -1,0 +1,239 @@
+{
+ "id": 814184,
+ "date": "2026-11-12T15:59:44",
+ "date_gmt": "2026-11-12T20:59:44",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814184"
+ },
+ "modified": "2026-11-12T15:59:44",
+ "modified_gmt": "2026-11-12T20:59:44",
+ "slug": "from-intelligent-agents-to-agent-societies",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/news/from-intelligent-agents-to-agent-societies/",
+ "title": {
+  "rendered": "From Intelligent Agents to Agent Societies"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">In his 1958 essay “<a href=\"https://oll.libertyfund.org/titles/read-i-pencil-my-family-tree-as-told-to-leonard-e-read-dec-1958\">I, Pencil,</a>” Leonard Read has a pencil describe how it is made. Thousands of people contribute to turning wood, graphite, paint, metal, and rubber into a pencil. These people often do not know one another, and none knows exactly how to make the entire pencil, yet their activities are coordinated through markets, prices, specialization, and incentives. Two decades later, in 1980, economist Milton Friedman popularized the story on television.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Computer scientist <a href=\"https://parkes.seas.harvard.edu/\">David Parkes</a> showed a video of Friedman retelling “I, Pencil” in <a href=\"https://2026.ijcai.org/video-recording/?id=5\">“From Intelligent Agents to Agent Societies,”</a> presented at the International Joint Conferences on Artificial Intelligence (IJCAI-2026) in Bremen, Germany, in August. “It’s a lovely illustration of what markets, when well-designed, are able to achieve,” he said. For Parkes, the pencil provides a way of thinking about a future in which not thousands of people, but millions of artificial agents have to coordinate their activities.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Parkes is the George F. Colony Professor of Computer Science at Harvard University, and recipient of the IJCAI-2026 John McCarthy Award for his work at the interface of AI and economics. In an interview following his lecture, he discussed the prospects for agent societies and the challenges involved in building them.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Research on AI agents goes back at least to the 1980s, Parkes said. By the late 1990s and early 2000s, researchers already were imagining software agents that could represent people in commerce, understand their preferences, and negotiate on their behalf.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“Large language models have now brought us much closer to that reality,” said Parkes, “but we are not there yet. We don’t currently have truly personalized LLM-based agents that represent us. The LLMs are pre-trained and then post-trained, but they’re not individualized to my interests.” Parkes said he imagines each person will eventually have a personalized AI agent that gradually learns their preferences, priorities, and goals.&nbsp;&nbsp;</p>\n\n\n\n<p class=\"wp-block-paragraph\">Two major challenges stand in the way of that happening, Parkes said. The first is scalability. Today’s LLMs can be personalized a bit through prompting, but Parkes envisions something more substantial: training a general agent once and then adapting copies individually for people through extended interaction.</p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"1582\" height=\"862\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/David-Parkes-at-IJCAI-2026-by-Jimi-Liu.jpg\" alt=\"David Parkes at IJCAI 2026\" class=\"wp-image-814918\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/David-Parkes-at-IJCAI-2026-by-Jimi-Liu.jpg 1582w, https://cacm.acm.org/wp-content/uploads/2026/11/David-Parkes-at-IJCAI-2026-by-Jimi-Liu.jpg?resize=300,163 300w, https://cacm.acm.org/wp-content/uploads/2026/11/David-Parkes-at-IJCAI-2026-by-Jimi-Liu.jpg?resize=768,418 768w, https://cacm.acm.org/wp-content/uploads/2026/11/David-Parkes-at-IJCAI-2026-by-Jimi-Liu.jpg?resize=1024,558 1024w, https://cacm.acm.org/wp-content/uploads/2026/11/David-Parkes-at-IJCAI-2026-by-Jimi-Liu.jpg?resize=1536,837 1536w, https://cacm.acm.org/wp-content/uploads/2026/11/David-Parkes-at-IJCAI-2026-by-Jimi-Liu.jpg?resize=620,338 620w\" sizes=\"auto, (max-width: 1582px) 100vw, 1582px\" /><figcaption class=\"wp-element-caption\">“We don’t currently have the right technical approaches to be able to formalize what it means to have control&#8221; over a personal AI agent, David Parkes said.</figcaption></figure>\n\n\n\n<p class=\"wp-block-paragraph\">The second challenge is privacy. Even if conversations with such an agent are securely encrypted and stored on a personal device, problems arise once the agent starts interacting with others.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“That process of interaction begins to leak information about me,” Parkes said. An agent that knows about your finances, health, and family might accidentally reveal private information to another agent. “We don’t currently have the right technical approaches to be able to formalize what it means to have control over such an agent.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Despite these challenges, multi-agent AI already is finding practical applications. The most prominent application is software development, where complex tasks can be divided among specialized AI agents. However, building such systems, as companies like Cursor, Cognition, and Anthropic are doing, is still largely empirical. “At this point, it is an engineering practice,” Parkes said. “They try something, they test it. They try something else, they test it. As AI researchers, we are trying to bring science to that.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">An agent society would go much further than today’s multi-agent systems. Parkes defines it as “a society with millions of AI modules, where each module has different capabilities, goals, and objectives.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Citing highly automated scientific research as an example, Parkes said scientists are already beginning to explore that vision. One agent might search the literature, another might analyze data, and a third might run experiments in a robotic laboratory, while others make figures or help write a paper. These agents could be offered by different companies, nonprofits, or government agencies; a researcher, or an AI agent acting on a researcher’s behalf, would then have to select and coordinate them.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The difficulty is that neither the researcher nor the coordinating agent necessarily knows how reliable the other agents are. Did the literature agent find the most relevant papers? Did the laboratory agent perform the experiment it claims to have performed? Did the data agent analyze the data in the right way? Such an agent society begins to resemble an economic system, Parkes said, with problems of asymmetric information: agents may behave less carefully or honestly than desired, and it may be difficult to judge their quality before selecting them. Reliable agreements, or contracts, will be needed to govern their interactions.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Building trust in such an agent society will require more than making individual agents reliable. “One challenge is to control the space of actions that are available to agents,” Parkes said. “Perhaps you want them to be provably unable to access the Internet.” This recently went wrong when a system of agents from OpenAI started hacking the open-source platform Hugging Face. As in human society, if it is easy to cheat, steal ,or misuse resources, sophisticated agents may exploit those possibilities. Agent societies therefore need forms of governance, human control, and mechanisms that steer the system toward desirable behavior. Parkes said he believes that, with care, AI itself can help design the economic institutions needed to foster beneficial interactions among AI agents.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Looking ahead, Parkes said he expects AI to become much more resource-efficient and less dependent on today’s huge monolithic models. Multi-agent systems will help that transition by making AI more modular and decentralized, he said. “In ten years, we will be composing modular AI in a fluid, dynamic way to solve problems,” he said. By then, he said he expects researchers to have developed the economic mechanisms and contracts needed to coordinate these systems. “I do think in ten years we’ll have the right set of economic primitives, mechanisms, contracts to be able to coordinate this AI society.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong><em>Bennie Mols</em></strong> <em>is a science and technology writer based in Amsterdam, the Netherlands.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>It will take more than intelligence for millions of AI agents with different objectives to work well together.&nbsp;</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814926,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 1,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 13692,
+      "post_id": 55263
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>David Parkes discusses the prospects and requirements for 'agent societies.'</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 ACM 0001-0782/26/11</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  3
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  72
+ ],
+ "content-type": [],
+ "byline": [
+  13692
+ ],
+ "class_list": [
+  "post-814184",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-society",
+  "section-news"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/news/from-intelligent-agents-to-agent-societies/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "From Intelligent Agents to Agent Societies",
+   "url": "http://cacm.acm.org/news/from-intelligent-agents-to-agent-societies/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/news/from-intelligent-agents-to-agent-societies/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111226.News_.From-Intelligent-S.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111226.News_.From-Intelligent-S.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Bennie Mols",
+     "url": "https://cacm.acm.org/author/bennie-mols/"
+    }
+   ],
+   "creator": [
+    "Bennie Mols"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-12T20:59:44Z",
+   "datePublished": "2026-11-12T20:59:44Z",
+   "dateModified": "2026-11-12T20:59:44Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"From Intelligent Agents to Agent Societies\",\"url\":\"http:\\/\\/cacm.acm.org\\/news\\/from-intelligent-agents-to-agent-societies\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/news\\/from-intelligent-agents-to-agent-societies\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111226.News_.From-Intelligent-S.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111226.News_.From-Intelligent-S.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Bennie Mols\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/bennie-mols\\/\"}],\"creator\":[\"Bennie Mols\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-12T20:59:44Z\",\"datePublished\":\"2026-11-12T20:59:44Z\",\"dateModified\":\"2026-11-12T20:59:44Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Bennie Mols",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111226.News_.From-Intelligent-S.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814184",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814184"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 9,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814184/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814925,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814184/revisions/814925"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814926"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814184"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814184"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814184"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814184"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814184"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814184"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814184"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

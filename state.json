@@ -199,7 +199,31 @@
       "date": "2026-11-11T12:51:00",
       "link": "https://cacm.acm.org/blogcacm/orchestration-from-personal-sound-signature-to-personal-computation-signature/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 814184,
+      "pushed_at": "2026-11-13T15:27:00+08:00",
+      "title": "From Intelligent Agents to Agent Societies",
+      "date": "2026-11-12T15:59:44",
+      "link": "https://cacm.acm.org/news/from-intelligent-agents-to-agent-societies/",
+      "section": "News"
+    },
+    {
+      "id": 814238,
+      "pushed_at": "2026-11-13T15:27:00+08:00",
+      "title": "Reasoning Beyond Prediction: From Data-Driven to Causal Software Engineering",
+      "date": "2026-11-12T10:55:47",
+      "link": "https://cacm.acm.org/research/reasoning-beyond-prediction-from-data-driven-to-causal-software-engineering/",
+      "section": "Research"
+    },
+    {
+      "id": 814171,
+      "pushed_at": "2026-11-13T15:27:00+08:00",
+      "title": "Meta’s Laptop Surveillance Leak Damages Internal Trust",
+      "date": "2026-11-12T09:57:21",
+      "link": "https://cacm.acm.org/news/metas-laptop-surveillance-leak-damages-internal-trust/",
+      "section": "News"
     }
   ],
-  "last_check": "2026-11-12T15:48:23+08:00"
+  "last_check": "2026-11-13T15:25:49+08:00"
 }
