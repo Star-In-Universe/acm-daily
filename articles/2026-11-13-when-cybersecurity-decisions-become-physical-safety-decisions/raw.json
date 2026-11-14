@@ -1,0 +1,241 @@
+{
+ "id": 814278,
+ "date": "2026-11-13T14:48:25",
+ "date_gmt": "2026-11-13T19:48:25",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814278"
+ },
+ "modified": "2026-11-13T14:48:25",
+ "modified_gmt": "2026-11-13T19:48:25",
+ "slug": "when-cybersecurity-decisions-become-physical-safety-decisions",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/when-cybersecurity-decisions-become-physical-safety-decisions/",
+ "title": {
+  "rendered": "When Cybersecurity Decisions Become Physical Safety Decisions"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">In a conventional IT incident, isolating a compromised machine from the network is often a sensible first move. Now imagine that machine is part of the control environment for a hospital&#8217;s electrical distribution system or an airport terminal&#8217;s power infrastructure. Network isolation might stop unauthorized commands. It might also remove information that operators depend on to manage equipment safely. Whether the equipment itself changes state depends on the system architecture. That uncertainty is the point: a cybersecurity response has become an engineering decision.</p>\n\n\n\n<p class=\"wp-block-paragraph\">In my work designing electrical systems for critical facilities, I have learned to look at two kinds of connections. An electrical one-line diagram shows how power reaches essential loads. A network diagram shows how measurements, commands, and alarms travel between devices. Either drawing may be correct while still leaving out a consequential dependency. The question is not simply whether the network is secure, but what the physical system will do—and what its operators will know—when part of that network becomes unavailable.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Consider a hypothetical campus with two incoming power sources, local protective relays, and a supervisory system that displays breaker positions and supports remote operating procedures. A security team detects suspicious traffic to the supervisory system and isolates its network connection. That may be exactly the right containment action. The protective relays could continue to perform their local functions, and the power supply might remain uninterrupted. Yet operators may lose reliable visibility into equipment status just as they need to decide whether a load transfer is safe. The new risk is not necessarily that isolation trips a breaker. It is that the next human decision is made with incomplete or stale information.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This distinction changes how I think an incident playbook should be written. “Disconnect the affected controller” is a cybersecurity action, not a complete description of a safe operating state. Before an incident, teams should know which functions merely display information, which can issue control commands, which protections operate independently, and how equipment behaves when communications fail. They should also agree on how to verify the actual equipment state after telemetry has been interrupted. An automatic network response that is appropriate for one device may be inappropriate for another that participates in a time-sensitive physical process.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The need to account for physical consequences is not new NIST&#8217;s <a href=\"https://csrc.nist.gov/pubs/sp/800/82/r3/final\">Guide to Operational Technology (OT) Security</a> explicitly addresses the performance, reliability, and safety requirements of systems that interact with the physical world. Its newer <a href=\"https://csrc.nist.gov/pubs/sp/800/61/r3/final\">incident-response guidance</a> also places response and recovery within a broader risk-management process. What these principles demand in practice is cooperation across a boundary that organizations often maintain for good reasons: security professionals understand the threat and containment options; operating teams understand the process; and engineers understand how the electrical equipment and its safeguards are intended to behave. A sound decision needs all three perspectives.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I would therefore design incident responses around pre-agreed operating conditions rather than a single instruction to isolate or shut down. Depending on the facility, these might include continued operation with closely monitored, restricted access; loss of supervisory connectivity while verified local protections remain active; or a controlled transition to an engineered safe state. These are not universal recipes. Each condition needs site-specific hazard analysis, assigned decision authority, and a clear route back to normal operation. Sometimes prompt isolation is the safest choice. Sometimes containment must be coordinated with operations to avoid creating a second emergency.</p>\n\n\n\n<p class=\"wp-block-paragraph\">One useful test is a joint exercise that begins after the intrusion has already been detected. Suppose the engineering workstation is unavailable, several status indications are stale, and the facility must perform a scheduled electrical transfer. Who can authorize the next action? Which independent indications can confirm the position of the equipment? Can the planned transfer be postponed without compromising essential service? What evidence is required before the isolated system can be reconnected? Those questions expose weaknesses that a network-only penetration test or an electrical-only commissioning exercise may miss. An <a href=\"https://media.defense.gov/2025/Aug/13/2003779777/-1/-1/0/JOINT-GUIDE-FOUNDATIONS-FOR-OT-CYBERSECURITY-ASSET-INVENTORY-GUIDANCE.PDF\">accurate inventory</a> of both digital assets and their operating roles is a prerequisite.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Computing professionals have an important role in making those decisions less fragile. Interfaces can distinguish live measurements from last-known values. Control systems can separate monitoring privileges from switching authority, make commands traceable, and communicate the consequences of a lost connection. Recovery workflows can require evidence that both software integrity and physical operating conditions have been restored. None of these features substitutes for independent protection, interlocking, trained operators, or sound engineering. They make it less likely that a security team and an operations team will act on different understandings of the same system.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I believe the most useful measure of cyber-physical resilience is not simply whether a system blocks an attacker or stays online. It is whether the organization can still make safe, informed decisions while some of its digital capabilities are impaired. In a critical facility, disconnecting a device changes more than a network diagram. It may change what the people responsible for the physical system can see, verify, and control. That is why cybersecurity response and physical-system safety must be designed together—before either team is making decisions under pressure.</p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/Mridul-Agrawal.103026.BLOG-350.jpg\" alt=\"Mridul Agrawal\" class=\"wp-image-814972\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/Mridul-Agrawal.103026.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/11/Mridul-Agrawal.103026.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/11/Mridul-Agrawal.103026.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><strong><em>Mridul</em></strong><em><strong> Agrawal</strong>, PE, is an electrical engineer and technical author specializing in critical infrastructure, aviation, healthcare, and electrical power systems. His work focuses on infrastructure reliability, operational resilience, and the intersection of cybersecurity, operational technology, and physical safety.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>The most useful measure of cyber-physical resilience is whether an organization can still make safe, informed decisions while some of its digital capabilities are impaired.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 814983,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20590,
+      "post_id": 814276
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Why digital containment must account for the physical state it leaves behind.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  4,
+  7,
+  8
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20590
+ ],
+ "class_list": [
+  "post-814278",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-computing-profession",
+  "category-data-and-information",
+  "category-security-and-privacy",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/when-cybersecurity-decisions-become-physical-safety-decisions/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "When Cybersecurity Decisions Become Physical Safety Decisions",
+   "url": "http://cacm.acm.org/blogcacm/when-cybersecurity-decisions-become-physical-safety-decisions/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/when-cybersecurity-decisions-become-physical-safety-decisions/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111326.BLOG_.When-Cybersecurity-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111326.BLOG_.When-Cybersecurity-G.jpg"
+   },
+   "articleSection": "Computing Profession",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Mridul Agrawal",
+     "url": "https://cacm.acm.org/author/mridul-agrawal/"
+    }
+   ],
+   "creator": [
+    "Mridul Agrawal"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-13T19:48:25Z",
+   "datePublished": "2026-11-13T19:48:25Z",
+   "dateModified": "2026-11-13T19:48:25Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"When Cybersecurity Decisions Become Physical Safety Decisions\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/when-cybersecurity-decisions-become-physical-safety-decisions\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/when-cybersecurity-decisions-become-physical-safety-decisions\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111326.BLOG_.When-Cybersecurity-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111326.BLOG_.When-Cybersecurity-G.jpg\"},\"articleSection\":\"Computing Profession\",\"author\":[{\"@type\":\"Person\",\"name\":\"Mridul Agrawal\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/mridul-agrawal\\/\"}],\"creator\":[\"Mridul Agrawal\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-13T19:48:25Z\",\"datePublished\":\"2026-11-13T19:48:25Z\",\"dateModified\":\"2026-11-13T19:48:25Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Mridul Agrawal",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111326.BLOG_.When-Cybersecurity-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814278",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814278"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 6,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814278/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814984,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814278/revisions/814984"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814983"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814278"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814278"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814278"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814278"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814278"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814278"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814278"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

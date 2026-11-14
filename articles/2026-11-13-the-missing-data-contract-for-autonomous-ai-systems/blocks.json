@@ -1,0 +1,126 @@
+{
+ "title": "The Missing Data Contract for Autonomous AI Systems",
+ "lede": "Addressing the gap between an agent's proposal and subsequent actions.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "A purchase order can be wrong even when every technical check passes. Imagine a procurement agent that reads an inventory snapshot, sees a low stock level, and places a replenishment order. The payload conforms to its schema. The service account is authorized. The pipeline completed successfully. What the agent cannot see is a delayed warehouse event that would have changed the quantity. The order is valid as a transaction and wrong as a decision."
+  },
+  {
+   "type": "p",
+   "en": "I have encountered the underlying distinction repeatedly in enterprise data engineering: a successful job is not proof that its output is complete or current. In reporting systems, people often notice the discrepancy before acting. An autonomous agent may not. It can turn a stale number into a write against a production system in seconds."
+  },
+  {
+   "type": "p",
+   "en": "Existing data contracts are useful, but they address a different question. The Open Data Contract Standard, for example, describes data structure, semantics, and service expectations. Those agreements do not, by themselves, establish whether a particular action is justified at the instant an agent proposes it. That is the gap I want to address."
+  },
+  {
+   "type": "h",
+   "en": "A Contract for the Moment of Action"
+  },
+  {
+   "type": "p",
+   "en": "I propose an Action-Readiness Contract (ARC): a set of action-specific, machine-evaluable evidence requirements checked immediately before an autonomous system causes an external side-effect. ARC is a design proposal, not a deployed standard or a claim of measured performance. It would sit alongside existing identity, authorization, and policy controls—not replace them."
+  },
+  {
+   "type": "p",
+   "en": "The distinction matters. A model can explain why a purchase seems sensible, but it should not be able to waive a missing lineage record or approve its own spending limit. The gate that evaluates action readiness must operate outside the model, under a versioned policy controlled by the application and security owners. This follows the separation of policy decision and enforcement familiar from zero-trust architecture."
+  },
+  {
+   "type": "h",
+   "en": "Five Checks, Evaluated Together"
+  },
+  {
+   "type": "p",
+   "en": "For each proposed action, ARC evaluates five predicates against a bounded snapshot of evidence. Each check returns PASS, FAIL, or UNKNOWN, together with a reason code. UNKNOWN is not silently treated as PASS."
+  },
+  {
+   "type": "p",
+   "en": "Freshness. The evidence must be recent enough for the action, and the source must be sufficiently complete. An event timestamp alone is not enough when late-arriving events are common; the system also needs a watermark or equivalent completeness signal. Streaming research explains why event time and processing time differ. A two-minute threshold might be appropriate for a shipment release, while a planning forecast may tolerate hours. Neither is a universal default: the owner must set the threshold according to operational risk."
+  },
+  {
+   "type": "p",
+   "en": "Provenance. The system must be able to identify which records and versions informed the decision. I would require every mandatory evidence reference to resolve to a stable source or snapshot. W3C PROV-O provides useful concepts for recording entities, activities, and agents. A model confidence score is not a substitute for traceable evidence."
+  },
+  {
+   "type": "p",
+   "en": "Authorization. Permission to call a tool is not permission to perform every action through it. A procurement agent might be allowed to query orders but not commit purchases above a delegated spending limit. The gate checks the principal, operation, resource scope, approval requirements, and current policy as close to execution as practical. This also reduces the risk that a permission revoked after planning remains effective at commit time."
+  },
+  {
+   "type": "p",
+   "en": "Observability. A trace identifier must connect the proposed action, its evidence, the policy decision, and the eventual outcome. W3C Trace Context and OpenTelemetry describe how execution context can be propagated. They do not guarantee a durable business audit record; the application must create one before the external side effect."
+  },
+  {
+   "type": "p",
+   "en": "Operational safety. Even a justified action can fail operationally. Retries can duplicate purchases; downstream systems can time out after accepting a request. ARC therefore checks idempotency, rate and monetary limits, dependency health, and whether compensation or escalation is available. These controls are established distributed-systems practices, applied explicitly at the agent’s action boundary."
+  },
+  {
+   "type": "h",
+   "en": "Where The Gate Belongs"
+  },
+  {
+   "type": "p",
+   "en": "Figure 1 places the evidence checks beneath a conventional runtime policy-enforcement flow. Its upper portion covers tool access, user permission, task and data scope, approval, and risk. Its lower portion adds ARC evidence checks for freshness, provenance, and observability. Authorization and operational safety are represented in the broader enforcement logic. A real implementation would evaluate all five ARC predicates within one decision, using the same request identifier and policy version."
+  },
+  {
+   "type": "p",
+   "en": "The decision rule is intentionally conservative. ALLOW requires all five predicates to pass. A failed authorization or operational-safety check results in DENY. Missing evidence, an incomplete freshness signal, or another unresolved check results in HOLD. A hold is not an endless retry loop: it needs an expiry, an escalation route, or a defined fallback. If the evidence changes before commit, the affected checks must run again."
+  },
+  {
+   "type": "p",
+   "en": "Consider the inventory example. The schema is valid and the agent has purchasing permission, but the warehouse watermark has not advanced beyond the period required to establish stock availability. ARC would place the order on HOLD until the missing event arrives or a human resolves the uncertainty. This is a hypothetical illustration, not a benchmark result."
+  },
+  {
+   "type": "h",
+   "en": "How to Determine Whether ARC is Worth the Cost"
+  },
+  {
+   "type": "p",
+   "en": "An architecture that blocks every risky action can also block legitimate work. That trade-off needs measurement. The useful comparison is not ARC versus an entirely unprotected agent; it is ARC versus a baseline with schema validation, API permissions, and normal application logging."
+  },
+  {
+   "type": "p",
+   "en": "I would replay the same proposed actions through both designs, injecting delayed events, broken lineage references, revoked delegation, duplicate requests, and audit-storage failures. The principal measures would be unsafe-action rate, false-hold rate, evidence completeness, p95 gate latency, and the time needed to reconstruct a disputed decision. The test should report confidence intervals, workload characteristics, and operational overhead, not only the number of prevented actions."
+  },
+  {
+   "type": "p",
+   "en": "This creates falsifiable hypotheses: ARC should reduce unsafe writes under the same fault conditions; false holds must stay within a service-defined limit; and the added latency must fit the action’s budget. If it does not meet those conditions, the policy or architecture needs revision. That emphasis on measurable risk and operational governance is consistent with the NIST AI Risk Management Framework."
+  },
+  {
+   "type": "h",
+   "en": "Who Owns the Contract?"
+  },
+  {
+   "type": "p",
+   "en": "The data producer owns timestamps, lineage, and completeness signals. The application owner defines the consequences of a wrong action and the acceptable freshness window. Security owns delegation and policy enforcement. The platform team operates the gate and its audit path. Without clear ownership, action readiness becomes another checklist that is easy to bypass."
+  },
+  {
+   "type": "p",
+   "en": "I would introduce ARC in shadow mode first, recording what the gate would have decided without blocking production. The next stage would enable HOLD on a small number of high-consequence operations, with a clear escalation process. Only after teams understand false holds, latency, and audit reliability would I recommend broader enforcement. Shadow-mode observations would be evaluation data—not evidence that ARC has already been adopted or proven effective."
+  },
+  {
+   "type": "p",
+   "en": "To make the proposal testable by others, the next useful artifacts would be a decision-record schema, a reference evaluator, and a reproducible fault corpus. Independent teams should be able to find cases where the checks prevent a bad action and cases where they impose unnecessary friction. Both findings matter."
+  },
+  {
+   "type": "p",
+   "en": "Data contracts have helped engineering teams agree on what data means and how it should arrive. Autonomous systems need one more agreement: what evidence must be present before software is permitted to act on that data."
+  },
+  {
+   "type": "p",
+   "en": "Disclosure: Generative AI tools assisted in drafting and language refinement of portions of this post and in generating Figure 1 from the author’s architectural specifications. The author originated the central concept, proposed framework, and technical direction and accepts responsibility for the final manuscript, its claims, and citations."
+  }
+ ],
+ "tail": [
+  "## References",
+  "1. Open Data Contract Standard (ODCS). Bitol; https://bitol.io/",
+  "2. Rose, S., Borchert, O., Mitchell, S., and Connelly, S. Zero Trust Architecture. NIST Special Publication 800-207 (2020); https://doi.org/10.6028/NIST.SP.800-207",
+  "3. Akidau, T. et al. The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing. Proceedings of the VLDB Endowment 8, 12 (2015), 1792–1803; https://doi.org/10.14778/2824032.2824076",
+  "4. PROV-O: The PROV Ontology. W3C Recommendation (2013); https://www.w3.org/TR/prov-o/",
+  "5. Trace Context. W3C Recommendation. W3C; https://www.w3.org/TR/trace-context/",
+  "6. OpenTelemetry. Context Propagation; https://opentelemetry.io/docs/concepts/context-propagation/",
+  "7. Tabassi, E. Artificial Intelligence Risk Management Framework (AI RMF 1.0). NIST AI 100-1 (2023); https://doi.org/10.6028/NIST.AI.100-1",
+  "8. OWASP GenAI Security Project. OWASP Top 10 for LLM Applications: Excessive Agency (LLM06:2025); https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+  "Aditya Ranjan is a Senior Data Engineer with more than 16 years of experience in enterprise data engineering, distributed systems, and cloud-based data infrastructure. His interests include data reliability, governance, and the engineering foundations of autonomous AI."
+ ]
+}

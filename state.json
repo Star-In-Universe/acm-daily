@@ -223,7 +223,31 @@
       "date": "2026-11-12T09:57:21",
       "link": "https://cacm.acm.org/news/metas-laptop-surveillance-leak-damages-internal-trust/",
       "section": "News"
+    },
+    {
+      "id": 814278,
+      "pushed_at": "2026-11-14T15:07:01+08:00",
+      "title": "When Cybersecurity Decisions Become Physical Safety Decisions",
+      "date": "2026-11-13T14:48:25",
+      "link": "https://cacm.acm.org/blogcacm/when-cybersecurity-decisions-become-physical-safety-decisions/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 814189,
+      "pushed_at": "2026-11-14T15:07:01+08:00",
+      "title": "The Missing Data Contract for Autonomous AI Systems",
+      "date": "2026-11-13T14:42:32",
+      "link": "https://cacm.acm.org/blogcacm/the-missing-data-contract-for-autonomous-ai-systems/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 814180,
+      "pushed_at": "2026-11-14T15:07:01+08:00",
+      "title": "Should Multiple AI Agents Collaborate Under Governance, Auditability, and Regulatory Constraints in a Global Financial Institution?",
+      "date": "2026-11-13T11:12:50",
+      "link": "https://cacm.acm.org/blogcacm/should-multiple-ai-agents-collaborate-under-governance-auditability-and-regulatory-constraints-in-a-global-financial-institution/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-13T15:25:49+08:00"
+  "last_check": "2026-11-14T15:06:18+08:00"
 }
