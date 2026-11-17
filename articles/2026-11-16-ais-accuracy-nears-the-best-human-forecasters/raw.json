@@ -1,0 +1,241 @@
+{
+ "id": 814448,
+ "date": "2026-11-16T14:15:09",
+ "date_gmt": "2026-11-16T19:15:09",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814448"
+ },
+ "modified": "2026-11-16T14:15:09",
+ "modified_gmt": "2026-11-16T19:15:09",
+ "slug": "ais-accuracy-nears-the-best-human-forecasters",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/news/ais-accuracy-nears-the-best-human-forecasters/",
+ "title": {
+  "rendered": "AI&#8217;s Accuracy Nears the Best Human Forecasters"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">When business leaders, government officials, and others seek predictability in a highly unpredictable world, they turn to forecasts. Historically, the most accurate prognostications have come from a group of humans called <a href=\"https://web.stanford.edu/~knutson/jdm/mellers15.pdf\"><em>superforecasters</em></a><em>,</em> who weigh probabilities and analyze questions before reaching conclusions.</p>\n\n\n\n<p class=\"wp-block-paragraph\">These individuals—the top 2% of forecasters—perform about 30% better than professional intelligence analysts with access to classified information, according to <a href=\"https://web.stanford.edu/~knutson/jdm/mellers15.pdf\">research</a> conducted by <a href=\"https://psychology.sas.upenn.edu/people/barbara-mellers\">Barbara Mellers</a> and <a href=\"https://mgmt.wharton.upenn.edu/profile/tetlock/\">Philip Tetlock</a>. But now things are getting more complicated as AI forecasting enters the picture.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“AI has transformed trading in prediction markets and in financial markets more generally,” said <a href=\"https://www.columbia.edu/~rs328/\">Rajiv Sethi</a>, a professor of economics at Barnard College, Columbia University, and an external professor at the Santa Fe Institute. “Now there’s a question of whether superforecasters will become obsolete due to the AI revolution.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">According to <a href=\"https://www.forecastbench.org/\">ForecastBench</a>, a benchmarking tool that scores AI models against human forecasters, model accuracy has climbed steadily over the past two years, reaching near parity with superforecasters. Yet parity isn’t judgment, and a growing number of observers are concerned that profit incentives and a lack of visibility into how prediction systems function could invite trouble.</p>\n\n\n\n<p class=\"wp-block-paragraph\">A growing question is whether it’s acceptable to trade explanation for accuracy. “We’re not yet at a point where anyone is willing to take the best forecasting models and rely on them for high-stakes decisions,” said <a href=\"https://ezrakarger.com/index.html\">Ezra Karger</a>, a senior economist at the Federal Reserve Bank of Chicago who leads the team that built ForecastBench.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Guessing Games</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">It is not surprising that forecasters would turn to AI to unravel complex geopolitical and economic events. LLMs can digest thousands of pages of reports in seconds and spot connections that humans miss. They excel at predicting the next word—though that’s far from predicting the outcome of world events.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Already, a handful of startups are looking to reinvent the way forecasting takes place. While the approaches of these firms, including <a href=\"https://futuresearch.ai/\">FutureSearch</a>, <a href=\"https://www.mantic.com/\">Mantic</a>, and <a href=\"https://soothlabs.com/\">Sooth Labs</a> vary, all rely on a frontier language model and software that decomposes questions, directs searches, weighs conflicting information, and returns a calibrated probability with a written rationale.</p>\n\n\n\n<p class=\"wp-block-paragraph\">For example, U.K.-based Mantic describes its mission as predicting “like an expert human forecaster but with digital speed and scale.” The firm focuses on geopolitics, business, policy, and technology anywhere from one week to one year out. Sooth Labs claims that it “delivers reliable forecasts to the questions that matter most,” helping “allocate capital, manage risk, and act with insight, not instinct.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Those claims have faced at least one public test. In the <a href=\"https://www.metaculus.com/tournament/metaculus-cup-summer-2026/\">Metaculus Cup</a>, Mantic’s system finished fourth against 539 human forecasters. Entrants had predicted the top bot would score 40% compared to human predictions, yet Mantic topped 80%.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Tests like this are possible because predictions eventually play out in the real world, and scoring across many forecasts separates skill from luck. “One critical factor is gathering important context, and the other is reasoning about the context, weighing this evidence, and coming up with a forecast,” said <a href=\"https://institute-tue.ellis.eu/person/sgoel\">Shashwat Goel</a>, a former research intern at Meta and currently a Ph.D. student at the ELLIS Institute in Tübingen, Germany.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Goel, who <a href=\"https://openforecaster.github.io/\">studies ways to train and evaluate AI forecasters</a>, pointed out that there’s little uniformity in the prediction space. Forecast methods can vary greatly across questions and across human and machine systems. A U.S. general election or interest rate hike produces mountains of data, while a conflict in sub-Saharan Africa or software release date may hinge on an obscure document.</p>\n\n\n\n<p class=\"wp-block-paragraph\">AI’s real edge is sheer scale. Many human superforecasters are hobbyists who enjoy the process but face time limitations, Goel said. Models can search relentlessly, yet there’s a catch: faster retrieval doesn’t mean better judgment. “Right now, most performance is driven by the quality of web search,” he explained.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Blind Spots</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Gauging the accuracy of AI prediction systems remains tricky. “Success” depends on the criteria a scoring system applies—typically a <a href=\"https://library.virginia.edu/data/articles/a-brief-on-brier-scores\">Brier score</a>, which measures how far a forecaster’s assigned probability landed from the outcome. Yet, scoreboards look backward, so it can take months or even years to learn whether a prediction was correct.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"https://en.wikipedia.org/wiki/Backtesting\">Backtests</a> speed the process. They work because a model’s training ends at a fixed cutoff date. Events after that date remain unknown to the model, even though they have already taken place. So, while developers can score a model based on settled questions, they may inadvertently feed it information that wasn’t known on the date of the forecast. “It’s very easy for information to leak into a system beyond the cutoff date, and that can reveal the answer,” Goel said.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Guarding against this problem is a significant challenge. It’s difficult to build a closed model or rebuild the information environment as a frozen snapshot. Backtests, no matter how elaborate, can miss this data leakage and produce skewed results. In addition, system builders don’t always adhere to best practices—and sometimes their <a href=\"https://arxiv.org/abs/2506.00723\">evaluation methods</a> are “sloppy,” said <a href=\"https://danielpaleka.com/\">Daniel Paleka</a>, a Ph.D. student who has studied AI forecasting at ETH Zurich’s SPY Lab.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Paleka is not skeptical of AI’s forecasting ability—he believes it can complement human forecasters through smart data aggregation—but he’s concerned benchmark scores can be wildly inaccurate without a frozen snapshot of the Internet. His testing has revealed that AI forecasting is “broadly reasonable but not ingenious.” Systems roughly match smart humans over the short term, but long-term accuracy remains an open question.</p>\n\n\n\n<p class=\"wp-block-paragraph\">There’s another issue: recruiting superforecasters is slow and costly. As a result, ForecastBench frequently measures today’s models against scores that humans posted roughly two years ago and then applies statistical adjustments. So, what appears to be a dead heat may fall within a margin of error. The takeaway? It is essential not to “overstate” results, Karger said.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Making Prophets</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">AI in prediction markets introduces a different problem. Venues like <a href=\"https://kalshi.com/\">Kalshi</a> and <a href=\"https://polymarket.com/\">Polymarket</a> now accommodate AI agents on their trading platforms. Yet accuracy and profitability are distinct things, Sethi said. An agent might make money by baiting rival bots into desirable responses, then trading against them. An accurate forecast could lose out to one that can generate and profit from short-term volatility. And because prediction markets are zero-sum, if agents consistently beat unassisted humans, the trading population eventually narrows to agents and <a href=\"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5714122\">insiders</a>.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The success of AI prediction largely hinges on trust, Karger said. Right now, no one knows why model accuracy is improving—or how precise AI forecasting might become. “People don’t trust black boxes to make forecasts,” he added. There’s also a need to improve methodologies. For example, every ForecastBench result currently rests on a yes-or-no question, leaving continuous outcomes and high-value, high-consequence events untouched and unmeasured. The team is working to expand the benchmark to these domains.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Paleka suggests that the solution, at least for now, is to pair human judgment and AI so that each can handle what it does best. Karger sets a higher bar: “If we get to the point where automated forecasts are being used in decision making at companies, policy groups, and the government, it would only be because people trust these models and understand what is happening under the hood.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Samuel Greengard</strong> is an author and journalist based in West Linn, OR, USA.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>AI models&#8217; forecasting accuracy has climbed steadily and is nearing parity with the best human forecasters.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 815037,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 148,
+      "post_id": 297
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>AI's ability to digest voluminous data has been parlayed into geopolitical, business, and economic forecasting.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 ACM 0001-0782/26/11</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  6,
+  7
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  72
+ ],
+ "content-type": [],
+ "byline": [
+  148
+ ],
+ "class_list": [
+  "post-814448",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-applications",
+  "category-data-and-information",
+  "section-news"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/news/ais-accuracy-nears-the-best-human-forecasters/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "AI&#8217;s Accuracy Nears the Best Human Forecasters",
+   "url": "http://cacm.acm.org/news/ais-accuracy-nears-the-best-human-forecasters/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/news/ais-accuracy-nears-the-best-human-forecasters/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111626.News_.AIs-Accuracy-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111626.News_.AIs-Accuracy-G.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Samuel Greengard",
+     "url": "https://cacm.acm.org/author/samuel-greengard/"
+    }
+   ],
+   "creator": [
+    "Samuel Greengard"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-16T19:15:09Z",
+   "datePublished": "2026-11-16T19:15:09Z",
+   "dateModified": "2026-11-16T19:15:09Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"AI&#8217;s Accuracy Nears the Best Human Forecasters\",\"url\":\"http:\\/\\/cacm.acm.org\\/news\\/ais-accuracy-nears-the-best-human-forecasters\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/news\\/ais-accuracy-nears-the-best-human-forecasters\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111626.News_.AIs-Accuracy-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111626.News_.AIs-Accuracy-G.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Samuel Greengard\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/samuel-greengard\\/\"}],\"creator\":[\"Samuel Greengard\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-16T19:15:09Z\",\"datePublished\":\"2026-11-16T19:15:09Z\",\"dateModified\":\"2026-11-16T19:15:09Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Samuel Greengard",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111626.News_.AIs-Accuracy-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814448",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814448"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 8,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814448/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815049,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814448/revisions/815049"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815037"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814448"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814448"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814448"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814448"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814448"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814448"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814448"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

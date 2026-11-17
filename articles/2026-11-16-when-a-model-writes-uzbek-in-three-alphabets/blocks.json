@@ -1,0 +1,51 @@
+{
+ "title": "When a Model Writes Uzbek in Three Alphabets",
+ "lede": "Some users will read an answer in a different language as a sign that the model wasn’t built for them.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "When a team in Tashkent or Almaty ships an AI feature, whether a support bot, menu search, or voice-note parsing, the first debate is almost always about the model: which one understands Uzbek, whether to use a Kazakhstan-built model, whether GPT is good enough. Most failures happen upstream of the model. One user writes Uzbek in Cyrillic, another in Latin, a third in Latin with three different apostrophes, and many messages are partly Russian. A model that looks strong on a benchmark behaves very differently on that stream."
+  },
+  {
+   "type": "p",
+   "en": "The script problem is about to get harder. Uzbekistan began moving from Cyrillic to Latin script in 1993; the deadline for the change slipped from 2000 to 2005, 2010, and then 2023, and both scripts remain in wide use. On October 21, 2026, Uzbekistan President Shavkat Mirziyoyev signed a law revising the Latin alphabet itself: from April 22, 2027, sh becomes Ş, ch becomes Ç, o‘ becomes Ö, and g‘ becomes Ğ, with no single deadline for the switch. Uzbek text will arrive in three written forms, because old text and typing habits remain. Even today, o‘ is typed as oʻ, o’, o` or o’, since the correct character isn’t on a standard keyboard. A person reads one word; your search index, tokenizer, and string matching see four. Kazakhstan’s own Latin transition still has no timeline, and Kazakh online is mostly Cyrillic, with Russian mixed in mid-sentence."
+  },
+  {
+   "type": "p",
+   "en": "What do the benchmarks say? KazMMLU, comprised of about 23,000 questions in Kazakh and Russian, offers two lessons. Global frontier models lead by a wide margin: with Kazakh instructions, GPT-4o averages 76.7% accuracy, while two Kazakh-specialized eight-billion-parameter models land around 38–39%. And results depend on the language of the instructions in ways that vary by model: GPT-4o barely moves between English and Kazakh instructions, while in the KazMMLU paper’s tables DeepSeek V3 falls from 76.9% to 45.5%. That is one model in one run, but the practical lesson holds: test with the exact prompt you will ship."
+  },
+  {
+   "type": "p",
+   "en": "TUMLU is unusual in testing both scripts. On Kazakh, all three tested models performed better in the Cyrillic script, and Latin-script prompts often pushed them into output that resembled Tatar. On Uzbek, the script made little difference (Claude 3.5 Sonnet scored 67.9 in Cyrillic, and 68.6 in Latin), because Uzbek text online is split more evenly. The paper also carries a warning: Uzbek looked most difficult partly because its questions were modeled on university entrance exams. Comparing languages by one number from someone else’s benchmark mostly compares the people who wrote the questions."
+  },
+  {
+   "type": "p",
+   "en": "Three more gaps matter for products. Code-switching is barely studied: researchers working on Kazakh-Russian translation found no public parallel corpus and built one of 618 sentences. For voice, the Whisper paper found that recognition error roughly halves with every sixteen-fold increase in training data for a language, so strong Russian recognition says nothing about Uzbek. And tokenizers can turn the same text into sequences up to fifteen times longer depending on the language, which moves price, latency, and how much history fits in context. Count tokens per message for each language and script in your own traffic before you sign off on unit economics."
+  },
+  {
+   "type": "p",
+   "en": "So normalize before the model. Detect language and script per message, not per user profile: the same person may type Latin on a phone in the morning and Cyrillic on a laptop at night. Map all apostrophe variants to one canonical character in a copy used for search and matching, and keep the original. Index both scripts, using transliteration tables built with a native speaker and tested on real dish, street, and product names. Don’t convert Kazakh to Latin before the model for consistency’s sake, since TUMLU suggests Cyrillic works better. Reply in the script the user wrote in. And store the alphabet version as a data field, so that a search conducted after April 2027 finds a word in any spelling without relabeling the archive."
+  },
+  {
+   "type": "p",
+   "en": "Then build your own evaluation set from real requests, split into strata: Uzbek Cyrillic, Uzbek Latin (soon in both orthographies), Kazakh, Russian, mixed messages, and voice. Score each stratum separately; if most traffic is Russian, an overall average will hide a failure on Uzbek Cyrillic. Use native-speaker labelers from different generations, since people schooled before and after the switch to Latin write differently, and trust an LLM judge only on strata where you have checked it against human ratings."
+  },
+  {
+   "type": "p",
+   "en": "Finally, treat fallback as a product decision. Some users will accept a Russian reply to an Uzbek question; others will read it as a sign that the product wasn’t built for them. When confidence is low, ask a clarifying question in the user’s language or offer buttons. In payments, safety, or account blocks, route to a person who speaks the language. Offer Russian as a choice rather than switching silently, and log every fallback with its language and script, because a month of logs shows where the model fails systematically."
+  },
+  {
+   "type": "p",
+   "en": "Where to start? Pull a week of real messages and label them by language and script. It takes a couple of days and shows what traffic you are actually serving. You can swap a model in a week; your normalization layer and evaluation set will outlast several model changes and the move to Uzbekistan’s new Latin alphabet."
+  },
+  {
+   "type": "p",
+   "en": "Disclosure: The views expressed are my own and do not necessarily reflect those of my employer."
+  },
+  {
+   "type": "p",
+   "en": "Ivan Lapa is a product manager at Uzum Tezkor in Tashkent, Uzbekistan. He previously worked on courier products at Yandex Pro."
+  }
+ ],
+ "tail": []
+}

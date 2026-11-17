@@ -247,7 +247,23 @@
       "date": "2026-11-13T11:12:50",
       "link": "https://cacm.acm.org/blogcacm/should-multiple-ai-agents-collaborate-under-governance-auditability-and-regulatory-constraints-in-a-global-financial-institution/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 814442,
+      "pushed_at": "2026-11-17T16:37:01+08:00",
+      "title": "When a Model Writes Uzbek in Three Alphabets",
+      "date": "2026-11-16T16:51:22",
+      "link": "https://cacm.acm.org/blogcacm/when-a-model-writes-uzbek-in-three-alphabets/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 814448,
+      "pushed_at": "2026-11-17T16:37:01+08:00",
+      "title": "AI’s Accuracy Nears the Best Human Forecasters",
+      "date": "2026-11-16T14:15:09",
+      "link": "https://cacm.acm.org/news/ais-accuracy-nears-the-best-human-forecasters/",
+      "section": "News"
     }
   ],
-  "last_check": "2026-11-16T15:23:20+08:00"
+  "last_check": "2026-11-17T16:36:26+08:00"
 }
