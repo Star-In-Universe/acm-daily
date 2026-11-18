@@ -1,0 +1,80 @@
+{
+ "title": "What Happened in Fall 2026: AI and P vs NP",
+ "lede": "OpenAI's proof that the Exponential Time Hypothesis is false and other new findings support my iconoclastic belief that P equals NP.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "Theoreticians will never forget 2026. When I left Massachusetts in the summer for a coast-to-coast trip, research in my field, theoretical computer science, was still done the way math had been done for the previous several millennia. Sure, artificial intelligence seemed to be getting better, but hadn’t we been there before? It was natural to be a little skeptical."
+  },
+  {
+   "type": "p",
+   "en": "But when I arrived in California to attend a program on pseudorandomness at the Simons Institute for the Theory of Computing, I found the field transformed almost beyond recognition. Suddenly, every proof was AI-assisted, and all the talk was about swarms of AI agents and Lean autoformalization. Then, on September 8, OpenAI announced a solution to the Navier–Stokes Millennium Prize Problem. Still, the impact on theoretical computer science was hard to judge; this was a problem in fluid dynamics, not computer science. Maybe there was something about this problem that made it particularly easy for AI, plus apparently researchers working on the problem who had been using AI models for a while got very close. Maybe OpenAI had somehow used their ideas and just wrapped up the solution faster than them. But soon afterward, rumors started circulating that a merry gang at OpenAI was systematically attacking all major open problems in mathematics and theoretical computer science, and unbelievably solving a large fraction of them. One of these was a problem central to the program at the Simons Institute: BPL versus L, asking whether randomized algorithms using logarithmic memory can be “derandomized,” that is, simulated deterministically while still using logarithmic memory. Worse, these incredible AI feats were beyond the grasp of publicly available models; only the companies’ internal models were strong enough."
+  },
+  {
+   "type": "p",
+   "en": "The atmosphere at the Institute became increasingly gloomy. People felt discouraged, hopeless; there didn’t seem to be any point in talking research anymore. I had looked forward to research collaborations with longtime colleagues; instead, we ended up sitting in adjacent rooms, each of us prompting an AI model."
+  },
+  {
+   "type": "p",
+   "en": "In the evening, I would come back to my rental in the El Cerrito hills to watch the sun set over the bay and San Francisco, where OpenAI’s headquarters are located, pondering the end of the field to which I had devoted 30 years."
+  },
+  {
+   "type": "p",
+   "en": "Then, another rumor started circulating: OpenAI was going to release its findings on October 6. When that date approached, there was a flood of papers on the Web, as researchers rushed to post whatever partial results they had in order to secure some recognition before the OpenAI release."
+  },
+  {
+   "type": "p",
+   "en": "When October 6 finally came and OpenAI indeed released its findings, there was a party at the Institute. Finally, the tension was released, and there was something to look at. But the atmosphere soon became somber again. The OpenAI dump contained solutions to hundreds of major mathematical problems, many of which had stood for decades and some for over a century. The proofs seemed to originate from an alien mind. They were the product of gigantic datacenters, scattered over desolate parts of the globe and effectively turning Mother Earth into a motherboard."
+  },
+  {
+   "type": "p",
+   "en": "The results in theoretical computer science were absolutely eye-popping. They were like looking into the next 20 years of theoretical breakthroughs, condensed into a single moment. Matrix multiplication, BPL, unique games, fast Fourier transform, and countless more; each would require a separate post to convey the magnitude of the improvement."
+  },
+  {
+   "type": "p",
+   "en": "Yet there was something that shocked many people even more. Many of the results countered long-held conjectures related to the grand challenge of theoretical computer science, and my main area of research: understanding the power and limitations of efficient computation. The most famous instance is the P versus NP problem, another Millennium Prize Problem, but one that has not yet been solved. In a nutshell, it asks whether a prominent class of problems—including the satisfiability of Boolean formulae and the traveling salesman problem—admits efficient algorithms, running in time n for a constant c on inputs of length n. Virtually all researchers believe these problems cannot be solved efficiently, and thus that P is not equal to NP."
+  },
+  {
+   "type": "p",
+   "en": "The AI results did not prove that P equals NP, but they did give several faster algorithms for a number of problems that were conjectured to not admit such improvements."
+  },
+  {
+   "type": "p",
+   "en": "First, on October 5, Alman and Vassilevska Williams released a paper explaining an algorithm discovered by an internal model at Anthropic that disproves the 3SUM conjecture. Stated in the 1990s, this conjecture asserts that deciding if three numbers sum to zero in a given list of n numbers requires time quadratic in n, a time which can be essentially achieved by an undergraduate-level algorithm using sorting and binary search. Anthropic’s new algorithm solves the problem in less time. This development is especially significant because in the last three decades, researchers had been using the 3SUM conjecture as a basis to settle the complexity of many other problems. The falsity of the 3SUM conjecture means that all these problems must now be re-examined."
+  },
+  {
+   "type": "p",
+   "en": "Second, as part of the October 6 dump, OpenAI presented an algorithm to multiply two n-bit integers faster than n log n, something conjectured to be impossible in the 1970s."
+  },
+  {
+   "type": "p",
+   "en": "And finally, the biggest blow of all: on October 26, OpenAI proved that the Exponential Time Hypothesis is false. Introduced in the late 1990s, this conjecture is a strengthening of the conjecture that P is different from NP. It states that Boolean satisfiability not only cannot be solved in time n for a constant c, but in fact requires exponential time, even for restricted formulae in conjunctive normal form with three literals per clause. Like the 3SUM conjecture, but to a much greater extent, this hypothesis underpinned decades of research. While the most glaring consequence of OpenAI’s discovery is to remove the basis for many subsequent works, the discovery has other consequences as well. For example, it yields a circuit-size lower bound of the order for a “half-explicit” function on n bits computable in exponential time, while we still do not know if explicit functions such as Boolean satisfiability admit circuits of size 10 n."
+  },
+  {
+   "type": "p",
+   "en": "These and other new findings actually support my iconoclastic belief that P equals NP. I have articulated the reasons behind my belief in my book Mathematics of the Impossible and in my 2018 blog post, “I believe P=NP.” Part of the “evidence” I collected is a comprehensive list of historical examples showing that researchers have consistently underestimated the power of efficient computation. Therefore, if one is to extrapolate from history, I believe the only reasonable direction is toward P equals NP. I expect that even more conjectures will fall soon."
+  },
+  {
+   "type": "p",
+   "en": "The future of the field lies with AI. The community must get together and build smarter and faster AI tools, trained by and publicly accessible to all researchers. With them, we will finally settle P vs NP."
+  }
+ ],
+ "tail": [
+  "## References",
+  "1. Simons Institute for the Theory of Computing. Pseudorandomness & High-Dimensional Expansion (2026).",
+  "2. OpenAI. On the Navier–Stokes Millennium Prize Problem (Sept. 8, 2026).",
+  "3. OpenAI. Sharing AI progress in mathematics (Oct. 6, 2026).",
+  "4. Clay Mathematics Institute. P vs NP.",
+  "5. Alman, J. and Vassilevska Williams, V. Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs. arXiv:2610.06783 (Oct. 5, 2026).",
+  "6. Gajentaan, A. and Overmars, M.H. On a class of O(n²) problems in computational geometry. Computational Geometry 5, 3 (1995), 165–185.",
+  "7. OpenAI. Integer multiplication below n log n. Manuscript dated Sept. 23, 2026; released Oct. 6, 2026.",
+  "8. Schönhage, A. and Strassen, V. Schnelle Multiplikation großer Zahlen. Computing 7 (1971), 281–292.",
+  "9. OpenAI. The Exponential Time Hypothesis Is False (Oct. 25, 2026).",
+  "10. Impagliazzo, R. and Paturi, R. Complexity of k-SAT. Proceedings of the 14th Annual IEEE Conference on Computational Complexity (1999), 237–240.",
+  "11. Jahanjou, H., Miles, E., and Viola, E. Local reduction. Information and Computation 261, Part 2 (2018), 281–295.",
+  "12. Viola, E. Mathematics of the Impossible: The Complexity of Computation. Cambridge University Press (Expected publication July 2027).",
+  "13. Viola, E. I believe P=NP. Thoughts (Feb. 16, 2018).",
+  "14. Viola, E. Thoughts (2026).",
+  "Emanuele Viola is a professor of computer science at Northeastern University, the author of numerous research papers and the forthcoming Cambridge University Press book Mathematics of the Impossible, and a former video game developer. His honors include an NSF CAREER Award, a Computational Complexity Conference Best Paper Award, and a SIAM Student Paper Prize; he blogs at Thoughts."
+ ]
+}

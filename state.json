@@ -263,7 +263,23 @@
       "date": "2026-11-16T14:15:09",
       "link": "https://cacm.acm.org/news/ais-accuracy-nears-the-best-human-forecasters/",
       "section": "News"
+    },
+    {
+      "id": 815176,
+      "pushed_at": "2026-11-18T16:00:24+08:00",
+      "title": "Sharing AI’s Gains",
+      "date": "2026-11-17T15:33:41",
+      "link": "https://cacm.acm.org/opinion/sharing-ais-gains/",
+      "section": "Opinion"
+    },
+    {
+      "id": 814531,
+      "pushed_at": "2026-11-18T16:00:24+08:00",
+      "title": "What Happened in Fall 2026: AI and P vs NP",
+      "date": "2026-11-17T13:34:07",
+      "link": "https://cacm.acm.org/blogcacm/what-happened-in-fall-2026-ai-and-p-vs-np/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-17T16:36:26+08:00"
+  "last_check": "2026-11-18T15:59:51+08:00"
 }

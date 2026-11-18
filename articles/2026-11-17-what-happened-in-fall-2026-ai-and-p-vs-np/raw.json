@@ -1,0 +1,241 @@
+{
+ "id": 814531,
+ "date": "2026-11-17T13:34:07",
+ "date_gmt": "2026-11-17T18:34:07",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814531"
+ },
+ "modified": "2026-11-17T14:11:18",
+ "modified_gmt": "2026-11-17T19:11:18",
+ "slug": "what-happened-in-fall-2026-ai-and-p-vs-np",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/what-happened-in-fall-2026-ai-and-p-vs-np/",
+ "title": {
+  "rendered": "What Happened in Fall 2026: AI and P vs NP"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">Theoreticians will never forget 2026.&nbsp;When I left Massachusetts in the summer for a coast-to-coast trip, research in my field, theoretical computer science, was still done the way math had been done for the previous several millennia.&nbsp;Sure, artificial intelligence seemed to be getting better, but hadn’t we been there before?&nbsp;It was natural to be a little skeptical.</p>\n\n\n\n<p class=\"wp-block-paragraph\">But when I arrived in California to attend a program on pseudorandomness<a href=\"#ref1\"><sup>1</sup></a> at the Simons Institute for the Theory of Computing, I found the field transformed almost beyond recognition. Suddenly, <em>every</em> proof was AI-assisted, and all the talk was about swarms of AI agents and Lean autoformalization.&nbsp;Then, on September 8, OpenAI announced a solution to the Navier–Stokes Millennium Prize Problem.<a href=\"#ref2\"><sup>2</sup></a> Still, the impact on theoretical computer science was hard to judge; this was a problem in fluid dynamics, not computer science.&nbsp;Maybe there was something about this problem that made it particularly easy for AI, plus apparently researchers working on the problem who had been using AI models for a while got very close. Maybe OpenAI had somehow used their ideas and just wrapped up the solution faster than them. But soon afterward, rumors started circulating that a merry gang at OpenAI was systematically attacking <em>all</em> major open problems in mathematics and theoretical computer science, and unbelievably solving a large fraction of them.&nbsp;One of these was a problem central to the program at the Simons Institute: BPL versus L, asking whether randomized algorithms using logarithmic memory can be “derandomized,” that is, simulated deterministically while still using logarithmic memory. Worse, these incredible AI feats were beyond the grasp of publicly available models; only the companies’ internal models were strong enough.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The atmosphere at the Institute became increasingly gloomy.&nbsp;People felt discouraged, hopeless; there didn’t seem to be any point in talking research anymore. I had looked forward to research collaborations with longtime colleagues; instead, we ended up sitting in adjacent rooms, each of us prompting an AI model.</p>\n\n\n\n<p class=\"wp-block-paragraph\">In the evening, I would come back to my rental in the El Cerrito hills to watch the sun set over the bay and San Francisco, where OpenAI’s headquarters are located, pondering the end of the field to which I had devoted 30 years.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Then, another rumor started circulating: OpenAI was going to release its findings on October 6.&nbsp;When that date approached, there was a flood of papers on the Web, as researchers rushed to post whatever partial results they had in order to secure some recognition before the OpenAI release.</p>\n\n\n\n<p class=\"wp-block-paragraph\">When October 6 finally came and OpenAI indeed released its findings,<a href=\"#ref3\"><sup>3</sup></a> there was a party at the Institute. Finally, the tension was released, and there was something to look at. But the atmosphere soon became somber again. The OpenAI dump contained solutions to hundreds of major mathematical problems, many of which had stood for decades and some for over a century.&nbsp;The proofs seemed to originate from an alien mind. They were the product of gigantic datacenters, scattered over desolate parts of the globe and effectively turning Mother Earth into a motherboard.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The results in theoretical computer science were absolutely eye-popping. They were like looking into the next 20 years of theoretical breakthroughs, condensed into a single moment. Matrix multiplication, BPL, unique games, fast Fourier transform, and countless more; each would require a separate post to convey the magnitude of the improvement.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Yet there was something that shocked many people even more. Many of the results countered long-held conjectures related to the grand challenge of theoretical computer science, and my main area of research: understanding the power and limitations of efficient computation. The most famous instance is the P versus NP problem,<a href=\"#ref4\"><sup>4</sup></a> another Millennium Prize Problem, but one that has not yet been solved. In a nutshell, it asks whether a prominent class of problems—including the satisfiability of Boolean formulae and the traveling salesman problem—admits efficient algorithms, running in time <em>n<sup>c</sup></em> for a constant <em>c</em> on inputs of length <em>n</em>. Virtually all researchers believe these problems cannot be solved efficiently, and thus that P is not equal to NP.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The AI results did not prove that P equals NP, but they did give several faster algorithms for a number of problems that were conjectured to not admit such improvements.</p>\n\n\n\n<p class=\"wp-block-paragraph\">First, on October 5, Alman and Vassilevska Williams released a paper<a href=\"#ref5\"><sup>5</sup></a> explaining an algorithm discovered by an internal model at Anthropic that disproves the 3SUM conjecture. Stated in the 1990s,<a href=\"#ref6\"><sup>6</sup></a> this conjecture asserts that deciding if three numbers sum to zero in a given list of <em>n</em> numbers requires time quadratic in <em>n</em>, a time which can be essentially achieved by an undergraduate-level algorithm using sorting and binary search. Anthropic’s new algorithm solves the problem in less time. This development is especially significant because in the last three decades, researchers had been using the 3SUM conjecture as a basis to settle the complexity of many other problems. The falsity of the 3SUM conjecture means that all these problems must now be re-examined.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Second, as part of the October 6 dump, OpenAI presented an algorithm to multiply two <em>n</em>-bit integers faster than <em>n</em> log <em>n</em>,<a href=\"#ref7\"><sup>7</sup></a> something conjectured to be impossible in the 1970s.<a href=\"#ref8\"><sup>8</sup></a></p>\n\n\n\n<p class=\"wp-block-paragraph\">And finally, the biggest blow of all: on October 26, OpenAI proved that the Exponential Time Hypothesis is false.<a href=\"#ref9\"><sup>9</sup></a> Introduced in the late 1990s,<a href=\"#ref10\"><sup>10</sup></a> this conjecture is a strengthening of the conjecture that P is different from NP. It states that Boolean satisfiability not only cannot be solved in time <em>n<sup>c</sup></em> for a constant <em>c</em>, but in fact requires exponential time, even for restricted formulae in conjunctive normal form with three literals per clause. Like the 3SUM conjecture, but to a much greater extent, this hypothesis underpinned decades of research. While the most glaring consequence of OpenAI’s discovery is to remove the basis for many subsequent works, the discovery has other consequences as well. For example, it yields a circuit-size lower bound of the order for a “half-explicit” function on <em>n</em> bits computable in exponential time,<a href=\"#ref11\"><sup>11</sup></a> while we still do not know if explicit functions such as Boolean satisfiability admit circuits of size 10 <em>n</em>.</p>\n\n\n\n<p class=\"wp-block-paragraph\">These and other new findings actually support my iconoclastic belief that P equals NP. I have articulated the reasons behind my belief in my book <em>Mathematics of the Impossible</em><a href=\"#ref12\"><sup>12</sup></a> and in my 2018 blog post, “I believe P=NP.”<a href=\"#ref13\"><sup>13</sup></a> Part of the “evidence” I collected is a comprehensive list of historical examples showing that researchers have consistently <em>underestimated</em> the power of efficient computation. Therefore, if one is to extrapolate from history, I believe the only reasonable direction is toward P equals NP. I expect that even more conjectures will fall soon.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The future of the field lies with AI. The community must get together and build smarter and faster AI tools, trained by and publicly accessible to all researchers. With them, we will finally settle P vs NP.</p>\n\n\n\n<h3 class=\"wp-block-heading\">References</h3>\n\n\n\n<p class=\"wp-block-paragraph\">1. Simons Institute for the Theory of Computing. <a href=\"https://live-simons-institute.pantheon.berkeley.edu/programs/pseudorandomness-high-dimensional-expansion\">Pseudorandomness &amp; High-Dimensional Expansion</a> (2026).</p>\n\n\n\n<p class=\"wp-block-paragraph\">2. OpenAI. <a href=\"https://openai.com/index/navier-stokes-solution/\">On the Navier–Stokes Millennium Prize Problem</a> (Sept. 8, 2026).</p>\n\n\n\n<p class=\"wp-block-paragraph\">3. OpenAI. <a href=\"https://openai.com/index/sharing-ai-progress-in-mathematics/\">Sharing AI progress in mathematics</a> (Oct. 6, 2026).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"ref4\"></a>4. Clay Mathematics Institute. <a href=\"https://www.claymath.org/millennium/p-vs-np/\">P vs NP.</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"ref5\"></a>5. Alman, J. and Vassilevska Williams, V. <a href=\"https://arxiv.org/abs/2610.06783\">Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs.</a> arXiv:2610.06783 (Oct. 5, 2026).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"ref6\"></a>6. Gajentaan, A. and Overmars, M.H. <a href=\"https://www.sciencedirect.com/science/article/pii/0925772195000222\">On a class of O(n²) problems in computational geometry.</a> <em>Computational Geometry 5</em>, 3 (1995), 165–185.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"ref7\"></a>7. OpenAI. <a href=\"https://github.com/openai/math/tree/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026\">Integer multiplication below n log n.</a> Manuscript dated Sept. 23, 2026; released Oct. 6, 2026.</p>\n\n\n\n<p class=\"wp-block-paragraph\">8. Schönhage, A. and Strassen, V. <a href=\"https://doi.org/10.1007/BF02242355\">Schnelle Multiplikation großer Zahlen.</a> <em>Computing 7</em> (1971), 281–292.</p>\n\n\n\n<p class=\"wp-block-paragraph\">9. OpenAI. <a href=\"https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026\">The Exponential Time Hypothesis Is False</a> (Oct. 25, 2026).</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"ref10\"></a>10. Impagliazzo, R. and Paturi, R. <a href=\"https://doi.org/10.1109/CCC.1999.766282\">Complexity of k-SAT.</a> <em>Proceedings of the 14th Annual IEEE Conference on Computational Complexity</em> (1999), 237–240.</p>\n\n\n\n<p class=\"wp-block-paragraph\">11. Jahanjou, H., Miles, E., and Viola, E. <a href=\"https://doi.org/10.1016/j.ic.2018.02.009\">Local reduction.</a> <em>Information and Computation 261</em>, Part 2 (2018), 281–295.</p>\n\n\n\n<p class=\"wp-block-paragraph\">12. Viola, E. <a href=\"https://www.ccs.neu.edu/home/viola/papers/moti.pdf\"><em>Mathematics of the Impossible: The Complexity of Computation.</em></a> Cambridge University Press (Expected publication July 2027).</p>\n\n\n\n<p class=\"wp-block-paragraph\">13. Viola, E. <a href=\"https://emanueleviola.wordpress.com/2018/02/16/i-believe-pnp/\">I believe P=NP.</a> <em>Thoughts</em> (Feb. 16, 2018).</p>\n\n\n\n<p class=\"wp-block-paragraph\">14. Viola, E. <a href=\"https://emanueleviola.wordpress.com/\">Thoughts</a> (2026).</p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/Emanuele-Viola.110526.BLOG-350.jpg\" alt=\"Emanuele Viola\" class=\"wp-image-815191\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/Emanuele-Viola.110526.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/11/Emanuele-Viola.110526.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/11/Emanuele-Viola.110526.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><strong><em>Emanuele Viola</em></strong> <em>is a professor of computer science at Northeastern University, the author of numerous research papers and the forthcoming Cambridge University Press book Mathematics of the Impossible, and a former video game developer. His honors include an NSF CAREER Award, a Computational Complexity Conference Best Paper Award, and a SIAM Student Paper Prize; he blogs at Thoughts</em>.<a href=\"#ref14\"><em><sup>14</sup></em></a></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>The OpenAI results gave faster algorithms for a number of problems that were conjectured to not admit such improvements.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 815193,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20597,
+      "post_id": 814529
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>OpenAI's proof that the Exponential Time Hypothesis is false and other new findings support my iconoclastic belief that P equals NP.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  7,
+  10
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20597
+ ],
+ "class_list": [
+  "post-814531",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-data-and-information",
+  "category-theory",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/what-happened-in-fall-2026-ai-and-p-vs-np/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "What Happened in Fall 2026: AI and P vs NP",
+   "url": "http://cacm.acm.org/blogcacm/what-happened-in-fall-2026-ai-and-p-vs-np/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/what-happened-in-fall-2026-ai-and-p-vs-np/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111626.BLOG_.What-Happened-S.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111626.BLOG_.What-Happened-S.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Emanuele Viola ",
+     "url": "https://cacm.acm.org/author/emanuele-viola/"
+    }
+   ],
+   "creator": [
+    "Emanuele Viola "
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-17T18:34:07Z",
+   "datePublished": "2026-11-17T18:34:07Z",
+   "dateModified": "2026-11-17T19:11:18Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"What Happened in Fall 2026: AI and P vs NP\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/what-happened-in-fall-2026-ai-and-p-vs-np\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/what-happened-in-fall-2026-ai-and-p-vs-np\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111626.BLOG_.What-Happened-S.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111626.BLOG_.What-Happened-S.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Emanuele Viola\\u00a0\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/emanuele-viola\\/\"}],\"creator\":[\"Emanuele Viola\\u00a0\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-17T18:34:07Z\",\"datePublished\":\"2026-11-17T18:34:07Z\",\"dateModified\":\"2026-11-17T19:11:18Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Emanuele Viola ",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111626.BLOG_.What-Happened-S.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814531",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814531"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 21,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814531/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815209,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814531/revisions/815209"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815193"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814531"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814531"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814531"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814531"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814531"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814531"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814531"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

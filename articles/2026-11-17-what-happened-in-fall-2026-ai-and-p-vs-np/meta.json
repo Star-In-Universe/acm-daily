@@ -1,0 +1,85 @@
+{
+ "title_zh": "2026年秋：AI与P vs NP",
+ "lede_zh": "OpenAI证明指数时间假设为假，支持P=NP信念。",
+ "summary": "2026年秋，理论计算机科学因AI发生剧变。作者在Simons研究所发现，AI辅助证明和Lean自动形式化成为常态。OpenAI于9月8日宣布解决纳维-斯托克斯千禧年问题，随后传闻其内部模型系统性地攻克数学与理论计算机科学的重大开放问题。10月6日，OpenAI发布数百个数学问题的解决方案，包括理论计算机科学的突破性结果：Alman和Vassilevska Williams于10月5日发表论文，用Anthropic内部模型发现的算法推翻3SUM猜想；OpenAI给出比n log n更快的整数乘法算法；10月26日，OpenAI证明指数时间假设（ETH）为假。这些结果动摇了长期持有的猜想，支持了作者认为P=NP的信念。作者认为，历史表明研究者低估了高效计算的能力，未来应共建公开可用的AI工具，最终解决P vs NP问题。",
+ "points": [
+  "2026年秋，AI辅助证明和Lean自动形式化在理论计算机科学中普及，OpenAI内部模型解决大量开放问题。",
+  "10月5日，Alman和Vassilevska Williams发表论文，用Anthropic内部模型发现的算法推翻3SUM猜想，该猜想曾用于判定许多问题的复杂性。",
+  "10月6日，OpenAI发布数百个数学问题的解决方案，包括比n log n更快的整数乘法算法。",
+  "10月26日，OpenAI证明指数时间假设（ETH）为假，该假设是P≠NP的强化版本，曾支撑数十年的研究。",
+  "这些结果支持作者P=NP的信念，作者认为历史表明研究者低估了高效计算的能力。",
+  "作者呼吁社区共建更智能、公开可用的AI工具，以最终解决P vs NP问题。"
+ ],
+ "terms": [
+  {
+   "en": "Exponential Time Hypothesis",
+   "zh": "指数时间假设"
+  },
+  {
+   "en": "P vs NP",
+   "zh": "P与NP问题"
+  },
+  {
+   "en": "3SUM conjecture",
+   "zh": "3SUM猜想"
+  },
+  {
+   "en": "BPL vs L",
+   "zh": "BPL与L问题"
+  },
+  {
+   "en": "Lean autoformalization",
+   "zh": "Lean自动形式化"
+  },
+  {
+   "en": "Navier–Stokes Millennium Prize Problem",
+   "zh": "纳维-斯托克斯千禧年问题"
+  },
+  {
+   "en": "derandomization",
+   "zh": "去随机化"
+  },
+  {
+   "en": "circuit-size lower bound",
+   "zh": "电路大小下界"
+  }
+ ],
+ "mindmap": {
+  "title": "AI冲击理论计算机科学",
+  "branches": [
+   {
+    "title": "背景：2026年秋的剧变",
+    "children": [
+     "AI辅助证明和Lean自动形式化普及",
+     "OpenAI内部模型解决大量开放问题",
+     "Simons研究所氛围从沮丧到震惊"
+    ]
+   },
+   {
+    "title": "关键事件与证据",
+    "children": [
+     "10月5日：3SUM猜想被推翻",
+     "10月6日：OpenAI发布数百个数学问题解决方案",
+     "10月26日：指数时间假设（ETH）被证明为假"
+    ]
+   },
+   {
+    "title": "影响与争议",
+    "children": [
+     "长期猜想被推翻，许多问题需重新审视",
+     "支持作者P=NP的信念",
+     "AI能力集中于公司内部模型，引发担忧"
+    ]
+   },
+   {
+    "title": "结论与呼吁",
+    "children": [
+     "历史表明研究者低估高效计算",
+     "社区应共建公开可用的AI工具",
+     "最终解决P vs NP问题"
+    ]
+   }
+  ]
+ },
+ "skip": []
+}
