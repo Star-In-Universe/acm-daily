@@ -1,0 +1,239 @@
+{
+ "id": 814565,
+ "date": "2026-11-18T17:52:46",
+ "date_gmt": "2026-11-18T22:52:46",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814565"
+ },
+ "modified": "2026-11-18T17:52:46",
+ "modified_gmt": "2026-11-18T22:52:46",
+ "slug": "ai-coding-shifts-cognitive-load-and-hits-developer-productivity",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/news/ai-coding-shifts-cognitive-load-and-hits-developer-productivity/",
+ "title": {
+  "rendered": "AI Coding Shifts Cognitive Load and Hits Developer Productivity"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">Traditional measurements of developer productivity—including lines of code written, number of commits, or tickets closed—capture only a small fraction of the work developers perform in the age of AI coding platforms.&nbsp;</p>\n\n\n\n<p class=\"wp-block-paragraph\">That’s why evaluating developer productivity with traditional tools has the potential to not only increase developer cognitive load, but could also lead to lower developer productivity. Because AI has changed the work developers do, the methods traditionally used to gauge developer productivity create the potential for increased developer mistakes, higher organizational operational failures, slower onboarding and knowledge transfer among teams, and developer burn-out and retention challenges.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“Measuring activity metrics alone pretty much never works,” said Jenna Butler, principal applied research science manager at Microsoft. “Is that really the goal, or is the goal to have good, secure software that meets the needs of the customer? That’s so hard to measure—you need to be a lot more creative.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">At the same time developer cognitive loads are shifting—and, some believe, increasing—the role of software developers is changing, as AI subsumes what used to be the principal job of a developer. The change in the developer job description from writing code to reviewing AI-assisted or generated code contributes to where, when, and how developers experience cognitive load.<a href=\"#_edn1\" id=\"_ednref1\"><sup>1</sup></a></p>\n\n\n\n<p class=\"wp-block-paragraph\">“Every developer who spent his whole life just writing software now has to rebuild himself into a manager,” said Asia Solnyshkina, founder and CEO at ProSense.digital, a consulting firm that builds software and AI products. “It doesn’t matter whether you manage real people or an AI machine, it’s still management. Management itself, taking responsibility for your actions, is exactly what creates the mental overload.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Today, organizations and teams all too often measure developer productivity based on surface activity metrics. But to improve productivity, reduce cognitive load, avoid risk, and improve the developer experience, experts say organizations and teams can focus on return on investment, adopt emerging productivity metrics, reduce friction before adding more AI into the software development lifecycle, assess the cost versus benefits of AI assisted coding—and more.&nbsp;</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>AI Coding Affects Developer Cognitive Load</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">As AI-assisted coding tools and agentic AI write more code, and developers spend more time reviewing code, developers are grappling with a shifting cognitive load. That’s because they must build understanding of code they didn’t write, check that the code actually does what was intended, and that it fits appropriately into the rest of the system.<a href=\"#_edn2\" id=\"_ednref2\"><sup>2</sup></a></p>\n\n\n\n<p class=\"wp-block-paragraph\">For developers, like everyone else, cognitive load increases as their brains work harder to understand something. Developers experience lower cognitive load when they work in an area where they have significant prior knowledge—like writing code—and increased cognitive load in an area where they lack familiarity.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Reading and reviewing code is a far different task than writing code, and one that imposes a higher cognitive load, said Felienne Hermans, a professor of computer science at Vrije Universiteit in Amsterdam, the Netherlands. “A goal of doing a pull request or analyzing code is to gain an understanding of what is happening with the code,” she said. “You might ask the person who wrote the code, and they tell you the reason. But at least you know what the intent is and even if you have to review fifty pull requests a day, you’ll have some fatigue.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">“This checking fatigue is also true for AI-generated code,” she said. “If developers are looking at AI-generated code, it seems to be fine, even if it isn’t. The result is that bad code will go in, and developers at the same time are not building mental models of what the code is designed to accomplish, which creates less and less understanding in the code base as time goes on.”</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>The Developer Productivity Challenge</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">Even before AI-assisted coding tools became more common, developer productivity did not lend itself particularly well to measurement. That’s because the factors involved in measuring developer productivity are complex.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“Developer productivity is a confounding factor because it is very hard to measure,” said Hermans. “Because managers don’t understand programming very well, they’ve tried to encapsulate it into something that is measurable, which takes the form of measuring lines of code and story points.” Story points estimate the effort involved to complete a developer task.<a href=\"#_edn3\" id=\"_ednref3\"><sup>3</sup></a></p>\n\n\n\n<p class=\"wp-block-paragraph\">Over time, the industry has developed frameworks designed to measure developer productivity, including:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>DORA: DevOps Research and Assessment, developed 2014-2018;</li>\n\n\n\n<li>SPACE: Satisfaction, Performance, Activity, Communication/Collaboration, and Efficiency and flow, developed in 2021; and</li>\n\n\n\n<li>DevEx: Developer Experience, developed in 2023.</li>\n</ul>\n\n\n\n<p class=\"wp-block-paragraph\">The three productivity frameworks have built upon each other over time and are used in different ways across industry to measure productivity.<a href=\"#_edn4\" id=\"_ednref4\"><sup>4</sup></a> DORA, which is the most widely utilized, is employed as an automated dashboard to track how fast teams ship code.<a href=\"#_edn5\" id=\"_ednref5\"><sup>5</sup></a> SPACE is used as a broad diagnostic checklist to ensure teams are committed to a broad measurement of productivity.<a href=\"#_edn6\" id=\"_ednref6\"><sup>6</sup></a> DevEx is used as a recurring developer survey and systems metric to pinpoint friction in a system.<a href=\"#_edn7\" id=\"_ednref7\"><sup>7</sup></a></p>\n\n\n\n<p class=\"wp-block-paragraph\">Little industry consensus exists on how to measure developer productivity; developers also lack confidence that the measurements organizations use adequately reflect the contributions they make to their organizations.<a href=\"#_edn8\" id=\"_ednref8\"><sup>8</sup></a><sup>,</sup><a href=\"#_edn9\" id=\"_ednref9\"><sup>9</sup></a></p>\n\n\n\n<p class=\"wp-block-paragraph\">As AI coding tools and agentic AI coding tools continue to evolve, the role of developers continues to shift towards managing code rather than writing it, which highlights one aspect of software development that is correlated with productivity: developer satisfaction.<a href=\"#_edn10\" id=\"_ednref10\"><sup>10</sup></a></p>\n\n\n\n<p class=\"wp-block-paragraph\">“From the developer experience perspective, one of the central aspects of whether things are going well is how motivated they are, and part of that motivation is that they have some kind of personal and professional pride in their work,” said Fabian Fagerholm, associate professor of computer science at Finland’s Aalto University. “Am I actually producing something of value? Am I the one producing the value, or am I just watching something else produce some value, and I’m supposed to be some kind of gatekeeper?”</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>How to Measure Developer Productivity Appropriately</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">While some aspects of measuring developer productivity in relation to AI-assisted coding have changed, others have not, said Butler, one of the authors of the original SPACE productivity framework paper. “A lot hasn’t changed and if anything, people are doubling down on what has never worked, not by lines of code or numbers of pull requests,” she said. “Suddenly, developer productivity matters a lot because there’s a lot of money on the line.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">For Matthew Skelton, co-author of <em>Team Topologies: Organizing Business and Technology for Fast Flow of Value</em>, measuring developer productivity boils down to building a system that is an effective and efficient steward of value and the flow of value across an organization.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“What technologies are appropriate to use?” he asked. “What are the criteria that is needed? Thinking about cognitive load, how can extraneous cognitive load be reduced within the flow of value? Those questions guide us towards using certain technologies in a certain way, because it is very much focused on the ongoing health of that value flow.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">This kind of evaluation holds true when it comes to adding AI tools to an organization. To effectively use such tools to enhance organizational value, organizations must create clearly defined boundaries of responsibility around AI use and assign accountability for outcomes related to focused areas of AI activity, Skelton said.</p>\n\n\n\n<p class=\"wp-block-paragraph\">In regard to more specific measurements of developer productivity, Butler noted the SPACE framework recommends examining several different categories of data to get a handle on developer productivity.<a href=\"#_edn11\" id=\"_ednref11\"><sup>11</sup></a>&nbsp;“Are my developers feeling like they are learning? Are they able to communicate well? What is the quality of the code?” Butler asked. “When developers are happy, they are usually churning out lots of good code.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">“You pick and choose a few metrics from totally different categories that hold each other somewhat in tension, and I think this is still the best way to measure productivity,” she added. “You become agnostic about the AI tool they are using and look at whether the organization is shipping more secure code, whether the number of incidents are down, what the code survivability is, and whether there are more bugs.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Nethanel Bar, co-founder and CEO at Coddy, a platform that teaches coding, noted that any assessment of developer productivity must be made in the context of how developers impact business development. “Phased roll-out of AI often proves more effective than full-fledged adoption right away, since it allows the team to discover the most beneficial ways to use the technology,” he said. “Adopting new tools gradually, not all at once, is the best way to figure out what works and what does not.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">For Fagerholm, the costs of using large language models (LLMs) are an appropriate question to consider in relation to developer productivity. “We aren’t completely certain how we should measure the cost of a developer using a LLM,” he said. “How can we compare productivity of a developer and an LLM if we think of productivity as the relationship between some kind of input or effort and the output that I get?”</p>\n\n\n\n<p class=\"wp-block-paragraph\">“Developers have a certain salary so we know roughly what they cost, but with an LLM, it has turned out to be very difficult to control costs because developers can rack up large bills trying out different things,” Fagerholm said. “The situation creates a challenge for companies trying to measure the productivity of LLM-assisted development, which are going to need to calculate to determine if it is worth using certain models for certain tasks.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>References</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">1. Developers’ Experience with Generative AI – First Insights from Empirical Mixed-Methods Field Study<em>, ICSE-SEIP ’26: Proceedings of the IEEE/ACM 48<sup>th</sup> International Conference on Software Engineering: Software Engineering in Practice</em>, Pages 259-268 (July 11, 2026); <a href=\"https://dl.acm.org/doi/10.1145/3786583.3786870\">https://dl.acm.org/doi/10.1145/3786583.3786870</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref2\" id=\"_edn2\"></a>2. Beyond the Hype: A Comprehensive Review of Current Trends in Generative AI Research, Teaching Practices, and Tools. <em>TiCSE 2024: 2024 Working Group Reports on Innovation and Technology in Computer Science Education</em>. Association for Computing Machinery (Jan. 23, 2025); <a href=\"https://dl.acm.org/doi/10.1145/3689187.3709614\">https://dl.acm.org/doi/10.1145/3689187.3709614</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref3\" id=\"_edn3\"></a>3. Agile Estimating and Planning, Mountain Goat Software;&nbsp;<a href=\"https://www.mountaingoatsoftware.com/books/agile-estimating-and-planning\">https://www.mountaingoatsoftware.com/books/agile-estimating-and-planning</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref4\" id=\"_edn4\"></a>4. Agile Alliance, Demystifying Story Points (July 14, 2017); <a href=\"https://agilealliance.org/resources/experience-reports/improving-estimation-story-points/\">https://agilealliance.org/resources/experience-reports/improving-estimation-story-points/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref5\" id=\"_edn5\"></a>5. Gitmore.io, What are DORA Metrics? A Practical Guide for Engineering Teams (July 20, 2026); <a href=\"https://gitmore.io/blog/dora-metrics-guide\">https://gitmore.io/blog/dora-metrics-guide</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref6\" id=\"_edn6\"></a>6. SPACE Framework, The SPACE Framework: A Complete Guide to Developer Productivity (Jan. 4, 2025); <a href=\"https://space-framework.com\">https://space-framework.com</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref7\" id=\"_edn7\"></a>7. DevEx: What Actually Drives Productivity, <em>Communications</em> (Nov. 1, 2023); <a href=\"https://cacm.acm.org/practice/devex-what-actually-drives-productivity/\">https://cacm.acm.org/practice/devex-what-actually-drives-productivity/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref8\" id=\"_edn8\"></a>8. SPACEX: Exploring Metrics with the SPACE Model for Developer Productivity (article pre-print), <em>Association for Computing Machinery</em> (Nov. 26, 2025); <a href=\"https://arxiv.org/html/2511.20955v1\">https://arxiv.org/html/2511.20955v1</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref9\" id=\"_edn9\"></a>9. JetBrains, The State of Developer Experience and Developer Productivity: What Developers Truly Want (Oct. 15, 2025); <a href=\"https://devecosystem-2025.jetbrains.com/productivity\">https://devecosystem-2025.jetbrains.com/productivity</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref10\" id=\"_edn10\"></a>10. Towards a Theory of Software Developer Job Satisfaction and Perceived Productivity, <em>IEEE Transactions on Software Engineering</em> (September 2019); <a href=\"https://bit.ly/3X7H60d\">https://bit.ly/3X7H60d</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a href=\"#_ednref11\" id=\"_edn11\"></a>11. The SPACE of Developer Productivity, <em>Communications</em> (June 1, 2021); <a href=\"https://cacm.acm.org/practice/the-space-of-developer-productivity/\">https://cacm.acm.org/practice/the-space-of-developer-productivity/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Amy Buttell</strong> is a Silver Spring, MD-based technology, legal, and business journalist, content creator, writer, and ghostwriter.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Developers working with agentic AI code must understand code they didn&rsquo;t write, make sure it works, and see that it fits into the rest of the system.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 815279,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 1,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20075,
+      "post_id": 776044
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>The role of software developers is changing as AI subsumes what used to be their principal job.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 ACM 0001-0782/26/11</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  4,
+  9
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  72
+ ],
+ "content-type": [],
+ "byline": [
+  20075
+ ],
+ "class_list": [
+  "post-814565",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-computing-profession",
+  "category-software-engineering-and-programming-languages",
+  "section-news"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/news/ai-coding-shifts-cognitive-load-and-hits-developer-productivity/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "AI Coding Shifts Cognitive Load and Hits Developer Productivity",
+   "url": "http://cacm.acm.org/news/ai-coding-shifts-cognitive-load-and-hits-developer-productivity/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/news/ai-coding-shifts-cognitive-load-and-hits-developer-productivity/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111826.News_.AI-Coding-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111826.News_.AI-Coding-G.jpg"
+   },
+   "articleSection": "Computing Profession",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Amy Buttell",
+     "url": "https://cacm.acm.org/author/amy-buttell/"
+    }
+   ],
+   "creator": [
+    "Amy Buttell"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-18T22:52:46Z",
+   "datePublished": "2026-11-18T22:52:46Z",
+   "dateModified": "2026-11-18T22:52:46Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"AI Coding Shifts Cognitive Load and Hits Developer Productivity\",\"url\":\"http:\\/\\/cacm.acm.org\\/news\\/ai-coding-shifts-cognitive-load-and-hits-developer-productivity\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/news\\/ai-coding-shifts-cognitive-load-and-hits-developer-productivity\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111826.News_.AI-Coding-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111826.News_.AI-Coding-G.jpg\"},\"articleSection\":\"Computing Profession\",\"author\":[{\"@type\":\"Person\",\"name\":\"Amy Buttell\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/amy-buttell\\/\"}],\"creator\":[\"Amy Buttell\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-18T22:52:46Z\",\"datePublished\":\"2026-11-18T22:52:46Z\",\"dateModified\":\"2026-11-18T22:52:46Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Amy Buttell",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111826.News_.AI-Coding-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814565",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814565"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 19,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814565/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815278,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814565/revisions/815278"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815279"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814565"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814565"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814565"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814565"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814565"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814565"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814565"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

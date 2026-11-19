@@ -279,7 +279,15 @@
       "date": "2026-11-17T13:34:07",
       "link": "https://cacm.acm.org/blogcacm/what-happened-in-fall-2026-ai-and-p-vs-np/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 814565,
+      "pushed_at": "2026-11-19T16:05:39+08:00",
+      "title": "AI Coding Shifts Cognitive Load and Hits Developer Productivity",
+      "date": "2026-11-18T17:52:46",
+      "link": "https://cacm.acm.org/news/ai-coding-shifts-cognitive-load-and-hits-developer-productivity/",
+      "section": "News"
     }
   ],
-  "last_check": "2026-11-18T15:59:51+08:00"
+  "last_check": "2026-11-19T16:05:12+08:00"
 }
