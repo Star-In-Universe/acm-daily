@@ -1,0 +1,145 @@
+{
+ "title_zh": "间谍外包：QScan与QTRouter揭秘",
+ "lede_zh": "国家资助黑客外包，美执法查封两大平台。",
+ "summary": "国家行为体将网络间谍活动外包给私营攻击供应商，形成“国家赋能”模式：客户购买托管中继网络和自动化扫描套件，而非自研工具。2026年8月26日，美国联邦当局查封了QScan和QTRouter两个互补黑客平台的域名。法庭文件显示，中国国家赞助的基础设施提供商QTFY（关联南京新九维网络科技公司）自2018年起运营这两个平台，客户包括中国国家安全部和解放军。QScan执行自动化侦察与漏洞扫描，QTRouter混淆攻击流量。攻击尝试涉及美参议院、卫生与公众服务部及电力设施，并确认利用NASA、三个能源部实验室、NIH、国防承包商和金融机构。执法通过查封硬编码的控制平面和服务域名，使平台全球失效。文章分析了闭环侦察、住宅IP网络混淆、硬编码基础设施的经济学、外包带来的归因挑战，以及检测与防御建议。",
+ "points": [
+  "QTFY自2018年运营QScan和QTRouter，客户包括中国国安部和解放军，2026年8月被美执法查封域名。",
+  "QScan使用RabbitMQ和Redis，集成200多个Python漏洞利用，实现无人工干预的扫描到利用闭环。",
+  "QTRouter基于OpenWrt和Clash，将攻击流量混入住宅IP和商业代理，使IP信誉防御失效。",
+  "硬编码控制域名带来部署简便，但成为单点故障，域名查封即瘫痪全球任务队列和认证通道。",
+  "外包基础设施从运营聚焦、规模经济、行动速度和归因掩护四方面改变间谍经济学，使小型单位获得顶级能力。",
+  "防御需多信号行为关联、DNS关系映射、边缘资产分段和出站过滤，并利用证书复用等指纹识别多租户基础设施。"
+ ],
+ "terms": [
+  {
+   "en": "state-enablement model",
+   "zh": "国家赋能模式"
+  },
+  {
+   "en": "managed relay networks",
+   "zh": "托管中继网络"
+  },
+  {
+   "en": "automated scanning suites",
+   "zh": "自动化扫描套件"
+  },
+  {
+   "en": "control-plane",
+   "zh": "控制平面"
+  },
+  {
+   "en": "closed-loop reconnaissance",
+   "zh": "闭环侦察"
+  },
+  {
+   "en": "proof-of-concept exploits",
+   "zh": "概念验证漏洞利用"
+  },
+  {
+   "en": "botnet-management systems",
+   "zh": "僵尸网络管理系统"
+  },
+  {
+   "en": "proxy network",
+   "zh": "代理网络"
+  },
+  {
+   "en": "OpenWrt firmware",
+   "zh": "OpenWrt固件"
+  },
+  {
+   "en": "Clash routing software",
+   "zh": "Clash路由软件"
+  },
+  {
+   "en": "DHCP pools",
+   "zh": "DHCP地址池"
+  },
+  {
+   "en": "IP reputation",
+   "zh": "IP信誉"
+  },
+  {
+   "en": "CIDR blocklists",
+   "zh": "CIDR黑名单"
+  },
+  {
+   "en": "hard-coded domains",
+   "zh": "硬编码域名"
+  },
+  {
+   "en": "multi-tenant networks",
+   "zh": "多租户网络"
+  },
+  {
+   "en": "Diamond Model of Intrusion Analysis",
+   "zh": "入侵分析钻石模型"
+  },
+  {
+   "en": "APT groups",
+   "zh": "APT组织"
+  },
+  {
+   "en": "egress filtering",
+   "zh": "出站过滤"
+  },
+  {
+   "en": "FQDN allowlists",
+   "zh": "全限定域名允许列表"
+  },
+  {
+   "en": "X.509 TLS certificates",
+   "zh": "X.509 TLS证书"
+  },
+  {
+   "en": "multi-tenant infrastructure",
+   "zh": "多租户基础设施"
+  }
+ ],
+ "mindmap": {
+  "title": "间谍外包\n平台揭秘",
+  "branches": [
+   {
+    "title": "背景与模式",
+    "children": [
+     "国家行为体外包攻击基础设施",
+     "QTFY运营QScan和QTRouter",
+     "客户含中国国安部和解放军"
+    ]
+   },
+   {
+    "title": "技术机制",
+    "children": [
+     "QScan闭环侦察自动利用",
+     "QTRouter混入住宅IP代理",
+     "硬编码域名集中控制"
+    ]
+   },
+   {
+    "title": "执法与证据",
+    "children": [
+     "2026年8月查封关键域名",
+     "攻击美参议院、NASA等机构",
+     "平台全球失效"
+    ]
+   },
+   {
+    "title": "影响与挑战",
+    "children": [
+     "外包改变间谍经济学",
+     "归因困难，钻石模型受挑战",
+     "IP信誉防御失效"
+    ]
+   },
+   {
+    "title": "防御建议",
+    "children": [
+     "多信号行为关联检测",
+     "边缘资产分段与出站过滤",
+     "证书复用指纹识别"
+    ]
+   }
+  ]
+ },
+ "skip": []
+}

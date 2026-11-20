@@ -287,7 +287,31 @@
       "date": "2026-11-18T17:52:46",
       "link": "https://cacm.acm.org/news/ai-coding-shifts-cognitive-load-and-hits-developer-productivity/",
       "section": "News"
+    },
+    {
+      "id": 814569,
+      "pushed_at": "2026-11-20T15:52:28+08:00",
+      "title": "The Problems of Sycophantic Chatbots",
+      "date": "2026-11-19T13:20:24",
+      "link": "https://cacm.acm.org/news/the-problems-of-sycophantic-chatbots/",
+      "section": "News"
+    },
+    {
+      "id": 814253,
+      "pushed_at": "2026-11-20T15:52:28+08:00",
+      "title": "The Public Mission of Academic Research in Computing",
+      "date": "2026-11-19T13:17:27",
+      "link": "https://cacm.acm.org/opinion/the-public-mission-of-academic-research-in-computing/",
+      "section": "Opinion"
+    },
+    {
+      "id": 814588,
+      "pushed_at": "2026-11-20T15:52:28+08:00",
+      "title": "When Espionage is Outsourced",
+      "date": "2026-11-19T09:25:33",
+      "link": "https://cacm.acm.org/news/when-espionage-is-outsourced/",
+      "section": "News"
     }
   ],
-  "last_check": "2026-11-19T16:05:12+08:00"
+  "last_check": "2026-11-20T15:51:34+08:00"
 }

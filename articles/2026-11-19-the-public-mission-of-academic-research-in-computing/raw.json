@@ -1,0 +1,202 @@
+{
+ "id": 814253,
+ "date": "2026-11-19T13:17:27",
+ "date_gmt": "2026-11-19T18:17:27",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?post_type=digital-library&#038;p=814253"
+ },
+ "modified": "2026-11-19T13:17:27",
+ "modified_gmt": "2026-11-19T18:17:27",
+ "slug": "the-public-mission-of-academic-research-in-computing",
+ "status": "publish",
+ "type": "digital-library",
+ "link": "https://cacm.acm.org/opinion/the-public-mission-of-academic-research-in-computing/",
+ "title": {
+  "rendered": "The Public Mission of Academic Research in Computing"
+ },
+ "content": {
+  "rendered": "<article>\n<div class=\"body\" lang=\"en\">\n<section id=\"sec1\" class=\"sec\">\n<p id=\"p-1\">Headline advances in computing are impressive. Many core ideas rest on academic foundations, but the frontier is increasingly shaped by industrial labs operating under nondisclosure and powered by resources few universities can match.<a class=\"reference-link xref xref-bibr\" href=\"#B1\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B1\"><sup>1</sup></a><sup>,</sup><a class=\"reference-link xref xref-bibr\" href=\"#B10\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B10\"><sup>10</sup></a> Left to industry alone, computing can become an uneven landscape: competitive markets often reward rapid iteration, proprietary advantage, and product fit at scale more than public intelligibility, long-horizon stewardship, or rigorous accounting of harms.</p>\n<p id=\"p-2\">Academic research can repay investment by producing public goods that can be inspected, taught, reused, and preserved for decades. Consistent with computing’s professional obligations to avoid harm and act in the public interest,<a class=\"reference-link xref xref-bibr\" href=\"#B2\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B2\"><sup>2</sup></a> these goods help fill gaps markets leave. One gap is epistemic: explanation sustained over decades through open questioning, measurement, and verification. The other is operational: the invention and long-term stewardship of services and artifacts that help keep computing dependable and beneficial for everyone.</p>\n</section>\n<section id=\"sec2\" class=\"sec\">\n<h2 class=\"heading\">The Epistemic Gap: Explanation through Questioning, Measurement, and Verification</h2>\n<p id=\"p-3\">We cannot control downstream adoption, incentives, or repurposing of the science and technology we release into the world. What enables scrutiny, safeguards, and defense when systems are misused or turned against the public is intelligibility: clear mechanisms, stated assumptions and limits, quantified uncertainty, foreseeable consequences, and life-cycle costs. For this reason, the public mission of academic computing is not only to invent, but to explain—to make computing, from foundations to applications, accountable through sustained questioning, measurement, and verification. When incentives push academic research to mirror industry, explanation recedes. Computing then drifts from cumulative science toward ephemeral engineering claims about opaque artifacts with poorly tracked harms. Those artifacts become everyday products, policies, and infrastructure, and allocate opportunities and risks in schools and hospitals, vehicles and factories, governments and homes. Misuse then becomes more difficult to detect, claims more difficult to contest, and defenses more difficult to build, especially for the most vulnerable.</p>\n<p id=\"p-4\">Thorough questioning is the starting point. Academic research can serve the public by widening the frame before optimization, scale, implementation cost, marketing momentum, and habit narrow it. We can ask who benefits, who is burdened, and how failures and externalities are distributed across populations and over time. We can translate public concerns and unspoken needs into technical questions that admit empirical answers. Universities are often positioned to pursue these questions without immediate commercial pressure, and to design studies that privilege long horizons, uncertainty, and user protections over short-run performance gains. This is also where academia can do work that markets underprioritize: accessible, inclusive, and localized design, including in low-resource settings; methods for safe and intelligible systems; and historical and philosophical scholarship that sharpens disciplinary self-knowledge, calibrates the scope and humility of our claims, and clarifies what is ethical.</p>\n<p id=\"p-5\">Rigorous measurement helps questions become answerable. Because deployed systems are complex empirical objects embedded in organizations and lives, computing needs stronger metrology for technical and sociotechnical systems: agreed definitions, calibration artifacts, stated measurement uncertainty, and inter-lab protocols so that results are reproducible and comparable over time. The goal is not merely better metrics, but tighter links from technical performance to human outcomes: safety, reliability, accessibility, privacy, and trust. Well-designed measurement makes explicit what remains unmeasured and where uncertainty persists. It also depends on shared instruments: benchmarks, conformance specifications, preregistered evaluation plans, and documentation that makes assumptions, populations, and life-cycle costs legible. Creating and maintaining these instruments is both a scientific contribution and a public service.</p>\n<p id=\"p-6\">Measurement can then inform verification and validation, helping turn evidence into trusted, cumulative knowledge. Before publication, this includes peer review and artifact evaluation; after publication it includes replication, refutation, adversarial testing, and post-deployment scrutiny. Careful peer review and artifact evaluation are essential scholarly labor, yet remain underincentivized and unevenly supported. Funders, universities, and professional societies should explicitly recognize high-quality reviewing and editorial work, support reviewer training, and treat artifact evaluation as research infrastructure rather than invisible volunteer labor.</p>\n<p id=\"p-7\">Verification would also benefit from a healthier publication ecosystem. Computing needs routine venues for replications, refutations, and negative or inconvenient results, alongside systematic adversarial testing. These outputs are not second class: they reduce recurring failures, temper overbroad generalization, and make deployments safer. A stable share of research portfolios can be reserved for verification work, and hiring and promotion criteria should explicitly value it.</p>\n<p id=\"p-8\">Rigorous explanation also requires access. Policy and contracting can ensure access for scrutiny of critical code, data, and trained models by researchers, civil society, journalists, regulators, and affected communities—through reproducible releases, secure research environments, or audited interfaces that preserve privacy and safety. Regulation and guidance increasingly establish expectations for independent scrutiny, risk assessment, and post-deployment monitoring, as illustrated by the EU Digital Services Act, the EU AI Act, and NIST’s AI Risk Management Framework.<a class=\"reference-link xref xref-bibr\" href=\"#B4\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B4\"><sup>4</sup></a><sup>,</sup><a class=\"reference-link xref xref-bibr\" href=\"#B5\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B5\"><sup>5</sup></a><sup>,</sup><a class=\"reference-link xref xref-bibr\" href=\"#B8\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B8\"><sup>8</sup></a> Meanwhile, some platform policy changes are restricting research access and deepening the “world’s growing information black box.”<a class=\"reference-link xref xref-bibr\" href=\"#B6\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B6\"><sup>6</sup></a> A fair principle is proportionality: the larger the claim or deployment, the stronger the evidence and access required for independent audit, replication, and ongoing monitoring.</p>\n</section>\n<section id=\"sec3\" class=\"sec\">\n<h2 class=\"heading\">The Operational Gap: Building and Maintaining the Public Stack</h2>\n<p id=\"p-9\">Vendors often undersupply shared capabilities that confer little proprietary advantage. Yet computing reaches its full potential when rigorous explanation is paired with durable, trusted services and artifacts that the public can use, inspect, adapt, and sustain beyond any single vendor’s terms and horizon. Even when capabilities are temporarily available, society inherits a single point of failure if critical infrastructure is controlled through proprietary interfaces or discretionary access. Business priorities can shift, access can be revoked, interfaces can be degraded, and the basis for oversight can vanish. Even critical scientific assets can disappear suddenly through political decisions or changes in government, as the large-scale removals of U.S. public data and tools in 2025 illustrated—underscoring the importance of data-preservation efforts by university libraries such as Harvard Law School Library.<a class=\"reference-link xref xref-bibr\" href=\"#B3\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B3\"><sup>3</sup></a><sup>,</sup><a class=\"reference-link xref xref-bibr\" href=\"#B9\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B9\"><sup>9</sup></a> This operational gap constrains society’s ability to use computing in the public interest.</p>\n<p id=\"p-10\">Universities are well suited to reduce this fragility because they already steward shared infrastructure over decades and across competing interests. They preserve knowledge through libraries and archives; operate identity, access, and computing services for heterogeneous communities; and maintain and adapt educational tools year after year. That institutional shape lets academia provide not only explanation, but also what we can call the public stack: maintained free software, reference implementations, conformance tests, archival datasets, and secure access environments that remain usable even when they are inconvenient to monetize.</p>\n<p id=\"p-11\">Free software is central because code is both explanation and capability. It gives the public the ability to learn without permission, to audit rather than assume, to adapt systems to local constraints, and to exit dependencies. But the public stack is brittle when stewardship is treated as extracurricular. Widely relied-upon components can become societal liabilities when maintenance depends on burnout-prone volunteer labor or short-term grants.<a class=\"reference-link xref xref-bibr\" href=\"#B7\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B7\"><sup>7</sup></a> Treating maintenance and operation as first-class academic output is not charity; it is risk management for a society that runs on code. Funding and evaluation could reward building, governance, and long-term staffing for public artifacts and services so that computing remains dependable for everyone.</p>\n</section>\n<section id=\"sec4\" class=\"sec\">\n<h2 class=\"heading\">Computing with Head, Hands, and Heart</h2>\n<p id=\"p-12\">Industry brings scale and speed: the hands of the enterprise. Academia should not mirror industry’s priorities and should partner with firms only on terms consistent with its public mission. If computing is to meet its public mission, funding and evaluation must reward scientific explanation and the public stack with the same seriousness as new capabilities. When evidence matches ambition and results remain open to challenge, progress becomes durable and worthy of public trust. That is our frontier.</p>\n</section>\n</div>\n<footer class=\"back\"></footer>\n</article>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Academia should not mirror industry’s priorities and should partner with firms only on terms consistent with its public mission.</p>",
+  "protected": false
+ },
+ "featured_media": 814671,
+ "comment_status": "open",
+ "ping_status": "closed",
+ "template": "",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 1,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20588,
+      "post_id": 814254
+     }
+    }
+   ]
+  },
+  "cacm_acm_queue_branding_active": 0,
+  "lede": "<p>We need academic computing to safeguard the public interest—not to run industry’s race.</p>\n",
+  "table_of_contents": "<ul>\n<li><a href=\"#sec2\">The Epistemic Gap: Explanation through Questioning, Measurement, and Verification</a></li>\n<li><a href=\"#sec3\">The Operational Gap: Building and Maintaining the Public Stack</a></li>\n<li><a href=\"#sec4\">Computing with Head, Hands, and Heart</a></li>\n<li><a href=\"#references\">References</a></li>\n</ul>\n",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "footnotes": ""
+ },
+ "categories": [
+  3
+ ],
+ "issue": [],
+ "section": [
+  11
+ ],
+ "content-type": [],
+ "byline": [
+  20588
+ ],
+ "class_list": [
+  "post-814253",
+  "digital-library",
+  "type-digital-library",
+  "status-publish",
+  "has-post-thumbnail",
+  "hentry",
+  "category-society",
+  "section-opinion"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/opinion/the-public-mission-of-academic-research-in-computing/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "The Public Mission of Academic Research in Computing",
+   "url": "http://cacm.acm.org/opinion/the-public-mission-of-academic-research-in-computing/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/opinion/the-public-mission-of-academic-research-in-computing/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/110926.OP_.The-Public-Mission.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/110926.OP_.The-Public-Mission.jpg"
+   },
+   "articleSection": "Society",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "David Abián",
+     "url": "https://cacm.acm.org/author/david-abian/"
+    }
+   ],
+   "creator": [
+    "David Abián"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-19T18:17:27Z",
+   "datePublished": "2026-11-19T18:17:27Z",
+   "dateModified": "2026-11-19T18:17:27Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"The Public Mission of Academic Research in Computing\",\"url\":\"http:\\/\\/cacm.acm.org\\/opinion\\/the-public-mission-of-academic-research-in-computing\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/opinion\\/the-public-mission-of-academic-research-in-computing\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110926.OP_.The-Public-Mission.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110926.OP_.The-Public-Mission.jpg\"},\"articleSection\":\"Society\",\"author\":[{\"@type\":\"Person\",\"name\":\"David Abi\\u00e1n\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/david-abian\\/\"}],\"creator\":[\"David Abi\\u00e1n\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-19T18:17:27Z\",\"datePublished\":\"2026-11-19T18:17:27Z\",\"dateModified\":\"2026-11-19T18:17:27Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "jetpack_sharing_enabled": true,
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814253",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/digital-library"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814253"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 3,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814253/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 814672,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814253/revisions/814672"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/814671"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814253"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814253"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814253"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814253"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814253"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814253"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}
