@@ -311,7 +311,39 @@
       "date": "2026-11-19T09:25:33",
       "link": "https://cacm.acm.org/news/when-espionage-is-outsourced/",
       "section": "News"
+    },
+    {
+      "id": 814542,
+      "pushed_at": "2026-11-21T15:48:27+08:00",
+      "title": "Do We Still Need Mathematicians?",
+      "date": "2026-11-20T14:14:06",
+      "link": "https://cacm.acm.org/news/do-we-still-need-mathematicians/",
+      "section": "News"
+    },
+    {
+      "id": 814841,
+      "pushed_at": "2026-11-21T15:48:27+08:00",
+      "title": "The Next Frontier in AI-Enabled Coding: Scaling Development",
+      "date": "2026-11-20T13:52:46",
+      "link": "https://cacm.acm.org/news/the-next-frontier-in-ai-enabled-coding-scaling-development/",
+      "section": "News"
+    },
+    {
+      "id": 814293,
+      "pushed_at": "2026-11-21T15:48:27+08:00",
+      "title": "When You Wish Upon a Prompt",
+      "date": "2026-11-20T11:08:18",
+      "link": "https://cacm.acm.org/kode-vicious/when-you-wish-upon-a-prompt/",
+      "section": "Kode Vicious / Opinion"
+    },
+    {
+      "id": 814508,
+      "pushed_at": "2026-11-21T15:48:27+08:00",
+      "title": "Personalization Is a Loop, Not a Model",
+      "date": "2026-11-20T09:23:33",
+      "link": "https://cacm.acm.org/blogcacm/personalization-is-a-loop-not-a-model/",
+      "section": "Blog@CACM"
     }
   ],
-  "last_check": "2026-11-20T15:51:34+08:00"
+  "last_check": "2026-11-21T15:47:25+08:00"
 }

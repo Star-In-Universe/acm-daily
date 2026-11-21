@@ -1,0 +1,241 @@
+{
+ "id": 814841,
+ "date": "2026-11-20T13:52:46",
+ "date_gmt": "2026-11-20T18:52:46",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814841"
+ },
+ "modified": "2026-11-20T13:52:46",
+ "modified_gmt": "2026-11-20T18:52:46",
+ "slug": "the-next-frontier-in-ai-enabled-coding-scaling-development",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/news/the-next-frontier-in-ai-enabled-coding-scaling-development/",
+ "title": {
+  "rendered": "The Next Frontier in AI-Enabled Coding: Scaling Development"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">There’s little doubt AI-enabled coding tools can expedite the first part of the coding process: writing code. However, bottlenecks appear once the code is written, which call into question whether AI-enabled coding genuinely improves the speed at which development takes place and products ship.</p>\n\n\n\n<p class=\"wp-block-paragraph\">CircleCI’s <em>2026 State of Software Delivery</em> documents the costs: while more code is being written, the rate at which development is finished and released fell at the same time during their study, which occurred between Sept. 1 to Sept. 28, 2025.<sup><a href=\"#one\">1</a></sup> AI-enabled code tends to fail at higher rates and takes longer to fix, which leads to more developer time lost, fewer products shipping, and questionable AI investment ROI.<sup><a href=\"#one\">1</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\">The next frontier in AI-enabled development seeks to harness the power of LLM-based AI coding platforms to scale coding and development to speed products (codes and programs) to market. Because LLM platforms develop and release new versions rapidly, defining the challenges involved in AI-enabled coding is a moving target.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“The bottleneck is both a process problem and an understanding problem,” said Margaret-Anne Storey, professor of computer science at Canada’s University of Victoria. “Understanding now needs to be a deliverable. We always thought of code as the deliverable when humans were writing code because you would write the code, your program would execute, and your understanding was recoverable from the code. Now, AI writes the code, so what we need to do is think about the architecture, which influences product security, performance, integration, and evolution.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">As understanding evolves, developers, teams, and organizations are identifying solutions to streamline the AI-enabled coding process and accelerate development and product shipment.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Challenges to Scaling AI-Enabled Coding</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">AI-enabled coding, whether directly through AI coding assistants or through AI agents, creates three specific types of debt that then cascade into a variety of concrete challenges that developers, teams, and organizations encounter as they seek to accelerate development and product shipment.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Storey originated the triple-debt concept around software health, which she explained in a paper published in <em>ACM Queue</em>: “Technical debt refers to problems in the code layer, cognitive debt refers to erosion of the shared understanding across a team over time, and intent debt refers to a lack of externalized goals, constraints, and rationale that both humans and AI systems need to work safely and efficiently within a codebase.”<sup><a href=\"#two\">2</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\">“Technical debt makes systems harder to change,” she continued in the paper. “Cognitive debt makes systems harder to understand. Intent debt makes it difficult to know what the system is actually for.”<sup><a href=\"#two\">2</a></sup></p>\n\n\n\n<p class=\"wp-block-paragraph\">For Nik Kale, principal engineer at networking company and contributor to the Coalition for Secure AI, AI coding must reduce the total effort required to deliver a dependable change to create value. “More AI in the building still means more change failures and more recovery work even after raw speed recovers,” he said.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“DORA’s 2026 report names the mechanism and calls it the verification tax, the added effort of checking whether generated code is correct, secure, and architecturally coherent,” Kale added. “Writing code was never really the bottleneck and rather was just the only part of the lifecycle anyone had bothered to instrument.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Solutions to Scaling AI-Enabled Coding</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Because LLM models are evolving rapidly, the solutions to scaling AI-enabled coding are in flux. At the same time, developers, teams, and organizations are starting to figure out the investment, processes, and procedures to implement to streamline AI coding, avoid or overcome bottlenecks, and expedite the entire process to accelerate product development. Several solutions are available.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Treating AI as an internal product or service:</strong> “With the tools and investment, what’s going to be really potent in the next two to three years is the fact of treating how you are implementing AI as an internal product or service,” said David Longnecker, an AI and technology consultant. “Just like building up a team wiki in Sharepoint, an organizational AI tool is something that will have to be owned and maintained with observability and explainability behind it.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Longnecker described AI as “an internal service we provide,” explaining, “Here is the team that are the service providers in charge of rolling out standard operating procedures, teaching people who are using the tool independently to use it in the same direction. It’s going to require investment not just in technology, but in people. You can’t fire all the people because AI is going to do all the things; you’re going to have to hire them back to keep the AI in line.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Employing context engineering:</strong> Context engineering relates to managing the context developers give AI agents, according to Storey. “Context engineering involves thinking about the kind of information that we should give to our AI coding agents,” she said. “Sometimes it’s called a constitution; like a constitution for the agents, the advice that they need to do a task correctly.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Creating or using an agentic AI development platform</strong>: IBM launched an agentic AI development platform called Bob in April 2026 to automate the software development lifecycle. Instead of responding to isolated prompts, Bob coordinates specialized AI agents across roles and lifecycle stages.<sup><a href=\"#three\">3</a></sup> IBM uses Bob internally and makes Bob available to clients as an SaaS offering.</p>\n\n\n\n<p class=\"wp-block-paragraph\">“Bob supports models that mimic different roles, rules that help create standardized templates, skills that help author playbooks, and tools that enable automation and gates for checkpointing,” said Neel Sundaresan, general manager of automation and AI at IBM. “These capabilities help create artifacts specific to individual states of the software development lifecycle, where Bob can assist, augment, or automate the work of a human in that role.”</p>\n\n\n\n<p class=\"wp-block-paragraph\">Sundaresan noted that beyond efficiency, Bob streamlines the team dynamic, which allows development teams to align faster, iterate with confidence, and bring higher quality products to market.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Building automation to support and distribute code review:</strong> “We use LLMs to review code at four levels—commit, pull request, feature, and release—classifying findings according to internal definitions between must-fix and nice-to-fix,” said Breno Oliveira, chief technology officer at Strider, a platform for hiring and retaining remote developers. “We’ve also built automations that distribute code reviews more effectively, ensuring a balanced workload but also driving improved accuracy by ensuring, for example, that the reviewer is familiar with a feature or the code involved.”</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>References</strong></p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\"/>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"one\"></a>1. Powell, R., and Schmitt, J. The New Reality of Software Delivery. <em>CircleCI</em>; <a href=\"https://circleci.com/resources/2026-state-of-software-delivery/\">https://circleci.com/resources/2026-state-of-software-delivery/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"two\"></a>2. Storey, M-A. From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI. <em>ACM</em> <em>Queue</em>; <a href=\"https://queue.acm.org/doi/10.1145/3807966\">https://queue.acm.org/doi/10.1145/3807966</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"three\"></a>3. Introducing IBM Bob: AI Development Partner that Takes Enterprises from AI-Assisted Coding to Production-Ready Software. IBM; <a href=\"https://bit.ly/48j2ZfB\">https://bit.ly/48j2ZfB</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Amy Buttell</strong> is a Silver Spring, MD-based technology, legal, and business journalist, content creator, writer, and ghostwriter.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Developers, teams, and organizations are identifying solutions to streamline the AI-enabled coding process and accelerate development and product shipment.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 815432,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20075,
+      "post_id": 776044
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>The triple-debt concept says AI-enabled coding creates debt in code, in teams, and in externalized artifacts.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 ACM 0001-0782/26/11</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  4,
+  9
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  72
+ ],
+ "content-type": [],
+ "byline": [
+  20075
+ ],
+ "class_list": [
+  "post-814841",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-profession",
+  "category-software-engineering-and-programming-languages",
+  "section-news"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/news/the-next-frontier-in-ai-enabled-coding-scaling-development/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "The Next Frontier in AI-Enabled Coding: Scaling Development",
+   "url": "http://cacm.acm.org/news/the-next-frontier-in-ai-enabled-coding-scaling-development/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/news/the-next-frontier-in-ai-enabled-coding-scaling-development/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/112026.News_.The-Next-Frontier-S.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/112026.News_.The-Next-Frontier-S.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Amy Buttell",
+     "url": "https://cacm.acm.org/author/amy-buttell/"
+    }
+   ],
+   "creator": [
+    "Amy Buttell"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-20T18:52:46Z",
+   "datePublished": "2026-11-20T18:52:46Z",
+   "dateModified": "2026-11-20T18:52:46Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"The Next Frontier in AI-Enabled Coding: Scaling Development\",\"url\":\"http:\\/\\/cacm.acm.org\\/news\\/the-next-frontier-in-ai-enabled-coding-scaling-development\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/news\\/the-next-frontier-in-ai-enabled-coding-scaling-development\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/112026.News_.The-Next-Frontier-S.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/112026.News_.The-Next-Frontier-S.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Amy Buttell\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/amy-buttell\\/\"}],\"creator\":[\"Amy Buttell\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-20T18:52:46Z\",\"datePublished\":\"2026-11-20T18:52:46Z\",\"dateModified\":\"2026-11-20T18:52:46Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Amy Buttell",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/112026.News_.The-Next-Frontier-S.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814841",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814841"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 8,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814841/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815435,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814841/revisions/815435"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815432"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814841"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814841"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814841"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814841"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814841"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814841"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814841"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

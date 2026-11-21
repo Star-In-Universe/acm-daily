@@ -1,0 +1,93 @@
+{
+ "title": "The Next Frontier in AI-Enabled Coding: Scaling Development",
+ "lede": "The triple-debt concept says AI-enabled coding creates debt in code, in teams, and in externalized artifacts.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "There’s little doubt AI-enabled coding tools can expedite the first part of the coding process: writing code. However, bottlenecks appear once the code is written, which call into question whether AI-enabled coding genuinely improves the speed at which development takes place and products ship."
+  },
+  {
+   "type": "p",
+   "en": "CircleCI’s 2026 State of Software Delivery documents the costs: while more code is being written, the rate at which development is finished and released fell at the same time during their study, which occurred between Sept. 1 to Sept. 28, 2025. AI-enabled code tends to fail at higher rates and takes longer to fix, which leads to more developer time lost, fewer products shipping, and questionable AI investment ROI."
+  },
+  {
+   "type": "p",
+   "en": "The next frontier in AI-enabled development seeks to harness the power of LLM-based AI coding platforms to scale coding and development to speed products (codes and programs) to market. Because LLM platforms develop and release new versions rapidly, defining the challenges involved in AI-enabled coding is a moving target."
+  },
+  {
+   "type": "p",
+   "en": "“The bottleneck is both a process problem and an understanding problem,” said Margaret-Anne Storey, professor of computer science at Canada’s University of Victoria. “Understanding now needs to be a deliverable. We always thought of code as the deliverable when humans were writing code because you would write the code, your program would execute, and your understanding was recoverable from the code. Now, AI writes the code, so what we need to do is think about the architecture, which influences product security, performance, integration, and evolution.”"
+  },
+  {
+   "type": "p",
+   "en": "As understanding evolves, developers, teams, and organizations are identifying solutions to streamline the AI-enabled coding process and accelerate development and product shipment."
+  },
+  {
+   "type": "p",
+   "en": "Challenges to Scaling AI-Enabled Coding"
+  },
+  {
+   "type": "p",
+   "en": "AI-enabled coding, whether directly through AI coding assistants or through AI agents, creates three specific types of debt that then cascade into a variety of concrete challenges that developers, teams, and organizations encounter as they seek to accelerate development and product shipment."
+  },
+  {
+   "type": "p",
+   "en": "Storey originated the triple-debt concept around software health, which she explained in a paper published in ACM Queue: “Technical debt refers to problems in the code layer, cognitive debt refers to erosion of the shared understanding across a team over time, and intent debt refers to a lack of externalized goals, constraints, and rationale that both humans and AI systems need to work safely and efficiently within a codebase.”"
+  },
+  {
+   "type": "p",
+   "en": "“Technical debt makes systems harder to change,” she continued in the paper. “Cognitive debt makes systems harder to understand. Intent debt makes it difficult to know what the system is actually for.”"
+  },
+  {
+   "type": "p",
+   "en": "For Nik Kale, principal engineer at networking company and contributor to the Coalition for Secure AI, AI coding must reduce the total effort required to deliver a dependable change to create value. “More AI in the building still means more change failures and more recovery work even after raw speed recovers,” he said."
+  },
+  {
+   "type": "p",
+   "en": "“DORA’s 2026 report names the mechanism and calls it the verification tax, the added effort of checking whether generated code is correct, secure, and architecturally coherent,” Kale added. “Writing code was never really the bottleneck and rather was just the only part of the lifecycle anyone had bothered to instrument.”"
+  },
+  {
+   "type": "p",
+   "en": "Solutions to Scaling AI-Enabled Coding"
+  },
+  {
+   "type": "p",
+   "en": "Because LLM models are evolving rapidly, the solutions to scaling AI-enabled coding are in flux. At the same time, developers, teams, and organizations are starting to figure out the investment, processes, and procedures to implement to streamline AI coding, avoid or overcome bottlenecks, and expedite the entire process to accelerate product development. Several solutions are available."
+  },
+  {
+   "type": "p",
+   "en": "Treating AI as an internal product or service: “With the tools and investment, what’s going to be really potent in the next two to three years is the fact of treating how you are implementing AI as an internal product or service,” said David Longnecker, an AI and technology consultant. “Just like building up a team wiki in Sharepoint, an organizational AI tool is something that will have to be owned and maintained with observability and explainability behind it.”"
+  },
+  {
+   "type": "p",
+   "en": "Longnecker described AI as “an internal service we provide,” explaining, “Here is the team that are the service providers in charge of rolling out standard operating procedures, teaching people who are using the tool independently to use it in the same direction. It’s going to require investment not just in technology, but in people. You can’t fire all the people because AI is going to do all the things; you’re going to have to hire them back to keep the AI in line.”"
+  },
+  {
+   "type": "p",
+   "en": "Employing context engineering: Context engineering relates to managing the context developers give AI agents, according to Storey. “Context engineering involves thinking about the kind of information that we should give to our AI coding agents,” she said. “Sometimes it’s called a constitution; like a constitution for the agents, the advice that they need to do a task correctly.”"
+  },
+  {
+   "type": "p",
+   "en": "Creating or using an agentic AI development platform: IBM launched an agentic AI development platform called Bob in April 2026 to automate the software development lifecycle. Instead of responding to isolated prompts, Bob coordinates specialized AI agents across roles and lifecycle stages. IBM uses Bob internally and makes Bob available to clients as an SaaS offering."
+  },
+  {
+   "type": "p",
+   "en": "“Bob supports models that mimic different roles, rules that help create standardized templates, skills that help author playbooks, and tools that enable automation and gates for checkpointing,” said Neel Sundaresan, general manager of automation and AI at IBM. “These capabilities help create artifacts specific to individual states of the software development lifecycle, where Bob can assist, augment, or automate the work of a human in that role.”"
+  },
+  {
+   "type": "p",
+   "en": "Sundaresan noted that beyond efficiency, Bob streamlines the team dynamic, which allows development teams to align faster, iterate with confidence, and bring higher quality products to market."
+  },
+  {
+   "type": "p",
+   "en": "Building automation to support and distribute code review: “We use LLMs to review code at four levels—commit, pull request, feature, and release—classifying findings according to internal definitions between must-fix and nice-to-fix,” said Breno Oliveira, chief technology officer at Strider, a platform for hiring and retaining remote developers. “We’ve also built automations that distribute code reviews more effectively, ensuring a balanced workload but also driving improved accuracy by ensuring, for example, that the reviewer is familiar with a feature or the code involved.”"
+  }
+ ],
+ "tail": [
+  "References",
+  "1. Powell, R., and Schmitt, J. The New Reality of Software Delivery. CircleCI; https://circleci.com/resources/2026-state-of-software-delivery/",
+  "2. Storey, M-A. From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI. ACM Queue; https://queue.acm.org/doi/10.1145/3807966",
+  "3. Introducing IBM Bob: AI Development Partner that Takes Enterprises from AI-Assisted Coding to Production-Ready Software. IBM; https://bit.ly/48j2ZfB",
+  "Amy Buttell is a Silver Spring, MD-based technology, legal, and business journalist, content creator, writer, and ghostwriter."
+ ]
+}

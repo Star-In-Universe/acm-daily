@@ -1,0 +1,100 @@
+{
+ "title_zh": "数学家是否仍被需要？",
+ "lede_zh": "海德堡获奖者论坛小组讨论AI如何改变数学研究及数学家的角色。",
+ "summary": "2026年9月OpenAI宣称其内部AI系统解决了纳维-斯托克斯千禧年难题，引发数学界震动。一周后海德堡获奖者论坛举办“AI在数学研究中的应用”专题讨论，由加州大学伯克利分校数学家Tony Feng主持，参与者包括菲尔兹奖得主Peter Scholze、Jacob Tsimerman，AI数学研究先驱Geordie Williamson和数论学家Michael Harris。讨论中，Scholze和Harris表示过去一周未使用AI，而Williamson每天使用AI三到四小时，Tsimerman每天使用半小时到一小时，并已加入OpenAI从事AI安全研究。Tsimerman预测超人类数学家将很快出现，数学将以超人类速度推进；Scholze则质疑加速本身的价值，认为数学研究的瓶颈在于人类对结果的理解而非产出速度；Williamson担忧AI可能打破解题能力与数学理解之间的关联，迫使社区重新评估人才评价和教育方式；Harris批评商业AI将公共知识私有化，并支持《莱顿宣言》和“人类数学协会”的倡议。尽管观点分歧，小组成员一致认为人类数学不会过时，人类专长对于监督AI系统仍然至关重要。",
+ "points": [
+  "OpenAI于2026年9月8日宣称其AI系统解决了纳维-斯托克斯千禧年难题，引发数学界对AI能力的广泛关注。",
+  "海德堡获奖者论坛小组讨论中，Scholze和Harris表示过去一周未使用AI，而Williamson每天使用AI三到四小时，Tsimerman每天使用半小时到一小时。",
+  "Tsimerman预测超人类数学家将很快出现，数学将以超人类速度推进，但强调这并不意味着人类数学失去价值。",
+  "Scholze认为数学研究的真正瓶颈是人类对结果的理解而非产出速度，AI加速可能导致人类理解减少。",
+  "Williamson担忧AI可能打破解题能力与数学理解之间的关联，社区需重新评估人才评价和教育方式。",
+  "Harris批评商业AI将公共知识私有化，支持《莱顿宣言》和“人类数学协会”的倡议，强调人类想象力应得到认可。"
+ ],
+ "terms": [
+  {
+   "en": "Navier-Stokes Millennium Prize Problem",
+   "zh": "纳维-斯托克斯千禧年难题"
+  },
+  {
+   "en": "Heidelberg Laureate Forum",
+   "zh": "海德堡获奖者论坛"
+  },
+  {
+   "en": "Fields Medalist",
+   "zh": "菲尔兹奖得主"
+  },
+  {
+   "en": "large language model (LLM)",
+   "zh": "大语言模型"
+  },
+  {
+   "en": "coding agent",
+   "zh": "编码代理"
+  },
+  {
+   "en": "superhuman mathematicians",
+   "zh": "超人类数学家"
+  },
+  {
+   "en": "gift economy",
+   "zh": "礼物经济"
+  },
+  {
+   "en": "Humboldtian university",
+   "zh": "洪堡式大学"
+  },
+  {
+   "en": "Leiden Declaration",
+   "zh": "莱顿宣言"
+  },
+  {
+   "en": "Association for Human Mathematics",
+   "zh": "人类数学协会"
+  }
+ ],
+ "mindmap": {
+  "title": "AI时代\n数学家角色",
+  "branches": [
+   {
+    "title": "背景与事件",
+    "children": [
+     "OpenAI宣称AI解决纳维-斯托克斯难题",
+     "海德堡论坛小组讨论AI在数学研究中的应用"
+    ]
+   },
+   {
+    "title": "数学家AI使用现状",
+    "children": [
+     "Scholze和Harris一周未用AI",
+     "Williamson每天用AI三到四小时",
+     "Tsimerman每天用AI半小时到一小时"
+    ]
+   },
+   {
+    "title": "对AI加速的分歧",
+    "children": [
+     "Tsimerman预测超人类数学家很快出现",
+     "Scholze质疑加速本身价值，强调理解瓶颈",
+     "Williamson担忧解题与理解关联被打破"
+    ]
+   },
+   {
+    "title": "商业AI与学术伦理",
+    "children": [
+     "Harris批评商业AI私有化公共知识",
+     "支持莱顿宣言和人类数学协会",
+     "强调人类专长对监督AI的重要性"
+    ]
+   },
+   {
+    "title": "结论与展望",
+    "children": [
+     "人类数学不会过时，仍是文化一部分",
+     "AI可能增加新数学风格而非取代传统",
+     "数学是AI影响所有知识工作的早期测试案例"
+    ]
+   }
+  ]
+ },
+ "skip": []
+}

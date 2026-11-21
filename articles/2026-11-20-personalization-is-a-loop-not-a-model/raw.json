@@ -1,0 +1,243 @@
+{
+ "id": 814508,
+ "date": "2026-11-20T09:23:33",
+ "date_gmt": "2026-11-20T14:23:33",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814508"
+ },
+ "modified": "2026-11-20T09:23:33",
+ "modified_gmt": "2026-11-20T14:23:33",
+ "slug": "personalization-is-a-loop-not-a-model",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/personalization-is-a-loop-not-a-model/",
+ "title": {
+  "rendered": "Personalization Is a Loop, Not a Model"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">When a feed seems to read your mind, or a store surfaces the one thing you did not know you wanted, it is tempting to say the system “knows” you—as if somewhere there is a model of you it consults. There is not. What there is, in every personalized product I have helped build, is a loop. The system watches your behavior, updates a learned representation of you, predicts what you will engage with, shows it, and then learns from how you react. The model is the famous part; the loop is the system. And once you see personalization as a loop rather than a model, the things that actually matter—where it fails, why it narrows, what it costs the people inside it—come into focus.</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>The Loop</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">Figure 1 shows the five stages of the personalization loop. It begins with <strong>signals</strong>: the implicit and explicit traces of behavior—clicks, dwell time, purchases, ratings, and context such as time and device. Those signals are compressed into a <strong>user representation</strong>, and this is the central move of the whole field: a person is turned into a vector, a handful of numbers that stand in for taste. A <strong>model</strong> then maps that representation to an <strong>experience</strong>—usually in two steps, generating a manageable set of candidates from a vast catalog and then ranking them.<sup><a href=\"#two\">2</a></sup> The user reacts, and that reaction is <strong>feedback</strong>, which becomes the next round of signals. The loop closes. That closure is the source of all the system’s power, and, as we will see, of its worst pathologies.</p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1245\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Ramakrishnan-Figure1.jpg\" alt=\"The Personalization Loop Figure 1\" class=\"wp-image-815370\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Ramakrishnan-Figure1.jpg 1600w, https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Ramakrishnan-Figure1.jpg?resize=300,233 300w, https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Ramakrishnan-Figure1.jpg?resize=768,598 768w, https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Ramakrishnan-Figure1.jpg?resize=1024,797 1024w, https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Ramakrishnan-Figure1.jpg?resize=1536,1195 1536w, https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Ramakrishnan-Figure1.jpg?resize=620,482 620w\" sizes=\"auto, (max-width: 1600px) 100vw, 1600px\" /><figcaption class=\"wp-element-caption\">Figure 1. The personalization loop. Signals become a learned user representation; a model turns that representation into a ranked or generated experience; the user’s reaction becomes the next round of signals. The model inside the loop has changed across generations; the loop, and its tensions, has not.</figcaption></figure>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>The Loop Stayed; the Model Changed</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">What has evolved over three decades is the box in the middle. The earliest systems were hand-written rules: “customers who bought X also bought Y.” Then came collaborative filtering, and with it the insight that you do not need to know <em>why</em> someone likes something: matrix factorization learns latent factors from the user-item matrix and predicts the gaps.<sup><a href=\"#four\">4</a></sup> Deep learning generalized this—representations became learned embeddings, and architectures scaled candidate generation and ranking to billions of items.<sup><a href=\"#two\">2</a></sup> Contextual bandits reframed each recommendation as an action with an uncertain reward, choosing online between options to balance learning and earning.<sup><a href=\"#five\">5</a></sup> And now foundation models invert the usual arrangement: instead of training a bespoke model per user, a single large model is conditioned on a user’s context through retrieval-augmented memory or parameter-efficient fine-tuning, so personalization becomes a matter of prompting and memory rather than a separate learned artifact.<sup><a href=\"#six\">6</a></sup></p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>The Loop’s Enduring Tensions</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">Because the unit of analysis is the loop, its hard problems are problems of dynamics, not of any single model. The first is cold start: a new user or item has no signals, so the representation is empty and the loop has nothing to turn. The second is the tradeoff the bandits formalize: a loop that only <em>exploits</em> what it already knows about you starves itself of the new signal it needs, so it must deliberately <em>explore</em>.<sup><a href=\"#five\">5</a></sup> The third is the deepest, and it follows directly from closure: the loop trains on data it generated, because you can only react to what you were shown. That self-confounding amplifies popular items, narrows what each person sees, and makes users more alike over time; Chaney and colleagues demonstrated this algorithmic confounding increases homogeneity and decreases utility.<sup><a href=\"#one\">1</a></sup> The loop’s greatest strength—learning from its own outputs—is also its characteristic failure.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The fourth tension is privacy, because the representation is assembled from intimate behavioral data. Three lines of work move the computation toward the data rather than the data toward the computation: federated<strong> </strong>learning trains across devices without centralizing raw records<sup><a href=\"#seven\">7</a></sup>; differential<strong> </strong>privacy bounds how much any one person’s data can reveal<sup><a href=\"#three\">3</a></sup>; and on-device personalization keeps the loop local to the phone. None of these is free—each trades some accuracy or freshness for protection—but together they make it possible to personalize without hoarding.</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>What Foundation Models Change, and What They Do Not</strong></h3>\n\n\n\n<p class=\"wp-block-paragraph\">The current shift is real, and it changes two things. Cold start eases: a model with broad world knowledge can personalize from a sentence—“I am vegetarian and training for a marathon” is enough to be useful before a single click.<sup><a href=\"#six\">6</a></sup> And personalization becomes legible; stored as memory and text a person can inspect and edit, rather than an opaque embedding no one can read. The deeper move is from <em>ranking what exists</em> to <em>generating and acting</em>: an assistant no longer just orders restaurants by predicted preference, it books one. But none of this leaves the loop. The agent’s actions become signals; its outputs shape the behavior that trains it next; the same self-confounding<sup><a href=\"#one\">1</a></sup> and the same exploration tradeoff<sup><a href=\"#five\">5</a></sup> now operate over actions with real consequences, and the privacy stakes rise as the representation becomes a rich, persistent memory of a life.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The enduring lesson is the one that survives every change of model: personalization is not an artifact you ship, but a loop you operate. The interesting engineering lives in the loop’s dynamics: starting it cold, exploring without annoying, bounding the feedback so it does not collapse into itself, and honoring the data that feeds it. Foundation models replaced the contents of the box; they did not repeal the loop around it. Treating personalization as a loop—measuring it, constraining it, and respecting the person it represents—is what separates a system that serves the user from one that merely converges on its own predictions.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Disclosure</strong>: In accordance with ACM policy, the author discloses that a large language model was used to assist with drafting, structuring, and copy-editing this post. The model presented, all technical claims, and the final text were reviewed, verified, and approved by the author, who takes full responsibility for the content. Figure 1 is the author’s original work.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>References</strong></p>\n\n\n<p><a id=\"one\"></a>1. Chaney, A.J.B., Stewart, B.M., and Engelhardt, B.E. How Algorithmic Confounding in Recommendation Systems Increases Homogeneity and Decreases Utility, In <em>Proceedings of the 12th ACM Conference on Recommender Systems (RecSys ’18)</em>, 224–232; <a href=\"https://arxiv.org/abs/1710.11214\">https://arxiv.org/abs/1710.11214</a></p>\n\n\n<p class=\"wp-block-paragraph\"><a id=\"two\"></a>2. Covington, P., Adams, J.,and Sargin, E. Deep Neural Networks for YouTube Recommendations, In <em>Proceedings of the 10th ACM Conference on Recommender</em> <em>Systems</em> (<em>RecSys ’16</em>), 191–198. New York: ACM, 2016; <a href=\"https://bit.ly/3UvQGcD\">https://bit.ly/3UvQGcD</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"three\"></a>3. Dwork, C. Differential Privacy. <em>Automata, Languages and Programming</em> <em>(ICALP 2006</em>), 1–12. Berlin: Springer, 2006; <a href=\"https://dl.acm.org/doi/10.1007/11787006_1\">https://dl.acm.org/doi/10.1007/11787006_1</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"four\"></a>4. Koren, Y., Bell, R., and Volinsky, C. Matrix Factorization Techniques for Recommender Systems.<em> Computer 42, </em>8 (2009), 30–37; <a href=\"https://ieeexplore.ieee.org/document/5197422/authors#authors\">https://ieeexplore.ieee.org/document/5197422/authors#authors</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"five\"></a>5. Li, L., Chu, W., Langford, J., and Schapire, R.E. A Contextual-Bandit Approach to Personalized News Article Recommendation. In <em>Proceedings of the 19th International Conference on World Wide Web (WWW ’10)</em>, 661–670; <a href=\"https://arxiv.org/abs/1003.0146\">https://arxiv.org/abs/1003.0146</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"six\"></a>6. Liu, J., Qiu, Z., Li, Z., Dai, Q., Zhu, J., Hu, M., Yang, M., and King, I. A Survey of Personalized Large Language Models: Progress and Future Directions. arXiv:2502.11528; <a href=\"https://arxiv.org/abs/2502.11528\">arxiv.org/abs/2502.11528</a> (accessed June 2026)</p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"seven\"></a>7. McMahan, H.B., Moore, E., Ramage, D., Hampson, S., and Agüera y Arcas, B. Communication-Efficient Learning of Deep Networks from Decentralized Data. In <em>Proceedings of the 20th International Conference on Artificial Intelligence and Statistics (AISTATS 2017)</em>, 1273–1282; <a href=\"https://arxiv.org/abs/1602.05629\">https://arxiv.org/abs/1602.05629</a></p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/06/Sriram-Ramakrishnan.071426.BLOG-350.jpg?w=350\" alt=\"Sriram Ramakrishnan\" class=\"wp-image-809948\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/06/Sriram-Ramakrishnan.071426.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/06/Sriram-Ramakrishnan.071426.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/06/Sriram-Ramakrishnan.071426.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Sriram</strong> <strong>Ramakrishnan</strong> is a product director in digital finance and payments infrastructure with over two decades of experience building cross-border payment systems, embedded-finance products, and blockchain-based settlement rails across Asia, Europe, and the Middle East. His current work focuses on machine-learning personalization, payment architecture, and agentic commerce.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Once you see personalization as a loop rather than a model, the things that actually matter come into focus.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 815388,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 1,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20351,
+      "post_id": 809440
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>A closed loop is the source of a personalized product's power, and of its worst pathologies.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  22,
+  20,
+  4,
+  7
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20351
+ ],
+ "class_list": [
+  "post-814508",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-architecture-and-hardware",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-profession",
+  "category-data-and-information",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/personalization-is-a-loop-not-a-model/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Personalization Is a Loop, Not a Model",
+   "url": "http://cacm.acm.org/blogcacm/personalization-is-a-loop-not-a-model/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/personalization-is-a-loop-not-a-model/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Personalization-Is-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Personalization-Is-G.jpg"
+   },
+   "articleSection": "Architecture and Hardware",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Sriram Ramakrishnan",
+     "url": "https://cacm.acm.org/author/sriram-ramakrishnan/"
+    }
+   ],
+   "creator": [
+    "Sriram Ramakrishnan"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-20T14:23:33Z",
+   "datePublished": "2026-11-20T14:23:33Z",
+   "dateModified": "2026-11-20T14:23:33Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Personalization Is a Loop, Not a Model\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/personalization-is-a-loop-not-a-model\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/personalization-is-a-loop-not-a-model\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111926.BLOG_.Personalization-Is-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/111926.BLOG_.Personalization-Is-G.jpg\"},\"articleSection\":\"Architecture and Hardware\",\"author\":[{\"@type\":\"Person\",\"name\":\"Sriram Ramakrishnan\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/sriram-ramakrishnan\\/\"}],\"creator\":[\"Sriram Ramakrishnan\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-20T14:23:33Z\",\"datePublished\":\"2026-11-20T14:23:33Z\",\"dateModified\":\"2026-11-20T14:23:33Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Sriram Ramakrishnan",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/111926.BLOG_.Personalization-Is-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814508",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814508"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 14,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814508/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815387,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814508/revisions/815387"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815388"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814508"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814508"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814508"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814508"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814508"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814508"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814508"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

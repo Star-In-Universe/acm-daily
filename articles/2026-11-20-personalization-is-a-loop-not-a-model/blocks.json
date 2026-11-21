@@ -1,0 +1,65 @@
+{
+ "title": "Personalization Is a Loop, Not a Model",
+ "lede": "A closed loop is the source of a personalized product's power, and of its worst pathologies.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "When a feed seems to read your mind, or a store surfaces the one thing you did not know you wanted, it is tempting to say the system “knows” you—as if somewhere there is a model of you it consults. There is not. What there is, in every personalized product I have helped build, is a loop. The system watches your behavior, updates a learned representation of you, predicts what you will engage with, shows it, and then learns from how you react. The model is the famous part; the loop is the system. And once you see personalization as a loop rather than a model, the things that actually matter—where it fails, why it narrows, what it costs the people inside it—come into focus."
+  },
+  {
+   "type": "h",
+   "en": "The Loop"
+  },
+  {
+   "type": "p",
+   "en": "Figure 1 shows the five stages of the personalization loop. It begins with signals: the implicit and explicit traces of behavior—clicks, dwell time, purchases, ratings, and context such as time and device. Those signals are compressed into a user representation, and this is the central move of the whole field: a person is turned into a vector, a handful of numbers that stand in for taste. A model then maps that representation to an experience—usually in two steps, generating a manageable set of candidates from a vast catalog and then ranking them. The user reacts, and that reaction is feedback, which becomes the next round of signals. The loop closes. That closure is the source of all the system’s power, and, as we will see, of its worst pathologies."
+  },
+  {
+   "type": "h",
+   "en": "The Loop Stayed; the Model Changed"
+  },
+  {
+   "type": "p",
+   "en": "What has evolved over three decades is the box in the middle. The earliest systems were hand-written rules: “customers who bought X also bought Y.” Then came collaborative filtering, and with it the insight that you do not need to know why someone likes something: matrix factorization learns latent factors from the user-item matrix and predicts the gaps. Deep learning generalized this—representations became learned embeddings, and architectures scaled candidate generation and ranking to billions of items. Contextual bandits reframed each recommendation as an action with an uncertain reward, choosing online between options to balance learning and earning. And now foundation models invert the usual arrangement: instead of training a bespoke model per user, a single large model is conditioned on a user’s context through retrieval-augmented memory or parameter-efficient fine-tuning, so personalization becomes a matter of prompting and memory rather than a separate learned artifact."
+  },
+  {
+   "type": "h",
+   "en": "The Loop’s Enduring Tensions"
+  },
+  {
+   "type": "p",
+   "en": "Because the unit of analysis is the loop, its hard problems are problems of dynamics, not of any single model. The first is cold start: a new user or item has no signals, so the representation is empty and the loop has nothing to turn. The second is the tradeoff the bandits formalize: a loop that only exploits what it already knows about you starves itself of the new signal it needs, so it must deliberately explore. The third is the deepest, and it follows directly from closure: the loop trains on data it generated, because you can only react to what you were shown. That self-confounding amplifies popular items, narrows what each person sees, and makes users more alike over time; Chaney and colleagues demonstrated this algorithmic confounding increases homogeneity and decreases utility. The loop’s greatest strength—learning from its own outputs—is also its characteristic failure."
+  },
+  {
+   "type": "p",
+   "en": "The fourth tension is privacy, because the representation is assembled from intimate behavioral data. Three lines of work move the computation toward the data rather than the data toward the computation: federated learning trains across devices without centralizing raw records; differential privacy bounds how much any one person’s data can reveal; and on-device personalization keeps the loop local to the phone. None of these is free—each trades some accuracy or freshness for protection—but together they make it possible to personalize without hoarding."
+  },
+  {
+   "type": "h",
+   "en": "What Foundation Models Change, and What They Do Not"
+  },
+  {
+   "type": "p",
+   "en": "The current shift is real, and it changes two things. Cold start eases: a model with broad world knowledge can personalize from a sentence—“I am vegetarian and training for a marathon” is enough to be useful before a single click. And personalization becomes legible; stored as memory and text a person can inspect and edit, rather than an opaque embedding no one can read. The deeper move is from ranking what exists to generating and acting: an assistant no longer just orders restaurants by predicted preference, it books one. But none of this leaves the loop. The agent’s actions become signals; its outputs shape the behavior that trains it next; the same self-confounding and the same exploration tradeoff now operate over actions with real consequences, and the privacy stakes rise as the representation becomes a rich, persistent memory of a life."
+  },
+  {
+   "type": "p",
+   "en": "The enduring lesson is the one that survives every change of model: personalization is not an artifact you ship, but a loop you operate. The interesting engineering lives in the loop’s dynamics: starting it cold, exploring without annoying, bounding the feedback so it does not collapse into itself, and honoring the data that feeds it. Foundation models replaced the contents of the box; they did not repeal the loop around it. Treating personalization as a loop—measuring it, constraining it, and respecting the person it represents—is what separates a system that serves the user from one that merely converges on its own predictions."
+  },
+  {
+   "type": "p",
+   "en": "Disclosure: In accordance with ACM policy, the author discloses that a large language model was used to assist with drafting, structuring, and copy-editing this post. The model presented, all technical claims, and the final text were reviewed, verified, and approved by the author, who takes full responsibility for the content. Figure 1 is the author’s original work."
+  }
+ ],
+ "tail": [
+  "References",
+  "1. Chaney, A.J.B., Stewart, B.M., and Engelhardt, B.E. How Algorithmic Confounding in Recommendation Systems Increases Homogeneity and Decreases Utility, In Proceedings of the 12th ACM Conference on Recommender Systems (RecSys ’18), 224–232; https://arxiv.org/abs/1710.11214",
+  "2. Covington, P., Adams, J.,and Sargin, E. Deep Neural Networks for YouTube Recommendations, In Proceedings of the 10th ACM Conference on Recommender Systems (RecSys ’16), 191–198. New York: ACM, 2016; https://bit.ly/3UvQGcD",
+  "3. Dwork, C. Differential Privacy. Automata, Languages and Programming (ICALP 2006), 1–12. Berlin: Springer, 2006; https://dl.acm.org/doi/10.1007/11787006_1",
+  "4. Koren, Y., Bell, R., and Volinsky, C. Matrix Factorization Techniques for Recommender Systems. Computer 42, 8 (2009), 30–37; https://ieeexplore.ieee.org/document/5197422/authors#authors",
+  "5. Li, L., Chu, W., Langford, J., and Schapire, R.E. A Contextual-Bandit Approach to Personalized News Article Recommendation. In Proceedings of the 19th International Conference on World Wide Web (WWW ’10), 661–670; https://arxiv.org/abs/1003.0146",
+  "6. Liu, J., Qiu, Z., Li, Z., Dai, Q., Zhu, J., Hu, M., Yang, M., and King, I. A Survey of Personalized Large Language Models: Progress and Future Directions. arXiv:2502.11528; arxiv.org/abs/2502.11528 (accessed June 2026)",
+  "7. McMahan, H.B., Moore, E., Ramage, D., Hampson, S., and Agüera y Arcas, B. Communication-Efficient Learning of Deep Networks from Decentralized Data. In Proceedings of the 20th International Conference on Artificial Intelligence and Statistics (AISTATS 2017), 1273–1282; https://arxiv.org/abs/1602.05629",
+  "Sriram Ramakrishnan is a product director in digital finance and payments infrastructure with over two decades of experience building cross-border payment systems, embedded-finance products, and blockchain-based settlement rails across Asia, Europe, and the Middle East. His current work focuses on machine-learning personalization, payment architecture, and agentic commerce."
+ ]
+}
