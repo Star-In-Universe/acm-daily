@@ -1,0 +1,243 @@
+{
+ "id": 814980,
+ "date": "2026-11-23T16:56:48",
+ "date_gmt": "2026-11-23T21:56:48",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814980"
+ },
+ "modified": "2026-11-23T16:56:48",
+ "modified_gmt": "2026-11-23T21:56:48",
+ "slug": "teaching-students-to-build-with-agents",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/teaching-students-to-build-with-agents/",
+ "title": {
+  "rendered": "Teaching Students to Build with Agents"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">I teach students to build software with AI agents, and the vocabulary keeps changing. First it was vibe coding. Now we hear agentic engineering, and perhaps agentic development engineering. Each term shifts attention away from typing every line and toward directing a system that can produce, test, and revise software, but what remains is the need to empower students to feel on top of things when they are vibe coding, and to help them understand debugging, testing, and being responsible for information and for LLM costs.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Andrej Karpathy used “vibe coding” for a deliberately loose style of working: describe a change, accept what the model produces, run it, and keep going. A year later, he contrasted its accessibility with agentic engineering’s aim of preserving professional quality while working with agents.<sup><a href=\"#one\">1</a></sup> The labels leave a teaching question open: What must students understand when agents do much of the construction?</p>\n\n\n\n<p class=\"wp-block-paragraph\">I use agentic development engineering as a possible course framing, not as an established term since the ideas keep changing. It emphasizes the full development cycle around the agent’s code: understanding the goal, directing the work, checking behavior, and taking responsibility for the result.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Build on Conceptual Fluency</h3>\n\n\n\n<p class=\"wp-block-paragraph\">In “How Can Vibe Coding Transform Programming Education?,” Yael Erez and Orit Hazzan argue that these tools can shift attention from syntax toward conceptual thinking: problem formulation, decomposition, and iteration.<sup><a href=\"#two\">2</a></sup> I agree. Platforms such as Lovable and Base44 let learners move quickly from an idea to an interactive application.</p>\n\n\n\n<p class=\"wp-block-paragraph\">But a working interface can hide a lot. Where does the data go after a form is submitted? Which part of the application changed? How can a student tell whether an agent’s test checks the intended behavior? A recent <em>CACM </em>Opinion article calls for verification and interpretability in AI-generated software.<sup><a href=\"#three\">3</a></sup> Another recent <em>CACM </em>viewpoint argues that introductory courses should teach students to take responsibility for AI-produced work.<sup><a href=\"#four\">4</a></sup> My contribution is to ask how that responsibility can be practiced while students are building.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I also want them to understand the rapid changes, and we discuss those. For example, Antigravity, an IDE tool used with an agent,<sup><a href=\"#six\">6</a></sup> updated to an agentic development platform that hides the code from the developer.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Abstraction Needs a Map</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Computer science depends on abstraction. A high-level language hides machine instructions; a framework hides common implementation details; a database lets us work with structured information without handling each disk operation. Hiding detail is useful when learners still have a model of what the abstraction does and a way to investigate its boundaries.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Students do not need to implement an entire database, web framework, or deployment service. They do need a map of the system at the level their task requires: how a user action travels through the application, where data persists, how tests check behavior, how changes are tracked, and how a version reaches users. They should be able to inspect or recreate a small, representative part when that would deepen understanding.</p>\n\n\n\n<p class=\"wp-block-paragraph\">For HCI, the abstraction boundary is also a design boundary. A save button that appears to work but loses state after refresh breaks the user’s mental model and trust. A validation message, permission rule, or slow deployment changes the interaction people experience. Students need enough system understanding to connect those visible effects to what the software is doing.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This matters even in a “vibe coding” workflow. In a controlled study of 100 tertiary students, computer science achievement predicted vibe-coding performance, including after accounting for general cognitive skills.<sup><a href=\"#five\">5</a></sup> The finding does not prescribe a curriculum, but it cautions against treating code generation as a substitute for learning the concepts that make software understandable.</p>\n\n\n\n<figure class=\"wp-block-image size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" width=\"922\" height=\"370\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_89a055.png\" alt=\"\" class=\"wp-image-814981\" style=\"aspect-ratio:2.4887640449438204;width:764px;height:auto\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_89a055.png 922w, https://cacm.acm.org/wp-content/uploads/2026/11/image_89a055.png?resize=300,120 300w, https://cacm.acm.org/wp-content/uploads/2026/11/image_89a055.png?resize=768,308 768w, https://cacm.acm.org/wp-content/uploads/2026/11/image_89a055.png?resize=620,249 620w\" sizes=\"auto, (max-width: 922px) 100vw, 922px\" /><figcaption class=\"wp-element-caption\"><em>Figure 1. A guided learning loop: Students build, verify, choose one unfamiliar term, study it, and apply the idea in the next development step. Image original generated with AI assistance of ChatGPT.</em></figcaption></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Make Learning Part of the Cycle</h3>\n\n\n\n<p class=\"wp-block-paragraph\">In my course, students submit evidence of their intent, testing, and verification. They explain what they asked the agent to do, how they checked the result, and what the evidence shows. For a website feature, that may mean checking both the visible behavior and whether the expected record exists in the database. They may ask an agent to propose tests and edge cases, but they still need to judge whether those tests cover what they intended.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I summarize the course rule this way: be lazy about writing code, but precise about verification standards. Students use AI tools to program and test, and they also build features that use LLMs and retrieval-augmented generation (RAG). The course also covers tool use and the Model Context Protocol (MCP), so students encounter both agents that help build software and AI capabilities that become part of the software. “Lazy” means letting tools draft code when that is useful; precision belongs in the intent, acceptance criteria, edge cases, and evidence students use to decide whether the result works.</p>\n\n\n\n<p class=\"wp-block-paragraph\">What does not change is the learning curve. An agent may produce code quickly, but understanding the development cycle still takes time for beginners. Human verification remains necessary. The amount depends on the task, but students need enough knowledge to explain what the software does, test it, and consider ethical risks.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I use a guided-learning step. At the end of each development step, students have the agent run a custom instruction and ask for a summary of the technical terms and concepts that came up. They choose one term they want to understand better, read about it, and write a short explanation in their own words, connected to the feature they just built. This is due to the fact that they explicitly know they have a gap of knowledge that they can work with, but also need to close.</p>\n\n\n\n<p class=\"wp-block-paragraph\">For example, after a feature that saves an item, an agent might list “API route,” “schema,” and “persistence.” A student chooses “API route,” reads about it, explains how a request carries information from the interface to the server. They do not have to study every unfamiliar term at once. That may work for an agent, but not for a student. They learn what black boxes are, and they know they use them. The agent helps surface possible knowledge gaps; each student chooses one to pursue. I discuss explicitly that they need to keep improving their knowledge as they work with agents. Growing knowledge helps them ask better questions, recognize weak explanations, and decide what evidence would be convincing. Their summaries also let me see where understanding is developing and where the agent’s account needs checking.</p>\n\n\n\n<h3 class=\"wp-block-heading\">What Should Endure</h3>\n\n\n\n<p class=\"wp-block-paragraph\">The vocabulary will continue to change. Vibe coding may name quick experimentation; agentic engineering may name a more disciplined way to coordinate agents; agentic development engineering may keep the whole lifecycle in view. A course organized around one label or platform will age quickly.</p>\n\n\n\n<p class=\"wp-block-paragraph\">A more durable objective is to help students work with abstractions without surrendering their judgment. They should be able to express intent, direct an agent, understand the system as far as the task requires, and verify what it does. They should also feel capable of opening a knowledge gap and closing it with guided study.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The question is not only whether students can get an application to work. It is whether they can understand enough to steer the tools, investigate the system they change, and take responsibility for what they deliver. That is what I want to teach.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Disclosure</strong>: I edited this post with the assistance of ChatGPT, yet it describes my intent and experience.</p>\n\n\n<p><strong>References</strong></p>\n\n\n<p class=\"wp-block-paragraph\"><a id=\"one\"></a>1. Andrej Karpathy: From Vibe Coding to Agentic Engineering w/ Stephanie Zhan. Sequoia Capital; <a href=\"https://www.youtube.com/watch?v=96jN2OCOfLs\">https://www.youtube.com/watch?v=96jN2OCOfLs</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"two\"></a>2. Erez, Y. and Hazzan, O. How Can Vibe Coding Transform Programming Education? <em>BLOG</em>@<em>CACM</em>; <a href=\"https://cacm.acm.org/blogcacm/how-can-vibe-coding-transform-programming-education/\">https://cacm.acm.org/blogcacm/how-can-vibe-coding-transform-programming-education/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"three\"></a>3. Mukhopadhyay, M. Can VIBE Drive Development? Threats and Opportunities, <em>Communications</em>; <a href=\"https://cacm.acm.org/opinion/can-vibe-drive-development-threats-and-opportunities/\">https://cacm.acm.org/opinion/can-vibe-drive-development-threats-and-opportunities/</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"four\"></a>4. Fisler, K., Krishnamurthi, S., and Littman, M. Teaching Novice Computing and Programming in the Agentic AI Era, <em>Communications</em>; <a href=\"https://doi.org/10.1145/3838277\">https://doi.org/10.1145/3838277</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"five\"></a>5. Thorgeirsson, S., Weidmann, T.B., and Su, Z. Computer Science Achievement and Writing Skills Predict Vibe Coding Proficiency, <em>Proceedings of CHI 2026</em>; <a href=\"https://doi.org/10.1145/3772318.3791666\">https://doi.org/10.1145/3772318.3791666</a></p>\n\n\n\n<p class=\"wp-block-paragraph\"><a id=\"six\"></a>6. Google Antigravity Team. Build with Google Antigravity, our new agentic development platform, <em>Google</em> <em>Developers</em> <em>Blog</em>; <a href=\"https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/\">https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/</a></p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/Michal-Gordon.111326.BLOG-350.jpg\" alt=\"Michal Gordon\" class=\"wp-image-815743\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/Michal-Gordon.111326.BLOG-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2026/11/Michal-Gordon.111326.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/11/Michal-Gordon.111326.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Michal Gordon</strong> holds a Ph.D. in computer science and applied mathematics from the Weizmann Institute of Science. Gordon teaches a new course on vibe AI programming at Indiana University Bloomington’s Luddy School of Informatics, Computing, and Engineering. Her interests include computing education and human AI interaction.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Students need to keep improving their knowledge as they work with agents. Growing knowledge helps them ask better questions and recognize weak explanations.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 815755,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20601,
+      "post_id": 814978
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Students can be lazy about writing code, meaning let tools draft it, but precise about verification standards.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  4,
+  5,
+  21
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20601
+ ],
+ "class_list": [
+  "post-814980",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-profession",
+  "category-education",
+  "category-hci",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/teaching-students-to-build-with-agents/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Teaching Students to Build with Agents",
+   "url": "http://cacm.acm.org/blogcacm/teaching-students-to-build-with-agents/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/teaching-students-to-build-with-agents/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/112326.BLOG_.Teaching-Students-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/112326.BLOG_.Teaching-Students-G.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Michal Gordon",
+     "url": "https://cacm.acm.org/author/michal-gordon/"
+    }
+   ],
+   "creator": [
+    "Michal Gordon"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-23T21:56:48Z",
+   "datePublished": "2026-11-23T21:56:48Z",
+   "dateModified": "2026-11-23T21:56:48Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Teaching Students to Build with Agents\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/teaching-students-to-build-with-agents\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/teaching-students-to-build-with-agents\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/112326.BLOG_.Teaching-Students-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/112326.BLOG_.Teaching-Students-G.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Michal Gordon\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/michal-gordon\\/\"}],\"creator\":[\"Michal Gordon\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-23T21:56:48Z\",\"datePublished\":\"2026-11-23T21:56:48Z\",\"dateModified\":\"2026-11-23T21:56:48Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Michal Gordon",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/112326.BLOG_.Teaching-Students-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814980",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814980"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 17,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814980/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815756,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814980/revisions/815756"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815755"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814980"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814980"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814980"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814980"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814980"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814980"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814980"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

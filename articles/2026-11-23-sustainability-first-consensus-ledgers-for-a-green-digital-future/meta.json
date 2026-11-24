@@ -1,0 +1,109 @@
+{
+ "title_zh": "可持续优先共识：绿色数字未来",
+ "lede_zh": "提出用可测量标准评估分布式系统可持续性的框架。",
+ "summary": "分布式账本技术（DLT）过去十年主要优化吞吐量、延迟和代币激励，但缺乏可验证的跨平台环境评估标准。比特币工作量证明网络年耗电100-170太瓦时，以太坊转向权益证明后能耗降低99.988%。然而，现有框架多为描述性，缺乏统一比较基准。为此，文章提出“可持续优先共识”（SFC）框架，要求共识架构满足可量化阈值（如年能耗<0.001太瓦时）、全生命周期评估、与欧盟绿色协议等法规对齐，并支持实时碳监测。SFC基于现有低能耗系统（如Algorand、Hedera）的实证数据设定保守阈值，旨在将生态责任作为共识的一级属性，推动行业从相对效率比较转向规范性标准，确保数字基础设施扩展与1.5°C气候目标一致。",
+ "points": [
+  "比特币PoW网络年耗电100-170太瓦时，以太坊转PoS后能耗降低99.988%，但行业仍缺统一可持续性标准。",
+  "SFC框架设定年能耗<0.001太瓦时的硬性上限，要求全生命周期评估和与CSRD、GHG协议等法规对齐。",
+  "SFC区别于现有框架：量化限制、法规整合、整体范围（含硬件生命周期和去中心化权衡）。",
+  "Algorand、Hedera、IOTA等低能耗架构证明生态效率与去中心化可兼得，部分宣称碳负或碳中和。",
+  "SFC建议强制能耗基准、政策对齐、互操作性架构、AI辅助合规和混合链上/链下数据模型。",
+  "阈值基于最佳实践网络性能设定，旨在将数字基础设施限制在行星边界内，支持1.5°C目标。"
+ ],
+ "terms": [
+  {
+   "en": "Distributed Ledger Technology (DLT)",
+   "zh": "分布式账本技术"
+  },
+  {
+   "en": "Proof-of-Work (PoW)",
+   "zh": "工作量证明"
+  },
+  {
+   "en": "Proof-of-Stake (PoS)",
+   "zh": "权益证明"
+  },
+  {
+   "en": "Sustainability-First Consensus (SFC)",
+   "zh": "可持续优先共识"
+  },
+  {
+   "en": "Corporate Sustainability Reporting Directive (CSRD)",
+   "zh": "企业可持续发展报告指令"
+  },
+  {
+   "en": "Carbon Border Adjustment Mechanism (CBAM)",
+   "zh": "碳边境调节机制"
+  },
+  {
+   "en": "Greenhouse Gas Protocol",
+   "zh": "温室气体核算体系"
+  },
+  {
+   "en": "Cambridge Bitcoin Electricity Consumption Index (CBECI)",
+   "zh": "剑桥比特币电力消耗指数"
+  },
+  {
+   "en": "Crypto Carbon Ratings Institute (CCRI)",
+   "zh": "加密碳评级研究所"
+  },
+  {
+   "en": "Directed Acyclic Graph (DAG)",
+   "zh": "有向无环图"
+  },
+  {
+   "en": "Layer-2",
+   "zh": "二层网络"
+  },
+  {
+   "en": "Planetary Boundaries",
+   "zh": "行星边界"
+  }
+ ],
+ "mindmap": {
+  "title": "可持续优先共识\n框架",
+  "branches": [
+   {
+    "title": "背景与问题",
+    "children": [
+     "DLT优化吞吐量、延迟，忽视环境影响",
+     "比特币PoW年耗电100-170太瓦时",
+     "缺乏可验证的跨平台可持续标准"
+    ]
+   },
+   {
+    "title": "SFC框架核心",
+    "children": [
+     "年能耗硬上限<0.001太瓦时",
+     "全生命周期评估与法规对齐",
+     "实时碳监测与链上审计"
+    ]
+   },
+   {
+    "title": "证据与案例",
+    "children": [
+     "以太坊转PoS能耗降99.988%",
+     "Algorand、Hedera低能耗运行",
+     "IOTA等用于环境数据试点"
+    ]
+   },
+   {
+    "title": "实施建议",
+    "children": [
+     "强制能耗与碳基准",
+     "AI辅助合规与优化",
+     "混合链上/链下数据模型"
+    ]
+   },
+   {
+    "title": "影响与结论",
+    "children": [
+     "可持续性成为共识一级属性",
+     "确保数字基础设施在行星边界内",
+     "呼吁计算社区采纳并完善标准"
+    ]
+   }
+  ]
+ },
+ "skip": []
+}

@@ -1,0 +1,206 @@
+{
+ "id": 814249,
+ "date": "2026-11-23T12:12:59",
+ "date_gmt": "2026-11-23T17:12:59",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?post_type=digital-library&#038;p=814249"
+ },
+ "modified": "2026-11-23T12:12:59",
+ "modified_gmt": "2026-11-23T17:12:59",
+ "slug": "sustainability-first-consensus-ledgers-for-a-green-digital-future",
+ "status": "publish",
+ "type": "digital-library",
+ "link": "https://cacm.acm.org/opinion/sustainability-first-consensus-ledgers-for-a-green-digital-future/",
+ "title": {
+  "rendered": "‘Sustainability-First Consensus’ Ledgers for a Green Digital Future"
+ },
+ "content": {
+  "rendered": "<article>\n<div class=\"body\" lang=\"en\">\n<section id=\"sec1\" class=\"sec\">\n<p id=\"p-1\">A distributed ledger technology (DLT) is a decentralized database system, managed by multiple participants across different locations, to enable secure, synchronized, and immutable recording of data without the need for a central administrator. The most well-known DLT is blockchain.<a class=\"reference-link xref xref-bibr\" href=\"#B11\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B11\"><sup>11</sup></a></p>\n<p id=\"p-2\">Distributed ledger technology systems have been optimizing for throughput, latency, and token incentives during the last decade. Yet as global climate commitments tighten and computing footprints grow, the field still lacks a verifiable, cross-platform standard for evaluating the environmental impact of consensus mechanisms. The debate has largely centered on proof-of-work (PoW) versus proof-of-stake (PoS), but neither provides a comprehensive sustainability benchmark. What is missing is a unifying approach that treats ecological responsibility as a first-class property of consensus itself. This Opinion column proposes Sustainability-First Consensus (SFC): a measurable, auditable framework for evaluating against transparent sustainability criteria (see the accompanying figure). SFC establishes thresholds and requirements that any consensus architecture must meet to be considered environmentally responsible, from a “sustainability by design” perspective.</p>\n<p><img loading=\"lazy\" decoding=\"async\" class=\"alignnone size-full wp-image-815714\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/Sustainability-First-Fig.1.jpg\" alt=\"Sustainability-First, Figure 1\" width=\"1680\" height=\"988\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/Sustainability-First-Fig.1.jpg 1680w, https://cacm.acm.org/wp-content/uploads/2026/11/Sustainability-First-Fig.1.jpg?resize=300,176 300w, https://cacm.acm.org/wp-content/uploads/2026/11/Sustainability-First-Fig.1.jpg?resize=768,452 768w, https://cacm.acm.org/wp-content/uploads/2026/11/Sustainability-First-Fig.1.jpg?resize=1024,602 1024w, https://cacm.acm.org/wp-content/uploads/2026/11/Sustainability-First-Fig.1.jpg?resize=1536,903 1536w, https://cacm.acm.org/wp-content/uploads/2026/11/Sustainability-First-Fig.1.jpg?resize=1600,941 1600w, https://cacm.acm.org/wp-content/uploads/2026/11/Sustainability-First-Fig.1.jpg?resize=620,365 620w\" sizes=\"auto, (max-width: 1680px) 100vw, 1680px\" /></p>\n<figure id=\"F1\" class=\"fig\"><figcaption><span class=\"caption-label\">Figure 1. </span> <span class=\"p\">The Sustainability-First Consensus (SFC) Framework. A conceptual map showing the transition from high-energy blockchain systems to a normative standard that integrates methodologies and planetary boundary constraints into the core of DLT architecture.</span></p>\n<div class=\"figcaption-footer\"> </div>\n</figcaption></figure>\n</section>\n<section id=\"sec2\" class=\"sec\">\n<h2 class=\"heading\">Why Sustainability Matters for Computing</h2>\n<p id=\"p-4\">Distributed ledgers are being woven into critical infrastructures: energy markets, supply chains, healthcare, and even climate accounting. With this evolution comes accountability. Policymakers expect digital infrastructures to meet the same sustainability thresholds as physical ones.</p>\n<p id=\"p-5\">Frameworks such as the European Union’s Green Deal,<a class=\"reference-link xref xref-bibr\" href=\"#B5\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B5\"><sup>5</sup></a> which set the goal of climate neutrality by 2050, pursued through regulations such as the Corporate Sustainability Reporting Directive (CSRD) and the Carbon Border Adjustment Mechanism (CBAM), or the United Nations Sustainable Development Goals,<a class=\"reference-link xref xref-bibr\" href=\"#B10\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B10\"><sup>10</sup></a> require verifiable, tamper-proof data. The Greenhouse Gas Protocol<a class=\"reference-link xref xref-bibr\" href=\"#B12\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B12\"><sup>12</sup></a> is the global carbon accounting standard. Its Scope 1, 2, and 3 methodologies provide the technical basis for the life-cycle and supply-chain reporting, ensuring the transparency and comparability required by modern climate policy.</p>\n</section>\n<section id=\"sec3\" class=\"sec\">\n<h2 class=\"heading\">From ‘Proof-of-Work’ to ‘Sustainability-First Consensus’</h2>\n<p id=\"p-6\">The early critique of blockchain centered on its immense energy footprint. According to the Cambridge Bitcoin Electricity Consumption Index (CBECI), Bitcoin’s PoW network consumes between 100 terawatt-hours (TWh)–170 Two annually, on par with countries such as the Netherlands or Argentina.<a class=\"reference-link xref xref-bibr\" href=\"#B2\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B2\"><sup>2</sup></a> Before its transition to PoS, Ethereum&#8217;s consumption peaked at an estimated 94 TWh per year.<a class=\"reference-link xref xref-bibr\" href=\"#B4\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B4\"><sup>4</sup></a></p>\n<p id=\"p-7\">According to the Crypto Carbon Ratings Institute (CCRI), Ethereum’s electricity consumption was reduced by 99.988%.<a class=\"reference-link xref xref-bibr\" href=\"#B3\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B3\"><sup>3</sup></a> Modern networks demonstrate comparable system-level efficiency: Algorand<a class=\"reference-link xref xref-bibr\" href=\"#B1\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B1\"><sup>1</sup></a> and Hedera<a class=\"reference-link xref xref-bibr\" href=\"#B7\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B7\"><sup>7</sup></a> operate at minimal energy scale. These represent orders-of-magnitude reductions in network energy consumption, compared to PoW systems.</p>\n<p id=\"p-8\">System-level, time-based metrics (annual energy consumption, carbon intensity given defined load scenarios) provide reliable comparisons. The figures cited here illustrate relative efficiency but should be interpreted within their operational contexts.</p>\n<p id=\"p-9\">Modern blockchain architectures increasingly decouple throughput from validator network size through sharding, directed acyclic graphs (DAGs), and Layer-2 solutions to scale horizontally and reduce energy use, processing transactions off-chain, payment channels for &gt;90% mainnet footprint reduction, and employing DAG-based consensus for high-throughput, low-energy parallel processing.</p>\n<p id=\"p-10\">Alternative DLT architectures—such as IOTA, Hedera, Algorand, BigchainDB—emerged to address limitations in speed, cost, and energy use. These evolving systems prioritize scalability and off-chain processing to enhance throughput without compromising network performance. These examples show that sustainability-oriented architectures are feasible and diverse, and have been explored in early pilots for environmental data collection, indicating suitability for real-time monitoring, supply-chain traceability, where efficiency and sustainability are paramount.<a class=\"reference-link xref xref-bibr\" href=\"#B1\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B1\"><sup>1</sup></a><sup>,</sup><a class=\"reference-link xref xref-bibr\" href=\"#B7\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B7\"><sup>7</sup></a><sup>,</sup><a class=\"reference-link xref xref-bibr\" href=\"#B8\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B8\"><sup>8</sup></a></p>\n</section>\n<section id=\"sec4\" class=\"sec\">\n<h2 class=\"heading\">The Problem: No Standard for Sustainability</h2>\n<p id=\"p-11\">Without such a standard, sustainability claims remain fragmented and inconsistent, lacking:</p>\n<ul class=\"list\" data-jats-list-type=\"bullet\">\n<li class=\"list-item\">\n<p id=\"p-12\">A consistent way to compare systems.</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-13\">A shared definition of “sustainable” consensus.</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-14\">A method for evaluating hardware life-cycle impacts.</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-15\">A framework that integrates regulatory expectations.</p>\n</li>\n</ul>\n</section>\n<section id=\"sec5\" class=\"sec\">\n<h2 class=\"heading\">Novelty and Distinction of SFC from Existing Frameworks</h2>\n<p id=\"p-16\">While recent research by Messina,<a class=\"reference-link xref xref-bibr\" href=\"#B9\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B9\"><sup>9</sup></a> Fernández,<a class=\"reference-link xref xref-bibr\" href=\"#B6\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B6\"><sup>6</sup></a> and others provides essential technical guidelines, consensus energy catalogs, and organizational reviews, these frameworks remain largely prescriptive—focusing on <i>implementation</i> rather than universal <i>evaluation</i>. The SFC framework distinguishes itself by shifting from relative comparisons to normative standards in three key areas:</p>\n<ul class=\"list\" data-jats-list-type=\"bullet\">\n<li class=\"list-item\">\n<p id=\"p-17\"><b>Quantifiable Limits:</b> SFC enforces strict objective baselines (for example, &lt;0.001 TWh/year) rather than relative efficiency comparisons.</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-18\"><b>Regulatory Alignment:</b> It integrates mandates like the EU Green Deal, CSRD, GHG, UN SDG as core architectural principles rather than afterthought compliance checks.</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-19\"><b>Holistic Scope:</b> Unlike models focused solely on consensus mechanisms, SFC evaluates hardware life-cycle impacts and decentralization trade-offs.</p>\n</li>\n</ul>\n<p id=\"p-20\">Ultimately, while existing frameworks guide <i>how</i> to operationalize sustainable systems, SFC provides the necessary evaluative layer defining <i>what</i> limits must be respected to remain within planetary boundaries. To operationalize this shift, the SFC framework is proposed, in which an SFC-compliant system must meet the criteria shown in the accompanying table.</p>\n<figure id=\"UT1\" class=\"table-wrap\">\n<div class=\"caption\"><span class=\"caption-label\">Table. </span> <span class=\"p\">Criteria for SFC-compliant systems.</span></div>\n<div class=\"table-container\">\n<table class=\"table table-bordered table-condensed table-hover\" data-jats-frame=\"hsides\" data-jats-rules=\"rows\">\n<colgroup>\n<col align=\"left\" valign=\"top\" />\n<col align=\"left\" valign=\"top\" /> </colgroup>\n<thead style=\"vertical-align: top;\">\n<tr>\n<th style=\"text-align: left;\">SFC Compliance Checklist</th>\n<th style=\"text-align: left;\">Threshold/Requirement</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: left;\"><b>1. Energy Consumption</b></td>\n<td style=\"text-align: left;\">Total annualized network energy consumption to be &lt; 0.001 TWh (1 GWh) systemwide.</td>\n</tr>\n<tr>\n<td style=\"text-align: left;\"><b>2. Hardware Life Cycle</b></td>\n<td style=\"text-align: left;\">Mandatory extended hardware utility to prevent e-waste (for example, using general-purpose hardware rather than single-use ASICs).</td>\n</tr>\n<tr>\n<td style=\"text-align: left;\"><b>3. Carbon Accountability</b></td>\n<td style=\"text-align: left;\">Native on-chain carbon transparency and regulatory-aligned thresholds requiring annual Net Zero status via direct renewables or verified offsets.</td>\n</tr>\n<tr>\n<td style=\"text-align: left;\"><b>4. Regulatory Readiness</b></td>\n<td style=\"text-align: left;\">Architecture must support auditability standards compatible with CSRD and ESG reporting (for example, accessible via APIs).</td>\n</tr>\n</tbody>\n</table>\n</div>\n</figure>\n<p id=\"p-22\">Measurement methods and data sources: Energy consumption (criterion 1) should be measured using methodologies aligned with the Cambridge Bitcoin Electricity Consumption Index<a class=\"reference-link xref xref-bibr\" href=\"#B2\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B2\"><sup>2</sup></a> for PoW systems or the Crypto Carbon Ratings Institute<a class=\"reference-link xref xref-bibr\" href=\"#B3\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B3\"><sup>3</sup></a> framework for PoS and hybrid systems, based on transparent hardware assumptions, energy grid mix data, and validated node counts. Carbon accountability (criterion 3) requires real-time monitoring of electricity carbon intensity using regional grid data (for example, ElectricityMap API, IEA carbon factors) and on-chain audit trails. Regulatory readiness (criterion 4) demands compatibility with CSRD reporting schemas and machine-readable ESG taxonomies. Implementing these criteria transforms SFC from an aspirational label into a verifiable, auditable standard. Verification of energy sources remains inconsistent and fossil fuels still play a major role.</p>\n<p id=\"p-23\">The SFC thresholds are intentionally conservative and empirically grounded, with the 0.001 TWh cap reflecting the proven capabilities of existing low-energy systems. By aligning with EU CSRD and circular economy guidelines, these criteria ensure a holistic evaluation that extends beyond runtime energy to hardware life cycles. Ultimately, these values serve as an adaptable baseline, designed to evolve as sustainability measurement practices mature. Deployments demonstrate that ecological efficiency and decentralization need not be mutually exclusive. Platforms such as Algorand, Hedera, and IOTA utilize low-energy architectures, and some state carbon-negative or carbon-neutral positions based on offsets, while modular frameworks such as Hyperledger Fabric and VeChain enable sector-specific sustainability tracking without computational waste.<a class=\"reference-link xref xref-bibr\" href=\"#B1\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B1\"><sup>1</sup></a><sup>,</sup><a class=\"reference-link xref xref-bibr\" href=\"#B7\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B7\"><sup>7</sup></a><sup>,</sup><a class=\"reference-link xref xref-bibr\" href=\"#B8\" data-jats-ref-type=\"bibr\" data-jats-rid=\"B8\"><sup>8</sup></a></p>\n</section>\n<section id=\"sec6\" class=\"sec\">\n<h2 class=\"heading\">The Case for a New Paradigm: Sustainability-First Consensus</h2>\n<p id=\"p-24\">What unites these systems is not just decentralization, it is sustainability by design. Proposing that SFC be sustained as a guiding paradigm for distributed ledgers and blockchains, on new systems, would include the following:</p>\n<ul class=\"list\" data-jats-list-type=\"bullet\">\n<li class=\"list-item\">\n<p id=\"p-25\">Mandatory energy and carbon benchmarks (Strict &lt; 0.001 TWh/year system caps).</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-26\">Policy alignment with EU Green Deal, CSRD, UN SDG.</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-27\">Interoperability-first architectures.</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-28\">AI-assisted compliance and optimizations.</p>\n</li>\n<li class=\"list-item\">\n<p id=\"p-29\">Hybrid on/off-chain data models.</p>\n</li>\n</ul>\n<p id=\"p-30\">Emerging research suggests that AI-assisted optimization may reduce overhead in certain consensus processes, such as dynamic validator selection or adaptive load balancing. Early pilots in environmental data collection also indicate potential suitability for real-time monitoring. These developments are promising, but results remain preliminary. SFC treats such innovations as complementary rather than foundational (for example, AI may enhance sustainability).</p>\n</section>\n<section id=\"sec7\" class=\"sec\">\n<h2 class=\"heading\">Rationale and Empirical Basis for SFC Thresholds</h2>\n<p id=\"p-31\">The SFC thresholds are derived from an empirical analysis of operational low-energy DLTs. The 0.001 TWh (1 GWh) cap is set as a proposed normative limit based on the performance of best-in-class networks; for context, this is orders of magnitude lower than traditional PoW systems and remains significantly below the post-Merge Ethereum baseline (approx. 0.0026 TWh).</p>\n<p id=\"p-32\">Setting the limit at this level addresses the planetary boundaries framework, specifically the boundaries for “climate change” and “novel entities” (including electronic waste). By capping energy at a negligible fraction of national grids, SFC ensures the scaling of digital infrastructure remains within the “safe operating space” required to maintain the 1.5°C global warming target. By referencing GHG Protocol Scope 2 and 3 methodologies, the framework ensures energy efficiency is not achieved by externalizing environmental costs to the hardware manufacturing supply chain. Instead, sustainability is treated as an intrinsic, measurable property of the consensus protocol itself, thus the SFC framework having direct impact on sustainability.</p>\n</section>\n<section id=\"sec8\" class=\"sec\">\n<h2 class=\"heading\">Conclusion: A Call to the Computing Community</h2>\n<p id=\"p-33\">Sustainability-First Consensus reframes the future of distributed systems around verifiable ecological responsibility rather than abstract efficiency gains. The field has spent a decade optimizing for throughput, latency, and token incentives; it is time to optimize for planetary boundaries with the same rigor. The technologies capable of meeting these expectations already exist, but the industry lacks a unifying standard that distinguishes genuinely sustainable architectures from those that merely shift costs elsewhere.</p>\n<p id=\"p-34\">By introducing measurable thresholds, transparent reporting requirements, and life-cycle-aware design principles, SFC offers a practical path forward for researchers, engineers, and policymakers. It challenges the community to treat sustainability not as an optional attribute but as a first-class property of consensus itself—one that can be audited, compared, and continuously improved.</p>\n<p id=\"p-35\">Distributed ledgers are at an inflection point. They can either remain trapped in the narrative of wasteful energy consumption or they can evolve into enablers of sustainable infrastructure. The technical tools already exist and are evolving, and professional communities must normalize sustainability as a design imperative and insist that all future systems prove their ecological responsibility.</p>\n<p id=\"p-36\">The next generation of distributed systems will not be judged by how cleverly they avoid computation, but by how responsibly they use it. If the computing industry is serious about aligning with global climate commitments, then consensus mechanisms must evolve accordingly. SFC is just one proposal for how to begin that shift. The broader challenge and opportunity is for the community to build on it, refine it, and hold itself accountable to it.</p>\n</section>\n</div>\n<footer class=\"back\"></footer>\n</article>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>The SFC auditable framework establishes thresholds and requirements that a consensus architecture must meet to be considered environmentally responsible.</p>",
+  "protected": false
+ },
+ "featured_media": 815306,
+ "comment_status": "open",
+ "ping_status": "closed",
+ "template": "",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 1,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20587,
+      "post_id": 814250
+     }
+    }
+   ]
+  },
+  "cacm_acm_queue_branding_active": 0,
+  "lede": "<p>A proposal for a framework that evaluates distributed systems using measurable criteria.</p>\n",
+  "table_of_contents": "<ul>\n<li><a href=\"#sec2\">Why Sustainability Matters for Computing</a></li>\n<li><a href=\"#sec3\">From ‘Proof-of-Work’ to ‘Sustainability-First Consensus’</a></li>\n<li><a href=\"#sec4\">The Problem: No Standard for Sustainability</a></li>\n<li><a href=\"#sec5\">Novelty and Distinction of SFC from Existing Frameworks</a></li>\n<li><a href=\"#sec6\">The Case for a New Paradigm: Sustainability-First Consensus</a></li>\n<li><a href=\"#sec7\">Rationale and Empirical Basis for SFC Thresholds</a></li>\n<li><a href=\"#sec8\">Conclusion: A Call to the Computing Community</a></li>\n<li><a href=\"#references\">References</a></li>\n</ul>\n",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "footnotes": ""
+ },
+ "categories": [
+  6,
+  7,
+  1
+ ],
+ "issue": [],
+ "section": [
+  11
+ ],
+ "content-type": [],
+ "byline": [
+  20587
+ ],
+ "class_list": [
+  "post-814249",
+  "digital-library",
+  "type-digital-library",
+  "status-publish",
+  "has-post-thumbnail",
+  "hentry",
+  "category-computing-applications",
+  "category-data-and-information",
+  "category-uncategorized",
+  "section-opinion"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/opinion/sustainability-first-consensus-ledgers-for-a-green-digital-future/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "‘Sustainability-First Consensus’ Ledgers for a Green Digital Future",
+   "url": "http://cacm.acm.org/opinion/sustainability-first-consensus-ledgers-for-a-green-digital-future/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/opinion/sustainability-first-consensus-ledgers-for-a-green-digital-future/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/110326.OP_.Sustainability-G-1.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/110326.OP_.Sustainability-G-1.jpg"
+   },
+   "articleSection": "Computing Applications",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Andrei Nicolae Besleaga",
+     "url": "https://cacm.acm.org/author/andrei-nicolae-besleaga/"
+    }
+   ],
+   "creator": [
+    "Andrei Nicolae Besleaga"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-23T17:12:59Z",
+   "datePublished": "2026-11-23T17:12:59Z",
+   "dateModified": "2026-11-23T17:12:59Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"\\u2018Sustainability-First Consensus\\u2019 Ledgers for a Green Digital Future\",\"url\":\"http:\\/\\/cacm.acm.org\\/opinion\\/sustainability-first-consensus-ledgers-for-a-green-digital-future\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/opinion\\/sustainability-first-consensus-ledgers-for-a-green-digital-future\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110326.OP_.Sustainability-G-1.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/110326.OP_.Sustainability-G-1.jpg\"},\"articleSection\":\"Computing Applications\",\"author\":[{\"@type\":\"Person\",\"name\":\"Andrei Nicolae Besleaga\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/andrei-nicolae-besleaga\\/\"}],\"creator\":[\"Andrei Nicolae Besleaga\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-23T17:12:59Z\",\"datePublished\":\"2026-11-23T17:12:59Z\",\"dateModified\":\"2026-11-23T17:12:59Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "jetpack_sharing_enabled": true,
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814249",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/digital-library"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814249"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 9,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814249/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815716,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/digital-library/814249/revisions/815716"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815306"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814249"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814249"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814249"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814249"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814249"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814249"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

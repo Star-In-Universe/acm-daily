@@ -1,0 +1,171 @@
+{
+ "title": "‘Sustainability-First Consensus’ Ledgers for a Green Digital Future",
+ "lede": "A proposal for a framework that evaluates distributed systems using measurable criteria.",
+ "blocks": [
+  {
+   "type": "p",
+   "en": "A distributed ledger technology (DLT) is a decentralized database system, managed by multiple participants across different locations, to enable secure, synchronized, and immutable recording of data without the need for a central administrator. The most well-known DLT is blockchain."
+  },
+  {
+   "type": "p",
+   "en": "Distributed ledger technology systems have been optimizing for throughput, latency, and token incentives during the last decade. Yet as global climate commitments tighten and computing footprints grow, the field still lacks a verifiable, cross-platform standard for evaluating the environmental impact of consensus mechanisms. The debate has largely centered on proof-of-work (PoW) versus proof-of-stake (PoS), but neither provides a comprehensive sustainability benchmark. What is missing is a unifying approach that treats ecological responsibility as a first-class property of consensus itself. This Opinion column proposes Sustainability-First Consensus (SFC): a measurable, auditable framework for evaluating against transparent sustainability criteria (see the accompanying figure). SFC establishes thresholds and requirements that any consensus architecture must meet to be considered environmentally responsible, from a “sustainability by design” perspective."
+  },
+  {
+   "type": "h",
+   "en": "Why Sustainability Matters for Computing"
+  },
+  {
+   "type": "p",
+   "en": "Distributed ledgers are being woven into critical infrastructures: energy markets, supply chains, healthcare, and even climate accounting. With this evolution comes accountability. Policymakers expect digital infrastructures to meet the same sustainability thresholds as physical ones."
+  },
+  {
+   "type": "p",
+   "en": "Frameworks such as the European Union’s Green Deal, which set the goal of climate neutrality by 2050, pursued through regulations such as the Corporate Sustainability Reporting Directive (CSRD) and the Carbon Border Adjustment Mechanism (CBAM), or the United Nations Sustainable Development Goals, require verifiable, tamper-proof data. The Greenhouse Gas Protocol is the global carbon accounting standard. Its Scope 1, 2, and 3 methodologies provide the technical basis for the life-cycle and supply-chain reporting, ensuring the transparency and comparability required by modern climate policy."
+  },
+  {
+   "type": "h",
+   "en": "From ‘Proof-of-Work’ to ‘Sustainability-First Consensus’"
+  },
+  {
+   "type": "p",
+   "en": "The early critique of blockchain centered on its immense energy footprint. According to the Cambridge Bitcoin Electricity Consumption Index (CBECI), Bitcoin’s PoW network consumes between 100 terawatt-hours (TWh)–170 Two annually, on par with countries such as the Netherlands or Argentina. Before its transition to PoS, Ethereum’s consumption peaked at an estimated 94 TWh per year."
+  },
+  {
+   "type": "p",
+   "en": "According to the Crypto Carbon Ratings Institute (CCRI), Ethereum’s electricity consumption was reduced by 99.988%. Modern networks demonstrate comparable system-level efficiency: Algorand and Hedera operate at minimal energy scale. These represent orders-of-magnitude reductions in network energy consumption, compared to PoW systems."
+  },
+  {
+   "type": "p",
+   "en": "System-level, time-based metrics (annual energy consumption, carbon intensity given defined load scenarios) provide reliable comparisons. The figures cited here illustrate relative efficiency but should be interpreted within their operational contexts."
+  },
+  {
+   "type": "p",
+   "en": "Modern blockchain architectures increasingly decouple throughput from validator network size through sharding, directed acyclic graphs (DAGs), and Layer-2 solutions to scale horizontally and reduce energy use, processing transactions off-chain, payment channels for >90% mainnet footprint reduction, and employing DAG-based consensus for high-throughput, low-energy parallel processing."
+  },
+  {
+   "type": "p",
+   "en": "Alternative DLT architectures—such as IOTA, Hedera, Algorand, BigchainDB—emerged to address limitations in speed, cost, and energy use. These evolving systems prioritize scalability and off-chain processing to enhance throughput without compromising network performance. These examples show that sustainability-oriented architectures are feasible and diverse, and have been explored in early pilots for environmental data collection, indicating suitability for real-time monitoring, supply-chain traceability, where efficiency and sustainability are paramount."
+  },
+  {
+   "type": "h",
+   "en": "The Problem: No Standard for Sustainability"
+  },
+  {
+   "type": "p",
+   "en": "Without such a standard, sustainability claims remain fragmented and inconsistent, lacking:"
+  },
+  {
+   "type": "p",
+   "en": "A consistent way to compare systems."
+  },
+  {
+   "type": "p",
+   "en": "A shared definition of “sustainable” consensus."
+  },
+  {
+   "type": "p",
+   "en": "A method for evaluating hardware life-cycle impacts."
+  },
+  {
+   "type": "p",
+   "en": "A framework that integrates regulatory expectations."
+  },
+  {
+   "type": "h",
+   "en": "Novelty and Distinction of SFC from Existing Frameworks"
+  },
+  {
+   "type": "p",
+   "en": "While recent research by Messina, Fernández, and others provides essential technical guidelines, consensus energy catalogs, and organizational reviews, these frameworks remain largely prescriptive—focusing on implementation rather than universal evaluation. The SFC framework distinguishes itself by shifting from relative comparisons to normative standards in three key areas:"
+  },
+  {
+   "type": "p",
+   "en": "Quantifiable Limits: SFC enforces strict objective baselines (for example, <0.001 TWh/year) rather than relative efficiency comparisons."
+  },
+  {
+   "type": "p",
+   "en": "Regulatory Alignment: It integrates mandates like the EU Green Deal, CSRD, GHG, UN SDG as core architectural principles rather than afterthought compliance checks."
+  },
+  {
+   "type": "p",
+   "en": "Holistic Scope: Unlike models focused solely on consensus mechanisms, SFC evaluates hardware life-cycle impacts and decentralization trade-offs."
+  },
+  {
+   "type": "p",
+   "en": "Ultimately, while existing frameworks guide how to operationalize sustainable systems, SFC provides the necessary evaluative layer defining what limits must be respected to remain within planetary boundaries. To operationalize this shift, the SFC framework is proposed, in which an SFC-compliant system must meet the criteria shown in the accompanying table."
+  },
+  {
+   "type": "p",
+   "en": "Measurement methods and data sources: Energy consumption (criterion 1) should be measured using methodologies aligned with the Cambridge Bitcoin Electricity Consumption Index for PoW systems or the Crypto Carbon Ratings Institute framework for PoS and hybrid systems, based on transparent hardware assumptions, energy grid mix data, and validated node counts. Carbon accountability (criterion 3) requires real-time monitoring of electricity carbon intensity using regional grid data (for example, ElectricityMap API, IEA carbon factors) and on-chain audit trails. Regulatory readiness (criterion 4) demands compatibility with CSRD reporting schemas and machine-readable ESG taxonomies. Implementing these criteria transforms SFC from an aspirational label into a verifiable, auditable standard. Verification of energy sources remains inconsistent and fossil fuels still play a major role."
+  },
+  {
+   "type": "p",
+   "en": "The SFC thresholds are intentionally conservative and empirically grounded, with the 0.001 TWh cap reflecting the proven capabilities of existing low-energy systems. By aligning with EU CSRD and circular economy guidelines, these criteria ensure a holistic evaluation that extends beyond runtime energy to hardware life cycles. Ultimately, these values serve as an adaptable baseline, designed to evolve as sustainability measurement practices mature. Deployments demonstrate that ecological efficiency and decentralization need not be mutually exclusive. Platforms such as Algorand, Hedera, and IOTA utilize low-energy architectures, and some state carbon-negative or carbon-neutral positions based on offsets, while modular frameworks such as Hyperledger Fabric and VeChain enable sector-specific sustainability tracking without computational waste."
+  },
+  {
+   "type": "h",
+   "en": "The Case for a New Paradigm: Sustainability-First Consensus"
+  },
+  {
+   "type": "p",
+   "en": "What unites these systems is not just decentralization, it is sustainability by design. Proposing that SFC be sustained as a guiding paradigm for distributed ledgers and blockchains, on new systems, would include the following:"
+  },
+  {
+   "type": "p",
+   "en": "Mandatory energy and carbon benchmarks (Strict < 0.001 TWh/year system caps)."
+  },
+  {
+   "type": "p",
+   "en": "Policy alignment with EU Green Deal, CSRD, UN SDG."
+  },
+  {
+   "type": "p",
+   "en": "Interoperability-first architectures."
+  },
+  {
+   "type": "p",
+   "en": "AI-assisted compliance and optimizations."
+  },
+  {
+   "type": "p",
+   "en": "Hybrid on/off-chain data models."
+  },
+  {
+   "type": "p",
+   "en": "Emerging research suggests that AI-assisted optimization may reduce overhead in certain consensus processes, such as dynamic validator selection or adaptive load balancing. Early pilots in environmental data collection also indicate potential suitability for real-time monitoring. These developments are promising, but results remain preliminary. SFC treats such innovations as complementary rather than foundational (for example, AI may enhance sustainability)."
+  },
+  {
+   "type": "h",
+   "en": "Rationale and Empirical Basis for SFC Thresholds"
+  },
+  {
+   "type": "p",
+   "en": "The SFC thresholds are derived from an empirical analysis of operational low-energy DLTs. The 0.001 TWh (1 GWh) cap is set as a proposed normative limit based on the performance of best-in-class networks; for context, this is orders of magnitude lower than traditional PoW systems and remains significantly below the post-Merge Ethereum baseline (approx. 0.0026 TWh)."
+  },
+  {
+   "type": "p",
+   "en": "Setting the limit at this level addresses the planetary boundaries framework, specifically the boundaries for “climate change” and “novel entities” (including electronic waste). By capping energy at a negligible fraction of national grids, SFC ensures the scaling of digital infrastructure remains within the “safe operating space” required to maintain the 1.5°C global warming target. By referencing GHG Protocol Scope 2 and 3 methodologies, the framework ensures energy efficiency is not achieved by externalizing environmental costs to the hardware manufacturing supply chain. Instead, sustainability is treated as an intrinsic, measurable property of the consensus protocol itself, thus the SFC framework having direct impact on sustainability."
+  },
+  {
+   "type": "h",
+   "en": "Conclusion: A Call to the Computing Community"
+  },
+  {
+   "type": "p",
+   "en": "Sustainability-First Consensus reframes the future of distributed systems around verifiable ecological responsibility rather than abstract efficiency gains. The field has spent a decade optimizing for throughput, latency, and token incentives; it is time to optimize for planetary boundaries with the same rigor. The technologies capable of meeting these expectations already exist, but the industry lacks a unifying standard that distinguishes genuinely sustainable architectures from those that merely shift costs elsewhere."
+  },
+  {
+   "type": "p",
+   "en": "By introducing measurable thresholds, transparent reporting requirements, and life-cycle-aware design principles, SFC offers a practical path forward for researchers, engineers, and policymakers. It challenges the community to treat sustainability not as an optional attribute but as a first-class property of consensus itself—one that can be audited, compared, and continuously improved."
+  },
+  {
+   "type": "p",
+   "en": "Distributed ledgers are at an inflection point. They can either remain trapped in the narrative of wasteful energy consumption or they can evolve into enablers of sustainable infrastructure. The technical tools already exist and are evolving, and professional communities must normalize sustainability as a design imperative and insist that all future systems prove their ecological responsibility."
+  },
+  {
+   "type": "p",
+   "en": "The next generation of distributed systems will not be judged by how cleverly they avoid computation, but by how responsibly they use it. If the computing industry is serious about aligning with global climate commitments, then consensus mechanisms must evolve accordingly. SFC is just one proposal for how to begin that shift. The broader challenge and opportunity is for the community to build on it, refine it, and hold itself accountable to it."
+  }
+ ],
+ "tail": []
+}

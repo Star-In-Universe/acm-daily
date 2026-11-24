@@ -343,7 +343,39 @@
       "date": "2026-11-20T09:23:33",
       "link": "https://cacm.acm.org/blogcacm/personalization-is-a-loop-not-a-model/",
       "section": "Blog@CACM"
+    },
+    {
+      "id": 814980,
+      "pushed_at": "2026-11-24T18:31:19+08:00",
+      "title": "Teaching Students to Build with Agents",
+      "date": "2026-11-23T16:56:48",
+      "link": "https://cacm.acm.org/blogcacm/teaching-students-to-build-with-agents/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 815178,
+      "pushed_at": "2026-11-24T18:31:19+08:00",
+      "title": "Be Careful What You Ask For!",
+      "date": "2026-11-23T12:57:30",
+      "link": "https://cacm.acm.org/opinion/be-careful-what-you-ask-for/",
+      "section": "Opinion"
+    },
+    {
+      "id": 814249,
+      "pushed_at": "2026-11-24T18:31:19+08:00",
+      "title": "‘Sustainability-First Consensus’ Ledgers for a Green Digital Future",
+      "date": "2026-11-23T12:12:59",
+      "link": "https://cacm.acm.org/opinion/sustainability-first-consensus-ledgers-for-a-green-digital-future/",
+      "section": "Opinion"
+    },
+    {
+      "id": 815182,
+      "pushed_at": "2026-11-24T18:31:19+08:00",
+      "title": "Revisiting Pascal’s Wager: A Pragmatist Approach to Scientific Inquiry in the Age of AI",
+      "date": "2026-11-23T11:50:25",
+      "link": "https://cacm.acm.org/opinion/revisiting-pascals-wager-a-pragmatist-approach-to-scientific-inquiry-in-the-age-of-ai/",
+      "section": "Opinion"
     }
   ],
-  "last_check": "2026-11-23T16:20:46+08:00"
+  "last_check": "2026-11-24T18:30:10+08:00"
 }
