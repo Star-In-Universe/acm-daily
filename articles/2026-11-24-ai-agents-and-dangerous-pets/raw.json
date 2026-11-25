@@ -1,0 +1,243 @@
+{
+ "id": 814846,
+ "date": "2026-11-24T14:46:08",
+ "date_gmt": "2026-11-24T19:46:08",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=814846"
+ },
+ "modified": "2026-11-24T14:46:08",
+ "modified_gmt": "2026-11-24T19:46:08",
+ "slug": "ai-agents-and-dangerous-pets",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/ai-agents-and-dangerous-pets/",
+ "title": {
+  "rendered": "AI Agents and Dangerous Pets"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">A lot is being written about AI security these days, and it is not an exaggeration to say that just about everybody has something to say in this fast-changing and evolving space.&nbsp;As if on cue, shortly after I started writing this post, Microsoft&#8217;s Satya Nadella weighed in saying that <a href=\"https://www.linkedin.com/news/story/businesses-should-assume-llms-arent-safe-microsoft-ceo-says-7661868/\">LLMs shouldn’t be trusted</a>, and this from a CEO whose company sells both AI services and compute to train AI models.&nbsp;Strange times.&nbsp;I think it would be helpful to zoom <em>out</em> for a broader and more longitudinal perspective on AI agents and AI solution architecture through the lens of <a href=\"https://en.wikipedia.org/wiki/Normalization_of_deviance\">normalization of deviance</a>.&nbsp;That concept came to the forefront during the NASA Challenger explosion investigation in the 1980s, describing an unsafe condition being considered normal provided it didn’t immediately lead to a catastrophe.&nbsp;</p>\n\n\n\n<p class=\"wp-block-paragraph\">Until it did.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>A Review of Solution Architecture Diagrams</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Let’s go way back to the late 1990s. The following image is a re-creation of the “EJB Components Implement Business Logic” figure from the <em><a href=\"https://www.oracle.com/technetwork/java/javaee/j2ee-guide-150255.pdf\">Simplified Guide to J2EE</a></em> by Sun Microsystems (1999).&nbsp;Java had been out for a few years at that point, and conceptions of “enterprise Java” started forming for <a href=\"https://cacm.acm.org/blogcacm/the-confounding-saga-of-java-web-application-development/\">building standardized web-applications</a> and modules of re-usable business logic.&nbsp;Just create a Java Server Page (JSP) and connect it to an Enterprise Java Bean (EJB) that is connected to a data source, and presto!</p>\n\n\n\n<figure class=\"wp-block-image size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" width=\"474\" height=\"243\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_547535.png\" alt=\"\" class=\"wp-image-814848\" style=\"aspect-ratio:1.9473684210526316;width:541px;height:auto\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_547535.png 474w, https://cacm.acm.org/wp-content/uploads/2026/11/image_547535.png?resize=300,154 300w\" sizes=\"auto, (max-width: 474px) 100vw, 474px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\">To be fair, the diagram was meant as an overview and to represent major concepts. I started developing in Java in 1996 and had already produced several solutions during this timeframe, but I already knew the reality was a lot more challenging that those high-level boxes let on.&nbsp;The goals were reasonable though while Java had made big inroads on the server-side programming, application server web frameworks were proprietary.&nbsp;The JSP specification was released in 1999, and in the ensuing years developers ended up requiring a long list of supplementary and sometimes competing frameworks to make them work (e.g., Struts, Java Server Faces, Struts2, etc.), but it <em>could</em> work.&nbsp;EJBs turned out to be a story of their own that left just about everybody unhappy, but the general idea of layered functionality was a foundational principle of software engineering.&nbsp;Java could be deployed quite effectively in many solutions, but the devil was in the details.&nbsp;While web application security is neither simple nor easy, there was some comfort in knowing that in general the bad actors were on the left side of the diagram. The primary threat was on the <em>outside</em>.&nbsp;Ah, the good old days.&nbsp;</p>\n\n\n\n<p class=\"wp-block-paragraph\">The diagram did <strong>not</strong> have this caveat, though . . .</p>\n\n\n\n<figure class=\"wp-block-image size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" width=\"235\" height=\"108\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_2263f1.png\" alt=\"\" class=\"wp-image-814849\" style=\"aspect-ratio:2.422680412371134;width:388px;height:auto\"/></figure>\n\n\n\n<p class=\"wp-block-paragraph\">. . . as one could use automated tests and code reviews to mitigate behavior risks in the middle of the architecture.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Generative AI Solution Architecture Diagrams</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">With the previous graphic in mind, after generative AI and LLMs came out in 2022 there were a <em>lot</em> of chatbot architecture diagrams that looked something like this:</p>\n\n\n\n<figure class=\"wp-block-image size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" width=\"375\" height=\"262\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_653747.png\" alt=\"\" class=\"wp-image-814852\" style=\"aspect-ratio:1.4307692307692308;width:426px;height:auto\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_653747.png 375w, https://cacm.acm.org/wp-content/uploads/2026/11/image_653747.png?resize=300,210 300w\" sizes=\"auto, (max-width: 375px) 100vw, 375px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\">Just put the chatbot in the architecture, connect the lines, and presto: new technology deployed!&nbsp;It’s easy!&nbsp;Again, to be fair, these were more often meant as conversation starters with people thinking aloud about potential solution opportunities, but they had the same blind-spot for over-simplification.&nbsp;And blind-spots can lead to problems, such as Chipotle’s support chatbot being used as an unintended coding assistant or LLMjacking for more nefarious purposes.</p>\n\n\n\n<p class=\"wp-block-paragraph\">AI solutions architecture diagrams have evolved and became more detailed as deployment realities set in. Architectural boxes now depict agent memory for more informed decisions, gateways, policies, harnesses, and other guardrails.&nbsp;This is clearly way more complicated than just connecting a chatbot engine connected directly to a website:</p>\n\n\n\n<figure class=\"wp-block-image size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" width=\"467\" height=\"301\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_7dee90.png\" alt=\"\" class=\"wp-image-814850\" style=\"aspect-ratio:1.5504587155963303;width:374px;height:auto\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/image_7dee90.png 467w, https://cacm.acm.org/wp-content/uploads/2026/11/image_7dee90.png?resize=300,193 300w\" sizes=\"auto, (max-width: 467px) 100vw, 467px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\">Credit: Agent Safety is a Box, <em>Marc&#8217;s Blog</em>, <a href=\"https://brooker.co.za/blog/2026/01/12/agent-box.html\">https://brooker.co.za/blog/2026/01/12/agent-box.html</a></p>\n\n\n\n<p class=\"wp-block-paragraph\">What I find unnerving, though—and this is where the normalization of deviation concept becomes relevant—is just how much attention is aimed at controlling <em>inside</em> behavior, and specifically, inside <em>mis</em>behavior.&nbsp;The following is an example from AWS Bedrock documentation, a framework for AI safety:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li><strong>Content filters</strong>.  This filter helps you detect and filter harmful text or image content in input prompts or model responses. Filtering is done based on detection of certain predefined harmful content categories: Hate, Insults, Sexual, Violence, Misconduct and Prompt Attack. You can configure the filter strength for each of these categories based on your use cases. These categories are supported for both Classic and Standard <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-tiers.html\">tiers</a>. With Standard tier, detection of undesirable content is extended to protection against harmful content introduced within code elements including comments, variable and function names, and string literals.</li>\n\n\n\n<li><strong>Denied topics</strong>.  You can define a set of topics that are undesirable in the context of your application. The filter will help block them if detected in user queries or model responses. With <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-tiers.html\">Standard tier</a>, detection of undesirable content is extended to protection against harmful content introduced within code elements including comments, variables and function names, and string literals.</li>\n\n\n\n<li><strong>Word filters</strong>.  You can define a set of custom words or phrases that you want to block in the interaction between end users and generative AI applications. Custom word filters use case-insensitive whole-word and whole-phrase matching. For example, you can block profanity (use a ready-to-use option) as well as custom words such as competitor names.</li>\n\n\n\n<li><strong>Sensitive information filters</strong>.  You can configure this filter to help block or mask sensitive information, such as personally identifiable information (PII), in user inputs and model responses. Blocking or masking is done based on probabilistic detection of sensitive information in entities such as SSN, Date of Birth, Address, etc. This filter also allows configuring regular expression based detection of patterns (custom regex).</li>\n\n\n\n<li><strong>Contextual grounding checks</strong>.  This filter helps you detect hallucinations in model responses if they are not grounded (factually inaccurate or add new information) in the source or are irrelevant to to the user&#8217;s query. For example, you can block or flag responses in retrieval-augmented generation (RAG) applications. If the model responses deviate from the information in the retrieved source or doesn&#8217;t answer the question from the user. With <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-tiers.html\">Standard tier</a>, contextual grounding checks support responses that include reasoning or conversational content, return more consistent scores, and support additional languages.</li>\n\n\n\n<li><strong>Automated Reasoning checks</strong>.  This filter helps you validate the accuracy of foundation model responses against a set of logical rules. You can use Automated Reasoning checks to detect hallucinations, suggest corrections, and highlight unstated assumptions in model responses.</li>\n</ul>\n\n\n\n<p class=\"wp-block-paragraph\"><em>Credit</em>: <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html\">Detect and filter harmful <em>content </em>by using Amazon Bedrock Guardrails</a>, <em>AWS</em>. </p>\n\n\n\n<p class=\"wp-block-paragraph\">There are impressive amounts of engineering being spent dedicated to preventing AI agents from making mistakes, getting mis-used, or going rogue.&nbsp;On one hand it is good to see AI safety complexities being recognized, but I think it is easy to take for granted how much of this configuration is about trying to protect the enterprise from its own solution. It is hard enough keeping the bad guys out, but can our own agents be trusted to stay in their cages? This is the new AI design problem.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Dangerous Pets</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\">Hunter S. Thompson once described treating someone as a <a href=\"https://www.rollingstone.com/feature/fear-and-loathing-in-washington-204130/\">“pet cobra”</a>:&nbsp;impressive looking, kind of cool to have around, but someone to never turn your back on. I think this an apt moniker for AI agents currently, especially given Satya Nadella’s recent statement: “Business should treat LLMs as potential ‘<a href=\"https://snscratchpad.com/posts/models-as-insider-risks/\">insider risks</a>’ and set up an ‘emergency brake’ system to keep them in line.” Nobody ever talked about putting emergency brakes on components like databases, middleware, or application servers.&nbsp;A revolutionary game-changing technology that happens to be an insider risk and also needs an <a href=\"https://en.wikipedia.org/wiki/Scram\">AZ-5 button</a>—this is the new AI normal.</p>\n\n\n\n<p class=\"wp-block-paragraph\">When considering the need for agentic activity, it is worth always keeping in mind what the original problem is and look at all of the ways a particular problem could be addressed. Agents might be powerful and perhaps just the ticket, but don’t lose sight of the fact that the fancy new thing in the center of the architecture diagram might be trying to size you up and escape.</p>\n\n\n\n<p class=\"wp-block-paragraph\">And that hiss you hear in the corner?&nbsp;Don’t worry.&nbsp;Probably nothing to worry about.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" decoding=\"async\" width=\"350\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2025/01/01.06.25.BLOG_.Doug-Meil-350.jpg?w=350\" alt=\"\" class=\"wp-image-764029\" srcset=\"https://cacm.acm.org/wp-content/uploads/2025/01/01.06.25.BLOG_.Doug-Meil-350.jpg 350w, https://cacm.acm.org/wp-content/uploads/2025/01/01.06.25.BLOG_.Doug-Meil-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2025/01/01.06.25.BLOG_.Doug-Meil-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 350px) 100vw, 350px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><em><strong>Doug Meil</strong> is a software architect in healthcare data management and analytics, and an ACM Senior Member. He also founded the Cleveland Big Data Meetup in 2010. His</em> BLOG@CACM <em>posts can be found at <a href=\"https://www.linkedin.com/pulse/publications-doug-meil\">https://www.linkedin.com/pulse/publications-doug-meil</a></em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Looking at AI agents and AI solution architecture through the lens of normalization of deviance.&nbsp;</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 815734,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 17402,
+      "post_id": 116896
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>It is hard enough keeping out the bad guys, but can our own AI agents be trusted to stay in their cages?</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  6,
+  4,
+  7
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  17402
+ ],
+ "class_list": [
+  "post-814846",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-applications",
+  "category-computing-profession",
+  "category-data-and-information",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/ai-agents-and-dangerous-pets/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "AI Agents and Dangerous Pets",
+   "url": "http://cacm.acm.org/blogcacm/ai-agents-and-dangerous-pets/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/ai-agents-and-dangerous-pets/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/112326.BLOG_.AI-Agents-and-G.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/112326.BLOG_.AI-Agents-and-G.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Doug Meil",
+     "url": "https://cacm.acm.org/author/doug-meil/"
+    }
+   ],
+   "creator": [
+    "Doug Meil"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-24T19:46:08Z",
+   "datePublished": "2026-11-24T19:46:08Z",
+   "dateModified": "2026-11-24T19:46:08Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"AI Agents and Dangerous Pets\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/ai-agents-and-dangerous-pets\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/ai-agents-and-dangerous-pets\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/112326.BLOG_.AI-Agents-and-G.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/112326.BLOG_.AI-Agents-and-G.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Doug Meil\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/doug-meil\\/\"}],\"creator\":[\"Doug Meil\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-24T19:46:08Z\",\"datePublished\":\"2026-11-24T19:46:08Z\",\"dateModified\":\"2026-11-24T19:46:08Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Doug Meil",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/112326.BLOG_.AI-Agents-and-G.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814846",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=814846"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 21,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814846/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815842,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/814846/revisions/815842"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815734"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=814846"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=814846"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=814846"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=814846"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=814846"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=814846"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=814846"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

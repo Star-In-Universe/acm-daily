@@ -375,7 +375,39 @@
       "date": "2026-11-23T11:50:25",
       "link": "https://cacm.acm.org/opinion/revisiting-pascals-wager-a-pragmatist-approach-to-scientific-inquiry-in-the-age-of-ai/",
       "section": "Opinion"
+    },
+    {
+      "id": 814846,
+      "pushed_at": "2026-11-25T17:20:23+08:00",
+      "title": "AI Agents and Dangerous Pets",
+      "date": "2026-11-24T14:46:08",
+      "link": "https://cacm.acm.org/blogcacm/ai-agents-and-dangerous-pets/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 815029,
+      "pushed_at": "2026-11-25T17:20:23+08:00",
+      "title": "Toward Self-Healing Engineering Systems",
+      "date": "2026-11-24T13:08:15",
+      "link": "https://cacm.acm.org/blogcacm/toward-self-healing-engineering-systems/",
+      "section": "Blog@CACM"
+    },
+    {
+      "id": 814256,
+      "pushed_at": "2026-11-25T17:20:23+08:00",
+      "title": "Beyond Model Alignment: The Case for Bounded Autonomy in AI Systems",
+      "date": "2026-11-24T12:08:14",
+      "link": "https://cacm.acm.org/opinion/beyond-model-alignment-the-case-for-bounded-autonomy-in-ai-systems/",
+      "section": "Opinion"
+    },
+    {
+      "id": 814236,
+      "pushed_at": "2026-11-25T17:20:23+08:00",
+      "title": "AI and Existential Risk: For Real?",
+      "date": "2026-11-23T10:50:46",
+      "link": "https://cacm.acm.org/opinion/ai-and-existential-risk-for-real/",
+      "section": "Opinion"
     }
   ],
-  "last_check": "2026-11-24T18:30:10+08:00"
+  "last_check": "2026-11-25T17:19:00+08:00"
 }

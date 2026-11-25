@@ -1,0 +1,241 @@
+{
+ "id": 815029,
+ "date": "2026-11-24T13:08:15",
+ "date_gmt": "2026-11-24T18:08:15",
+ "guid": {
+  "rendered": "https://cacm.acm.org/?p=815029"
+ },
+ "modified": "2026-11-24T13:08:15",
+ "modified_gmt": "2026-11-24T18:08:15",
+ "slug": "toward-self-healing-engineering-systems",
+ "status": "publish",
+ "type": "post",
+ "link": "https://cacm.acm.org/blogcacm/toward-self-healing-engineering-systems/",
+ "title": {
+  "rendered": "Toward Self-Healing Engineering Systems"
+ },
+ "content": {
+  "rendered": "\n<p class=\"wp-block-paragraph\">In more than 20 years of QA automation and network security engineering across financial services, healthcare, pharmaceuticals, semiconductor design, and next-generation firewall testing, automation has meant teaching machines to follow instructions we already understand.</p>\n\n\n\n<p class=\"wp-block-paragraph\">That model speeds delivery, but struggles with situations its designers did not anticipate.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Tests fail when APIs change, interface elements move, or environments behave unexpectedly. Some failures are intermittent, caused by asynchronous waits, concurrency, or test-order dependencies. The framework reports the failure; a human still diagnoses it.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Agentic AI introduces a different approach. An agent observes a system, reasons about what it sees, plans an action, checks the result, and continues until the task succeeds or human help is needed. Applied carefully, this makes automation adaptive—not simply faster.</p>\n\n\n\n<h3 class=\"wp-block-heading\">From Automated Execution to Autonomous Reasoning</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Traditional automation follows a fixed sequence: Trigger → Execute → Verify → Report. Agentic automation adds a reasoning loop: Observe → Reason → Plan → Act → Verify → Learn or Escalate. That change may look small, but it alters the engineering problem.</p>\n\n\n\n<p class=\"wp-block-paragraph\">If a test cannot find a button, a conventional framework reports “Element not found.” An agent could compare page versions, identify a changed identifier, verify that the business function still works, then propose an updated locator and rerun the test.</p>\n\n\n\n<p class=\"wp-block-paragraph\">This is self-healing test automation, but the term needs care. A system that edits its own tests and declares success is not necessarily intelligent or safe. The objective is not simply to make a test pass. It is to identify why it failed, make the smallest justified correction, and provide evidence that the correction is valid.</p>\n\n\n\n<h3 class=\"wp-block-heading\">A Failing Test Is Not Necessarily a Defect</h3>\n\n\n\n<p class=\"wp-block-paragraph\">A red test does not automatically mean the application is broken. In network security testing, failure may originate in the device, traffic generator, lab topology, test, or an external dependency.</p>\n\n\n\n<p class=\"wp-block-paragraph\">After an overnight deployment, a customer-order suite fails. The cause might be a changed API, obsolete locator, consumed test data, unavailable dependency, expired token, partial deployment, or genuine defect. A traditional framework may report them all alike.</p>\n\n\n\n<p class=\"wp-block-paragraph\">An agent can correlate logs, traces, deployment records, code changes, test history, and environment health. It might report that the customer-status endpoint changed its response structure, moving an expected field, and that three other tests failed after the same deployment.</p>\n\n\n\n<p class=\"wp-block-paragraph\">That is a meaningful shift—from detecting failure to diagnosing it.</p>\n\n\n\n<h3 class=\"wp-block-heading\">The Self-Healing Loop</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Self-healing should operate as a controlled feedback loop:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Observe: Gather test results, logs, traces, and environment signals.</li>\n\n\n\n<li>Diagnose: Separate application defects from test or environment problems.</li>\n\n\n\n<li>Plan: Choose the smallest, lowest-risk correction.</li>\n\n\n\n<li>Act: Make only an authorized change.</li>\n\n\n\n<li>Validate: Rerun the test and related checks.</li>\n\n\n\n<li>Accept or escalate: Record evidence or send the issue to an engineer.</li>\n</ul>\n\n\n\n<p class=\"wp-block-paragraph\">Every repair should pass a confidence and policy gate. A failed gate should lead to escalation, not another unreviewed attempt.</p>\n\n\n\n<h3 class=\"wp-block-heading\">Evidence Before Action</h3>\n\n\n\n<p class=\"wp-block-paragraph\">There is a temptation to describe agentic AI as fully autonomous software engineering. I am more cautious. If loosening a payment validation rule makes a failing test pass, the green result may conceal a serious defect. Before accepting an automated repair, I would require evidence that:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>The failure is reproducible and the change addresses its cause.</li>\n\n\n\n<li>The repaired test passes repeatedly, as do related tests.</li>\n\n\n\n<li>Business behavior, security, and compliance requirements remain intact.</li>\n\n\n\n<li>The change is within the agent’s authorized scope.</li>\n</ul>\n\n\n\n<p class=\"wp-block-paragraph\">The agent should not be rewarded simply for producing a green pipeline. It should be evaluated on whether the pipeline is trustworthy.</p>\n\n\n\n<h3 class=\"wp-block-heading\">What Agents Should Automate First</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Four areas offer value while preserving engineering control.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Test maintenance</strong>: Identify obsolete locators, changed API contracts, unstable tests, and broken test data; recommend or make low-risk updates.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Test generation</strong>: Draft tests from requirements, APIs, and past defects. Engineers must check that they cover meaningful behavior, not just mirror implementation.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Regression optimization</strong>: Use change information and test history to select relevant tests without sacrificing critical coverage.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Failure</strong> <strong>triage</strong>: Classify failures as new, known, environmental, intermittent, or likely regressions. This may deliver the greatest early value by separating infrastructure noise from product defects.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The shift is from asking, “Which test should I execute?” to asking, “What evidence do I need to decide whether this change is safe?”</p>\n\n\n\n<h3 class=\"wp-block-heading\">Self-Healing Does Not Mean Human-Free</h3>\n\n\n\n<p class=\"wp-block-paragraph\">The future does not remove engineers from the process; it changes where they spend their time. No engineer should have to fix the same broken locator repeatedly. Engineers should, however, define what an agent is allowed to change.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I see three practical levels of autonomy:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Low risk: The agent can act automatically on reversible, well-understood changes.</li>\n\n\n\n<li>Medium risk: The agent proposes a change and an engineer approves it.</li>\n\n\n\n<li>High risk: Changes involving security, financial transactions, customer data, production infrastructure, or business-critical behavior require explicit human authorization.</li>\n</ul>\n\n\n\n<p class=\"wp-block-paragraph\">Test engineers increasingly become designers of quality systems. Their expertise moves toward risk modeling, observability, reliability, security, and defining what evidence is sufficient to establish confidence.</p>\n\n\n\n<h3 class=\"wp-block-heading\">From Self-Healing Tests to Self-Healing Systems</h3>\n\n\n\n<p class=\"wp-block-paragraph\">The same principles can extend beyond testing. One agent might connect rising latency to a recent deployment and recommend a rollback. Another might generate tests when an API contract change affects downstream consumers. A security agent might investigate unusual access patterns and recommend containment.</p>\n\n\n\n<p class=\"wp-block-paragraph\">I think of these as intelligent engineering loops: systems that continuously observe software, reason about its behavior, take controlled actions, and verify the consequences. The goal is not software that blindly repairs itself. It is software that can correct problems within defined boundaries and produce evidence people can trust. </p>\n\n\n\n<h3 class=\"wp-block-heading\">The Engineering Challenge Ahead</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Writing another test script is no longer the hardest part. The challenge is the control system: observability, authorization boundaries, auditability, secure tool access, rollback, repeatable validation, and confidence measures.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Organizations must avoid excessive agency: granting more permissions or autonomy than a task requires. Fewer human interventions are not automatically better; success means reducing unnecessary intervention while preserving quality, safety, security, and accountability.</p>\n\n\n\n<h3 class=\"wp-block-heading\">A New Role for Software Engineers</h3>\n\n\n\n<p class=\"wp-block-paragraph\">Software engineering has moved from manual testing to scripted automation, from scripted deployments to continuous delivery, and from hand-managed servers to infrastructure as code. The next transition may be from deterministic automation to adaptive engineering systems.</p>\n\n\n\n<p class=\"wp-block-paragraph\">That makes experience more important, not obsolete. An agent can generate thousands of actions, but it still needs engineering judgment to decide which actions are safe. Engineers who understand failure modes, distributed systems, security, and business risk are well positioned to build and govern these systems.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The future I see is not AI replacing engineers. It is engineers building systems in which agents help us test, repair, and improve software. The real measure of success will not be how autonomous these systems become, but how much more reliable software engineering becomes because we learned to make autonomy trustworthy.</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Disclosure</strong>: Generative AI tools, including Anthropic’s Claude, were used to help condense an earlier draft, identify and check supporting references, and edit for clarity. The ideas, examples, technical arguments, and conclusions are the author’s own, drawn from his professional experience. The author reviewed the final text and takes full responsibility for its content and references.</p>\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"351\" height=\"350\" src=\"https://cacm.acm.org/wp-content/uploads/2026/11/Mohammed-Bari-Syed.112426.BLOG-350.jpg\" alt=\"Mohammed Bari Syed\" class=\"wp-image-815828\" srcset=\"https://cacm.acm.org/wp-content/uploads/2026/11/Mohammed-Bari-Syed.112426.BLOG-350.jpg 351w, https://cacm.acm.org/wp-content/uploads/2026/11/Mohammed-Bari-Syed.112426.BLOG-350.jpg?resize=150,150 150w, https://cacm.acm.org/wp-content/uploads/2026/11/Mohammed-Bari-Syed.112426.BLOG-350.jpg?resize=300,300 300w\" sizes=\"auto, (max-width: 351px) 100vw, 351px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\"><br><em><strong>Mohammed</strong> <strong>Bari</strong> <strong>Syed</strong> is a Principal Network QA Engineer at Palo Alto Networks, with more than 20 years of experience in QA automation and network security engineering. The views expressed here are his own and do not represent those of his employer.</em></p>\n",
+  "protected": false
+ },
+ "excerpt": {
+  "rendered": "<p>Applied carefully, agentic AI makes automation adaptive&mdash;not simply faster.</p>",
+  "protected": false
+ },
+ "author": 14,
+ "featured_media": 815831,
+ "comment_status": "open",
+ "ping_status": "0",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "cacm_featured_image_credit": "",
+  "cacm_show_featured_image_credit": 0,
+  "byline": {
+   "profiles": [
+    {
+     "type": "byline_id",
+     "atts": {
+      "term_id": 20602,
+      "post_id": 815027
+     }
+    }
+   ]
+  },
+  "cacm_mu_open_graph_description": "",
+  "cacm_mu_open_graph_image": 0,
+  "cacm_mu_open_graph_title": "",
+  "cacm_acm_queue_branding_active": 0,
+  "cacm_plugin_open_graph_description": "",
+  "cacm_plugin_open_graph_image": 0,
+  "cacm_plugin_open_graph_title": "",
+  "video_embed_code": "",
+  "display_on_video_page": false,
+  "lede": "<p>Agentic AI does not remove engineers from the process; it changes where they spend their time.</p>",
+  "table_of_contents": "",
+  "cacm_plugin_article_dl_pub_date": "",
+  "cacm_plugin_article_dl_url": "",
+  "cacm_plugin_article_pdf_url": "",
+  "cacm_plugin_article_copyright_text": "<p>&copy; 2026 Copyright held by the owner/author(s).</p>",
+  "related_reading_search_string": "",
+  "related_reading_posts": [],
+  "_jetpack_newsletter_access": "",
+  "_jetpack_dont_email_post_to_subs": false,
+  "_jetpack_newsletter_tier_id": 0,
+  "_jetpack_memberships_contains_paywalled_content": false,
+  "_jetpack_hide_featured_image": false,
+  "_jetpack_featured_image_duplicate_dismissed": 0,
+  "_jetpack_feature_clip_id": 0,
+  "_jetpack_memberships_contains_paid_content": false,
+  "footnotes": "",
+  "jetpack_post_was_ever_published": false
+ },
+ "categories": [
+  20,
+  6,
+  4
+ ],
+ "tags": [],
+ "issue": [],
+ "section": [
+  164
+ ],
+ "content-type": [],
+ "byline": [
+  20602
+ ],
+ "class_list": [
+  "post-815029",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "has-post-thumbnail",
+  "hentry",
+  "category-artificial-intelligence-machine-learning",
+  "category-computing-applications",
+  "category-computing-profession",
+  "section-blogcacm"
+ ],
+ "parsely": {
+  "version": "1.1.0",
+  "canonical_url": "https://acm.org/blogcacm/toward-self-healing-engineering-systems/",
+  "meta": {
+   "@context": "https://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Toward Self-Healing Engineering Systems",
+   "url": "http://cacm.acm.org/blogcacm/toward-self-healing-engineering-systems/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://cacm.acm.org/blogcacm/toward-self-healing-engineering-systems/"
+   },
+   "thumbnailUrl": "https://cacm.acm.org/wp-content/uploads/2026/11/112426.BLOG_.Toward-Self-S.jpg?w=150&h=150&crop=1",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://cacm.acm.org/wp-content/uploads/2026/11/112426.BLOG_.Toward-Self-S.jpg"
+   },
+   "articleSection": "Artificial Intelligence and Machine Learning",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Mohammed Bari Syed",
+     "url": "https://cacm.acm.org/author/mohammed-bari-syed/"
+    }
+   ],
+   "creator": [
+    "Mohammed Bari Syed"
+   ],
+   "publisher": {
+    "@type": "Organization",
+    "name": "Communications of the ACM",
+    "logo": ""
+   },
+   "keywords": [],
+   "dateCreated": "2026-11-24T18:08:15Z",
+   "datePublished": "2026-11-24T18:08:15Z",
+   "dateModified": "2026-11-24T18:08:15Z"
+  },
+  "rendered": "<script type=\"application/ld+json\" class=\"wp-parsely-metadata\">{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Toward Self-Healing Engineering Systems\",\"url\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/toward-self-healing-engineering-systems\\/\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"http:\\/\\/cacm.acm.org\\/blogcacm\\/toward-self-healing-engineering-systems\\/\"},\"thumbnailUrl\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/112426.BLOG_.Toward-Self-S.jpg?w=150&h=150&crop=1\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cacm.acm.org\\/wp-content\\/uploads\\/2026\\/11\\/112426.BLOG_.Toward-Self-S.jpg\"},\"articleSection\":\"Artificial Intelligence and Machine Learning\",\"author\":[{\"@type\":\"Person\",\"name\":\"Mohammed Bari Syed\",\"url\":\"https:\\/\\/cacm.acm.org\\/author\\/mohammed-bari-syed\\/\"}],\"creator\":[\"Mohammed Bari Syed\"],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Communications of the ACM\",\"logo\":\"\"},\"keywords\":[],\"dateCreated\":\"2026-11-24T18:08:15Z\",\"datePublished\":\"2026-11-24T18:08:15Z\",\"dateModified\":\"2026-11-24T18:08:15Z\"}</script>",
+  "tracker_url": "https://cdn.parsely.com/keys/acm.org/p.js"
+ },
+ "authors": "Mohammed Bari Syed",
+ "jetpack_sharing_enabled": true,
+ "jetpack_featured_media_url": "https://cacm.acm.org/wp-content/uploads/2026/11/112426.BLOG_.Toward-Self-S.jpg",
+ "_links": {
+  "self": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/815029",
+    "targetHints": {
+     "allow": [
+      "GET"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/users/14"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/comments?post=815029"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 5,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/815029/revisions"
+   }
+  ],
+  "predecessor-version": [
+   {
+    "id": 815832,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/posts/815029/revisions/815832"
+   }
+  ],
+  "wp:featuredmedia": [
+   {
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media/815831"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://cacm.acm.org/wp-json/wp/v2/media?parent=815029"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/categories?post=815029"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/tags?post=815029"
+   },
+   {
+    "taxonomy": "issue",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/issue?post=815029"
+   },
+   {
+    "taxonomy": "section",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/section?post=815029"
+   },
+   {
+    "taxonomy": "content-type",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/content-type?post=815029"
+   },
+   {
+    "taxonomy": "byline",
+    "embeddable": true,
+    "href": "https://cacm.acm.org/wp-json/wp/v2/byline?post=815029"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+[1] (P) In more than 20 years of QA automation and network security engineering across financial services, healthcare, pharmaceuticals, semiconductor design, and next-generation firewall testing, automation has meant teaching machines to follow instructions we already understand.
+[2] (P) That model speeds delivery, but struggles with situations its designers did not anticipate.
+[3] (P) Tests fail when APIs change, interface elements move, or environments behave unexpectedly. Some failures are intermittent, caused by asynchronous waits, concurrency, or test-order dependencies. The framework reports the failure; a human still diagnoses it.
+[4] (P) Agentic AI introduces a different approach. An agent observes a system, reasons about what it sees, plans an action, checks the result, and continues until the task succeeds or human help is needed. Applied carefully, this makes automation adaptive—not simply faster.
+[5] (H) From Automated Execution to Autonomous Reasoning
+[6] (P) Traditional automation follows a fixed sequence: Trigger → Execute → Verify → Report. Agentic automation adds a reasoning loop: Observe → Reason → Plan → Act → Verify → Learn or Escalate. That change may look small, but it alters the engineering problem.
+[7] (P) If a test cannot find a button, a conventional framework reports “Element not found.” An agent could compare page versions, identify a changed identifier, verify that the business function still works, then propose an updated locator and rerun the test.
+[8] (P) This is self-healing test automation, but the term needs care. A system that edits its own tests and declares success is not necessarily intelligent or safe. The objective is not simply to make a test pass. It is to identify why it failed, make the smallest justified correction, and provide evidence that the correction is valid.
+[9] (H) A Failing Test Is Not Necessarily a Defect
+[10] (P) A red test does not automatically mean the application is broken. In network security testing, failure may originate in the device, traffic generator, lab topology, test, or an external dependency.
+[11] (P) After an overnight deployment, a customer-order suite fails. The cause might be a changed API, obsolete locator, consumed test data, unavailable dependency, expired token, partial deployment, or genuine defect. A traditional framework may report them all alike.
+[12] (P) An agent can correlate logs, traces, deployment records, code changes, test history, and environment health. It might report that the customer-status endpoint changed its response structure, moving an expected field, and that three other tests failed after the same deployment.
+[13] (P) That is a meaningful shift—from detecting failure to diagnosing it.
+[14] (H) The Self-Healing Loop
+[15] (P) Self-healing should operate as a controlled feedback loop:
+[16] (L) Observe: Gather test results, logs, traces, and environment signals.
+[17] (L) Diagnose: Separate application defects from test or environment problems.
+[18] (L) Plan: Choose the smallest, lowest-risk correction.
+[19] (L) Act: Make only an authorized change.
+[20] (L) Validate: Rerun the test and related checks.
+[21] (L) Accept or escalate: Record evidence or send the issue to an engineer.
+[22] (P) Every repair should pass a confidence and policy gate. A failed gate should lead to escalation, not another unreviewed attempt.
+[23] (H) Evidence Before Action
+[24] (P) There is a temptation to describe agentic AI as fully autonomous software engineering. I am more cautious. If loosening a payment validation rule makes a failing test pass, the green result may conceal a serious defect. Before accepting an automated repair, I would require evidence that:
+[25] (L) The failure is reproducible and the change addresses its cause.
+[26] (L) The repaired test passes repeatedly, as do related tests.
+[27] (L) Business behavior, security, and compliance requirements remain intact.
+[28] (L) The change is within the agent’s authorized scope.
+[29] (P) The agent should not be rewarded simply for producing a green pipeline. It should be evaluated on whether the pipeline is trustworthy.
+[30] (H) What Agents Should Automate First
+[31] (P) Four areas offer value while preserving engineering control.
+[32] (P) Test maintenance: Identify obsolete locators, changed API contracts, unstable tests, and broken test data; recommend or make low-risk updates.
+[33] (P) Test generation: Draft tests from requirements, APIs, and past defects. Engineers must check that they cover meaningful behavior, not just mirror implementation.
+[34] (P) Regression optimization: Use change information and test history to select relevant tests without sacrificing critical coverage.
+[35] (P) Failure triage: Classify failures as new, known, environmental, intermittent, or likely regressions. This may deliver the greatest early value by separating infrastructure noise from product defects.
+[36] (P) The shift is from asking, “Which test should I execute?” to asking, “What evidence do I need to decide whether this change is safe?”
+[37] (H) Self-Healing Does Not Mean Human-Free
+[38] (P) The future does not remove engineers from the process; it changes where they spend their time. No engineer should have to fix the same broken locator repeatedly. Engineers should, however, define what an agent is allowed to change.
+[39] (P) I see three practical levels of autonomy:
+[40] (L) Low risk: The agent can act automatically on reversible, well-understood changes.
+[41] (L) Medium risk: The agent proposes a change and an engineer approves it.
+[42] (L) High risk: Changes involving security, financial transactions, customer data, production infrastructure, or business-critical behavior require explicit human authorization.
+[43] (P) Test engineers increasingly become designers of quality systems. Their expertise moves toward risk modeling, observability, reliability, security, and defining what evidence is sufficient to establish confidence.
+[44] (H) From Self-Healing Tests to Self-Healing Systems
+[45] (P) The same principles can extend beyond testing. One agent might connect rising latency to a recent deployment and recommend a rollback. Another might generate tests when an API contract change affects downstream consumers. A security agent might investigate unusual access patterns and recommend containment.
+[46] (P) I think of these as intelligent engineering loops: systems that continuously observe software, reason about its behavior, take controlled actions, and verify the consequences. The goal is not software that blindly repairs itself. It is software that can correct problems within defined boundaries and produce evidence people can trust.
+[47] (H) The Engineering Challenge Ahead
+[48] (P) Writing another test script is no longer the hardest part. The challenge is the control system: observability, authorization boundaries, auditability, secure tool access, rollback, repeatable validation, and confidence measures.
+[49] (P) Organizations must avoid excessive agency: granting more permissions or autonomy than a task requires. Fewer human interventions are not automatically better; success means reducing unnecessary intervention while preserving quality, safety, security, and accountability.
+[50] (H) A New Role for Software Engineers
+[51] (P) Software engineering has moved from manual testing to scripted automation, from scripted deployments to continuous delivery, and from hand-managed servers to infrastructure as code. The next transition may be from deterministic automation to adaptive engineering systems.
+[52] (P) That makes experience more important, not obsolete. An agent can generate thousands of actions, but it still needs engineering judgment to decide which actions are safe. Engineers who understand failure modes, distributed systems, security, and business risk are well positioned to build and govern these systems.
+[53] (P) The future I see is not AI replacing engineers. It is engineers building systems in which agents help us test, repair, and improve software. The real measure of success will not be how autonomous these systems become, but how much more reliable software engineering becomes because we learned to make autonomy trustworthy.
+[54] (P) Disclosure: Generative AI tools, including Anthropic’s Claude, were used to help condense an earlier draft, identify and check supporting references, and edit for clarity. The ideas, examples, technical arguments, and conclusions are the author’s own, drawn from his professional experience. The author reviewed the final text and takes full responsibility for its content and references.
+[55] (P) Mohammed Bari Syed is a Principal Network QA Engineer at Palo Alto Networks, with more than 20 years of experience in QA automation and network security engineering. The views expressed here are his own and do not represent those of his employer.
